@@ -6,6 +6,7 @@ import Input from '@/components/ui/Input';
 import FadeUp from '@/components/animations/FadeUp';
 import BookingCalendar from '@/components/BookingCalendar';
 import { personSchema, schemaScript } from '@/lib/schema';
+import { buildMy1003AppUrl } from '@/lib/my1003app';
 import type { Metadata } from 'next';
 
 export function generateStaticParams() {
@@ -121,7 +122,15 @@ export default async function LoanOfficerPage({
                   <Button href={`mailto:${lo.email}`}>
                     Email {lo.name.split(' ')[0]}
                   </Button>
-                  <Button href={lo.my1003appUrl} variant="secondary" external>
+                  <Button
+                    href={buildMy1003AppUrl({
+                      baseUrl: lo.my1003appUrl,
+                      loSlug: lo.slug,
+                      medium: 'lo_page',
+                    })}
+                    variant="secondary"
+                    external
+                  >
                     Continue your application
                   </Button>
                 </div>
