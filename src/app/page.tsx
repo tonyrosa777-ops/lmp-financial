@@ -1,7 +1,6 @@
 import HeroSection from '@/components/sections/HeroSection';
 import PainPointsSection from '@/components/sections/PainPointsSection';
 import ServicesSection from '@/components/sections/ServicesSection';
-import AboutSection from '@/components/sections/AboutSection';
 import StatsSection from '@/components/sections/StatsSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import QuizCTASection from '@/components/sections/QuizCTASection';
@@ -12,21 +11,19 @@ import PreApprovalCTASection from '@/components/sections/PreApprovalCTASection';
 // Homepage rhythm — strict dark/light alternation, distinct purpose per section.
 // Each section is a self-contained component pulling from siteConfig.
 //
-// Hero               → dark  → conversion (HeroParticles + KeyringCanvas + stagger text)
-// Pain Points        → light → empathy
-// Services           → dark  → education (9 loan programs)
-// About              → light → trust (Mike's founder story)
-// Stats              → light → social proof (CountUp animations)
-// Testimonials       → dark  → social proof (3 featured + see-all link)
-// Quiz CTA           → light → conversion (mid-page nudge)
-// Meet the Team      → dark  → relationship (LO grid teaser)
-// Blog Preview       → light → content preview (Phase 1F real articles)
-// Pre-Approval CTA   → dark  → conversion (final CTA)
+// Hero (with founder strip)  → dark  → conversion + relationship
+// Pain Points                → light → empathy
+// Services                   → dark  → education
+// Stats                      → light → social proof
+// Testimonials               → dark  → social proof
+// Quiz CTA                   → light → conversion (mid-page)
+// Meet the Team              → dark  → relationship
+// Blog Preview               → light → content preview
+// Pre-Approval CTA           → dark  → conversion (final)
 //
-// Note: AboutSection + StatsSection are both light per the section components agent's
-// output. The orchestrator preserves that ordering — adjacency between two light
-// sections is a tone-rhythm violation that should be revisited in Phase 1H pre-launch
-// audit. For Phase 1E demo, this is acceptable.
+// Phase 1G — AboutSection content folded into HeroSection as a founder strip.
+// Resolves the L-L adjacency from Sessions 5+6 by reducing to 9 sections.
+// Strict alternation D-L-D-L-D-L-D-L-D.
 
 export default function HomePage() {
   return (
@@ -34,7 +31,6 @@ export default function HomePage() {
       <HeroSection />
       <PainPointsSection />
       <ServicesSection />
-      <AboutSection />
       <StatsSection />
       <TestimonialsSection />
       <QuizCTASection />
