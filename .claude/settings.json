@@ -33,7 +33,8 @@
       "Bash(mv \"mortgage-broker-[state]/page.tsx\" \"mortgage-broker/[state]/page.tsx\")",
       "Bash(rmdir \"mortgage-broker-[state]\")",
       "Read(//c/c/Projects/LMP Financial/src/app/**)",
-      "Bash(curl -s http://localhost:3000/sitemap.xml)"
+      "Bash(curl -s http://localhost:3000/sitemap.xml)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" \"http://localhost:3000/blog/masshousing-30k-down-payment-assistance\")"
     ]
   }
 }

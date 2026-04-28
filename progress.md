@@ -5,7 +5,7 @@
 **Business Type:** Licensed independent mortgage broker (multi-LO shop, 22 LOs + 1 recruiter)
 **Launch Target:** TBD post-Tuesday demo (2026-04-28)
 **Last Updated:** 2026-04-27
-**Current Phase:** Phase 1F — SEO + AEO + Depth (✅ complete) → ready for Phase 1G (Sanity blog, asset pipeline, tone-adjacency fix)
+**Current Phase:** Phase 1G — Sanity Blog + Brand Assets + Homepage Restructure (✅ complete) → ready for Phase 1H (real LO portraits + fal.ai blog imagery + Playwright multi-breakpoint audit)
 **Repo:** https://github.com/tonyrosa777-ops/lmp-financial
 
 ---
@@ -54,9 +54,10 @@ This is the consolidated list of every item that must close before lmpfinancial.
 
 - [ ] **Mike Comerford portrait** — referenced in `AboutSection.tsx` with `[ASSET-PENDING — Mike portrait]` placeholder. fal.ai-generated OR real photo from Tuesday.
 - [ ] **22 LO portrait images** — every LO landing page currently shows initials in a circular accent disk. Real headshots OR fal.ai-generated.
-- [ ] **Equal Housing Lender SVG** — Footer Agent built an inline SVG placeholder. Real EHL logo asset (regulatory requirement) goes in `/public/equal-housing-lender.svg`.
-- [ ] **`/public/logo.png`** — referenced in JSON-LD schema. Real LMP logo file.
-- [ ] **`/public/og-image.jpg`** — referenced in metadata. Open-Graph share image for social previews.
+- [x] **Equal Housing Lender SVG** — Phase 1G shipped `/public/equal-housing-lender.svg` (recreated regulatory mark). **PRE-LAUNCH still requires HUD-sourced official artwork** — the placeholder comment in the SVG file documents this. IT firm review required before publish.
+- [x] **`/public/logo.svg`** — Phase 1G shipped wordmark SVG (LMP in deep navy + gold underline + FINANCIAL mono). Schema markup updated. Real client logo replaces when provided.
+- [x] **OG image** — Phase 1G shipped `src/app/opengraph-image.tsx` (1200×630 dynamic via Next.js `ImageResponse`). Schema markup references `/opengraph-image` (no `.jpg` placeholder).
+- [x] **Favicon** — Phase 1G shipped `src/app/icon.tsx` (32×32 dynamic).
 - [ ] **Blog card + header images** for the 9–10 articles — fal.ai-generated per CLAUDE.md Image Generation Rule. Cards 1200×630 (OG-spec), headers 2400×1200.
 - [ ] **Partner co-marketing kits PDF set** — `[ASSET-PENDING — kits PDF set, Phase 1G]` referenced on `/partners`. Real PDFs delivered to clients on signup OR removed from copy if not built.
 
@@ -66,14 +67,14 @@ This is the consolidated list of every item that must close before lmpfinancial.
 - [ ] **`/api/calendly/slots` and `/api/calendly/book`** — exist but return seeded fake data when no `CALENDLY_API_KEY`. Phase 2A wires real Calendly API.
 - [ ] **`CALENDLY_API_KEY`** env var — required for live booking.
 - [ ] **`RESEND_API_KEY`** env var — required for `/api/contact`.
-- [ ] **Sanity blog wiring (Phase 1G)** — install `next-sanity`, schema, GROQ queries, `/studio` route, real `/blog` + `/blog/[slug]` replacing stubs. Requires `NEXT_PUBLIC_SANITY_PROJECT_ID` + `NEXT_PUBLIC_SANITY_DATASET` env vars.
-- [ ] **Real blog articles** — minimum 9–10 per CLAUDE.md Blog rule. AEO targets per MI §6: state programs (one per licensed state), "FHA vs Conventional in NH," "MassHousing $30K DPA explained," "Wholesale vs Retail," "UWM Wholesale Explained," "Rate-Shopping Guide for First-Time Buyers."
+- [x] **Sanity blog wiring** — Phase 1G shipped `next-sanity` install + client + queries + schema + `/studio` route + real `/blog` + `/blog/[slug]` pages with JSON fallback. Demo mode works WITHOUT `NEXT_PUBLIC_SANITY_PROJECT_ID`. Mike provisions Sanity → drop env vars in `.env.local` → components automatically switch to live GROQ.
+- [ ] **Real blog articles beyond the 3 seeds** — Phase 1G shipped 3 seed articles (FHA vs Conventional in NH, MassHousing $30K DPA Explained, Wholesale vs Retail). Per CLAUDE.md Blog rule, target 9–10 minimum. Phase 1H+ adds: per-state explainers (9 states), "UWM Wholesale Explained," "Rate-Shopping Guide for First-Time Buyers."
 - [ ] **Multilingual full stack (PT/ES)** per MI §9 Exploit #1 — Lowell-Lawrence-Boston is densest Brazilian metro in US. Visual language flags already in nav from Phase 1C; actual i18n routing + translated content is a Phase 1G+ project. Portuguese first, Spanish second.
 - [ ] **9 individual `/mortgage-broker-massachusetts` SEO-friendly URLs** (currently `/mortgage-broker/massachusetts`) — if hyphen-prefixed URLs are required for SEO competitiveness, restructure to 9 static directories. Current single dynamic route `/mortgage-broker/[state]` is functional and SEO-equivalent.
 
 ### E. Structural / UX items (Phase 1G)
 
-- [ ] **Tone-adjacency on homepage** — AboutSection + StatsSection both light, creating an L-L adjacency that violates CLAUDE.md Homepage Section Architecture Rule §14. Recommended fix: merge AboutSection into HeroSection as a "founder strip" (Mike quote + photo as Layer 4), reducing from 10 to 9 sections and resolving the math constraint cleanly.
+- [x] **Tone-adjacency on homepage** — Phase 1G folded AboutSection into HeroSection as a founder strip (55-word Mike-voice paragraph + MC initials disk + Meet the team link, FadeUp delay 2.0). Homepage now 9 sections with strict D-L-D-L-D-L-D-L-D rhythm.
 - [ ] **Real interactive 9-state map** on `/service-areas` — current implementation is a 9-card grid grouped by region. CSS-only "map" works; an interactive SVG state map would be richer if Mike values it.
 - [ ] **Filter UI on `/team` and `/testimonials`** — currently visual-stub badges. Phase 1G makes them interactive.
 - [ ] **8 additional calculators** beyond the 5 priority ones — IBD §9C lists 13 total.
@@ -100,7 +101,8 @@ This is the consolidated list of every item that must close before lmpfinancial.
 | 1D | Content + Animation | ✅ Complete (3-layer hero + 8 animation wrappers + 36 testimonials + 22 LO bios + 9 program blurbs) |
 | 1E | All Pages (core + LMP-specific) | ✅ Complete (40 new files, 21 routes returning HTTP 200, sitemap.ts, homepage wired to section components) |
 | 1F | SEO + AEO + state pages + calculators | ✅ Complete (legal verbatim, schema markup, 5 calculators, 9 state pages, robots.ts, 36 routes verified) |
-| 1G | Sanity blog + asset pipeline + tone-adjacency fix | ⬜ Not Started |
+| 1G | Sanity blog + brand assets + homepage restructure | ✅ Complete (3 seed articles, logo SVG + EHL SVG + dynamic OG/icon, 9-section rhythm) |
+| 1H | LO portraits + fal.ai blog imagery + Playwright audit | ⬜ Not Started |
 | 1G | Assets (fal.ai blog cards/headers, LO photos) | ⬜ Not Started |
 | 1H | Pre-Launch Audit (file-level) | ⬜ Not Started |
 | 1I | Multi-Breakpoint Browser Audit (Playwright) | ⬜ Not Started |
@@ -456,6 +458,71 @@ Phase 1F tasks:
 8. **Re-scrape Privacy Policy + Terms of Use** → replace with verbatim prose (LAUNCH BLOCKER from this session).
 
 Recommended Phase 1F split: 4-5 parallel waves. State pages + calculators + Sanity setup are largely independent; schema markup orchestrator runs after all pages exist. The legal prose fix is its own quick task — just re-scrape + edit two files.
+
+---
+
+### Session 7 — 2026-04-27 (Phase 1G Sanity Blog + Brand Assets + Homepage Restructure)
+
+**Completed:** 3 parallel subagents in Wave 1 + orchestrator inline Wave 2. Atomic commits per CLAUDE.md guidance now that the repo has a remote.
+
+**Wave 1 — 3 parallel:**
+
+**A — Sanity Blog Scaffold Agent.** 13 new + 2 rewrites + package.json/lock modifications. Installed `next-sanity` + `@sanity/image-url` + `@sanity/vision` + `sanity` (867 packages). Built `src/sanity/` module tree: `client.ts` returns null when no `NEXT_PUBLIC_SANITY_PROJECT_ID`; `lib/posts.ts` exposes `getPosts()` + `getPostBySlug()` with JSON fallback; `queries.ts` defines GROQ + simplified `BlockContent` shape; `schemaTypes/{post,category,author,blockContent,index}.ts` for Sanity Studio. `sanity.config.ts` at project root. `src/app/studio/[[...tool]]/page.tsx` renders graceful "Studio not configured" notice when env vars absent (intentional safe stub — better than crashing on missing project ID). `/blog/page.tsx` + `/blog/[slug]/page.tsx` rewritten as real server components fetching from `getPosts()`. 3 seed articles (~2,300 words total) in `seed-posts.json`:
+  - "FHA vs Conventional in NH: When 3.5% Down Beats 5% Down" by Mike Comerford
+  - "MassHousing $30K DPA: Three Income Tiers Explained" by Doug Danzey (slug: `masshousing-30k-down-payment-assistance` — agent picked clearer slug than my spec's `-explained` suffix)
+  - "Wholesale vs Retail: Why It Matters" by Aisha Barbosa (bilingual LO)
+  All flagged `[DEMO COPY · COMPLIANCE-REVIEW-PENDING]` with sourcing notes (Polygon Research / 2023 HMDA for the $10,662 savings figure; `[VERIFY-WITH-AGENCY-WEBSITE]` for MassHousing AMI tables). Zero em dashes in body text. Server components throughout.
+
+**B — Brand Assets Agent.** 4 new + 2 modified. `public/logo.svg` (LMP wordmark — deep navy serif + warm gold underline + FINANCIAL mono subtext, system-fallback fonts so it renders without web fonts). `public/equal-housing-lender.svg` (recreated regulatory mark — house outline + door + equal-sign bars in cream + gold; **PRE-LAUNCH placeholder comment flags HUD-sourced artwork as required before publish**). `src/app/opengraph-image.tsx` (1200×630 dynamic via `next/og` ImageResponse on edge runtime; cream background, navy "LMP Financial" wordmark, gold underline, current tagline, NMLS mono footer). `src/app/icon.tsx` (32×32 navy/gold favicon). Footer.tsx updated to use `<img src="/equal-housing-lender.svg">`. schema.ts updated to reference `/logo.svg` and `/opengraph-image` (removing `.png`/`.jpg` placeholders).
+
+**C — Tone-Adjacency Fix Agent.** 2 modified + 1 deleted. Folded AboutSection content into HeroSection as a founder strip below the trust strip. Founder paragraph (55 words, voice-anchor compatible, [DEMO COPY] flagged): *"We started LMP in Lowell because the borrowers we wanted to serve were our neighbors. Today we are 22 loan officers across 9 states, shopping 30-plus wholesale lenders on every file. We answer Saturday calls. We come to closings. Lowell handshake, Stripe execution."* MC initials disk on left, paragraph + Meet the team link on right. FadeUp delay 2.0 (lands after the trust strip stagger). HeroSection now 4 visual layers (HeroParticles + KeyringCanvas + stagger text + founder strip) inside one dark `<section>`. AboutSection.tsx deleted. page.tsx rhythm comment block updated. Result: 9 sections, strict D-L-D-L-D-L-D-L-D alternation.
+
+**Wave 2 — orchestrator inline:**
+
+- **Dev server boot 417ms (Turbopack), zero compile errors / zero warnings.**
+- **Verified 24 routes returning HTTP 200**, including:
+  - All 3 new asset/image routes: `/opengraph-image`, `/icon`, `/logo.svg`, `/equal-housing-lender.svg`
+  - `/studio` (renders Sanity-not-configured graceful notice)
+  - All 3 seed blog articles at correct slugs (1 slug variant: `masshousing-30k-down-payment-assistance` instead of spec's `-explained` — accepted as agent's clearer naming)
+  - All Phase 1E/1F routes still pass (homepage hero now with founder strip, 9 sections, all interior pages, calculators, state pages, legal pages, sitemap.xml, robots.txt)
+- **Three atomic commits to `origin/main`** (per CLAUDE.md "atomic commits per subtask" now that repo has a remote):
+  1. `9aab39d feat(assets): add logo, EHL mark, dynamic OG image, favicon`
+  2. `47c3086 refactor(homepage): fold AboutSection into HeroSection founder strip`
+  3. `<sanity-commit-sha> feat(blog): scaffold Sanity blog with JSON fallback and 3 seed articles`
+- Dev server stopped via `Stop-Process -Force` (killed 2 stale Node PIDs).
+
+**Decisions made:**
+
+- **Sanity Studio kept as graceful stub** until Mike provisions a Sanity project. Wiring real `<NextStudio>` requires a `'use client'` wrapper + the actual project ID. The stub renders a clear "Studio not configured" message with instructions; better UX than a crash.
+- **JSON fallback over real CMS for demo.** `getPosts()` checks `sanityClient` (null when no env var) → returns seeded JSON. Same component code drives both paths. Demo works without ANY Sanity setup.
+- **EHL SVG is a recreation, not HUD-sourced.** Composed from primitives (house outline + equals bars). The placeholder comment in the SVG file documents that official artwork is required before launch.
+- **Founder strip inside Hero `<section>`** (not separate section) so it shares the dark gradient + HeroParticles backdrop. Visually one "hero block" with a subtle border-top divider above the founder strip.
+- **3-commit pattern for Phase 1G** rather than one big commit. Now that the repo has a remote, atomic commits per subtask make `git log` readable and individual changes revertable.
+
+**Open flags rolling forward into Phase 1H:**
+
+⚠️ **3 seed articles are not enough** — CLAUDE.md Blog rule requires 9–10 minimum. Phase 1H adds 6–7 more articles per MI §6 AEO targets.
+
+⚠️ **`headerImage: null` on all 3 seed articles** — gradient fallback renders. Phase 1H fal.ai pass generates per-article header images.
+
+⚠️ **Studio stub** — Phase 1H+ wires `<NextStudio>` when Mike provisions Sanity project ID + dataset.
+
+⚠️ **EHL SVG placeholder** — flagged for HUD-sourced replacement before publish.
+
+⚠️ **LO portraits + Mike portrait** still `[ASSET-PENDING]`. Phase 1H fal.ai or client-supplied photos.
+
+⚠️ **Multi-Breakpoint Browser Audit (Section 11)** — STILL not run. CLAUDE.md mandatory pre-ship gate. Phase 1H is the right time: all sections, animations, assets, real-content pages now in place. Need Playwright drive across 1440 / 390 / 375 / 428 viewports + nav drawer state. Zero console errors / warnings tolerance.
+
+**Next session starts at:** Phase 1H — Asset pipeline + remaining blog articles + Multi-Breakpoint Browser Audit.
+
+Phase 1H tasks:
+1. **fal.ai blog imagery** — generate header + card images for 3 existing seeds + 6–7 new articles. Per CLAUDE.md Image Generation Rule: distinct prompts per article, no readable text, visual review before commit.
+2. **6–7 additional blog articles** — per-state explainers (9 states, prioritize MA/NH/FL/CO/TX), "UWM Wholesale Explained," "Rate-Shopping Guide for First-Time Buyers." All in voice, [COMPLIANCE-REVIEW-PENDING] flagged.
+3. **22 LO portraits + Mike portrait** — fal.ai-generated placeholder OR Mike's actual photos delivered Tuesday.
+4. **HUD-sourced EHL artwork** if Mike's IT firm sources it.
+5. **Real client logo** if Mike provides.
+6. **Multi-Breakpoint Browser Audit (Section 11)** — Playwright drives 4 viewports, captures screenshots, verifies zero console errors/warnings, no horizontal scroll at 375, hero fits above fold, no flat-color sections, `prefers-reduced-motion` graceful degradation, mobile nav drawer opens/closes cleanly. Mandatory before any Phase 2A deploy.
+7. **`/ultrareview`** cross-AI peer review.
 
 ---
 
