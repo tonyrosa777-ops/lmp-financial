@@ -34,7 +34,15 @@
       "Bash(rmdir \"mortgage-broker-[state]\")",
       "Read(//c/c/Projects/LMP Financial/src/app/**)",
       "Bash(curl -s http://localhost:3000/sitemap.xml)",
-      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" \"http://localhost:3000/blog/masshousing-30k-down-payment-assistance\")"
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" \"http://localhost:3000/blog/masshousing-30k-down-payment-assistance\")",
+      "Bash(node --env-file=.env.local scripts/generate-images.mjs blog)",
+      "Bash(node --env-file=.env.local scripts/generate-images.mjs programs)",
+      "Bash(node --env-file=.env.local scripts/generate-images.mjs states)",
+      "Bash(node --env-file=.env.local scripts/generate-images.mjs pages)",
+      "Bash(node --env-file=.env.local scripts/generate-images.mjs calculators)",
+      "Bash(rm public/images/pages/partners.jpg)",
+      "Bash(node --env-file=.env.local scripts/generate-images.mjs partners)",
+      "Bash(node scripts/wire-photo-backgrounds.mjs)"
     ]
   }
 }

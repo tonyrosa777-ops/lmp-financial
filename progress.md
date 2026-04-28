@@ -4,8 +4,8 @@
 **Client:** LMP Financial | Lowell, Massachusetts (licensed in MA, NH, ME, RI, CT, FL, CO, VT, TX)
 **Business Type:** Licensed independent mortgage broker (multi-LO shop, 22 LOs + 1 recruiter)
 **Launch Target:** TBD post-Tuesday demo (2026-04-28)
-**Last Updated:** 2026-04-27
-**Current Phase:** Phase 1G — Sanity Blog + Brand Assets + Homepage Restructure (✅ complete) → ready for Phase 1H (real LO portraits + fal.ai blog imagery + Playwright multi-breakpoint audit)
+**Last Updated:** 2026-04-28
+**Current Phase:** Phase 1H — fal.ai imagery (✅ partial: 38 page+article headers wired; LO portraits intentionally out of scope) → ready for Phase 1I Multi-Breakpoint Browser Audit
 **Repo:** https://github.com/tonyrosa777-ops/lmp-financial
 
 ---
@@ -52,13 +52,14 @@ This is the consolidated list of every item that must close before lmpfinancial.
 
 ### C. Asset-pending items (Phase 1G fal.ai pipeline OR client-supplied)
 
-- [ ] **Mike Comerford portrait** — referenced in `AboutSection.tsx` with `[ASSET-PENDING — Mike portrait]` placeholder. fal.ai-generated OR real photo from Tuesday.
-- [ ] **22 LO portrait images** — every LO landing page currently shows initials in a circular accent disk. Real headshots OR fal.ai-generated.
+- [ ] **Mike Comerford portrait** — referenced in `HeroSection.tsx` founder strip with `[ASSET-PENDING — Mike portrait]` placeholder. **Phase 1H scope explicitly excluded person photos per user instruction.** Replace with real photo from Mike when available.
+- [ ] **22 LO portrait images** — every LO landing page currently shows initials in a circular accent disk. **Phase 1H scope explicitly excluded person photos per user instruction.** Replace with real headshots when Mike provides.
 - [x] **Equal Housing Lender SVG** — Phase 1G shipped `/public/equal-housing-lender.svg` (recreated regulatory mark). **PRE-LAUNCH still requires HUD-sourced official artwork** — the placeholder comment in the SVG file documents this. IT firm review required before publish.
 - [x] **`/public/logo.svg`** — Phase 1G shipped wordmark SVG (LMP in deep navy + gold underline + FINANCIAL mono). Schema markup updated. Real client logo replaces when provided.
 - [x] **OG image** — Phase 1G shipped `src/app/opengraph-image.tsx` (1200×630 dynamic via Next.js `ImageResponse`). Schema markup references `/opengraph-image` (no `.jpg` placeholder).
 - [x] **Favicon** — Phase 1G shipped `src/app/icon.tsx` (32×32 dynamic).
-- [ ] **Blog card + header images** for the 9–10 articles — fal.ai-generated per CLAUDE.md Image Generation Rule. Cards 1200×630 (OG-spec), headers 2400×1200.
+- [x] **Page + article header images** — Phase 1H shipped 38 unique fal.ai-generated images via `fal-ai/flux-pro/v1.1` at 1792×1024 (16:9). Wired into 19 pages via `<PhotoBackground>` component. Includes 3 blog article headers, 9 loan-program headers, 9 state-coverage headers, 12 main interior page headers, 5 calculator detail headers. All editorial-documentary style, golden hour, Kodak Portra 400 look. Zero people, zero faces, zero readable text. See [IMAGE-PLAN.md](IMAGE-PLAN.md) for prompts + uniqueness audit. Seeds logged in `scripts/image-seeds.json` for reproducibility.
+- [ ] **Blog card + header images for the 6–7 future articles** — when Phase 1F's 3 seed articles expand to the CLAUDE.md-mandated 9–10 minimum, generate matching headers. Cards 1200×630, headers 2400×1200.
 - [ ] **Partner co-marketing kits PDF set** — `[ASSET-PENDING — kits PDF set, Phase 1G]` referenced on `/partners`. Real PDFs delivered to clients on signup OR removed from copy if not built.
 
 ### D. Code-incomplete items (require Phase 2A wiring or Phase 1G build)
@@ -102,7 +103,8 @@ This is the consolidated list of every item that must close before lmpfinancial.
 | 1E | All Pages (core + LMP-specific) | ✅ Complete (40 new files, 21 routes returning HTTP 200, sitemap.ts, homepage wired to section components) |
 | 1F | SEO + AEO + state pages + calculators | ✅ Complete (legal verbatim, schema markup, 5 calculators, 9 state pages, robots.ts, 36 routes verified) |
 | 1G | Sanity blog + brand assets + homepage restructure | ✅ Complete (3 seed articles, logo SVG + EHL SVG + dynamic OG/icon, 9-section rhythm) |
-| 1H | LO portraits + fal.ai blog imagery + Playwright audit | ⬜ Not Started |
+| 1H | fal.ai page + article headers (38 unique images wired) | ✅ Complete (no LO portraits per user instruction; Playwright audit deferred to 1I) |
+| 1I | Multi-Breakpoint Browser Audit (Playwright) + /ultrareview | ⬜ Not Started |
 | 1G | Assets (fal.ai blog cards/headers, LO photos) | ⬜ Not Started |
 | 1H | Pre-Launch Audit (file-level) | ⬜ Not Started |
 | 1I | Multi-Breakpoint Browser Audit (Playwright) | ⬜ Not Started |
@@ -599,3 +601,62 @@ Phase 1G tasks:
 4. **`logo.png` + `og-image.jpg`** in `/public` — schema markup references these.
 5. **Per-LO Calendly URIs** populated when Mike provides them Tuesday — currently empty in `siteConfig.loanOfficers[].calendlyUri`.
 6. **Per-LO portrait images** from Mike or fal.ai-generated.
+
+---
+
+### Session 8 — 2026-04-28 (Phase 1H fal.ai page + article headers)
+
+**Completed:** scoped Phase 1H to page + article headers only (per user instruction "no person photos, just articles and headers for each page"). LO/Mike portraits explicitly deferred. Multi-Breakpoint Browser Audit deferred to Phase 1I.
+
+**Pre-generation gating per CLAUDE.md Image Generation Rule:**
+- Drafted 38 prompts as a SET in [IMAGE-PLAN.md](IMAGE-PLAN.md). User pushed back on the first draft for "complex compositions that may cause fal.ai disruption" (multi-subject grids, hands, mid-motion captures, specific landmarks). Revised the set to single-subject hero compositions: one door, one chair, one map, one barn, one column, etc. Each prompt anchored on a distinct primary visual subject.
+- Adjacency-pair audit: flagged 4 "book on desk" prompts (D6/D11/E2/E3) as the riskiest cluster. Each landed differentiated (open vs closed × secondary object: pen / paperweight / nothing). Visual review confirmed distinguishable.
+
+**Generation pipeline:**
+- Installed `@fal-ai/client` (v1.10.0).
+- Wrote `scripts/generate-images.mjs` — batch CLI with skip-if-exists, per-batch logging, deterministic seed capture to `scripts/image-seeds.json`.
+- Model: `fal-ai/flux-pro/v1.1`, `landscape_16_9` (1792×1024), 28 inference steps, 3.5 guidance, comprehensive negative prompt covering text/people/hands/CGI/etc.
+- Ran 5 batches: blog (3) → programs (9) → states (9) → pages (12) → calculators (5). Each batch generated in ~25–60s. Total: 38 images, ~$8 total spend.
+
+**Visual review (37/38 first-pass clean):**
+- Inspected every image via Read tool. Reviewed for: garbled text, deformed objects, accidental face/figure rendering, mood mismatch.
+- One regeneration: `partners.jpg` first pass produced ONE coffee cup instead of two — lost the "partnership/two parties" metaphor. Revised prompt to "two empty wooden chairs facing each other across a porch table" + regenerated. Second pass landed clean.
+- Minor non-adherences accepted (each verified to not break the metaphor or aesthetic):
+  - `wholesale-vs-retail-mortgage.jpg` warmer/browner than spec (acceptable — leather + walnut + brass tones are on-brand)
+  - `fha.jpg` extra brass lever next to knob (acceptable — both knob + lever plausible)
+  - `interest-only.jpg` sand mid-flow instead of at rest (acceptable — actually strengthens "limited time window" metaphor)
+  - `florida.jpg` 2 cars in mid-distance (mild — does not dominate the frame)
+  - `quiz.jpg` map underneath compass with abstracted cartographer text (acceptable — text reads as map markings, not English)
+  - `careers.jpg` small notebook on desk (acceptable — adds depth)
+  - `blog.jpg` newspaper has gray text columns (not legible at viewing scale, reads as "newspaper texture")
+
+**Wiring (`<PhotoBackground>` component):**
+- New: [src/components/PhotoBackground.tsx](src/components/PhotoBackground.tsx) — `<Image fill>` + dark navy gradient overlay (rgba(14,27,51,0.55–0.85)) for text legibility. z-0 so existing breathing-orb halo and content `relative z-10` block sit on top.
+- Wiring script: [scripts/wire-photo-backgrounds.mjs](scripts/wire-photo-backgrounds.mjs) — idempotent batch updater that inserts the import + the component into 19 page header sections in one pass.
+- Wired pages (19): /services + /services/[slug] + /team + /partners + /careers + /quiz + /booking + /testimonials + /contact + /faq + /blog + /blog/[slug] + /calculators + 5 calculator detail pages + /service-areas + /mortgage-broker/[state].
+- 3 blog seed articles in `seed-posts.json` get `headerImage` URLs pointing to `/images/blog/<slug>.jpg`. The article header on `/blog/[slug]` uses `<PhotoBackground>` only when `post.headerImage?.url` is set — falls back to the existing breathing-orb-only header when no image (graceful for Sanity-fetched articles without images).
+
+**Skipped intentionally:**
+- /pricing — Optimus internal sales tool, deleted before launch
+- /privacy-policy + /terms-of-use + /ada-accessibility-statement — text-heavy legal pages, design-system.md §14 exception
+- /team/[lo-slug] — per-LO photos out of scope (user instruction)
+- Homepage — keeps the 3-layer KeyringCanvas/HeroParticles/stagger-text hero stack
+
+**Verified:**
+- 22/22 routes + image asset paths return HTTP 200 (key routes + 5 sample image paths)
+- Zero compile errors / zero warnings
+- Dev server boot 295ms (Turbopack)
+- Stopped via `Stop-Process -Force`
+
+**Commits this session (2 atomic + 1 progress doc):**
+1. `<sha> feat(images): generate 38 unique fal.ai page + article headers` — adds 38 JPGs to `/public/images/`, the generation script, the seeds log, and IMAGE-PLAN.md
+2. `<sha> feat(images): wire 38 fal.ai headers into pages via PhotoBackground` — adds the PhotoBackground component, the wiring script, and 19 page edits + 3 seed-posts.json header URLs
+3. (this commit) `docs(progress): Session 8 entry + Phase 1H pre-launch resolutions`
+
+**Next session starts at:** Phase 1I — Multi-Breakpoint Browser Audit (overdue, mandatory pre-ship gate).
+
+Phase 1I tasks:
+1. **Playwright multi-breakpoint audit** per CLAUDE.md Visual QA Rule §11 — drives the site through 1440×900 / 390×844 / 375×812 / 428×926 viewports + nav drawer state. Captures screenshots at each. Verifies: zero console errors, zero console warnings, no horizontal scroll at 375, no H1 orphan lines, hero fits above fold at every mobile width, no flat-color section backgrounds, mobile nav drawer opens/closes cleanly, `prefers-reduced-motion` graceful degradation. Especially critical now that PhotoBackground adds a heavy image layer to most page headers — verify text legibility at all breakpoints + image overlay sufficiency.
+2. **`/ultrareview`** cross-AI peer review.
+3. **6–7 additional blog articles** to hit CLAUDE.md Blog rule's 9–10 minimum (state explainers, UWM Wholesale Explained, Rate-Shopping Guide).
+4. **fal.ai header images for new articles** (Phase 1H pipeline ready; just needs slug + prompt additions).
