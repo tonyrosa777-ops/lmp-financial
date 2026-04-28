@@ -5,7 +5,7 @@
 **Business Type:** Licensed independent mortgage broker (multi-LO shop, 22 LOs + 1 recruiter)
 **Launch Target:** TBD post-Tuesday demo (2026-04-28)
 **Last Updated:** 2026-04-28
-**Current Phase:** Phase 1I — Multi-Breakpoint Audit + Blog Expansion (✅ complete) → `/ultrareview` queued for user-triggered run; otherwise demo-ready
+**Current Phase:** Phase 1J — Hybrid Borrower Portal + Conversion Architecture Reset (✅ complete) → `/ultrareview` queued for user-triggered run; otherwise demo-ready
 **Repo:** https://github.com/tonyrosa777-ops/lmp-financial
 
 ---
@@ -749,3 +749,99 @@ The site has now passed Phase 1I's mandatory pre-ship audit with one blocker fix
 The remaining pre-launch items are all client-confirm or compliance-IT-firm gates, not engineering blockers. Site is **demo-ready**.
 
 **Next session starts at:** `/ultrareview` results review (when user runs it) → Phase 2A Vercel deploy + DNS + Resend wiring + real Calendly API keys.
+
+---
+
+### Session 10 — 2026-04-28 (Phase 1J Hybrid Borrower Portal + Conversion Architecture Reset)
+
+User audited the live `lmpfinancial.com` ahead of Tuesday's demo and surfaced two distinct classes of problems: (a) old-site bugs already absent from our build (contradictory experience claims, VA copy on Jumbo card, /reviews + /calculators 404s, mailto typos, friction-heavy multi-step quote form, Wistia + Limesite getting free marketing in hero + footer), and (b) architectural problems we still replicated — every LO landing page blind-redirects to `*.my1003app.com` with no UTM, no return path, no session, and no pre-fill; the quiz dead-ended into the calendar without carrying its 5 answers; and there was no authed account anywhere on lmpfinancial.com for borrowers to come back to.
+
+User also pasted full canonical text for the three legal pages (ADA, Privacy, Terms) and asked for a verbatim diff. User picked the "Hybrid portal" scope at the AskUserQuestion gate: thin authed shell on lmpfinancial.com that holds saved quiz + booking history and deep-links to my1003app for the actual application — instead of rebuilding the regulated 1003 application backend natively. We don't replace the LO's existing LOS connector (ARIVE / my1003app); we put a brand-correct shell over it.
+
+**Wave 1 — Quick wins (no auth dep):**
+- **1a Legal verbatim diff.** Privacy + Terms already verbatim from the Phase 1F Firecrawl re-scrape (with explicit `VERBATIM from ...` comments and 5 source typos preserved). ADA had drift — Phase 1E shipped invented sections ("Our Commitment", "Ongoing Efforts", "Third-Party Content", "Need Assistance?", office address) that aren't in the live source. Canonical is a single flowing 3-paragraph statement. Reconciled the page to render only that text + restored the truncated `siteConfig.compliance.adaStatement` opening (`(ADA) Statement for Your Website:` + trailing `to guarantee website accessibility for all our visitors.`). Run-on typos (`visitors.In`, `disabilities.We`) preserved by splitting at those points across 3 `<p>` tags. Commit: `fix(legal): reconcile ADA statement with canonical 2025-01-01 verbatim`.
+- **1b Wistia/Limesite scan.** `Grep src/` for `wistia|limesite|fast.wistia` → zero hits. Read `Footer.tsx` end-to-end: zero third-party "powered by" attribution, zero off-domain heart/badge, zero Wistia hero video. Our build never replicated either competitor's free-marketing surface.
+- **1c Quiz → BookingCalendar carryforward.** Added optional `prefill` prop to BookingCalendar accepting `name/email/phone/smsOptIn` defaults + `quizContext` payload (`{ resultType, recommendedProgramSlug, recommendedProgramName, recommendedLOSlug }`). Form-step renders a gold reassurance badge above the inputs when `quizContext` is present: "From your quiz: Recommended program: X · Best fit: Y · We'll bring this context into the call so you don't have to repeat yourself." `/api/calendly/book` accepts and logs `quizContext` (Phase 2A maps it to Calendly invitee metadata). QuizClient ResultsPhase passes `prefill={{ quizContext }}` and ALSO persists the result to localStorage at `lmp.quizResult.v1` for portal hydration. Commit: `feat(quiz): carry quizContext + prefill into BookingCalendar`.
+- **1d UTM tagging on my1003app deep links.** New `src/lib/my1003app.ts` central builder — every link out now carries `utm_source=lmpfinancial.com&utm_medium=lo_page&utm_campaign=continue_application&lo=<slug>`. Optional `prefill` param plumbed through; silently dropped today, turned on once Mike confirms ARIVE/my1003app accepts `firstName/lastName/email/phone` URL params (Wave 3 deferral). LO page `team/[lo-slug]/page.tsx` updated to use `buildMy1003AppUrl()`. Commit: `feat(my1003app): UTM-tag continue-application deep links`.
+
+**Wave 2 — Hybrid Borrower Portal:**
+- **2a Dependencies.** `npm install next-auth@beta resend` — landed `next-auth@5.0.0-beta.31` + `resend@6.12.2`. Compatible with Next 16.2.4 + React 19.2.4.
+- **2b Auth.js v5 config.** `src/auth.ts` with JWT-only sessions (no DB), single Credentials provider for demo (email-only, accepts any valid email, no password, no magic link). The "no DB" choice deliberately sidesteps Auth.js's adapter requirement — the Resend provider would have crashed with `MissingAdapter` since email magic-links must persist verification tokens. Phase 2A swap: replace Credentials with Resend + Drizzle/unstorage adapter once Mike verifies the lmpfinancial.com sender domain in Resend (DNS SPF/DKIM/DMARC). The portal pages, middleware, and `useSession()` consumers do NOT change in that swap. `src/middleware.ts` guards `/account/*` (except `/account/sign-in`) via `callbacks.authorized`. Auth.js v5 `handlers` is an object with nested `GET`/`POST` — `src/app/api/auth/[...nextauth]/route.ts` destructures correctly. `src/components/Providers.tsx` wraps `<SessionProvider>` so any client component (Navigation, MobileNav, future portal sub-components) can call `useSession()` without prop-drilling. Layout updated. Commit: `feat(auth): scaffold Auth.js v5 + credentials demo sign-in`.
+- **2c Borrower Portal pages.**
+  - `/account/sign-in` — minimal email-only form. Dark gradient header + light gradient body matching legal pages. Mid-audit copy fix: button + subhead corrected from "Send sign-in link" to "Sign in" since demo mode signs in immediately, not via email. Generic enough to also work post-magic-link migration.
+  - `/account` — Server Component reading session via `auth()`. Four sections: Welcome (email + Sign Out via Server Action `'use server'` form action), Your scheduled calls (AccountBookings client child), Your match (AccountSavedQuiz client child), Continue your application (UTM-tagged my1003app deep-link via `buildMy1003AppUrl({ medium: 'borrower_portal' })`). Falls back to `/account/sign-in` via `redirect()` if session missing post-middleware (defense in depth).
+  - `AccountBookings` (client) — fetches `/api/account/bookings` on mount, renders consultation cards with date / time / LO name / location / About-LO link. Demo-mode badge surfaces when no Calendly token wired.
+  - `AccountSavedQuiz` (client) — reads `lmp.quizResult.v1` from localStorage, resolves program + LO from siteConfig, renders 2-column match card with program emoji + LO initials disk. Defensive fallback prompts retake if program/LO slug no longer resolves (future data edits).
+  - Both pages carry `robots: { index: false, follow: false }` metadata. Commit: `feat(account): build Borrower Portal at /account with bookings + saved quiz`.
+- **2d `/api/account/bookings` route.** Requires session (401 otherwise). When `CALENDLY_API_KEY` set: hits Calendly's `scheduled_events` endpoint filtered by invitee email (Phase 2A wiring TODO). When unset: returns 1–2 deterministic seeded bookings keyed off email hash so the demo always shows something rather than an empty card.
+- **2e Auth-aware nav.** Navigation + MobileNav now read `useSession()` and swap link state (Sign In ↔ My Account). Mobile drawer carries the same link with arrow suffix. Reactive — updates without page reload.
+- **2f sitemap noindex.** `/account/*` documented as intentionally excluded from `sitemap.ts`; metadata-level `robots: { index: false, follow: false }` on each page is the second layer.
+
+**Wave 3 deferred** to Mike's Tuesday demo confirmation: ARIVE/my1003app pre-fill URL-param support. UTM tagging from Wave 1d is the immediate attribution win regardless.
+
+**Wave 4 — Verification + commit + push.**
+- **4a Manual smoke test.** Two failure modes hit during smoke testing — both identified and fixed:
+  1. `MissingAdapter` from Auth.js v5 Resend provider (email magic-links require a database adapter, which we don't have). Resolved by switching to Credentials provider (sidesteps adapter requirement entirely).
+  2. `export { GET, POST } from '@/auth'` failed because Auth.js v5 returns `handlers` as an object with nested GET/POST, not top-level exports. Fixed by destructuring: `import { handlers } from '@/auth'; export const { GET, POST } = handlers;`.
+
+  After fixes: end-to-end auth flow verified via curl — CSRF token fetch → credentials POST → 302 redirect with cookie set → /account renders 200 with seeded demo bookings → /api/account/bookings returns 200 with bookings JSON. UTM tagging confirmed on `/team/mike-comerford` ("Continue your application" href contains all 4 UTM params + `lo=mike-comerford`). Public pages (/, /quiz, /ada-accessibility-statement, /privacy-policy, /terms-of-use, /team/mike-comerford) all return 200.
+- **4b Multi-breakpoint Playwright audit.** New surfaces driven through 1440 / 390 / 375 / 428. Zero console errors / zero warnings at every breakpoint. Zero horizontal overflow (375 doc=360, 390 doc=375, 428 doc=413). Auth flow verified end-to-end via real form interaction. `audit-1J.md` written + 8 screenshots saved to `audit-1J-screenshots/`. Mid-audit found a copy mismatch (button said "Send sign-in link" but demo signs in directly); fixed inline before commit.
+- **4c-d Atomic commits + push.**
+
+**Files touched (Phase 1J):**
+
+NEW:
+- `src/auth.ts` — Auth.js v5 config (Credentials demo provider + JWT sessions)
+- `src/middleware.ts` — `/account/*` route gate
+- `src/app/api/auth/[...nextauth]/route.ts` — Auth.js handlers re-export
+- `src/app/account/page.tsx` — Borrower Portal home (Server Component)
+- `src/app/account/AccountBookings.tsx` — upcoming consultations (Client)
+- `src/app/account/AccountSavedQuiz.tsx` — saved quiz match (Client)
+- `src/app/account/sign-in/page.tsx` + `SignInClient.tsx` — sign-in form
+- `src/app/api/account/bookings/route.ts` — Calendly bookings by email
+- `src/lib/my1003app.ts` — central UTM + prefill URL builder
+- `src/components/Providers.tsx` — SessionProvider wrapper
+- `audit-1J.md` + `audit-1J-screenshots/` (8 PNGs)
+
+MODIFIED:
+- `src/data/site.ts` — restored full `compliance.adaStatement` canonical opening
+- `src/app/ada-accessibility-statement/page.tsx` — verbatim reconcile (3 paragraphs)
+- `src/components/BookingCalendar.tsx` — `prefill` prop + quizContext badge
+- `src/app/api/calendly/book/route.ts` — accept + log `quizContext`
+- `src/app/quiz/QuizClient.tsx` — pass prefill into BookingCalendar + persist to localStorage
+- `src/app/team/[lo-slug]/page.tsx` — `buildMy1003AppUrl()` for the application CTA
+- `src/components/layout/Navigation.tsx` + `MobileNav.tsx` — auth-aware Sign In / My Account
+- `src/app/layout.tsx` — wrap children in `<Providers>`
+- `src/app/sitemap.ts` — document `/account/*` exclusion
+- `package.json` + `package-lock.json` — `next-auth@beta` + `resend`
+- `.env.local` — added `AUTH_SECRET` (generated via openssl), placeholder `AUTH_RESEND_KEY` and `AUTH_EMAIL_FROM` for Phase 2A
+
+**Atomic commits (7 total):**
+1. `85961e4 fix(legal): reconcile ADA statement with canonical 2025-01-01 verbatim`
+2. `0437970 feat(quiz): carry quizContext + prefill into BookingCalendar`
+3. `31b2c50 feat(my1003app): UTM-tag continue-application deep links`
+4. `2c8c44d feat(auth): scaffold Auth.js v5 + credentials demo sign-in`
+5. `4aca6da feat(account): build Borrower Portal at /account with bookings + saved quiz`
+6. `5223845 feat(nav): auth-aware Sign In / My Account links + sitemap noindex`
+7. `a88b8e2 chore(audit): Phase 1J multi-breakpoint browser audit + Wistia/Limesite scan`
+8. (this commit) `docs(progress): Session 10 entry — Phase 1J Borrower Portal complete`
+
+**New open items for Mike at Tuesday demo (added to PRE-LAUNCH CHECKLIST):**
+- **Resend sender domain.** Phase 2A magic-link migration needs `hello@lmpfinancial.com` (or other verified sender) configured in Resend with SPF/DKIM/DMARC DNS records. Demo works without this (Credentials provider).
+- **my1003app pre-fill confirmation.** Does ARIVE-hosted my1003app accept URL params for `firstName`, `lastName`, `email`, `phone` on the `/register` flow? If yes, Wave 3b wires session prefill into the portal "Continue your application" CTA. If no, UTM tagging is still the attribution win.
+- **Calendly token strategy.** Org-wide admin token (one for all 22 LOs) or per-LO OAuth (22 flows)? Determines `/api/account/bookings` Phase 2A wiring.
+- **Demo mode for Tuesday.** Recommend showing the portal via the live Credentials demo sign-in (Mike enters his email → instant access) rather than wiring Resend before Tuesday. Production swap to Resend + adapter happens in Phase 2A after sender verification.
+
+**Conversion architecture decision recorded:** Hero CTA priority does NOT change per Optimus standard. Pre-approval/consultation stays primary on the hero. Mortgage applications (SSN + employment + 3-year address history) belong at the END of a trust funnel, not the entry. "Continue your application" stays secondary on LO page + tertiary in the Borrower Portal.
+
+**Pre-launch checklist updates:**
+- ✅ ADA verbatim reconcile (1 of 5 source-typo items in Compliance section A — Mike's IT firm decides whether to fix the remaining typos in Privacy + Terms)
+- ✅ Wistia/Limesite footer audit confirms our build does not replicate the live site's free-marketing surfaces
+- 🆕 Resend sender domain DNS (Compliance section A)
+- 🆕 ARIVE/my1003app prefill confirmation (Client-confirm section B)
+- 🆕 Calendly org-token vs per-LO-token strategy (Phase 2A engineering)
+- 🆕 Compliance review of `/account` portal copy + the eventual magic-link email template (Compliance section A)
+
+**Site state at end of Session 10:** Demo-ready with end-to-end Borrower Portal. Mike enters his email at /account/sign-in, lands on /account, sees a seeded demo booking with one of his LOs, sees the "Take the quiz" CTA (or his saved quiz match if he completed the quiz first), and sees the "Continue your application" deep-link. The conversion architecture answers all three of his audit complaints: quiz data carries forward, my1003app handoff is attributed via UTM, and there's now a branded shell holding everything.
+
+**Next session starts at:** `/ultrareview` results review (when user runs it) → Phase 2A Vercel deploy + DNS + Resend wiring (if Mike provides verified sender) + real Calendly API keys + (conditional) ARIVE prefill enable based on Mike's Tuesday answer.
