@@ -1,0 +1,192 @@
+{
+  "fha-vs-conventional-nh": {
+    "seed": 3406714081,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:22:39.275Z"
+  },
+  "masshousing-30k-down-payment-assistance": {
+    "seed": 105083596,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:22:44.164Z"
+  },
+  "wholesale-vs-retail-mortgage": {
+    "seed": 3006020767,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:22:48.830Z"
+  },
+  "fixed-rate": {
+    "seed": 3070572064,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:23:53.208Z"
+  },
+  "fha": {
+    "seed": 3065846037,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:23:57.737Z"
+  },
+  "va": {
+    "seed": 1448433059,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:24:02.435Z"
+  },
+  "jumbo": {
+    "seed": 859513513,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:24:06.394Z"
+  },
+  "arm": {
+    "seed": 3932758888,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:24:10.591Z"
+  },
+  "usda": {
+    "seed": 4220163441,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:24:17.245Z"
+  },
+  "first-time-buyer": {
+    "seed": 1712715453,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:24:20.074Z"
+  },
+  "reverse": {
+    "seed": 2264923840,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:24:25.488Z"
+  },
+  "interest-only": {
+    "seed": 1269339453,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:24:29.494Z"
+  },
+  "massachusetts": {
+    "seed": 1712511879,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:26:43.919Z"
+  },
+  "new-hampshire": {
+    "seed": 3343976482,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:26:47.863Z"
+  },
+  "maine": {
+    "seed": 3386410815,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:26:51.184Z"
+  },
+  "rhode-island": {
+    "seed": 3070149075,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:26:55.736Z"
+  },
+  "connecticut": {
+    "seed": 2879582971,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:27:00.609Z"
+  },
+  "vermont": {
+    "seed": 4107829485,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:27:07.253Z"
+  },
+  "florida": {
+    "seed": 3424067735,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:27:14.475Z"
+  },
+  "colorado": {
+    "seed": 3737950428,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:27:24.657Z"
+  },
+  "texas": {
+    "seed": 3530803034,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:27:29.232Z"
+  },
+  "services": {
+    "seed": 1757047042,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:32:30.785Z"
+  },
+  "team": {
+    "seed": 3712050380,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:32:34.673Z"
+  },
+  "partners": {
+    "seed": 709717469,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:43:40.336Z"
+  },
+  "careers": {
+    "seed": 2595714099,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:32:43.787Z"
+  },
+  "quiz": {
+    "seed": 3971282857,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:32:49.092Z"
+  },
+  "booking": {
+    "seed": 1111220088,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:32:52.386Z"
+  },
+  "testimonials": {
+    "seed": 2601502581,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:32:55.095Z"
+  },
+  "contact": {
+    "seed": 1833760400,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:32:58.989Z"
+  },
+  "faq": {
+    "seed": 749541956,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:33:04.357Z"
+  },
+  "blog": {
+    "seed": 162612453,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:33:08.896Z"
+  },
+  "calculators": {
+    "seed": 3227966674,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:33:13.848Z"
+  },
+  "service-areas": {
+    "seed": 3293369035,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:33:17.658Z"
+  },
+  "affordability": {
+    "seed": 4080626047,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:37:35.535Z"
+  },
+  "monthly-payment": {
+    "seed": 2943442267,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:37:40.063Z"
+  },
+  "refinance": {
+    "seed": 4022435678,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:37:44.577Z"
+  },
+  "down-payment": {
+    "seed": 3190612063,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:37:51.073Z"
+  },
+  "dti": {
+    "seed": 2820611972,
+    "model": "fal-ai/flux-pro/v1.1",
+    "timestamp": "2026-04-28T12:37:56.556Z"
+  }
+}
