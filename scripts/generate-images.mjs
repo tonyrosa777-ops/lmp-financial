@@ -68,6 +68,38 @@ const PROMPTS = [
     prompt: 'Editorial documentary still life photograph of a single closed brown leather portfolio resting on a worn dark walnut desk, a soft beam of golden afternoon light raking across the leather grain texture, brass corner protectors catching the warm light, 35mm full-frame, very shallow depth of field on the leather grain, color graded warm cream highlight and aged brass with deep walnut shadow, Kodak Portra 400 film look. No people, no text, no other objects on the desk.',
   },
 
+  // ─── Phase 1I — 6 new article headers (added 2026-04-28) ──────────────
+  {
+    slug: 'uwm-wholesale-explained',
+    category: 'blog',
+    prompt: 'Editorial documentary still life photograph of a single antique brass letter opener resting diagonally across an unmarked cream paper envelope on a worn dark walnut desk, late afternoon golden hour window light raking across the brass blade from camera right casting a long warm shadow, deep navy wall in soft focus behind, 35mm full-frame, very shallow depth of field on the brass blade tip, color graded warm cream paper and aged brass with deep walnut shadow, Kodak Portra 400 film look. No people, no readable text on envelope, no other objects.',
+  },
+  {
+    slug: 'rate-shopping-guide-first-time-buyers',
+    category: 'blog',
+    prompt: 'Editorial documentary still life photograph of a single vintage brass-cased pocket stopwatch resting on a worn cream linen surface, the stopwatch face turned slightly toward camera (numerals abstracted not legible), late afternoon golden hour window light raking from camera left casting a long warm shadow, soft fabric weave texture visible, 35mm full-frame, very shallow depth of field on the stopwatch crown, color graded warm cream linen and aged brass with deep navy shadow, Kodak Portra 400 film look. No people, no readable numerals on the dial, no other objects.',
+  },
+  {
+    slug: 'nhhfa-home-flex-plus-explained',
+    category: 'blog',
+    prompt: 'Editorial documentary photograph of a small classic New England maple sugar shack at dawn, weathered wood-shingled cabin with a tin chimney, soft white steam rising vertically from the chimney, surrounded by a stand of bare sugar maples in early spring, soft mist hovering low across the snowy ground, low golden hour sunrise light from camera left raking across the cabin face, 35mm full-frame, shallow depth of field on the cabin door, color graded warm cream steam and aged amber wood with deep navy shadows, Kodak Portra 400 film look. No people, no text on the cabin, no other buildings.',
+  },
+  {
+    slug: 'chfa-time-to-own-connecticut',
+    category: 'blog',
+    prompt: 'Editorial documentary still life photograph of a single antique brass colonial-style pineapple door knocker mounted on a deep navy painted wooden door, polished brass surface catching late afternoon golden hour sunlight from camera right, soft autumn maple leaf shadow drifting across the door, weathered cream-painted door trim visible at edges, 35mm full-frame, very shallow depth of field on the pineapple knocker detail, color graded deep navy door and aged brass with warm cream trim shadows, Kodak Portra 400 film look. No people, no text, no house numbers.',
+  },
+  {
+    slug: 'fl-hometown-heroes-explained',
+    category: 'blog',
+    prompt: 'Editorial documentary photograph of a single classic painted wooden lifeguard chair (a tall four-legged structure, no figures) silhouetted on a quiet Florida beach at golden hour, gentle low waves visible at the shoreline behind, a single tall palm tree leaning into the frame from the left side, low warm late afternoon sun raking from camera right casting long warm shadows on the white sand, 35mm full-frame, shallow depth of field on the chair seat, color graded warm cream sand and aged amber chair with deep navy ocean shadows, Kodak Portra 400 film look. No people, no text on the chair, no signage.',
+  },
+  {
+    slug: 'chfa-co-metrodpa-stacking',
+    category: 'blog',
+    prompt: 'Editorial documentary photograph of a single weathered wooden birdhouse mounted on a tall cedar post, silhouetted against the deep navy silhouette of the Rocky Mountain Front Range at dusk, golden afterglow on the western sky behind the mountains, tall waving prairie grasses in the foreground catching warm amber light, a soft gradient sky from deep navy to warm cream at the horizon, 35mm full-frame, shallow depth of field on the birdhouse roof, color graded warm cream sky and aged amber grass with deep navy mountains, Kodak Portra 400 film look. No people, no readable text on the birdhouse, no other birdhouses.',
+  },
+
   // ─── B. Loan program headers (9) ───────────────────────────────────────
   {
     slug: 'fixed-rate',
