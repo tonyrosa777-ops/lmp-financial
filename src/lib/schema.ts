@@ -63,8 +63,8 @@ export function financialServiceSchema(): JsonLd {
     '@id': `${BASE_URL}#organization`,
     name: business.name,
     url: BASE_URL,
-    logo: `${BASE_URL}/logo.png`, // [Phase 1G — asset pending]
-    image: `${BASE_URL}/og-image.jpg`, // [Phase 1G — asset pending]
+    logo: `${BASE_URL}/logo.svg`,
+    image: `${BASE_URL}/opengraph-image`,
     telephone: business.phone,
     email: business.emailMain,
     description:

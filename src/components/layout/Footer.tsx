@@ -98,37 +98,14 @@ export default function Footer() {
             borderBottom: '1px solid var(--border-dark)',
           }}
         >
-          {/* Left — Equal Housing Lender placeholder
-              PLACEHOLDER: replace with /public/equal-housing-lender.svg in Phase 1G */}
-          <div
-            className="flex items-center justify-center"
-            style={{ width: 64, height: 64, color: 'var(--text-secondary)' }}
-            aria-label="Equal Housing Lender"
-            role="img"
-          >
-            {/* Inline SVG fallback — house outline + equal-sign accent. Replaced in 1G with the real logo asset. */}
-            <svg
-              width="64"
-              height="64"
-              viewBox="0 0 64 64"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                d="M32 12 L52 28 L52 50 L12 50 L12 28 Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                fill="none"
-              />
-              <path
-                d="M22 38 H42 M22 44 H42"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            </svg>
-          </div>
+          {/* Left — Equal Housing Lender mark (regulatory placeholder) */}
+          <img
+            src="/equal-housing-lender.svg"
+            alt="Equal Housing Lender"
+            width={64}
+            height={64}
+            style={{ width: 64, height: 64 }}
+          />
 
           {/* Center — broker disclosure (verbatim, all caps, never modified) */}
           <p

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" role="img" aria-label="LMP Financial">
+  <!-- "LMP" wordmark — large serif, navy -->
+  <text x="120" y="46" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="44" fill="#0E1B33" text-anchor="middle" letter-spacing="-1">LMP</text>
+  <!-- gold underline accent -->
+  <line x1="100" y1="54" x2="140" y2="54" stroke="#C5A572" stroke-width="2"/>
+  <!-- "FINANCIAL" subtext — small monospace, navy -->
+  <text x="120" y="70" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="10" fill="#0E1B33" text-anchor="middle" letter-spacing="3">FINANCIAL</text>
+</svg>

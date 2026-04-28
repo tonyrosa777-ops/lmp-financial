@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Equal Housing Lender mark — REGULATORY ASSET PLACEHOLDER.
+  This is a recreated rendering of the Equal Housing Lender symbol composed from primitives.
+
+  PRE-LAUNCH REQUIREMENT: source the official Equal Housing Lender artwork from HUD or
+  the appropriate regulator before publishing. Do NOT publish this placeholder to production
+  without IT firm + compliance review confirming the mark satisfies regulatory requirements.
+
+  Reference: https://www.hud.gov/sites/dfiles/AdminSec/documents/EqualHousingLenderLogo.png
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Equal Housing Lender">
+  <!-- House outline — roof + walls -->
+  <path d="M 8 32 L 32 12 L 56 32 L 56 56 L 8 56 Z" fill="none" stroke="#F5EFE2" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- Door rectangle -->
+  <rect x="26" y="38" width="12" height="18" fill="none" stroke="#F5EFE2" stroke-width="2"/>
+  <!-- Equal sign bars across the door (the EHL signature element) -->
+  <line x1="22" y1="44" x2="42" y2="44" stroke="#C5A572" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="22" y1="50" x2="42" y2="50" stroke="#C5A572" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
