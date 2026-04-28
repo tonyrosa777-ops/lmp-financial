@@ -51,7 +51,31 @@
       "mcp__playwright__browser_snapshot",
       "mcp__playwright__browser_click",
       "Bash(rm public/images/blog/fl-hometown-heroes-explained.jpg)",
-      "Bash(node --env-file=.env.local scripts/generate-images.mjs fl-hometown-heroes-explained)"
+      "Bash(node --env-file=.env.local scripts/generate-images.mjs fl-hometown-heroes-explained)",
+      "Bash(npm ls *)",
+      "Bash(openssl rand *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/account/sign-in)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/account)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/api/account/bookings)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/api/auth/providers)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/ada-accessibility-statement)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/quiz)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/team/mike-comerford)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s http://localhost:3000/api/auth/providers)",
+      "Bash(curl -s http://localhost:3000/account/sign-in)",
+      "Bash(curl -s http://localhost:3000/api/account/bookings)",
+      "Bash(curl -s -o /dev/null -w \"sign-in: %{http_code}\\\\n\" http://localhost:3000/account/sign-in)",
+      "Bash(curl -s -o /dev/null -w \"bookings: %{http_code}\\\\n\" http://localhost:3000/api/account/bookings)",
+      "Bash(curl -s http://localhost:3000/team/mike-comerford)",
+      "Bash(curl -s -o /dev/null -w \"quiz: %{http_code}\\\\n\" http://localhost:3000/quiz)",
+      "Bash(curl -s -o /dev/null -w \"ada: %{http_code}\\\\n\" http://localhost:3000/ada-accessibility-statement)",
+      "Bash(curl -s -o /dev/null -w \"privacy: %{http_code}\\\\n\" http://localhost:3000/privacy-policy)",
+      "Bash(curl -s -o /dev/null -w \"terms: %{http_code}\\\\n\" http://localhost:3000/terms-of-use)",
+      "mcp__playwright__browser_type",
+      "mcp__playwright__browser_wait_for",
+      "Bash(npx tsc *)",
+      "Bash(git config *)"
     ]
   }
 }
