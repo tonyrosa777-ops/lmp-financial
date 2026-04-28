@@ -42,7 +42,16 @@
       "Bash(node --env-file=.env.local scripts/generate-images.mjs calculators)",
       "Bash(rm public/images/pages/partners.jpg)",
       "Bash(node --env-file=.env.local scripts/generate-images.mjs partners)",
-      "Bash(node scripts/wire-photo-backgrounds.mjs)"
+      "Bash(node scripts/wire-photo-backgrounds.mjs)",
+      "mcp__playwright__browser_resize",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_console_messages",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_click",
+      "Bash(rm public/images/blog/fl-hometown-heroes-explained.jpg)",
+      "Bash(node --env-file=.env.local scripts/generate-images.mjs fl-hometown-heroes-explained)"
     ]
   }
 }

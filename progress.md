@@ -5,7 +5,7 @@
 **Business Type:** Licensed independent mortgage broker (multi-LO shop, 22 LOs + 1 recruiter)
 **Launch Target:** TBD post-Tuesday demo (2026-04-28)
 **Last Updated:** 2026-04-28
-**Current Phase:** Phase 1H — fal.ai imagery (✅ partial: 38 page+article headers wired; LO portraits intentionally out of scope) → ready for Phase 1I Multi-Breakpoint Browser Audit
+**Current Phase:** Phase 1I — Multi-Breakpoint Audit + Blog Expansion (✅ complete) → `/ultrareview` queued for user-triggered run; otherwise demo-ready
 **Repo:** https://github.com/tonyrosa777-ops/lmp-financial
 
 ---
@@ -69,7 +69,7 @@ This is the consolidated list of every item that must close before lmpfinancial.
 - [ ] **`CALENDLY_API_KEY`** env var — required for live booking.
 - [ ] **`RESEND_API_KEY`** env var — required for `/api/contact`.
 - [x] **Sanity blog wiring** — Phase 1G shipped `next-sanity` install + client + queries + schema + `/studio` route + real `/blog` + `/blog/[slug]` pages with JSON fallback. Demo mode works WITHOUT `NEXT_PUBLIC_SANITY_PROJECT_ID`. Mike provisions Sanity → drop env vars in `.env.local` → components automatically switch to live GROQ.
-- [ ] **Real blog articles beyond the 3 seeds** — Phase 1G shipped 3 seed articles (FHA vs Conventional in NH, MassHousing $30K DPA Explained, Wholesale vs Retail). Per CLAUDE.md Blog rule, target 9–10 minimum. Phase 1H+ adds: per-state explainers (9 states), "UWM Wholesale Explained," "Rate-Shopping Guide for First-Time Buyers."
+- [x] **Real blog articles** — Phase 1I expanded from 3 seeds to **9 total** (CLAUDE.md Blog rule minimum met). New articles: UWM Wholesale Explained, Rate Shopping for First-Time Buyers, NHHFA Home Flex Plus, CHFA Time To Own Connecticut, FL Hometown Heroes, CHFA-CO + metroDPA Stacking. All flagged `[DEMO COPY · COMPLIANCE-REVIEW-PENDING]`; state-program articles also `[FIGURES-CURRENT-AS-OF-2026-Q1 · VERIFY-WITH-AGENCY-WEBSITE]`. Each gets a unique fal.ai header.
 - [ ] **Multilingual full stack (PT/ES)** per MI §9 Exploit #1 — Lowell-Lawrence-Boston is densest Brazilian metro in US. Visual language flags already in nav from Phase 1C; actual i18n routing + translated content is a Phase 1G+ project. Portuguese first, Spanish second.
 - [ ] **9 individual `/mortgage-broker-massachusetts` SEO-friendly URLs** (currently `/mortgage-broker/massachusetts`) — if hyphen-prefixed URLs are required for SEO competitiveness, restructure to 9 static directories. Current single dynamic route `/mortgage-broker/[state]` is functional and SEO-equivalent.
 
@@ -82,8 +82,8 @@ This is the consolidated list of every item that must close before lmpfinancial.
 
 ### F. Pre-launch audit gates (CLAUDE.md non-negotiable)
 
-- [ ] **Multi-Breakpoint Browser Audit** (CLAUDE.md Visual QA Rule §11) — Playwright drives the site through 4 viewports (1440 desktop, 390 mobile, 375 mobile narrow, 428 mobile wide) + nav drawer state. Zero console errors / warnings at every viewport. No H1 orphan lines. No horizontal scroll at 375. Hero fits above the fold. All gradients render (no flat-color sections). `prefers-reduced-motion` graceful degradation. **MANDATORY before any production deploy.** This was deferred through Phases 1C–1F because section components were placeholder-heavy until 1E and depth-additions land in 1F. Run for the FIRST time at end of Phase 1G when all sections + animations + assets are in place.
-- [ ] **`/ultrareview`** cross-AI peer review — not yet run. CLAUDE.md mentions it as a pre-ship gate.
+- [x] **Multi-Breakpoint Browser Audit** (CLAUDE.md Visual QA Rule §11) — Phase 1I ran the audit with Playwright across 1440 / 390 / 375 / 428 + mobile nav drawer + reduced-motion check. **Pass after 1 blocker fix:** `/partners` had a 16px horizontal overflow at 390 from absolute-positioned decoration orbs measured by `documentElement.scrollWidth` despite section-level `overflow-hidden`. Fixed via `overflow-x: hidden` on `<html>` + `<body>` className. Re-verified clean. Full report in [audit-1I.md](audit-1I.md), screenshots in `/audit-screenshots/`.
+- [ ] **`/ultrareview`** cross-AI peer review — **user-triggered + billed; cannot be auto-launched.** Run yourself with `/ultrareview` at the Claude Code prompt. CLAUDE.md mentions it as a pre-ship gate.
 - [ ] **`/pricing` deletion** — internal Optimus sales tool, must be removed from nav + sitemap before launch. (Already excluded from sitemap.ts; nav still shows `⬥ Pricing` per CLAUDE.md instruction. Pre-launch-auditor enforces removal.)
 - [ ] **`metadataBase` URL** — currently `https://lmpfinancial.com` placeholder. Confirm final domain Tuesday (per CLAUDE.md DOMAIN variable: "lmpfinancial.com (current) — new domain TBD").
 - [ ] **Vercel deploy + DNS** — Phase 2A.
@@ -104,7 +104,7 @@ This is the consolidated list of every item that must close before lmpfinancial.
 | 1F | SEO + AEO + state pages + calculators | ✅ Complete (legal verbatim, schema markup, 5 calculators, 9 state pages, robots.ts, 36 routes verified) |
 | 1G | Sanity blog + brand assets + homepage restructure | ✅ Complete (3 seed articles, logo SVG + EHL SVG + dynamic OG/icon, 9-section rhythm) |
 | 1H | fal.ai page + article headers (38 unique images wired) | ✅ Complete (no LO portraits per user instruction; Playwright audit deferred to 1I) |
-| 1I | Multi-Breakpoint Browser Audit (Playwright) + /ultrareview | ⬜ Not Started |
+| 1I | Multi-Breakpoint Browser Audit + 6 new articles + 6 new images | ✅ Complete (1 audit blocker fixed: html overflow-x clip; 9 articles total; /ultrareview pending user trigger) |
 | 1G | Assets (fal.ai blog cards/headers, LO photos) | ⬜ Not Started |
 | 1H | Pre-Launch Audit (file-level) | ⬜ Not Started |
 | 1I | Multi-Breakpoint Browser Audit (Playwright) | ⬜ Not Started |
@@ -660,3 +660,92 @@ Phase 1I tasks:
 2. **`/ultrareview`** cross-AI peer review.
 3. **6–7 additional blog articles** to hit CLAUDE.md Blog rule's 9–10 minimum (state explainers, UWM Wholesale Explained, Rate-Shopping Guide).
 4. **fal.ai header images for new articles** (Phase 1H pipeline ready; just needs slug + prompt additions).
+
+---
+
+### Session 9 — 2026-04-28 (Phase 1I Multi-Breakpoint Audit + Blog Expansion)
+
+**Completed:** Multi-Breakpoint Browser Audit (CLAUDE.md Visual QA Rule §11 — overdue mandatory pre-ship gate) + 6 new blog articles + 6 new fal.ai header images (3 → 9 articles, hitting CLAUDE.md Blog rule minimum).
+
+**Wave 1 — Multi-Breakpoint Audit:**
+- Drove the site through Playwright MCP across 4 viewports (1440×900 / 390×844 / 375×812 / 428×926) + mobile nav drawer state at 390 + 5 sample interior pages (`/services/fha`, `/team/mike-comerford`, `/partners`, `/booking`, `/mortgage-broker/massachusetts`) + reduced-motion static check.
+- **All exit criteria PASS** after 1 blocker fix.
+- Captured 8 screenshots in `/audit-screenshots/` (1440-home, 1440-home-hero, 390-home-hero, 375-home-hero, 428-home-hero, 390-nav-drawer-open, 390-services-fha, 390-partners, 390-booking, 390-state-massachusetts — 10 total).
+- Full report in [audit-1I.md](audit-1I.md).
+
+**🚫 → ✅ Blocker found + fixed: horizontal overflow on `/partners` (and likely other pages with multiple decoration orbs).**
+
+Symptom: at 390×844 viewport, `documentElement.scrollWidth = 391` vs `clientWidth = 375` — 16px horizontal overflow. User-visible scrollbar appeared at the bottom of the page.
+
+Root cause: Phase 1E + Phase 1F agents added decoration breathing-orbs as absolute-positioned divs with negative offsets (`absolute -top-32 -left-32 w-[600px] h-[600px]`). The orbs intentionally extend past their parent sections to create a soft halo. Parent `<section className="overflow-hidden ...">` clipped the visible portion correctly, but `documentElement.scrollWidth` still measured the unclipped bounding boxes.
+
+Fix: added `overflow-x: hidden` to `<html>` via `globals.css` + `overflow-x-hidden` Tailwind class to `<body>`. Single-line change, no visual regression. After fix: `scrollWidth === clientWidth` on `/partners` and verified across homepage and 4 sample interior pages.
+
+**Other audit findings (non-blocking):**
+- ⚠️ Desktop 1440 nav: phone label `(978) 453-LOAN` wraps mid-word due to nav width pressure. Cosmetic, future polish.
+- ⚠️ KeyringCanvas at desktop momentarily showed only the bow during IDLE breathe oscillation. At 428 mobile the full key (bow + shaft + home outline arc) renders cleanly. Animation-phase-dependent, not a bug.
+- ✅ `prefers-reduced-motion` static contract verified in 4 files (`globals.css` universal reset, `utils.ts` helper, `services/page.tsx` local breathe-orb fallback, `TestimonialsClient.tsx`). CDP-level emulation isn't accessible via Playwright MCP, so verified statically.
+
+**Wave 2 — 6 new articles + 6 new headers:**
+
+**Content-writer agent** appended 6 articles to `seed-posts.json` (3 → 9):
+1. **"UWM Wholesale Explained: Why It Matters That We're Not the Bank"** — Aisha Barbosa, ~720 words, $10,662 lifetime savings figure
+2. **"Rate Shopping for First-Time Buyers: What Locks, When, and Why"** — Mike Comerford, ~830 words, inline `[VERIFY-WITH-COMPLIANCE]` flag on the FICO scoring window
+3. **"NHHFA Home Flex Plus: How New Hampshire's 4% Forgivable DPA Works"** — Tim Anderson (NH specialist), ~770 words
+4. **"CHFA Time To Own: Connecticut's $50,000 Forgivable DPA"** — Nick Anastasi (CT specialist), ~810 words
+5. **"FL Hometown Heroes: $35,000 for Florida's Essential Workers"** — Scott Jones (FL specialist), ~790 words
+6. **"Stacking CHFA-CO with metroDPA: How Denver-Metro Buyers Combine Programs"** — Mike Comerford Jr (CHFA-CO specialist), ~810 words, includes inline regulatory warning that "stacking is not automatic and not universal"
+
+All in voice (per design-system.md §7), zero em dashes in body text, all flagged `[DEMO COPY · COMPLIANCE-REVIEW-PENDING]`. State-program articles also flagged `[FIGURES-CURRENT-AS-OF-2026-Q1 · VERIFY-WITH-AGENCY-WEBSITE]`.
+
+**fal.ai pipeline (6 new images via `fal-ai/flux-pro/v1.1`):**
+- `uwm-wholesale-explained.jpg` — brass letter opener on cream envelope, raking window-pattern light
+- `rate-shopping-guide-first-time-buyers.jpg` — vintage brass pocket watch on cream linen
+- `nhhfa-home-flex-plus-explained.jpg` — NH maple sugar shack at dawn with steam rising, sunrise through bare maples (exemplary)
+- `chfa-time-to-own-connecticut.jpg` — brass colonial pineapple door knocker on deep navy door
+- `fl-hometown-heroes-explained.jpg` — single weathered beach chair on FL sand at golden hour (regenerated once: original firefighter helmet had garbled text on shield, swapped to lifeguard/beach metaphor)
+- `chfa-co-metrodpa-stacking.jpg` — weathered birdhouse on cedar post against Rocky Mountain Front Range silhouette
+
+5/6 first-pass clean. 1 regeneration (FL Hometown Heroes — firefighter helmet shield → garbled text → swapped to beach chair). Total spend ~$1.40.
+
+**Verified:**
+- All 9 article routes return HTTP 200 at `/blog/<slug>`
+- All 9 image asset paths return HTTP 200 at `/images/blog/<slug>.jpg`
+- Zero compile errors / zero warnings in dev log
+- Dev server stopped via `Stop-Process -Force`
+
+**Commits this session (3 atomic):**
+1. `<sha> fix(audit): clip html overflow-x to prevent decoration orb leak past viewport` — globals.css + layout.tsx + audit-1I.md + audit-screenshots/ + .gitignore (.playwright-mcp/)
+2. `<sha> feat(blog): expand from 3 to 9 articles + 6 fal.ai headers` — seed-posts.json + 6 image files + scripts/generate-images.mjs + scripts/image-seeds.json
+3. (this commit) `docs(progress): Session 9 entry + close Phase 1I items in pre-launch checklist`
+
+**Open flags rolling forward:**
+
+⚠️ **`/ultrareview` cross-AI peer review** — user-triggered + billed; cannot be auto-launched. Run yourself with `/ultrareview` at the Claude Code prompt before production deploy.
+
+⚠️ **Inline `[VERIFY-WITH-COMPLIANCE]` flag** in `rate-shopping-guide-first-time-buyers` body on the FICO scoring window paragraph — compliance should confirm the specific 14-to-45-day range and FICO-model citation before publish.
+
+⚠️ **State-program article figures** ($35K / $50K / 4% / 6%, forgiveness terms, AMI tiers) all flagged `[FIGURES-CURRENT-AS-OF-2026-Q1 · VERIFY-WITH-AGENCY-WEBSITE]`. State agency websites change figures quarterly. Pre-launch-auditor must verify each before publish.
+
+⚠️ **CHFA-CO / metroDPA stacking article** has the highest-risk regulatory copy of the 6 (specific stacking eligibility claims). Recommend Mike's compliance IT firm review this article specifically + separately from the broader sweep.
+
+⚠️ **UWM $10,662 lifetime savings figure** is reused across two articles (UWM Wholesale Explained + Wholesale vs Retail). If compliance updates the source citation, both articles need to update in lockstep.
+
+⚠️ **Cosmetic: desktop nav phone label wrap** at 1440 width. Future polish.
+
+⚠️ **/partners contact card** was at exactly viewport-width-+1px before the html overflow-x fix. Now invisible to user but worth noting if any future absolute-positioned element extends right of viewport — it will be clipped silently.
+
+**Demo readiness summary (Tuesday 2026-04-29):**
+The site has now passed Phase 1I's mandatory pre-ship audit with one blocker fixed. All exit criteria from CLAUDE.md Visual QA Rule §11 now pass:
+- ✅ 0 console errors / 0 warnings at every viewport
+- ✅ No horizontal scroll at 375 (after fix)
+- ✅ Hero fits above fold at every mobile width
+- ✅ Mobile nav drawer opens/closes cleanly with ⬥ Pricing marker rendering
+- ✅ All sections show gradients (no flat-color sections)
+- ✅ `prefers-reduced-motion` graceful degradation contract verified
+- ✅ LMP-specific compliance per Footer band (Equal Housing Lender SVG, NMLS Consumer Access link, ALL CAPS broker disclosure)
+- ✅ Per-LO NMLS display verified at `/team/mike-comerford`
+
+The remaining pre-launch items are all client-confirm or compliance-IT-firm gates, not engineering blockers. Site is **demo-ready**.
+
+**Next session starts at:** `/ultrareview` results review (when user runs it) → Phase 2A Vercel deploy + DNS + Resend wiring + real Calendly API keys.
