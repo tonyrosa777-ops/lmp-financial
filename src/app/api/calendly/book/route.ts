@@ -12,6 +12,13 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 
+interface BookQuizContext {
+  resultType?: string;
+  recommendedProgramSlug?: string;
+  recommendedProgramName?: string;
+  recommendedLOSlug?: string;
+}
+
 interface BookRequestBody {
   startTime?: string;
   name?: string;
@@ -20,6 +27,11 @@ interface BookRequestBody {
   smsOptIn?: boolean;
   loSlug?: string;
   eventTypeUri?: string;
+  // Phase 1J: persona + program signal carried over from the quiz when the
+  // user reached the form via /quiz. Forwarded to Calendly metadata in
+  // Phase 2A; for now, logged as the audit trail so the LO can see the
+  // context post-demo.
+  quizContext?: BookQuizContext;
 }
 
 export async function POST(request: NextRequest) {
@@ -33,8 +45,16 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const { startTime, name, email, phone, smsOptIn, loSlug, eventTypeUri } =
-    body;
+  const {
+    startTime,
+    name,
+    email,
+    phone,
+    smsOptIn,
+    loSlug,
+    eventTypeUri,
+    quizContext,
+  } = body;
 
   if (!startTime || !name || !email) {
     return NextResponse.json(
@@ -62,6 +82,7 @@ export async function POST(request: NextRequest) {
     smsOptIn: Boolean(smsOptIn),
     loSlug: loSlug ?? null,
     eventTypeUri: eventTypeUri ?? null,
+    quizContext: quizContext ?? null,
     receivedAt: new Date().toISOString(),
   });
 

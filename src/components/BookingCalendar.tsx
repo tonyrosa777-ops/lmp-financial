@@ -30,10 +30,31 @@ import Input from '@/components/ui/Input';
 import Badge from '@/components/ui/Badge';
 import { siteConfig } from '@/data/site';
 
+/**
+ * Optional prefill payload — typically supplied by the quiz result phase
+ * (Phase 1J). Identity fields seed the form-step inputs (still editable);
+ * `quizContext` surfaces a small reassurance badge so the user sees their
+ * quiz answers carried into the booking, and is forwarded in the booking
+ * POST so the LO sees the persona before the call.
+ */
+export interface BookingCalendarPrefill {
+  name?: string;
+  email?: string;
+  phone?: string;
+  smsOptIn?: boolean;
+  quizContext?: {
+    resultType: string;
+    recommendedProgramSlug: string;
+    recommendedProgramName: string;
+    recommendedLOSlug: string;
+  };
+}
+
 interface BookingCalendarProps {
   loSlug?: string; // when set, books with this LO (per-LO Calendly URI)
   eventTypeUri?: string; // optional override for direct Calendly URI
   className?: string;
+  prefill?: BookingCalendarPrefill;
 }
 
 type Step = 'date' | 'time' | 'form' | 'confirmed';
@@ -61,6 +82,7 @@ export default function BookingCalendar({
   loSlug,
   eventTypeUri,
   className,
+  prefill,
 }: BookingCalendarProps) {
   const [step, setStep] = useState<Step>('date');
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -68,10 +90,10 @@ export default function BookingCalendar({
   const [slots, setSlots] = useState<Slot[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [smsOptIn, setSmsOptIn] = useState(false);
+  const [name, setName] = useState(prefill?.name ?? '');
+  const [email, setEmail] = useState(prefill?.email ?? '');
+  const [phone, setPhone] = useState(prefill?.phone ?? '');
+  const [smsOptIn, setSmsOptIn] = useState(prefill?.smsOptIn ?? false);
   const [submitting, setSubmitting] = useState(false);
   const [demoMode, setDemoMode] = useState<boolean>(true);
 
@@ -127,6 +149,7 @@ export default function BookingCalendar({
           smsOptIn,
           loSlug,
           eventTypeUri,
+          quizContext: prefill?.quizContext,
         }),
       });
       const data = (await res.json()) as BookResponse;
@@ -277,6 +300,33 @@ export default function BookingCalendar({
       {/* STEP 3 — borrower details + SMS opt-in (verbatim disclaimer). */}
       {step === 'form' && (
         <form onSubmit={handleSubmit} className="space-y-4">
+          {/* Quiz-context reassurance: only when the quiz routed the user here. */}
+          {prefill?.quizContext && (
+            <div
+              className="rounded-[var(--radius-md)] border border-[rgba(197,165,114,0.25)] bg-[rgba(197,165,114,0.08)] p-4 text-body-sm"
+              role="note"
+            >
+              <p className="text-eyebrow text-[var(--accent)] mb-1">
+                From your quiz
+              </p>
+              <p className="text-[var(--text-primary)]">
+                Recommended program:{' '}
+                <span className="font-semibold">
+                  {prefill.quizContext.recommendedProgramName}
+                </span>
+                {lo && (
+                  <>
+                    {' '}
+                    · Best fit:{' '}
+                    <span className="font-semibold">{lo.name}</span>
+                  </>
+                )}
+              </p>
+              <p className="text-[var(--text-muted)] text-micro mt-1">
+                We&apos;ll bring this context into the call so you don&apos;t have to repeat yourself.
+              </p>
+            </div>
+          )}
           <Input
             name="name"
             label="Full name"

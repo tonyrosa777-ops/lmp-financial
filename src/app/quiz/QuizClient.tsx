@@ -316,6 +316,26 @@ function ResultsPhase({ resultType, onRestart }: ResultsPhaseProps) {
     (p) => p.slug === result.recommendedProgram.slug,
   );
 
+  // Phase 1J: persist the result to localStorage so the Borrower Portal
+  // (/account) can surface "Your match" after sign-in. Key + shape are the
+  // contract documented in src/app/account/AccountSavedQuiz.tsx.
+  useEffect(() => {
+    if (!program || !lo) return;
+    try {
+      window.localStorage.setItem(
+        'lmp.quizResult.v1',
+        JSON.stringify({
+          resultType,
+          recommendedProgramSlug: program.slug,
+          recommendedLOSlug: lo.slug,
+          savedAt: new Date().toISOString(),
+        }),
+      );
+    } catch {
+      // Quota exceeded / disabled / privacy mode — fail silently.
+    }
+  }, [resultType, program, lo]);
+
   // Initials disk for LO photo placeholder (no real headshots yet — see IBD §4).
   const initials = lo
     ? lo.name
@@ -411,12 +431,27 @@ function ResultsPhase({ resultType, onRestart }: ResultsPhaseProps) {
                 </div>
               </div>
 
-              {/* Inline booking calendar — never a link to /booking. */}
+              {/* Inline booking calendar — never a link to /booking.
+                  Phase 1J: pass quizContext via prefill so the form-step shows a
+                  reassurance badge AND the booking POST forwards persona/program
+                  signal to the LO without forcing the user to repeat themselves. */}
               <div className="mt-8 pt-8 border-t border-[rgba(14,27,51,0.08)]">
                 <h4 className="font-display text-xl text-[var(--text-on-light)] mb-4 text-center md:text-left">
                   Book your 15-minute intro call
                 </h4>
-                <BookingCalendar loSlug={lo.slug} />
+                <BookingCalendar
+                  loSlug={lo.slug}
+                  prefill={{
+                    quizContext: program
+                      ? {
+                          resultType,
+                          recommendedProgramSlug: program.slug,
+                          recommendedProgramName: program.name,
+                          recommendedLOSlug: lo.slug,
+                        }
+                      : undefined,
+                  }}
+                />
               </div>
             </Card>
           </div>
