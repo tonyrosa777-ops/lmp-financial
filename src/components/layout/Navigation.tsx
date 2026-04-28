@@ -2,12 +2,15 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 import { siteConfig } from '@/data/site';
 import MobileNav from './MobileNav';
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { status } = useSession();
+  const isAuthed = status === 'authenticated';
 
   // Scroll-state listener — flips nav from transparent to navy backdrop after 20px
   useEffect(() => {
@@ -122,6 +125,16 @@ export default function Navigation() {
                 {phone}
               </a>
             ) : null}
+
+            {/* Auth-aware portal link — Sign In when logged out, My Account when logged in.
+                Phase 1J. Hidden on small screens where the mobile drawer carries it. */}
+            <Link
+              href={isAuthed ? '/account' : '/account/sign-in'}
+              className="hidden lg:inline font-body text-sm transition-colors"
+              style={{ color: 'var(--text-secondary)' }}
+            >
+              {isAuthed ? 'My Account' : 'Sign In'}
+            </Link>
 
             {/* Primary CTA — desktop */}
             <Link

@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useSession } from 'next-auth/react';
 import { siteConfig } from '@/data/site';
 
 interface MobileNavProps {
@@ -11,6 +12,9 @@ interface MobileNavProps {
 }
 
 export default function MobileNav({ open, onClose }: MobileNavProps) {
+  const { status } = useSession();
+  const isAuthed = status === 'authenticated';
+
   // Lock body scroll while drawer is open
   useEffect(() => {
     if (open) {
@@ -173,6 +177,16 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
                   {phone}
                 </a>
               ) : null}
+
+              {/* Auth-aware portal link — Phase 1J Borrower Portal */}
+              <Link
+                href={isAuthed ? '/account' : '/account/sign-in'}
+                onClick={onClose}
+                className="font-body text-body-sm transition-colors"
+                style={{ color: 'var(--text-secondary)' }}
+              >
+                {isAuthed ? 'My Account →' : 'Sign In →'}
+              </Link>
 
               {/* Primary CTA */}
               <Link

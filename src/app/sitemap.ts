@@ -32,6 +32,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // /pricing is intentionally excluded — internal sales tool, deleted before launch (per CLAUDE.md Always-Built Features Rule).
+  // /account and /account/sign-in are intentionally excluded — authed Borrower Portal (Phase 1J).
+  // Both pages also carry `robots: { index: false, follow: false }` metadata as belt-and-suspenders.
 
   const programRoutes = siteConfig.loanPrograms.map(p => ({
     path: `/services/${p.slug}`,
