@@ -1,0 +1,113 @@
+[
+  {
+    "_id": "post-fha-vs-conventional-nh",
+    "title": "FHA vs Conventional in NH: When 3.5% Down Beats 5% Down",
+    "slug": "fha-vs-conventional-nh",
+    "excerpt": "Same buyer, two programs, side by side. What FHA actually costs after MIP, when Conventional 97 wins on rate, and the New Hampshire move-up math nobody runs at the kitchen table.",
+    "publishedAt": "2026-04-15T00:00:00.000Z",
+    "category": "Loan Programs",
+    "author": { "name": "Mike Comerford", "role": "President & CEO" },
+    "headerImage": null,
+    "flag": "[DEMO COPY — pending client review · COMPLIANCE-REVIEW-PENDING]",
+    "body": [
+      { "type": "paragraph", "text": "We get this question every week from buyers in Manchester, Salem, and Concord. The down payment on FHA is 3.5%. The down payment on Conventional 97 is 3%. So Conventional wins, right? Not so fast." },
+      { "type": "paragraph", "text": "The down payment is one number. The full picture is four: down payment, mortgage insurance, interest rate, and the credit score floor. Get any one of those wrong and you pay for it every month for years. So we run all four every time." },
+      { "type": "heading", "level": 2, "text": "The FICO floor is the first gate" },
+      { "type": "paragraph", "text": "FHA accepts FICO scores down to 580 with 3.5% down, and some lenders go to 500 with 10% down. Conventional 97 starts at 620 in most cases, and the rate hits get steep below 680. If your credit is in the 580 to 640 range, FHA is usually the only door open. If you are 740 plus, Conventional almost always wins on rate." },
+      { "type": "paragraph", "text": "The middle band, 660 to 720, is where the real comparison lives. That is where we sit down and run both options on the same property and let the numbers decide." },
+      { "type": "heading", "level": 2, "text": "Mortgage insurance: the line item nobody explains" },
+      { "type": "paragraph", "text": "FHA has two MIPs. An upfront 1.75% rolled into the loan, plus annual MIP that hangs on for the life of the loan unless you put 10% down. Conventional has PMI that you can drop once you hit 20% equity, often within five to seven years on a normal payment schedule." },
+      { "type": "paragraph", "text": "On a $400,000 home in Salem with 3.5% FHA down, the upfront MIP adds roughly $6,755 to the loan balance. The annual MIP at 0.55% on a 30-year loan is about $176 a month, forever. That is real money." },
+      { "type": "heading", "level": 2, "text": "When FHA still wins" },
+      { "type": "paragraph", "text": "FHA wins for three borrowers we see constantly:" },
+      { "type": "list", "items": [
+        "Credit in the 580 to 640 range. Conventional rate adds eat any down payment savings alive.",
+        "DTI above 45%. FHA stretches further on debt-to-income with manual underwriting.",
+        "Buyers who plan to refinance within five years. The lifetime MIP issue dissolves at refinance, and FHA streamline refinances are fast and cheap."
+      ] },
+      { "type": "heading", "level": 2, "text": "When Conventional 97 wins" },
+      { "type": "paragraph", "text": "Conventional wins for the buyer with strong credit, stable income, and a property they plan to stay in. The 0.5% lower down payment matters less than dropping PMI in year five and locking a lower rate from day one. Over a 10-year hold in Manchester, the difference can be $20,000 to $35,000." },
+      { "type": "heading", "level": 2, "text": "What this looks like in real numbers" },
+      { "type": "paragraph", "text": "Same buyer. $400,000 single-family in Concord. 720 FICO. $90,000 income. Both options run, same lender, same day. FHA payment lands $312 higher per month than Conventional 97 once MIP is factored in. That is $3,744 a year, or $37,440 across the first decade. Conventional wins for this buyer. Easy call." },
+      { "type": "paragraph", "text": "Drop the same buyer to a 640 FICO and Conventional 97 disappears. The rate hits push the monthly payment $190 above FHA. FHA wins now. Same property, same buyer, different credit, different answer." },
+      { "type": "heading", "level": 2, "text": "How we run it for you" },
+      { "type": "paragraph", "text": "Fifteen minutes on a call. We pull a soft credit check (no impact on your score), grab the property tax and insurance estimate, and run both programs side by side. You see the monthly payment, the cash to close, the lifetime cost on each. Then you pick. We do not pick for you." }
+    ]
+  },
+  {
+    "_id": "post-masshousing-30k-dpa",
+    "title": "MassHousing $30K Down Payment Assistance: Three Income Tiers, Explained",
+    "slug": "masshousing-30k-down-payment-assistance",
+    "excerpt": "The MassHousing $30K DPA stack is one of the strongest in New England. Three income tiers, real eligibility, and the Lowell, Lawrence, and Brockton cases where it changes the math from no to yes.",
+    "publishedAt": "2026-04-08T00:00:00.000Z",
+    "category": "State Programs",
+    "author": { "name": "Doug Danzey", "role": "Senior Loan Officer" },
+    "headerImage": null,
+    "flag": "[DEMO COPY — pending client review · COMPLIANCE-REVIEW-PENDING · VERIFY-WITH-AGENCY-WEBSITE for current AMI tables and program limits]",
+    "body": [
+      { "type": "paragraph", "text": "MassHousing’s down payment assistance program is the single most useful tool we have for first-time buyers in Massachusetts. It is also the most misunderstood. So let us walk through it the way we walk through it on a discovery call." },
+      { "type": "heading", "level": 2, "text": "What the program actually is" },
+      { "type": "paragraph", "text": "MassHousing offers up to $30,000 in down payment assistance to qualified first-time buyers, structured as a second mortgage. The money is real cash you can use toward your down payment and closing costs. It pairs with a MassHousing first mortgage, which is itself competitive on rate." },
+      { "type": "paragraph", "text": "The DPA second is repayable over 15 years, deferred for some borrowers. There is no forgiveness component in the standard product. You pay it back, period. That is fair: the program lets you buy years earlier than you otherwise could." },
+      { "type": "heading", "level": 2, "text": "The three income tiers" },
+      { "type": "paragraph", "text": "Eligibility is built around Area Median Income (AMI), and three tiers determine your terms:" },
+      { "type": "list", "items": [
+        "Tier 1: at or below 80% AMI. The most generous program tier with the strongest assistance. Lowell, Lawrence, and Brockton borrowers often qualify here.",
+        "Tier 2: 80% to 100% AMI. Mid-band assistance, still very strong. Most working couples in MetroWest and the South Shore land here.",
+        "Tier 3: 100% to 135% AMI. Higher-income tier with reduced assistance, but still a useful tool in higher-cost areas like Cambridge, Boston, and Newton."
+      ] },
+      { "type": "paragraph", "text": "AMI numbers move every year and vary by county. Verify the current table at masshousing.com before you assume which tier you fit." },
+      { "type": "heading", "level": 2, "text": "Eligibility, plain English" },
+      { "type": "paragraph", "text": "You qualify if all of the following are true:" },
+      { "type": "list", "items": [
+        "First-time buyer, defined as no ownership interest in a primary residence in the past three years.",
+        "Property is in Massachusetts and will be your primary residence (no investment, no second home).",
+        "Loan is originated through a MassHousing-approved lender. (We are one. So are most of our wholesale partners.)",
+        "Income falls within one of the three tiers above for the county the property sits in.",
+        "You complete a MassHousing-approved homebuyer education course (usually 8 hours, online or in-person)."
+      ] },
+      { "type": "heading", "level": 2, "text": "How it stacks with FHA or Conventional" },
+      { "type": "paragraph", "text": "MassHousing DPA pairs with a MassHousing first mortgage, which is generally Conventional under the hood with strong rate pricing for eligible buyers. If you need FHA for credit reasons, MassHousing has FHA options too, though the math changes and we run both side by side." },
+      { "type": "paragraph", "text": "The big move: combining MassHousing DPA with a 3% down Conventional first means a buyer can get into a $400,000 home with as little as $0 to $2,000 of their own cash at close, depending on closing costs and seller credits. That is what changes the math from no to yes." },
+      { "type": "heading", "level": 2, "text": "The Lowell, Lawrence, Brockton cases" },
+      { "type": "paragraph", "text": "We work these markets constantly. A Lowell teacher making $58,000 with $4,000 saved buys a $325,000 condo using MassHousing DPA + a 3% Conventional first. Total cash to close: under $1,500 after seller credits. Without DPA, that buyer needs $13,000 cash. The program is the difference between renting another two years or owning now." },
+      { "type": "paragraph", "text": "A Lawrence couple at 95% AMI buys a two-family at $475,000, lives in one unit, rents the other. MassHousing DPA covers the down payment. Rental income from the second unit nearly covers their mortgage. That is generational. That is what we mean when we say a program changed the math." },
+      { "type": "heading", "level": 2, "text": "What we do" },
+      { "type": "paragraph", "text": "We confirm your AMI tier in 5 minutes. We pre-approve you on MassHousing in the same call we pre-approve you on FHA and Conventional, so you see all three options together. You pick the one that gets you the home you actually want with payments you can sleep on." }
+    ]
+  },
+  {
+    "_id": "post-wholesale-vs-retail",
+    "title": "Wholesale vs Retail: Why It Matters When You're Shopping a Mortgage",
+    "slug": "wholesale-vs-retail-mortgage",
+    "excerpt": "Banks shop one lender, theirs. We shop more than thirty. The difference shows up on the loan estimate, in the rate, and in the closing date. The plain-English version of the wholesale advantage.",
+    "publishedAt": "2026-04-01T00:00:00.000Z",
+    "category": "How We Work",
+    "author": { "name": "Aisha Barbosa", "role": "Bilingual Loan Officer" },
+    "headerImage": null,
+    "flag": "[DEMO COPY — pending client review · COMPLIANCE-REVIEW-PENDING · savings figure cited from public Polygon Research / 2023 HMDA aggregate — verify current source before publish]",
+    "body": [
+      { "type": "paragraph", "text": "When most people shop for a mortgage, they call the bank. Their bank, the bank down the street, maybe the big national one with the catchy commercials. They get one quote, sign one set of papers, and assume that is how it works. It is not how it works. There is a whole other side of the mortgage industry, and it is built for the borrower." },
+      { "type": "heading", "level": 2, "text": "What retail actually means" },
+      { "type": "paragraph", "text": "Retail lenders are banks and credit unions. They lend their own money on their own products, with their own pricing. The loan officer at a retail lender works for that bank. They have one rate sheet, one set of guidelines, one underwriting team. If their guidelines say no, the answer is no." },
+      { "type": "paragraph", "text": "That is fine if you fit the box. If you do not, retail is a dead end and the borrower starts over somewhere else, often after weeks of waiting." },
+      { "type": "heading", "level": 2, "text": "What wholesale actually means" },
+      { "type": "paragraph", "text": "A mortgage broker is a wholesale shop. We do not lend our own money. We have relationships with more than thirty wholesale lenders, including United Wholesale Mortgage (UWM), Rocket Pro TPO, Newrez, and dozens of niche specialists. Each lender publishes a daily rate sheet to brokers like us, often at lower rates than the same lender would offer through their retail channel." },
+      { "type": "paragraph", "text": "For each loan, we shop the file across multiple lenders, find the best fit on rate, guidelines, and turn time, and lock there. The borrower gets the lender best suited to their file, not the one we are stuck with." },
+      { "type": "heading", "level": 2, "text": "The savings number you keep seeing" },
+      { "type": "paragraph", "text": "Polygon Research analyzed 2023 HMDA data and found borrowers using the wholesale broker channel saved an average of $10,662 over the life of a loan compared to retail. That is the headline number, and it is real, but it is also an average. Some borrowers save more, some save less, and a few break even. The principle holds: more lenders competing for your file beats one lender taking it as a given." },
+      { "type": "heading", "level": 2, "text": "Where the savings actually come from" },
+      { "type": "paragraph", "text": "Three places, mostly:" },
+      { "type": "list", "items": [
+        "Lower wholesale rates. Wholesale lenders price below their retail equivalents because brokers handle origination work. Those savings flow to the borrower.",
+        "Better fit on guidelines. A self-employed borrower who gets a no at one lender often gets a yes at another with bank-statement programs. We know which lenders fit which files.",
+        "Faster closes when speed matters. UWM in particular is built for fast turn times. On a competitive offer, that closing date can be the difference between winning and losing the house."
+      ] },
+      { "type": "heading", "level": 2, "text": "What wholesale does not mean" },
+      { "type": "paragraph", "text": "Wholesale does not mean cheaper for everyone. A high-FICO borrower walking into their longtime credit union might get a great rate there. We tell people that honestly. What wholesale means is more options, and more options usually wins. We have walked away from files where the borrower’s existing bank had a relationship rate we could not beat. That is fine. The goal is the borrower’s best loan, not our commission." },
+      { "type": "heading", "level": 2, "text": "How LMP shops" },
+      { "type": "paragraph", "text": "We pull credit once, build the file once, and run it across the lenders that fit. You see real loan estimates from real lenders, side by side. No bait-and-switch, no soft quote that vanishes at underwriting. The loan estimate you get on day one is the one you close on, give or take normal third-party adjustments." },
+      { "type": "paragraph", "text": "If you are shopping a mortgage right now, get one wholesale quote alongside whatever retail quote you have. Fifteen minutes, soft credit, side by side. If wholesale wins, great. If your bank wins, also great. Either way, you know." }
+    ]
+  }
+]

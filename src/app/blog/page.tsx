@@ -1,64 +1,40 @@
+/**
+ * /blog — Reading Room index. Phase 1G: Sanity-wired with seeded JSON fallback.
+ *
+ * Data source: src/sanity/lib/posts.ts → getPosts(). When env vars are set,
+ * fetches from Sanity via GROQ. When not set (demo state), reads seed-posts.json.
+ *
+ * Section rhythm:
+ *   1. Hero        → dark  → intent (Reading Room)
+ *   2. Article grid → light → preview (paginated/grid of all articles)
+ *   3. CTA         → dark  → conversion
+ *
+ * Server component. Articles flagged with [DEMO COPY] / [COMPLIANCE-REVIEW-PENDING]
+ * — flags are surfaced on each card so reviewers can see review status at a glance.
+ */
+
 import type { Metadata } from 'next';
+import { getPosts } from '@/sanity/lib/posts';
 import Card from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 import FadeUp from '@/components/animations/FadeUp';
 
-// /blog — STUB for Phase 1F
-//
-// Phase 1E (Static Pages Bundle Agent) ships a 3-card placeholder index so the
-// /blog route does not 404 and so users land somewhere coherent if they click
-// through from BlogPreviewSection on the homepage. Phase 1F wires Sanity CMS and
-// publishes the real articles per CLAUDE.md Always-Built Features Rule (Blog).
-//
-// Section rhythm:
-//   1. Hero       → dark  → intent (Reading Room, state-program literacy)
-//   2. Stub grid  → light → preview (3 article placeholders mirroring homepage preview)
-//   3. Note       → dark  → status (Phase 1F flag)
-
 export const metadata: Metadata = {
-  title: 'Reading Room — Mortgage Articles',
+  title: 'Reading Room',
   description:
-    'State-program walkthroughs, FHA vs Conventional explainers, refinance guides, and wholesale-vs-retail breakdowns. Built for AEO and real-world borrower questions.',
+    'State programs, loan-program comparisons, and how the wholesale-broker model works. Written by LMP loan officers.',
 };
 
-interface ArticleStub {
-  category: string;
-  title: string;
-  excerpt: string;
-}
+export default async function BlogPage() {
+  const posts = await getPosts();
 
-// [DEMO COPY — pending client review]
-// Three placeholders mirroring the homepage BlogPreviewSection so users do not get
-// orphan cards if they click through.
-const ARTICLE_STUBS: ArticleStub[] = [
-  {
-    category: 'Loan Programs',
-    title: 'FHA vs Conventional in NH',
-    excerpt:
-      'Same buyer, two programs, side-by-side. What FHA actually costs after MIP, when Conventional wins on rate, and the New Hampshire-specific layered DPA most retail lenders never mention.',
-  },
-  {
-    category: 'State Programs',
-    title: 'MassHousing $30K Down Payment Assistance',
-    excerpt:
-      'How the MassHousing DPA stack actually works. Income limits, the recapture rules nobody reads, and the Lowell, Lawrence, and Brockton cases where it changes the math from no to yes.',
-  },
-  {
-    category: 'How We Work',
-    title: 'Wholesale vs Retail: Why It Matters',
-    excerpt:
-      'Banks shop one lender, theirs. We shop more than thirty. The difference shows up on the loan estimate, in the rate, and in the closing date. The plain-English version of the wholesale advantage.',
-  },
-];
-
-export default function BlogIndexPage() {
   return (
     <>
       {/* ============================================================ */}
       {/* SECTION 1 — Hero (dark)                                        */}
       {/* ============================================================ */}
-      <section className="relative overflow-hidden section-dark-gradient pt-32 pb-20">
+      <section className="relative overflow-hidden section-dark-gradient pt-32 pb-16">
         <div
           aria-hidden="true"
           className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full pointer-events-none"
@@ -67,16 +43,7 @@ export default function BlogIndexPage() {
               'radial-gradient(circle, rgba(197, 165, 114, 0.10), transparent 60%)',
           }}
         />
-        <div
-          aria-hidden="true"
-          className="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none"
-          style={{
-            background:
-              'radial-gradient(circle, rgba(197, 165, 114, 0.06), transparent 60%)',
-          }}
-        />
-
-        <div className="container-wide px-6 relative z-10">
+        <div className="container-base px-6 relative z-10">
           <FadeUp delay={0.1}>
             <p className="text-eyebrow text-[var(--accent)]">Reading Room</p>
           </FadeUp>
@@ -87,84 +54,88 @@ export default function BlogIndexPage() {
           </FadeUp>
           <FadeUp delay={0.3}>
             <p className="text-body text-[var(--text-secondary)] mt-6 max-w-2xl">
-              Plain-English walkthroughs of the loans, programs, and trade-offs your bank
-              will not sit down and explain. Built for the questions a real first-time
-              buyer or refinance shopper actually asks.
+              Loan-program comparisons, state DPA explainers, and how the wholesale-broker
+              model actually works. Written by LMP loan officers, flagged demo copy
+              pending client review.
             </p>
           </FadeUp>
         </div>
       </section>
 
       {/* ============================================================ */}
-      {/* SECTION 2 — Stub article grid (light)                          */}
+      {/* SECTION 2 — Articles grid (light)                              */}
       {/* ============================================================ */}
       <section className="section-light-gradient section-pad-base">
-        <div className="container-wide px-6">
-          <FadeUp>
-            <p className="text-eyebrow text-[var(--accent-deep)]">First Three Articles</p>
-          </FadeUp>
-          <FadeUp delay={0.1}>
-            <h2 className="font-display text-h2 text-[var(--text-on-light)] mt-3 max-w-3xl">
-              Coming first to the Reading Room.
-            </h2>
-          </FadeUp>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            {ARTICLE_STUBS.map((article, idx) => (
-              <FadeUp key={article.title} delay={0.1 + idx * 0.075}>
-                <Card variant="light" hover={false} className="h-full">
-                  <div className="flex items-start justify-between gap-3">
-                    <Badge color="gold">{article.category}</Badge>
-                    <Badge color="neutral">Stub</Badge>
-                  </div>
-                  <h3 className="font-display text-h4 text-[var(--text-on-light)] mt-4">
-                    {article.title}
-                  </h3>
-                  <p className="text-body-sm text-[var(--text-on-light-secondary)] mt-3">
-                    {article.excerpt}
-                  </p>
-                  <p className="font-mono text-[10px] text-[var(--text-on-light-muted)] mt-4">
-                    [STUB — Phase 1F: Sanity wiring]
-                  </p>
-                </Card>
-              </FadeUp>
-            ))}
-          </div>
-
-          <FadeUp delay={0.5}>
-            <div className="mt-12 text-center">
-              <Button href="/booking" size="lg">
-                Talk to a loan officer now
-              </Button>
+        <div className="container-base px-6">
+          {posts.length === 0 ? (
+            <p className="text-body text-[var(--text-on-light-secondary)] text-center">
+              No articles yet.
+            </p>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {posts.map((post, i) => (
+                <FadeUp key={post._id} delay={i * 0.05}>
+                  <Card variant="light" href={`/blog/${post.slug}`}>
+                    {post.headerImage?.url ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={post.headerImage.url}
+                        alt={post.headerImage.alt}
+                        className="w-full aspect-[16/9] object-cover rounded-[var(--radius-lg)] mb-4"
+                      />
+                    ) : (
+                      <div
+                        className="w-full aspect-[16/9] rounded-[var(--radius-lg)] mb-4 flex items-center justify-center p-6"
+                        style={{
+                          background:
+                            'linear-gradient(135deg, var(--primary) 0%, var(--accent-deep) 100%)',
+                        }}
+                      >
+                        <span className="font-display text-h4 text-[var(--text-primary)] text-center leading-tight">
+                          {post.title}
+                        </span>
+                      </div>
+                    )}
+                    <Badge color="gold">{post.category}</Badge>
+                    <h2 className="font-display text-h3 text-[var(--text-on-light)] mt-3">
+                      {post.title}
+                    </h2>
+                    <p className="text-body-sm text-[var(--text-on-light-secondary)] mt-2 line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                    {post.flag && (
+                      <p className="font-mono text-[10px] text-[var(--text-on-light-muted)] mt-4 italic">
+                        {post.flag}
+                      </p>
+                    )}
+                  </Card>
+                </FadeUp>
+              ))}
             </div>
-          </FadeUp>
+          )}
         </div>
       </section>
 
       {/* ============================================================ */}
-      {/* SECTION 3 — Phase 1F status note (dark)                        */}
+      {/* SECTION 3 — CTA (dark)                                         */}
       {/* ============================================================ */}
-      <section className="relative overflow-hidden section-dark-gradient section-pad-base">
-        <div
-          aria-hidden="true"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none opacity-50"
-          style={{
-            background:
-              'radial-gradient(circle, rgba(197, 165, 114, 0.06), transparent 65%)',
-          }}
-        />
-
-        <div className="container-base px-6 text-center relative z-10">
+      <section className="section-dark-gradient section-pad-base">
+        <div className="container-base px-6 text-center">
           <FadeUp>
-            <p className="font-mono text-eyebrow text-[var(--accent)]">
-              [PHASE-1F STUB]
-            </p>
-          </FadeUp>
-          <FadeUp delay={0.1}>
+            <h2 className="font-display text-h2 max-w-2xl mx-auto">
+              Want to talk it through?
+            </h2>
             <p className="text-body text-[var(--text-secondary)] mt-4 max-w-xl mx-auto">
-              Full blog launching with real articles soon, wired to Sanity for fast
-              editing and AEO-optimized at the schema layer.
+              Articles are a good start. Conversations close loans.
             </p>
+            <div className="mt-8 flex flex-wrap gap-4 justify-center">
+              <Button href="/booking" size="lg">
+                Get Pre-Approved
+              </Button>
+              <Button href="/quiz" variant="secondary" size="lg">
+                Take the Quiz
+              </Button>
+            </div>
           </FadeUp>
         </div>
       </section>
