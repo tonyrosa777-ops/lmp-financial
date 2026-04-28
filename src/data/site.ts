@@ -988,7 +988,7 @@ export const siteConfig: SiteConfig = {
     brokerDisclosure:
       "MORTGAGE BROKER ONLY, NOT A MORTGAGE LENDER OR MORTGAGE CORRESPONDENT LENDER",
     adaStatement:
-      "American with Disabilities Act (ADA) Statement: We at LMP Financial are committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.",
+      "American with Disabilities Act (ADA) Statement for Your Website: We at LMP Financial are committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards to guarantee website accessibility for all our visitors.",
     privacyPolicyLastUpdated: "January 1, 2025",
     termsOfUseLastUpdated: "January 1, 2025",
   },
