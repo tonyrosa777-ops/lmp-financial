@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__firecrawl__firecrawl_map",
+      "mcp__firecrawl__firecrawl_scrape",
+      "Read(//c/Projects/Optimus Assets//**)",
+      "Bash(mkdir -p \"/c/Projects/LMP Financial/.claude/commands\")",
+      "Bash(cp \"/c/Projects/Optimus Assets/project-prime.md\" \"/c/Projects/LMP Financial/.claude/commands/prime.md\")",
+      "Bash(sed -i 's|\\\\[BUSINESS_NAME\\\\]|LMP Financial|g' prime.md)",
+      "Bash(sed -i 's|\\\\[DOMAIN\\\\]|lmpfinancial.com|g' prime.md)",
+      "Bash(sed -i 's|\\\\[BUSINESS_TYPE\\\\]|Licensed independent mortgage broker \\(multi-LO shop\\)|g' prime.md)",
+      "Bash(sed -i 's|\\\\[LOCATION\\\\]|Lowell, Massachusetts \\(licensed in MA, NH, ME, RI, CT, FL, CO, VT, TX\\)|g' prime.md)",
+      "Bash(sed -i 's|\\\\[LAUNCH_TARGET\\\\]|TBD post-Tuesday demo \\(2026-04-28\\)|g' prime.md)",
+      "Bash(npm --version)",
+      "Bash(mkdir __scaffold__)",
+      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-git --use-npm --yes)",
+      "Bash(rmdir __scaffold__)",
+      "Bash(mkdir scaffold-tmp *)",
+      "Bash(rm -rf .git .next CLAUDE.md AGENTS.md README.md)",
+      "Read(//c/c/Projects/LMP Financial/__scaffold__/**)",
+      "PowerShell(cmd /c \"rmdir /S /Q `\"C:\\\\Projects\\\\LMP Financial\\\\__scaffold__`\"\" 2>&1)",
+      "Bash(curl -sL \"https://api.fontshare.com/v2/css?f[]=general-sans@1,2&display=swap\")",
+      "Bash(mkdir -p public/fonts)",
+      "Bash(curl -sL \"https://cdn.fontshare.com/wf/LHQJ5KSAL7VGAEIDSTEXCCOIUKFLT2I6/GW57XUEG4ZBVMLZZTQZTGYPROITRRQ5W/JA3IZUEMJ2J6WWT2OQVJOAWDXO3YL4YG.woff2\" -o \"public/fonts/GeneralSans-Variable.woff2\")",
+      "Bash(curl -sL \"https://cdn.fontshare.com/wf/RRO6TYZXO7WQBHSH4BZYSTI7E7T2HKLF/55LXPUDQQQTSLB3M2T377FIN2EKQQWJY/3HUYMY6WP3BZQYPOVGG6IZQAM476CQDC.woff2\" -o \"public/fonts/GeneralSans-VariableItalic.woff2\")",
+      "Read(//c/c/Projects/LMP Financial/public/**)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} | %{time_total}s\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(curl -s \"http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__0-9lafm._.css\")",
+      "Bash(curl -s -o /tmp/lmp-hero.html -w \"HTTP %{http_code} | %{time_total}s | %{size_download} bytes\\\\n\" http://localhost:3000/)",
+      "PowerShell($path = \"C:\\\\Projects\\\\LMP Financial\\\\src\\\\data\\\\site.ts\"; \\(Get-Content $path -Raw -Encoding UTF8\\) -replace '/programs', '/services' | Set-Content $path -Encoding UTF8 -NoNewline; Select-String -Path $path -Pattern '/programs','/services' | Select-Object -First 15 | ForEach-Object { $_.LineNumber.ToString\\(\\) + ': ' + $_.Line })",
+      "Bash(mkdir -p \"mortgage-broker/[state]\")",
+      "Bash(mv \"mortgage-broker-[state]/page.tsx\" \"mortgage-broker/[state]/page.tsx\")",
+      "Bash(rmdir \"mortgage-broker-[state]\")",
+      "Read(//c/c/Projects/LMP Financial/src/app/**)",
+      "Bash(curl -s http://localhost:3000/sitemap.xml)"
+    ]
+  }
+}

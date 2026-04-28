@@ -1,0 +1,256 @@
+@import "tailwindcss";
+
+/* ============================================================
+   LMP FINANCIAL — DESIGN TOKENS
+   Source of truth: design-system.md
+   Posture: dark-first by default. NO prefers-color-scheme flip.
+   ============================================================ */
+
+:root {
+  /* === BRAND CORE === */
+  --primary:        #0E1B33;                       /* Deep navy — dark section base */
+  --primary-deep:   #061021;                       /* Even deeper — footer, deepest accents */
+  --primary-soft:   #1A2A47;                       /* Slightly elevated navy — cards on dark, hover */
+  --primary-muted:  rgba(14, 27, 51, 0.6);
+
+  --accent:         #C5A572;                       /* Warm aged gold (brass) — CTAs, shimmer */
+  --accent-deep:    #A8895F;                       /* Darker brass — hover/pressed */
+  --accent-light:   #E0C690;                       /* Lighter gold — soft emphasis, glow halos */
+  --accent-muted:   rgba(197, 165, 114, 0.5);
+
+  /* === SURFACE SCALE — LIGHT SECTIONS (cream-based) === */
+  --bg-base:        #F5EFE2;                       /* Warm cream — primary light section bg */
+  --bg-elevated:    #FAF6EC;                       /* Lighter cream — elevated bands */
+  --bg-card:        #FFFFFF;                       /* Pure white — cards on cream only */
+
+  /* === DARK SECTION CARD SURFACES === */
+  --bg-card-dark:        rgba(255, 255, 255, 0.04);
+  --border-dark:         rgba(255, 255, 255, 0.08);
+  --border-dark-strong:  rgba(197, 165, 114, 0.25);
+
+  /* === TEXT — DARK SECTIONS (cream on navy) === */
+  --text-primary:        #F5EFE2;
+  --text-secondary:      rgba(245, 239, 226, 0.72);
+  --text-muted:          rgba(245, 239, 226, 0.42);
+
+  /* === TEXT — LIGHT SECTIONS (navy on cream) === */
+  --text-on-light:           #0E1B33;
+  --text-on-light-secondary: rgba(14, 27, 51, 0.72);
+  --text-on-light-muted:     rgba(14, 27, 51, 0.42);
+
+  /* === SEMANTIC === */
+  --success:        #5C8A6F;                       /* Sage — qualified, closed, paid */
+  --warning:        #D4A93C;                       /* Warm amber — pending, attention */
+  --error:          #B85450;                       /* Muted brick — declined, error */
+  --info:           #6B8CAE;                       /* Slate blue — neutral notice */
+
+  /* === SPACING — STANDARD ACROSS ALL OPTIMUS BUILDS === */
+  --space-xs:  0.25rem;   /* 4px  */
+  --space-sm:  0.5rem;    /* 8px  */
+  --space-md:  1rem;      /* 16px */
+  --space-lg:  1.5rem;    /* 24px */
+  --space-xl:  2rem;      /* 32px */
+  --space-2xl: 3rem;      /* 48px */
+  --space-3xl: 4rem;      /* 64px */
+  --space-4xl: 6rem;      /* 96px */
+
+  /* === BORDER RADIUS === */
+  --radius-sm:   6px;     /* Inline tags, badges */
+  --radius-md:   10px;    /* Buttons, inputs */
+  --radius-lg:   16px;    /* Cards, sections */
+  --radius-xl:   24px;    /* Featured cards, hero panel */
+  --radius-2xl:  32px;    /* Pricing tier cards */
+  --radius-pill: 9999px;
+
+  /* === SHADOWS — SUBTLE, LUXURY RESTRAINT === */
+  --shadow-sm:  0 1px 2px rgba(14, 27, 51, 0.06);
+  --shadow-md:  0 4px 12px rgba(14, 27, 51, 0.08);
+  --shadow-lg:  0 12px 32px rgba(14, 27, 51, 0.10);
+  --shadow-xl:  0 24px 60px rgba(14, 27, 51, 0.14);
+  --shadow-glow-gold: 0 0 32px rgba(197, 165, 114, 0.25);
+}
+
+/* Scroll padding — matches fixed header height at each breakpoint.
+   Without this, anchor links (#id) scroll the target behind the fixed navbar. */
+html { scroll-padding-top: 96px; }
+@media (min-width: 640px)  { html { scroll-padding-top: 112px; } }
+@media (min-width: 1024px) { html { scroll-padding-top: 128px; } }
+
+/* ============================================================
+   TAILWIND v4 @theme — connect tokens to Tailwind utilities
+   ============================================================ */
+
+@theme inline {
+  --color-primary:       var(--primary);
+  --color-primary-deep:  var(--primary-deep);
+  --color-primary-soft:  var(--primary-soft);
+  --color-accent:        var(--accent);
+  --color-accent-deep:   var(--accent-deep);
+  --color-accent-light:  var(--accent-light);
+  --color-bg-base:       var(--bg-base);
+  --color-bg-elevated:   var(--bg-elevated);
+  --color-bg-card:       var(--bg-card);
+  --color-text-primary:  var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-on-light: var(--text-on-light);
+  --color-success:       var(--success);
+  --color-warning:       var(--warning);
+  --color-error:         var(--error);
+  --color-info:          var(--info);
+
+  --font-display: var(--font-display);  /* set by next/font in layout.tsx */
+  --font-body:    var(--font-body);
+  --font-mono:    var(--font-mono);
+}
+
+/* ============================================================
+   BODY BASELINE
+   Dark-first: navy bg, cream text. Headings default to display serif.
+   ============================================================ */
+
+body {
+  font-family: var(--font-body), system-ui, sans-serif;
+  background: var(--primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, .font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+/* ============================================================
+   TYPE SCALE — clamp-based, per design-system.md Section 3
+   ============================================================ */
+
+.text-display {
+  font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.text-h1 {
+  font-size: clamp(2.25rem, 4.2vw, 3.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+.text-h2 {
+  font-size: clamp(1.625rem, 3.2vw, 2.5rem);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+.text-h3 {
+  font-size: clamp(1.375rem, 2.6vw, 1.875rem);
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+}
+.text-h4 {
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  line-height: 1.3;
+}
+.text-body {
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.6;
+}
+.text-body-sm {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+.text-eyebrow {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+.text-micro {
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   HERO SHIMMER — warm-gold variant
+   MANDATORY on every hero H1 + interior page H1 per CLAUDE.md
+   ============================================================ */
+
+.hero-shimmer {
+  background: linear-gradient(
+    100deg,
+    var(--text-primary) 0%,
+    var(--accent-light) 30%,
+    var(--accent) 50%,
+    var(--accent-light) 70%,
+    var(--text-primary) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-sweep 8s ease-in-out infinite;
+}
+
+@keyframes shimmer-sweep {
+  0%, 100% { background-position: 200% 50%; }
+  50%      { background-position: 0% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-shimmer {
+    animation: none;
+    background-position: 100% 50%;
+  }
+}
+
+/* ============================================================
+   SECTION BACKGROUND GRADIENTS
+   Per design-system.md Section 14 — no flat solid backgrounds, ever.
+   Pick ONE motion type per section (do not stack); see luxury-gradient
+   patterns doc for breathing-orb / mesh-drift / aurora-sweep / grain-shimmer.
+   ============================================================ */
+
+.section-dark-gradient {
+  background:
+    radial-gradient(ellipse 60% 80% at 20% 10%, rgba(197, 165, 114, 0.08), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 80% 90%, rgba(26, 42, 71, 0.6), transparent 70%),
+    var(--primary);
+}
+
+.section-light-gradient {
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 10%, rgba(197, 165, 114, 0.06), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 20% 90%, rgba(14, 27, 51, 0.04), transparent 70%),
+    var(--bg-base);
+}
+
+/* ============================================================
+   CONTAINER UTILITIES
+   ============================================================ */
+
+.container-narrow { max-width: 720px;  margin-inline: auto; }   /* Long-form prose, blog, legal */
+.container-base   { max-width: 1080px; margin-inline: auto; }   /* Standard section content */
+.container-wide   { max-width: 1280px; margin-inline: auto; }   /* Hero, full-bleed grids */
+.container-full   { max-width: 1440px; margin-inline: auto; }   /* Edge-to-edge layouts */
+
+/* ============================================================
+   SECTION PADDING UTILITIES
+   ============================================================ */
+
+.section-pad-tight { padding-block: clamp(2.5rem, 5vw, 4rem); }
+.section-pad-base  { padding-block: clamp(4rem, 8vw, 7rem); }   /* Default for homepage sections */
+.section-pad-loose { padding-block: clamp(6rem, 12vw, 10rem); } /* Hero, dramatic transitions */
+
+/* ============================================================
+   PREFERS-REDUCED-MOTION — GLOBAL RESET
+   Per design-system.md Section 5 + CLAUDE.md mandatory contract.
+   Per-component overrides (e.g., .hero-shimmer above) handle background
+   degradation to static gradient instead of flat color.
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
