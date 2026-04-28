@@ -3,6 +3,7 @@ import { Fraunces, JetBrains_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
+import Providers from '@/components/Providers';
 import { siteConfig } from '@/data/site';
 import {
   financialServiceSchema,
@@ -75,9 +76,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={schemaScript(localBusinessSchema())}
         />
-        <Navigation />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <Providers>
+          <Navigation />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

@@ -14,11 +14,13 @@
     "@sanity/vision": "^5.22.0",
     "framer-motion": "^12.38.0",
     "next": "16.2.4",
+    "next-auth": "^5.0.0-beta.31",
     "next-sanity": "^12.3.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-hook-form": "^7.74.0",
     "react-intersection-observer": "^10.0.3",
+    "resend": "^6.12.2",
     "sanity": "^5.22.0",
     "zod": "^4.3.6"
   },
