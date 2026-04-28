@@ -42,3 +42,6 @@ next-env.d.ts
 
 # scaffold temp dir (Windows file-lock leftover; safe to ignore)
 __scaffold__/
+
+# Playwright MCP transient snapshots (per-session browser captures)
+.playwright-mcp/

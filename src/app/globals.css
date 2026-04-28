@@ -71,8 +71,10 @@
 }
 
 /* Scroll padding — matches fixed header height at each breakpoint.
-   Without this, anchor links (#id) scroll the target behind the fixed navbar. */
-html { scroll-padding-top: 96px; }
+   Without this, anchor links (#id) scroll the target behind the fixed navbar.
+   overflow-x: hidden on html clips any decoration orbs that leak past viewport
+   (Phase 1I audit fix — partners page bottom-right orb at -32px right of edge). */
+html { scroll-padding-top: 96px; overflow-x: hidden; }
 @media (min-width: 640px)  { html { scroll-padding-top: 112px; } }
 @media (min-width: 1024px) { html { scroll-padding-top: 128px; } }
 

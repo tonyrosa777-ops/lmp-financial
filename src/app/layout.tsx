@@ -65,7 +65,7 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${generalSans.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="min-h-screen bg-[var(--primary)] text-[var(--text-primary)] antialiased">
+      <body className="min-h-screen overflow-x-hidden bg-[var(--primary)] text-[var(--text-primary)] antialiased">
         {/* JSON-LD: FinancialService (root org) + LocalBusiness (Lowell office) */}
         <script
           type="application/ld+json"
