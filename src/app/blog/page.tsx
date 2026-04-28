@@ -19,6 +19,7 @@ import Card from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 import FadeUp from '@/components/animations/FadeUp';
+import PhotoBackground from '@/components/PhotoBackground';
 
 export const metadata: Metadata = {
   title: 'Reading Room',
@@ -35,6 +36,7 @@ export default async function BlogPage() {
       {/* SECTION 1 — Hero (dark)                                        */}
       {/* ============================================================ */}
       <section className="relative overflow-hidden section-dark-gradient pt-32 pb-16">
+        <PhotoBackground src="/images/pages/blog.jpg" priority />
         <div
           aria-hidden="true"
           className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full pointer-events-none"

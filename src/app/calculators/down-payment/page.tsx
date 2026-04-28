@@ -17,6 +17,7 @@ import { useMemo, useState } from 'react';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import FadeUp from '@/components/animations/FadeUp';
+import PhotoBackground from '@/components/PhotoBackground';
 
 const CLOSING_COST_RATE = 0.03;
 
@@ -136,6 +137,7 @@ export default function DownPaymentCalculatorPage() {
   return (
     <>
       <section className="relative overflow-hidden section-dark-gradient pt-32 pb-12">
+        <PhotoBackground src="/images/calculators/down-payment.jpg" priority />
         <div
           aria-hidden="true"
           className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full pointer-events-none"

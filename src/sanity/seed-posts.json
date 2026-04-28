@@ -7,7 +7,7 @@
     "publishedAt": "2026-04-15T00:00:00.000Z",
     "category": "Loan Programs",
     "author": { "name": "Mike Comerford", "role": "President & CEO" },
-    "headerImage": null,
+    "headerImage": { "url": "/images/blog/fha-vs-conventional-nh.jpg", "alt": "Deep navy New Hampshire farmhouse front door with brass kick plate at golden hour, autumn maple leaves on the entry stoop." },
     "flag": "[DEMO COPY — pending client review · COMPLIANCE-REVIEW-PENDING]",
     "body": [
       { "type": "paragraph", "text": "We get this question every week from buyers in Manchester, Salem, and Concord. The down payment on FHA is 3.5%. The down payment on Conventional 97 is 3%. So Conventional wins, right? Not so fast." },
@@ -42,7 +42,7 @@
     "publishedAt": "2026-04-08T00:00:00.000Z",
     "category": "State Programs",
     "author": { "name": "Doug Danzey", "role": "Senior Loan Officer" },
-    "headerImage": null,
+    "headerImage": { "url": "/images/blog/masshousing-30k-down-payment-assistance.jpg", "alt": "Antique brass house key resting on cream linen surface with dramatic raking light." },
     "flag": "[DEMO COPY — pending client review · COMPLIANCE-REVIEW-PENDING · VERIFY-WITH-AGENCY-WEBSITE for current AMI tables and program limits]",
     "body": [
       { "type": "paragraph", "text": "MassHousing’s down payment assistance program is the single most useful tool we have for first-time buyers in Massachusetts. It is also the most misunderstood. So let us walk through it the way we walk through it on a discovery call." },
@@ -84,7 +84,7 @@
     "publishedAt": "2026-04-01T00:00:00.000Z",
     "category": "How We Work",
     "author": { "name": "Aisha Barbosa", "role": "Bilingual Loan Officer" },
-    "headerImage": null,
+    "headerImage": { "url": "/images/blog/wholesale-vs-retail-mortgage.jpg", "alt": "Single closed brown leather portfolio with brass corner protectors on a worn walnut desk in golden hour light." },
     "flag": "[DEMO COPY — pending client review · COMPLIANCE-REVIEW-PENDING · savings figure cited from public Polygon Research / 2023 HMDA aggregate — verify current source before publish]",
     "body": [
       { "type": "paragraph", "text": "When most people shop for a mortgage, they call the bank. Their bank, the bank down the street, maybe the big national one with the catchy commercials. They get one quote, sign one set of papers, and assume that is how it works. It is not how it works. There is a whole other side of the mortgage industry, and it is built for the borrower." },

@@ -3,6 +3,7 @@ import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
 import FadeUp from '@/components/animations/FadeUp';
+import PhotoBackground from '@/components/PhotoBackground';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function TeamPage() {
     <>
       {/* Page header — dark gradient, breathing orb ambient */}
       <section className="relative overflow-hidden section-dark-gradient pt-32 pb-20">
+        <PhotoBackground src="/images/pages/team.jpg" priority />
         <div
           aria-hidden="true"
           className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full pointer-events-none"

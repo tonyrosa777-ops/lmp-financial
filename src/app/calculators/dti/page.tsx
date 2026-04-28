@@ -19,6 +19,7 @@ import Card from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 import FadeUp from '@/components/animations/FadeUp';
+import PhotoBackground from '@/components/PhotoBackground';
 
 type Status = 'pass' | 'tight' | 'comp' | 'special';
 
@@ -163,6 +164,7 @@ export default function DtiCalculatorPage() {
   return (
     <>
       <section className="relative overflow-hidden section-dark-gradient pt-32 pb-12">
+        <PhotoBackground src="/images/calculators/dti.jpg" priority />
         <div
           aria-hidden="true"
           className="absolute -top-20 -left-20 w-[500px] h-[500px] rounded-full pointer-events-none"

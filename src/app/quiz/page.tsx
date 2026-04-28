@@ -8,6 +8,7 @@
 // Architecture Rule (heading-shimmer applies to every page H1, not just home).
 
 import type { Metadata } from 'next';
+import PhotoBackground from '@/components/PhotoBackground';
 import QuizClient from './QuizClient';
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function QuizPage() {
     <>
       {/* Page header — dark gradient with shimmer H1 */}
       <section className="relative overflow-hidden section-dark-gradient pt-32 pb-12">
+        <PhotoBackground src="/images/pages/quiz.jpg" priority />
         <div className="container-base px-6 relative z-10 text-center">
           <p className="text-eyebrow text-[var(--accent)]">Find Your Loan Path</p>
           <h1 className="hero-shimmer font-display text-h1 mt-3 max-w-3xl mx-auto">

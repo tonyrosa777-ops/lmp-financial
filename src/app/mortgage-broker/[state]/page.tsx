@@ -24,6 +24,7 @@ import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
 import FadeUp from '@/components/animations/FadeUp';
+import PhotoBackground from '@/components/PhotoBackground';
 
 export function generateStaticParams() {
   return Object.values(STATE_PROGRAMS).map((s) => ({ state: s.slug }));
@@ -64,6 +65,7 @@ export default async function StatePage({
     <>
       {/* Page header — dark, breathing-orb gold halo */}
       <section className="relative overflow-hidden section-dark-gradient pt-32 pb-16">
+        <PhotoBackground src={`/images/states/${info.slug}.jpg`} priority />
         <div
           aria-hidden="true"
           className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full pointer-events-none"

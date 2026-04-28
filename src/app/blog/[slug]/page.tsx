@@ -22,6 +22,7 @@ import type { BlockContent } from '@/sanity/queries';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 import FadeUp from '@/components/animations/FadeUp';
+import PhotoBackground from '@/components/PhotoBackground';
 
 export async function generateStaticParams() {
   const posts = await getPosts();
@@ -108,9 +109,12 @@ export default async function BlogArticlePage({
       {/* SECTION 1 — Article header (dark)                              */}
       {/* ============================================================ */}
       <section className="relative overflow-hidden section-dark-gradient pt-32 pb-12">
+        {post.headerImage?.url && (
+          <PhotoBackground src={post.headerImage.url} alt={post.headerImage.alt} priority />
+        )}
         <div
           aria-hidden="true"
-          className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full pointer-events-none"
+          className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full pointer-events-none z-0"
           style={{
             background:
               'radial-gradient(circle, rgba(197, 165, 114, 0.10), transparent 60%)',

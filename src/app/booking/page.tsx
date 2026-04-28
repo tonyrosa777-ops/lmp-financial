@@ -14,6 +14,7 @@
 import type { Metadata } from 'next';
 import BookingCalendar from '@/components/BookingCalendar';
 import FadeUp from '@/components/animations/FadeUp';
+import PhotoBackground from '@/components/PhotoBackground';
 
 export const metadata: Metadata = {
   title: 'Schedule a Call',
@@ -45,6 +46,7 @@ export default function BookingPage() {
     <>
       {/* Page header — dark gradient. */}
       <section className="relative overflow-hidden section-dark-gradient pt-32 pb-16">
+        <PhotoBackground src="/images/pages/booking.jpg" priority />
         <div className="container-base px-6 relative z-10 text-center">
           <FadeUp delay={0.1}>
             <p className="text-eyebrow text-[var(--accent)]">Get Pre-Approved</p>

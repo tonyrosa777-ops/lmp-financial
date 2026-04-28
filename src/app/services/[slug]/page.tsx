@@ -21,6 +21,7 @@ import { notFound } from 'next/navigation';
 import { siteConfig } from '@/data/site';
 import Button from '@/components/ui/Button';
 import FadeUp from '@/components/animations/FadeUp';
+import PhotoBackground from '@/components/PhotoBackground';
 import { serviceSchema, schemaScript } from '@/lib/schema';
 import type { Metadata } from 'next';
 
@@ -91,6 +92,7 @@ export default async function LoanProgramPage({
 
       {/* Page header — interior page pattern (pt-32 pb-20). Dark gradient. */}
       <section className="relative overflow-hidden section-dark-gradient pt-32 pb-20">
+        <PhotoBackground src={`/images/programs/${program.slug}.jpg`} priority />
         <div className="container-wide px-6 relative z-10">
           <FadeUp delay={0.1}>
             <p className="text-eyebrow text-[var(--accent)]">

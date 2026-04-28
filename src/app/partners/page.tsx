@@ -5,6 +5,7 @@ import Card from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
 import Input from '@/components/ui/Input';
 import FadeUp from '@/components/animations/FadeUp';
+import PhotoBackground from '@/components/PhotoBackground';
 import SlideIn from '@/components/animations/SlideIn';
 
 // /partners — Realtor Referral Funnel
@@ -155,6 +156,7 @@ export default function PartnersPage() {
       {/* SECTION 1 — Hero (dark, breathing-orb ambient)                 */}
       {/* ============================================================ */}
       <section className="relative overflow-hidden section-dark-gradient pt-32 pb-20">
+        <PhotoBackground src="/images/pages/partners.jpg" priority />
         <div
           aria-hidden="true"
           className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full pointer-events-none"

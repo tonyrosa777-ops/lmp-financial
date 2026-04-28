@@ -11,6 +11,7 @@ import { siteConfig } from '@/data/site';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import FadeUp from '@/components/animations/FadeUp';
+import PhotoBackground from '@/components/PhotoBackground';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -37,6 +38,7 @@ export default function ServicesPage() {
       {/* Page header — interior page pattern (pt-32 pb-20).
           Dark gradient + ambient breathing orb (CSS-only). */}
       <section className="relative overflow-hidden section-dark-gradient pt-32 pb-20">
+        <PhotoBackground src="/images/pages/services.jpg" priority />
         <div
           aria-hidden="true"
           className="breathe-orb absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full pointer-events-none"

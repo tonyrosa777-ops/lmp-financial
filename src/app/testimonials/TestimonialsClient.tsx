@@ -30,6 +30,7 @@ import Card from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 import FadeUp from '@/components/animations/FadeUp';
+import PhotoBackground from '@/components/PhotoBackground';
 import ScaleIn from '@/components/animations/ScaleIn';
 import SlideIn from '@/components/animations/SlideIn';
 
@@ -137,6 +138,7 @@ export default function TestimonialsClient() {
           1. HERO HEADER — dark gradient + ambient breathing orb
           ============================================================ */}
       <section className="relative overflow-hidden section-dark-gradient pt-32 pb-20">
+        <PhotoBackground src="/images/pages/testimonials.jpg" priority />
         <div
           aria-hidden="true"
           className="breathe-orb absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full pointer-events-none"

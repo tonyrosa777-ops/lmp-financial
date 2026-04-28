@@ -18,6 +18,7 @@ import { useMemo, useState } from 'react';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import FadeUp from '@/components/animations/FadeUp';
+import PhotoBackground from '@/components/PhotoBackground';
 
 const NEW_TERM_OPTIONS = [15, 20, 30] as const;
 type NewTerm = (typeof NEW_TERM_OPTIONS)[number];
@@ -148,6 +149,7 @@ export default function RefinanceCalculatorPage() {
   return (
     <>
       <section className="relative overflow-hidden section-dark-gradient pt-32 pb-12">
+        <PhotoBackground src="/images/calculators/refinance.jpg" priority />
         <div
           aria-hidden="true"
           className="absolute -top-20 -left-20 w-[500px] h-[500px] rounded-full pointer-events-none"

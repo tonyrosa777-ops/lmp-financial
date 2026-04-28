@@ -19,6 +19,7 @@ import { useMemo, useState } from 'react';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import FadeUp from '@/components/animations/FadeUp';
+import PhotoBackground from '@/components/PhotoBackground';
 
 const TERM_OPTIONS = [15, 20, 30] as const;
 type Term = (typeof TERM_OPTIONS)[number];
@@ -130,6 +131,7 @@ export default function MonthlyPaymentCalculatorPage() {
   return (
     <>
       <section className="relative overflow-hidden section-dark-gradient pt-32 pb-12">
+        <PhotoBackground src="/images/calculators/monthly-payment.jpg" priority />
         <div
           aria-hidden="true"
           className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full pointer-events-none"
