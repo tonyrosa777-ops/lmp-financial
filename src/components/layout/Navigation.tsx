@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { siteConfig } from '@/data/site';
 import { LanguageToggle } from '@/components/ui/LanguageToggle';
@@ -14,9 +15,17 @@ interface TranslatedNavItem {
   isInternal?: boolean;
 }
 
+// Hrefs that move into the "More" dropdown on desktop. Mobile drawer keeps
+// the flat list. Internal/Optimus tools (currently /pricing) belong here so
+// the public-facing top-line nav stays focused on borrower conversion paths.
+const MORE_DROPDOWN_HREFS = new Set(['/team', '/blog', '/pricing']);
+
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
+  const moreRef = useRef<HTMLLIElement>(null);
+  const pathname = usePathname();
   const { status } = useSession();
   const isAuthed = status === 'authenticated';
   const { t, ta } = useTranslation('common');
@@ -31,6 +40,30 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Close the More dropdown on outside click + Escape.
+  useEffect(() => {
+    if (!moreOpen) return;
+    const onClick = (e: MouseEvent) => {
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setMoreOpen(false);
+      }
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMoreOpen(false);
+    };
+    document.addEventListener('mousedown', onClick);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onClick);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [moreOpen]);
+
+  // Close dropdown when route changes.
+  useEffect(() => {
+    setMoreOpen(false);
+  }, [pathname]);
+
   const phone = siteConfig.business.phone;
   const businessName = siteConfig.business.name;
 
@@ -40,6 +73,9 @@ export default function Navigation() {
   const navItems =
     ta<TranslatedNavItem[]>('nav.items') ??
     siteConfig.nav.filter((n) => !n.isCta);
+
+  const primaryItems = navItems.filter((i) => !MORE_DROPDOWN_HREFS.has(i.href));
+  const moreItems = navItems.filter((i) => MORE_DROPDOWN_HREFS.has(i.href));
 
   const ctaPrimary =
     ta<{ label: string; href: string }>('nav.ctaPrimary') ??
@@ -79,32 +115,82 @@ export default function Navigation() {
             aria-label={t('nav.primaryAriaLabel')}
           >
             <ul className="flex items-center gap-7">
-              {navItems.map((item) => {
-                return (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="font-body text-sm transition-colors"
+              {primaryItems.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="font-body text-sm transition-colors"
+                    style={{ color: 'var(--text-secondary)' }}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+
+              {/* "More" dropdown — Team, Blog, internal Pricing tucked away */}
+              {moreItems.length > 0 && (
+                <li ref={moreRef} className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setMoreOpen((v) => !v)}
+                    aria-expanded={moreOpen}
+                    aria-haspopup="menu"
+                    aria-label={t('nav.moreAriaLabel')}
+                    className="font-body text-sm transition-colors inline-flex items-center gap-1.5 cursor-pointer"
+                    style={{
+                      color: moreOpen ? 'var(--text-primary)' : 'var(--text-secondary)',
+                    }}
+                  >
+                    {t('nav.moreLabel')}
+                    <span
+                      aria-hidden="true"
+                      className="transition-transform duration-200 inline-block"
                       style={{
-                        color: item.isInternal
-                          ? 'var(--accent)'
-                          : 'var(--text-secondary)',
+                        fontSize: '0.65rem',
+                        transform: moreOpen ? 'rotate(180deg)' : 'rotate(0)',
                       }}
                     >
-                      {item.isInternal ? (
-                        <>
-                          <span style={{ color: 'var(--accent)' }} aria-hidden="true">
-                            ⬥{' '}
-                          </span>
-                          {item.label}
-                        </>
-                      ) : (
-                        item.label
-                      )}
-                    </Link>
-                  </li>
-                );
-              })}
+                      ▾
+                    </span>
+                  </button>
+
+                  {moreOpen && (
+                    <ul
+                      role="menu"
+                      className="absolute right-0 top-full mt-3 min-w-[200px] rounded-md py-2 shadow-2xl"
+                      style={{
+                        background: 'var(--primary-deep)',
+                        border: '1px solid var(--border-dark)',
+                      }}
+                    >
+                      {moreItems.map((item) => (
+                        <li key={item.href} role="none">
+                          <Link
+                            href={item.href}
+                            role="menuitem"
+                            onClick={() => setMoreOpen(false)}
+                            className="block px-4 py-2.5 font-body text-sm transition-colors"
+                            style={{
+                              color: item.isInternal
+                                ? 'var(--accent)'
+                                : 'var(--text-primary)',
+                            }}
+                          >
+                            {item.isInternal ? (
+                              <>
+                                <span aria-hidden="true">⬥ </span>
+                                {item.label}
+                              </>
+                            ) : (
+                              item.label
+                            )}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              )}
             </ul>
           </nav>
 

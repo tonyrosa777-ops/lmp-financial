@@ -15,7 +15,9 @@
     "closeNav": "Close navigation",
     "homeAriaTemplate": "{businessName} home",
     "primaryAriaLabel": "Primary",
-    "drawerAriaLabel": "Site navigation"
+    "drawerAriaLabel": "Site navigation",
+    "moreLabel": "More",
+    "moreAriaLabel": "More navigation"
   },
   "auth": {
     "signIn": "Sign In",

@@ -17,7 +17,9 @@
     "closeNav": "Cerrar navegación",
     "homeAriaTemplate": "Inicio de {businessName}",
     "primaryAriaLabel": "Principal",
-    "drawerAriaLabel": "Navegación del sitio"
+    "drawerAriaLabel": "Navegación del sitio",
+    "moreLabel": "Más",
+    "moreAriaLabel": "Más navegación"
   },
   "auth": {
     "signIn": "Iniciar sesión",
