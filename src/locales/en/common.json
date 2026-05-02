@@ -1,1 +1,87 @@
-{}
+{
+  "nav": {
+    "items": [
+      { "href": "/services", "label": "Loan Programs" },
+      { "href": "/calculators", "label": "Calculators" },
+      { "href": "/team", "label": "Team" },
+      { "href": "/partners", "label": "Realtors" },
+      { "href": "/careers", "label": "Careers" },
+      { "href": "/blog", "label": "Blog" },
+      { "href": "/contact", "label": "Contact" },
+      { "href": "/pricing", "label": "Pricing", "isInternal": true }
+    ],
+    "ctaPrimary": { "label": "Get Pre-Approved", "href": "/booking" },
+    "openNav": "Open navigation",
+    "closeNav": "Close navigation",
+    "homeAriaTemplate": "{businessName} home",
+    "primaryAriaLabel": "Primary",
+    "drawerAriaLabel": "Site navigation"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "myAccount": "My Account",
+    "signInArrow": "Sign In →",
+    "myAccountArrow": "My Account →"
+  },
+  "footer": {
+    "columns": [
+      {
+        "title": "Company",
+        "links": [
+          { "label": "About", "href": "/about" },
+          { "label": "Team", "href": "/team" },
+          { "label": "Realtors", "href": "/partners" },
+          { "label": "Careers", "href": "/careers" },
+          { "label": "Contact", "href": "/contact" }
+        ]
+      },
+      {
+        "title": "Loan Programs",
+        "links": [
+          { "label": "Fixed-Rate Mortgage", "href": "/services/fixed-rate" },
+          { "label": "FHA Loan", "href": "/services/fha" },
+          { "label": "VA Loan", "href": "/services/va" },
+          { "label": "Jumbo Mortgage", "href": "/services/jumbo" },
+          { "label": "Adjustable-Rate Mortgage", "href": "/services/arm" },
+          { "label": "USDA Mortgage", "href": "/services/usda" },
+          { "label": "First-Time Home Buyer", "href": "/services/first-time-buyer" },
+          { "label": "Reverse Mortgage", "href": "/services/reverse" },
+          { "label": "Interest-Only Mortgage", "href": "/services/interest-only" }
+        ]
+      },
+      {
+        "title": "Resources",
+        "links": [
+          { "label": "Calculators", "href": "/calculators" },
+          { "label": "FAQ", "href": "/faq" },
+          { "label": "Blog", "href": "/blog" },
+          { "label": "Reviews", "href": "/testimonials" },
+          { "label": "Service Areas", "href": "/service-areas" }
+        ]
+      },
+      {
+        "title": "Connect",
+        "links": [
+          { "label": "(978) 453-LOAN", "href": "tel:+19784535626" },
+          { "label": "info@lmpfinancial.com", "href": "mailto:info@lmpfinancial.com" },
+          { "label": "LinkedIn", "href": "https://www.linkedin.com/in/mike-comerford-aa134887/" }
+        ]
+      }
+    ],
+    "copyright": "© 2026 LMP Financial. All rights reserved.",
+    "legalLinks": [
+      { "label": "Privacy Policy", "href": "/privacy-policy" },
+      { "label": "Terms of Use", "href": "/terms-of-use" },
+      { "label": "ADA Accessibility Statement", "href": "/ada-accessibility-statement" }
+    ],
+    "verbatimNote": "Regulatory disclosures are displayed in English to comply with state advertising rules."
+  },
+  "buttons": {
+    "getPreApproved": "Get Pre-Approved",
+    "talkToLO": "Talk to a Loan Officer",
+    "takeQuiz": "Take the Quiz",
+    "learnMore": "Learn more →",
+    "meetTheTeam": "Meet the team →",
+    "viewAll": "View All"
+  }
+}

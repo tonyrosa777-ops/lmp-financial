@@ -1,1 +1,134 @@
-{}
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "reviewer": null,
+    "reviewed_at": null,
+    "notes": "Traducción al español castellano-neutral, registro 'usted'. Sin guiones largos. Los nombres oficiales de estados (Massachusetts, New Hampshire, etc.) y de regiones (New England, Mountain West) se mantienen en inglés por uso regulatorio en documentos hipotecarios y de bienes raíces de Estados Unidos. Los nombres de programas estatales (MassHousing, NHHFA, CHFA, MaineHousing, RIHousing, VHFA, TSAHC, TDHCA, metroDPA, ONE Mortgage, etc.) son nombres propios y no se traducen."
+  },
+  "indexPage": {
+    "eyebrow": "Dónde tenemos licencia",
+    "headline": "Nueve estados. Un apretón de manos de Lowell.",
+    "subheadline": "Tenemos licencia para originar hipotecas residenciales en nueve estados. Cada uno tiene su propia agencia de financiación de vivienda, su propio paquete de DPA y sus propias particularidades. Los conocemos todos por su nombre.",
+    "mapHelpText": "Haga clic en un estado para ver lo que ofrecemos allí"
+  },
+  "statePage": {
+    "labels": {
+      "regionLabel": "Región",
+      "primaryCityLabel": "Ciudad principal",
+      "programsAvailable": "Programas disponibles en este estado",
+      "loanOfficersInState": "Oficiales de préstamos que atienden este estado",
+      "specialPrograms": "Programas específicos del estado",
+      "downPaymentAssistance": "Asistencia para el pago inicial",
+      "eligibility": "Elegibilidad",
+      "agency": "Agencia",
+      "viewAgencyLink": "Ver el sitio de la agencia →",
+      "ctaSection": "Obtenga su preaprobación en {state}",
+      "ctaSubheadline": "Una llamada inicial de 15 minutos. Sin consulta de crédito, sin documentos, sin compromiso.",
+      "ctaButton": "Programe una cita con un oficial de préstamos de {state}",
+      "preApprovalCta": "Inicie su preaprobación"
+    },
+    "compliance": {
+      "figuresFlag": "Cifras vigentes al primer trimestre de 2026. Verifique en el sitio web de la agencia. Revisión de cumplimiento pendiente.",
+      "disclaimer": "Los programas, la elegibilidad y las cifras están sujetos a cambios. Confirme los detalles vigentes con la agencia emisora antes de presentar la solicitud."
+    }
+  },
+  "states": {
+    "massachusetts": {
+      "code": "MA",
+      "shortName": "MA",
+      "fullName": "Massachusetts",
+      "primaryCity": "Lowell",
+      "region": "New England",
+      "blurb": "Massachusetts es nuestro hogar. Nuestra oficina de Lowell está a cinco minutos del Acre, a diez de Centralville, y trabajamos cada semana en el Merrimack Valley, la South Shore, las comunidades brasileña e hispana de Lawrence y Brockton, y el Cape. Cerramos paquetes de DPA de MassHousing, expedientes de ONE Mortgage y préstamos FHA en tres idiomas."
+    },
+    "new-hampshire": {
+      "code": "NH",
+      "shortName": "NH",
+      "fullName": "New Hampshire",
+      "primaryCity": "Manchester",
+      "region": "New England",
+      "blurb": "Salem, Nashua, Manchester, Concord. New Hampshire está a quince minutos al norte de nuestra sede en Lowell y representa nuestra segunda cartera más densa. Combinamos NHHFA Home Flex Plus con el primer préstamo convencional, gestionamos la Community Heroes Initiative para socorristas, y conocemos al detalle el mercado de cambio a vivienda mayor en el sur de New Hampshire."
+    },
+    "maine": {
+      "code": "ME",
+      "shortName": "ME",
+      "fullName": "Maine",
+      "primaryCity": "Portland",
+      "region": "New England",
+      "blurb": "De Portland a Bangor, la Midcoast y Down East, financiación de casas móviles y modulares que otras agencias rechazan. El paquete First Home Loan más Advantage de MaineHousing es una de las estructuras de DPA más generosas de New England, y la nueva subvención First Generation es una verdadera ventaja para compradores cuyos padres nunca fueron propietarios. Lo cerramos."
+    },
+    "rhode-island": {
+      "code": "RI",
+      "shortName": "RI",
+      "fullName": "Rhode Island",
+      "primaryCity": "Providence",
+      "region": "New England",
+      "blurb": "Providence, Cranston, Pawtucket, Newport, Woonsocket. Rhode Island es un mercado denso de compradores primerizos y RIHousing ha construido uno de los paquetes de DPA más superponibles del país: 15kDPA encima de FirstGenHomeRI encima de un crédito fiscal MCC. Hemos cerrado los tres en el mismo expediente."
+    },
+    "connecticut": {
+      "code": "CT",
+      "shortName": "CT",
+      "fullName": "Connecticut",
+      "primaryCity": "Hartford",
+      "region": "New England",
+      "blurb": "Hartford, New Haven, Bridgeport, Stamford, el mercado jumbo del condado de Fairfield. CHFA Time To Own puede aportar hasta 50.000 dólares en efectivo perdonable para una primera vivienda, combinado con el primer préstamo CHFA. La mayoría de los prestamistas minoristas tratan los programas de bonos de Connecticut como una casilla de verificación. Nosotros los tratamos como el expediente."
+    },
+    "vermont": {
+      "code": "VT",
+      "shortName": "VT",
+      "fullName": "Vermont",
+      "primaryCity": "Burlington",
+      "region": "New England",
+      "blurb": "Burlington, South Burlington, Montpelier, Rutland. Vermont es un mercado pequeño con un conjunto desproporcionado de herramientas de DPA. VHFA combina MOVE más ASSIST más First Generation en un único expediente, y el MOVE MCC añade un crédito fiscal federal sobre todo eso. Los cerramos."
+    },
+    "florida": {
+      "code": "FL",
+      "shortName": "FL",
+      "fullName": "Florida",
+      "primaryCity": "Tampa",
+      "region": "Florida",
+      "blurb": "Tampa, Miami, Orlando, Cape Coral, Naples, Jacksonville. Florida es el mercado de los snowbirds, el mercado de condominios y el mercado de los trabajadores esenciales. Hometown Heroes pone sobre la mesa hasta 35.000 dólares de DPA para enfermeras, maestros, bomberos, policías y personal de emergencias. La financiación de condominios no garantizables asusta a los prestamistas minoristas. A nosotros no nos asusta."
+    },
+    "colorado": {
+      "code": "CO",
+      "shortName": "CO",
+      "fullName": "Colorado",
+      "primaryCity": "Denver",
+      "region": "Mountain West",
+      "blurb": "Denver, Boulder, Aurora, Colorado Springs, el Front Range. CHFA-CO actualizó los límites de ingresos en enero de 2026 y el segundo préstamo perdonable metroDPA es uno de los programas de asistencia más superponibles del país. Combinamos CHFA Preferred con metroDPA en el mismo expediente, y conocemos al detalle el juego del jumbo en condados de alto costo en Boulder."
+    },
+    "texas": {
+      "code": "TX",
+      "shortName": "TX",
+      "fullName": "Texas",
+      "primaryCity": "Houston",
+      "region": "Texas",
+      "blurb": "Houston, Dallas, Austin, San Antonio, el Valle del Río Grande. Texas opera dos sistemas estatales de vivienda paralelos (TSAHC y TDHCA), cada uno con su propio DPA, MCC y programa para trabajadores esenciales. Los expedientes bilingües se cierran más rápido aquí que en cualquier otro lugar de nuestra cobertura, y hemos cerrado Homes for Texas Heroes para maestros, personal de emergencias, bomberos y policías."
+    }
+  },
+  "regions": {
+    "New England": "New England",
+    "Florida": "Florida",
+    "Mountain West": "Mountain West",
+    "Texas": "Texas"
+  },
+  "_compliance_flags": {
+    "DEMO_COPY_PENDING_CLIENT_REVIEW": "Todas las introducciones de los estados (campos blurb) son copia demo pendiente de revisión del cliente.",
+    "FIGURES_CURRENT_AS_OF_2026_Q1": "Todas las cifras de los programas (montos de DPA, porcentajes, niveles de ingresos para elegibilidad) están marcadas en la fuente. Verificar con los sitios web de las agencias antes de publicar.",
+    "COMPLIANCE_REVIEW_PENDING": "Toda la copia de programas requiere revisión de cumplimiento de LMP antes de publicar. La copia publicitaria específica de cada estado debe cumplir con las normas de publicidad hipotecaria de cada estado (MA, NH, ME, RI, CT, FL, CO, VT, TX).",
+    "FEATURED_LO_LICENSURE_UNCONFIRMED": "La licencia por estado de los oficiales de préstamos (featuredLOSlugs en la fuente) está sin confirmar pendiente de la verificación regulatoria de Mike Comerford. Mostrar únicamente los oficiales de préstamos confirmados con licencia en cada estado.",
+    "TRANSLATION_REVIEW_PENDING": "Traducción generada por IA. Requiere revisión nativa antes de publicar, especialmente nombres de programas y terminología hipotecaria estadounidense (DPA, MCC, HFA, jumbo, condominio no garantizable, segundo préstamo perdonable).",
+    "STATE_NAMES_UNTRANSLATED": "Los nombres oficiales de los estados se conservan en inglés porque así aparecen en documentos legales, hipotecarios y de bienes raíces dentro de Estados Unidos.",
+    "QUANTIFIABLE_CLAIMS": [
+      "MA: MassHousing hasta 30.000 dólares de DPA (verificar con la agencia)",
+      "NH: NHHFA Home Flex Plus hasta el 4 por ciento perdonable (verificar)",
+      "ME: Advantage subvención de 5.000 dólares más First Generation 5.000 dólares (verificar)",
+      "RI: 15kDPA 15.000 dólares, Extra Assistance hasta 25.000 dólares, FirstGenHomeRI 25.000 dólares perdonables (verificar)",
+      "CT: Time To Own hasta 50.000 dólares perdonables, DAP hasta 25.000 dólares (verificar)",
+      "VT: ASSIST hasta 15.000 dólares, First Generation 15.000 dólares (verificar)",
+      "FL: Hometown Heroes hasta 35.000 dólares, Florida Assist hasta 10.000 dólares (verificar)",
+      "CO: FirstGeneration 25.000 dólares, HomeAccess hasta 25.000 dólares, metroDPA hasta el 6 por ciento perdonable (verificar)",
+      "TX: TSAHC Heroes hasta el 5 por ciento, Home Sweet Texas hasta el 5 por ciento, programas TDHCA hasta el 5 por ciento (verificar)"
+    ]
+  }
+}

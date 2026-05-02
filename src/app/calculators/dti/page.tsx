@@ -20,58 +20,51 @@ import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 import FadeUp from '@/components/animations/FadeUp';
 import PhotoBackground from '@/components/PhotoBackground';
+import { useTranslation } from '@/hooks/useTranslation';
 
 type Status = 'pass' | 'tight' | 'comp' | 'special';
+type ProgramKey = 'fha' | 'conventional' | 'va' | 'usda';
 
 interface ProgramThreshold {
   emoji: string;
-  name: string;
-  description: string;
+  /** Translation key under dti.programs.<key> for name/description/note */
+  key: ProgramKey;
   // null = no traditional DTI test (VA residual)
   frontEnd: number | null;
   backEnd: number | null;
   flexBackEnd: number | null;
-  note: string;
   isResidual?: boolean;
 }
 
 const PROGRAMS: ProgramThreshold[] = [
   {
     emoji: '🔑',
-    name: 'FHA',
-    description: 'Front 31% / Back 43% (50% with comp factors)',
+    key: 'fha',
     frontEnd: 31,
     backEnd: 43,
     flexBackEnd: 50,
-    note: 'Most flexible thresholds. Compensating factors include reserves, residual income, and credit depth.',
   },
   {
     emoji: '🏠',
-    name: 'Conventional',
-    description: 'Front 28% / Back 36% (up to 50% extended)',
+    key: 'conventional',
     frontEnd: 28,
     backEnd: 36,
     flexBackEnd: 50,
-    note: 'Tightest at the standard threshold; many lenders extend to 45-50% with strong files.',
   },
   {
     emoji: '🇺🇸',
-    name: 'VA',
-    description: 'Residual income method (not traditional DTI)',
+    key: 'va',
     frontEnd: null,
     backEnd: null,
     flexBackEnd: null,
-    note: 'VA evaluates residual income (cash left after debts and taxes) by family size and region, not a back-end DTI ceiling.',
     isResidual: true,
   },
   {
     emoji: '🌾',
-    name: 'USDA',
-    description: 'Front 29% / Back 41%',
+    key: 'usda',
     frontEnd: 29,
     backEnd: 41,
     flexBackEnd: 44,
-    note: 'Property must be in USDA-eligible geography. Income limits apply by county.',
   },
 ];
 
@@ -83,28 +76,30 @@ function formatPctValue(n: number): string {
   return `${n.toFixed(1)}%`;
 }
 
+type BadgeKey = 'pass' | 'tight' | 'compNeeded' | 'residual' | 'specialProgram';
+
 function evaluateProgram(
   program: ProgramThreshold,
   frontDti: number,
   backDti: number
-): { status: Status; label: string } {
+): { status: Status; badgeKey: BadgeKey } {
   if (program.isResidual) {
-    return { status: 'special', label: 'Residual income test' };
+    return { status: 'special', badgeKey: 'residual' };
   }
   if (program.frontEnd === null || program.backEnd === null) {
-    return { status: 'special', label: 'Special program' };
+    return { status: 'special', badgeKey: 'specialProgram' };
   }
   const frontPass = frontDti <= program.frontEnd;
   const backPass = backDti <= program.backEnd;
   if (frontPass && backPass) {
-    return { status: 'pass', label: 'Pass' };
+    return { status: 'pass', badgeKey: 'pass' };
   }
   const flexPass =
     program.flexBackEnd !== null && backDti <= program.flexBackEnd;
   if (flexPass) {
-    return { status: 'comp', label: 'Comp factors needed' };
+    return { status: 'comp', badgeKey: 'compNeeded' };
   }
-  return { status: 'tight', label: 'Tight' };
+  return { status: 'tight', badgeKey: 'tight' };
 }
 
 interface SliderInputProps {
@@ -148,6 +143,7 @@ function StatusBadge({ status, label }: { status: Status; label: string }) {
 }
 
 export default function DtiCalculatorPage() {
+  const { t } = useTranslation('calculators');
   const [monthlyIncome, setMonthlyIncome] = useState(7000);
   const [monthlyDebts, setMonthlyDebts] = useState(500);
   const [mortgagePayment, setMortgagePayment] = useState(2500);
@@ -175,18 +171,16 @@ export default function DtiCalculatorPage() {
         />
         <div className="container-wide px-6 relative z-10">
           <FadeUp delay={0.1}>
-            <p className="text-eyebrow text-[var(--accent)]">Debt-to-Income</p>
+            <p className="text-eyebrow text-[var(--accent)]">{t('dti.eyebrow')}</p>
           </FadeUp>
           <FadeUp delay={0.2}>
             <h1 className="hero-shimmer font-display text-h1 mt-3 max-w-3xl">
-              Will my DTI clear underwriting?
+              {t('dti.headline')}
             </h1>
           </FadeUp>
           <FadeUp delay={0.3}>
             <p className="text-body text-[var(--text-secondary)] mt-6 max-w-2xl">
-              Front-end and back-end debt-to-income ratios, scored against the
-              guidelines four major programs actually use. The badges show where you
-              stand at a glance.
+              {t('dti.subheadline')}
             </p>
           </FadeUp>
         </div>
@@ -197,14 +191,14 @@ export default function DtiCalculatorPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <Card variant="light" hover={false} className="h-full">
               <h2 className="font-display text-h3 text-[var(--text-on-light)] mb-2">
-                Your numbers
+                {t('shared.yourNumbers')}
               </h2>
               <p className="text-body-sm text-[var(--text-on-light-secondary)] mb-8">
-                Slide to adjust. Ratios update live.
+                {t('shared.slideToAdjustRatios')}
               </p>
               <div className="flex flex-col gap-6">
                 <SliderInput
-                  label="Gross monthly income"
+                  label={t('dti.inputs.grossMonthlyIncome')}
                   min={2000}
                   max={30000}
                   step={100}
@@ -213,7 +207,7 @@ export default function DtiCalculatorPage() {
                   format={formatUSD}
                 />
                 <SliderInput
-                  label="Current monthly debts (car, student, credit cards, etc.)"
+                  label={t('dti.inputs.monthlyDebts')}
                   min={0}
                   max={8000}
                   step={50}
@@ -222,7 +216,7 @@ export default function DtiCalculatorPage() {
                   format={formatUSD}
                 />
                 <SliderInput
-                  label="Target mortgage payment (PITI)"
+                  label={t('dti.inputs.mortgagePayment')}
                   min={0}
                   max={10000}
                   step={50}
@@ -238,13 +232,13 @@ export default function DtiCalculatorPage() {
                   style={{ backgroundColor: 'rgba(14,27,51,0.04)' }}
                 >
                   <p className="text-eyebrow text-[var(--text-on-light-secondary)]">
-                    Front-end DTI
+                    {t('dti.results.frontEnd')}
                   </p>
                   <p className="font-display text-h2 text-[var(--text-on-light)] mt-2">
                     {formatPctValue(result.frontDti)}
                   </p>
                   <p className="text-micro text-[var(--text-on-light-muted)] mt-1">
-                    Mortgage / income
+                    {t('dti.results.frontEndFormula')}
                   </p>
                 </div>
                 <div
@@ -255,12 +249,14 @@ export default function DtiCalculatorPage() {
                     border: '1.5px solid var(--accent-muted)',
                   }}
                 >
-                  <p className="text-eyebrow text-[var(--accent-deep)]">Back-end DTI</p>
+                  <p className="text-eyebrow text-[var(--accent-deep)]">
+                    {t('dti.results.backEnd')}
+                  </p>
                   <p className="font-display text-h2 text-[var(--text-on-light)] mt-2">
                     {formatPctValue(result.backDti)}
                   </p>
                   <p className="text-micro text-[var(--text-on-light-muted)] mt-1">
-                    (Mortgage + debts) / income
+                    {t('dti.results.backEndFormula')}
                   </p>
                 </div>
               </div>
@@ -268,22 +264,22 @@ export default function DtiCalculatorPage() {
 
             <Card variant="light" hover={false} className="h-full">
               <h2 className="font-display text-h3 text-[var(--text-on-light)] mb-2">
-                By program
+                {t('dti.results.byProgramTitle')}
               </h2>
               <p className="text-body-sm text-[var(--text-on-light-secondary)] mb-8">
-                Pass / tight / comp factors needed at a glance.
+                {t('dti.results.byProgramSubtitle')}
               </p>
 
               <div className="flex flex-col gap-4">
                 {PROGRAMS.map((program) => {
-                  const { status, label } = evaluateProgram(
+                  const { status, badgeKey } = evaluateProgram(
                     program,
                     result.frontDti,
                     result.backDti
                   );
                   return (
                     <div
-                      key={program.name}
+                      key={program.key}
                       className="rounded-[var(--radius-md)] p-4 border border-[rgba(14,27,51,0.10)]"
                     >
                       <div className="flex items-start justify-between gap-3">
@@ -293,17 +289,20 @@ export default function DtiCalculatorPage() {
                               {program.emoji}
                             </span>
                             <h3 className="font-display text-h4 text-[var(--text-on-light)]">
-                              {program.name}
+                              {t(`dti.programs.${program.key}.name`)}
                             </h3>
                           </div>
                           <p className="text-micro text-[var(--text-on-light-muted)] mt-1">
-                            {program.description}
+                            {t(`dti.programs.${program.key}.description`)}
                           </p>
                         </div>
-                        <StatusBadge status={status} label={label} />
+                        <StatusBadge
+                          status={status}
+                          label={t(`dti.badges.${badgeKey}`)}
+                        />
                       </div>
                       <p className="text-body-sm text-[var(--text-on-light-secondary)] mt-3">
-                        {program.note}
+                        {t(`dti.programs.${program.key}.note`)}
                       </p>
                     </div>
                   );
@@ -311,28 +310,26 @@ export default function DtiCalculatorPage() {
               </div>
 
               <p className="font-mono text-micro text-[var(--text-on-light-muted)] mt-6">
-                Compensating factors include cash reserves, residual income, longer
-                employment history, and stronger credit. A loan officer can map yours.
+                {t('dti.results.compFactorsNote')}
               </p>
             </Card>
           </div>
         </div>
       </section>
 
+      {/* [COMPLIANCE-REVIEW-PENDING] disclaimer copy below per CLAUDE.md
+          Compliance Rule. JSON dictionary is source; ES needs LMP review. */}
       <section className="section-light-gradient pb-16">
         <div className="container-base px-6">
           <div className="rounded-[var(--radius-md)] p-6 border border-[rgba(14,27,51,0.10)] bg-[var(--bg-card)]">
             <p className="font-mono text-eyebrow text-[var(--accent-deep)] mb-3">
-              [NOT-A-COMMITMENT]
+              {t('shared.notACommitment')}
             </p>
             <p className="text-body-sm text-[var(--text-on-light-secondary)]">
-              These numbers are estimates. DTI thresholds vary by lender, program
-              version, and AUS findings. Compensating factors and residual income
-              calculations are evaluated by underwriting on a per-file basis. Talk to a
-              loan officer for a real read on your file.
+              {t('dti.disclaimerBody')}
             </p>
             <p className="font-mono text-micro text-[var(--text-on-light-muted)] mt-4">
-              [COMPLIANCE-REVIEW-PENDING]
+              {t('shared.complianceReviewPending')}
             </p>
           </div>
         </div>
@@ -350,19 +347,18 @@ export default function DtiCalculatorPage() {
         <div className="container-base px-6 text-center relative z-10">
           <FadeUp>
             <h2 className="font-display text-h2 text-[var(--text-primary)] max-w-2xl mx-auto">
-              Want a real number?
+              {t('shared.wantRealNumber')}
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="text-body text-[var(--text-secondary)] mt-6 max-w-xl mx-auto">
-              A loan officer can run your full file through wholesale AUS, factor in
-              compensating factors, and tell you exactly which programs clear.
+              {t('dti.ctaBody')}
             </p>
           </FadeUp>
           <FadeUp delay={0.2}>
             <div className="mt-8">
               <Button href="/booking" size="lg">
-                Get Pre-Approved
+                {t('shared.getPreApproved')}
               </Button>
             </div>
           </FadeUp>

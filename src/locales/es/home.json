@@ -1,1 +1,168 @@
-{}
+{
+  "_meta": { "status": "ai-demo-pending-review", "reviewer": null, "reviewed_at": null },
+  "_compliance_flags": [
+    "claim:14-day-close (stats.items[0])",
+    "claim:4.9-rating (stats.items[1])",
+    "claim:9-states-licensed (stats.items[2], hero.subheadline, hero.eyebrowTemplate, hero.trustStrip, preApprovalCTA.bodyTemplate)",
+    "claim:22-loan-officers (stats.items[3], hero.subheadline, hero.eyebrowTemplate, hero.trustStrip, hero.founderStrip.body, meetTheTeam.headline, preApprovalCTA.bodyTemplate)",
+    "claim:30-plus-wholesale-lenders (hero.subheadline, hero.founderStrip.body)",
+    "claim:10662-average-savings (stats.items[4])"
+  ],
+  "hero": {
+    "eyebrowTemplate": "NMLS #{nmls} · {stateCount} estados · {loCount} oficiales de préstamos",
+    "tagline": "Instálese en su casa, no en una tasa de la que se va a arrepentir.",
+    "subheadline": "Somos un broker hipotecario independiente con sede en Lowell, Massachusetts. Veintidós oficiales de préstamos, nueve estados con licencia, más de treinta prestamistas mayoristas que cotizan cada expediente que tocamos. Una sola solicitud, un solo equipo, un solo cierre.",
+    "ctaPrimary": { "label": "Obtenga su pre-aprobación", "href": "/booking" },
+    "ctaSecondary": { "label": "Haga el cuestionario", "href": "/quiz" },
+    "trustStrip": [
+      "NMLS #2754084",
+      "9 estados con licencia",
+      "22 oficiales de préstamos",
+      "Lowell, MA",
+      "EN · PT · ES"
+    ],
+    "founderStrip": {
+      "eyebrow": "De Mike Comerford, Presidente",
+      "body": "Fundamos LMP en Lowell porque los prestatarios a los que queríamos servir eran nuestros vecinos. Hoy somos 22 oficiales de préstamos en 9 estados, cotizando con más de 30 prestamistas mayoristas en cada expediente. Contestamos llamadas los sábados. Vamos en persona a los cierres. Apretón de manos de Lowell, ejecución estilo Stripe.",
+      "linkLabel": "Conozca al equipo →"
+    }
+  },
+  "painPoints": {
+    "eyebrow": "Dolores comunes",
+    "headline": "Hemos escuchado todas las versiones de esta historia.",
+    "items": [
+      {
+        "emoji": "🔍",
+        "title": "Cotizar con varios bancos por su cuenta",
+        "body": "Tres bancos, tres respuestas, cero claridad. Enviamos una sola solicitud a más de treinta prestamistas mayoristas y le traemos la mejor combinación, para que compare manzanas con manzanas."
+      },
+      {
+        "emoji": "💰",
+        "title": "Tasas confusas y cargos ocultos",
+        "body": "Tasas gancho, puntos, créditos del prestamista, cargos basura. Repasamos el loan estimate línea por línea, para que sepa exactamente qué está pagando y qué no."
+      },
+      {
+        "emoji": "⏳",
+        "title": "Aprobaciones lentas que matan los acuerdos",
+        "body": "La mayoría de los prestamistas minoristas trabajan con su propio reloj. Las casas mayoristas contestan el teléfono. Nuestro equipo resuelve las condiciones el mismo día en que llegan, así la fecha de cierre se mantiene firme."
+      },
+      {
+        "emoji": "❓",
+        "title": "Inseguridad sobre si lo van a aprobar",
+        "body": "La pre-aprobación debe ser un sí, o un camino claro hacia el sí. Le decimos dónde está parado desde el primer día y armamos el expediente que lo lleva al otro lado. Sin tibiezas."
+      },
+      {
+        "emoji": "🗣️",
+        "title": "Barreras de idioma en una decisión de vida",
+        "body": "En nuestro equipo trabajamos en inglés, portugués y español. La decisión financiera más grande de su vida nunca se debe perder en la traducción, y su familia debe poder seguir cada paso."
+      },
+      {
+        "emoji": "📈",
+        "title": "Ingreso por cuenta propia que confunde a los prestamistas",
+        "body": "1099, K-1, estados de cuenta bancarios, DSCR, ingreso por renta. Trabajamos con inversionistas mayoristas que de verdad analizan ingresos no-W-2, en lugar de marcar casillas y rechazar."
+      }
+    ]
+  },
+  "loanPrograms": {
+    "eyebrow": "Programas de préstamo",
+    "headline": "Nueve programas. 9 caminos a casa.",
+    "learnMore": "Más información →"
+  },
+  "stats": {
+    "eyebrow": "En cifras",
+    "headline": "Números específicos, con fuente.",
+    "items": [
+      { "emoji": "⚡", "value": "14 días", "label": "Tiempo promedio de cierre", "flag": "[SOURCING-REQUIRED]" },
+      { "emoji": "⭐", "value": "4.9/5", "label": "Calificación promedio", "flag": "[SOURCING-REQUIRED]" },
+      { "emoji": "🌎", "value": "9", "label": "Estados con licencia" },
+      { "emoji": "👥", "value": "22", "label": "Oficiales de préstamos" },
+      { "emoji": "💰", "value": "$10,662", "label": "Ahorro promedio de por vida vs. minorista (Polygon Research / UWM, HMDA 2023)", "flag": "[COMPLIANCE-REVIEW-PENDING]" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "En sus palabras",
+    "headline": "Prestatarios reales, cierres reales.",
+    "seeAllTemplate": "Vea los {count} testimonios"
+  },
+  "quizCTA": {
+    "eyebrow": "¿No sabe por dónde empezar?",
+    "headline": "Tres minutos. Cinco preguntas. El oficial de préstamos correcto.",
+    "body": "Cuéntenos un poco sobre su situación. Le emparejamos con el programa adecuado y con el LO indicado.",
+    "ctaLabel": "Haga el cuestionario"
+  },
+  "meetTheTeam": {
+    "eyebrow": "Conozca al equipo",
+    "headline": "22 oficiales de préstamos, una sola sede en Lowell.",
+    "ctaLabelTemplate": "Conozca a los {count} oficiales"
+  },
+  "blogPreview": {
+    "eyebrow": "Sala de lectura",
+    "headline": "Programas estatales, explicados.",
+    "stubFlag": "[STUB, Phase 1F: Sanity wiring]",
+    "articles": [
+      {
+        "title": "FHA vs. Convencional en NH",
+        "excerpt": "Cuándo conviene 3.5% de enganche con score 580 antes que 5% con 620.",
+        "category": "Programas de préstamo"
+      },
+      {
+        "title": "MassHousing: $30K de asistencia para el enganche",
+        "excerpt": "Niveles de ingreso, elegibilidad y cómo se combina con FHA.",
+        "category": "Programas estatales"
+      },
+      {
+        "title": "Mayorista vs. Minorista: por qué importa",
+        "excerpt": "Qué significa que cotizamos con más de 30 prestamistas mayoristas para usted.",
+        "category": "Cómo trabajamos"
+      }
+    ]
+  },
+  "preApprovalCTA": {
+    "headline": "Obtenga su pre-aprobación.",
+    "bodyTemplate": "Una sola solicitud. {loCount} oficiales de préstamos. {stateCount} estados.",
+    "ctaPrimary": { "label": "Obtenga su pre-aprobación", "href": "/booking" },
+    "ctaSecondary": { "label": "Haga el cuestionario", "href": "/quiz" }
+  },
+  "processSteps": {
+    "eyebrow": "Cómo funciona",
+    "headline": "Seis pasos, de la primera llamada a las llaves.",
+    "items": [
+      {
+        "number": "1️⃣",
+        "emoji": "🤝",
+        "title": "Llamada inicial",
+        "body": "Una conversación de 15 minutos con el LO que se ajuste a su estado, su idioma y su situación. Primero escuchamos, después preguntamos, al final recomendamos programas."
+      },
+      {
+        "number": "2️⃣",
+        "emoji": "📋",
+        "title": "Documentos",
+        "body": "Ingresos, activos, identificación. Le mandamos un checklist limpio, usted carga los archivos de forma segura, nosotros nos encargamos del resto. La mayoría de los expedientes quedan completos en 2 o 3 días."
+      },
+      {
+        "number": "3️⃣",
+        "emoji": "🔍",
+        "title": "Cotización con prestamistas",
+        "body": "Enviamos su expediente a varios prestamistas mayoristas y le traemos la mejor combinación de tasa, cargos y programa. La misma semana, siempre."
+      },
+      {
+        "number": "4️⃣",
+        "emoji": "📝",
+        "title": "Solicitud",
+        "body": "Con la carta de pre-aprobación en mano, usted hace la oferta. Cuando la oferta gana, pasamos directo a la solicitud completa con el prestamista elegido. Sin reiniciar nada, sin volver a teclear."
+      },
+      {
+        "number": "5️⃣",
+        "emoji": "🏠",
+        "title": "Underwriting",
+        "body": "Empujamos el expediente, resolvemos condiciones el mismo día, y mantenemos a usted y a su agente al tanto con actualizaciones escritas cada semana. Sin silencios largos."
+      },
+      {
+        "number": "6️⃣",
+        "emoji": "🎉",
+        "title": "Cierre",
+        "body": "Números finales, closing disclosure, día de la firma. Usted recibe las llaves. Mandamos un regalo de cierre, y seguimos aquí para el refinanciamiento, la próxima casa, la primera casa de sus hijos."
+      }
+    ]
+  }
+}

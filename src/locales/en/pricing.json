@@ -1,1 +1,150 @@
-{}
+{
+  "page": {
+    "metaTitle": "⬥ Pricing — Internal Sales Tool",
+    "metaDescription": "Optimus website tier pricing. Internal sales tool — deleted before launch.",
+    "eyebrow": "⬥ Pricing",
+    "headline": "Three tiers. One website that closes deals.",
+    "subheadline": "Every site we build ships with the same luxury foundation. Tiers add features that compound conversion. Most clients pick Pro."
+  },
+  "tiers": {
+    "popularBadge": "⭐ Most Popular",
+    "starter": {
+      "name": "Starter",
+      "tagline": "Premium foundation. Core pages. Animated hero.",
+      "features": [
+        "Custom luxury homepage with animated hero",
+        "About page with founder story",
+        "Loan programs page (or services for non-mortgage clients)",
+        "Contact page with form routing",
+        "FAQ page",
+        "Custom domain + Vercel deployment",
+        "Mobile-responsive across all breakpoints",
+        "Performance optimized (90+ Lighthouse)",
+        "Automated Booking Calendar",
+        "Lead-Capture Quiz",
+        "Professional Blog",
+        "Photo Gallery",
+        "Testimonials Showcase",
+        "Branded Merch Shop"
+      ]
+    },
+    "pro": {
+      "name": "Pro",
+      "tagline": "Everything most clients actually need to convert.",
+      "features": [
+        "Everything in Starter",
+        "Automated Booking Calendar (custom-branded, no third-party iframe)",
+        "Lead-Capture Quiz (scored funnel, archetype results)",
+        "Professional Blog (article architecture, SEO-ready, AEO-optimized)",
+        "Photo Gallery (12-16 images, fully branded)",
+        "Testimonials Showcase (full review page, paginated)",
+        "Branded Merch Shop",
+        "Premium tier features"
+      ]
+    },
+    "premium": {
+      "name": "Premium",
+      "tagline": "White-glove launch with commerce + priority support.",
+      "features": [
+        "Everything in Pro",
+        "Branded Merch Shop (Stripe + Printful integration, custom-branded)",
+        "Priority support and revisions",
+        "White-glove launch package",
+        "Multi-language support architecture (when applicable)"
+      ]
+    },
+    "ctaButton": "Get Started",
+    "includedAria": "Included",
+    "notIncludedAria": "Not included"
+  },
+  "roi": {
+    "eyebrow": "ROI Calculator",
+    "headline": "What's the ROI?",
+    "body": "Slide to your numbers. The right tier pays for itself in days, not quarters.",
+    "labels": {
+      "avgCommission": "Average commission per loan",
+      "loansPerMonth": "Loans per month",
+      "tier": "Tier",
+      "tierPriceTemplate": "Selected tier price: ${price}"
+    },
+    "tierAriaLabel": "Pricing tier",
+    "outputs": {
+      "eyebrow": "Your numbers",
+      "subtitle": "Live updates as you slide.",
+      "monthlyRevenue": "Monthly revenue",
+      "monthlyRevenueSub": "From your loan pipeline alone.",
+      "breakEven": "Break-even",
+      "breakEvenSubTemplate": "To pay off {tierName}.",
+      "breakEvenDays": "days",
+      "twelveMonthRoi": "12-month ROI",
+      "twelveMonthRoiSub": "Net return on the build over a year."
+    },
+    "lockInTemplate": "Lock in {tierName}"
+  },
+  "comparison": {
+    "eyebrow": "Side by side",
+    "headline": "Every feature, every tier.",
+    "body": "Pro is most clients' sweet spot — every conversion feature, none of the commerce overhead.",
+    "headers": {
+      "feature": "Feature",
+      "starter": "Starter",
+      "pro": "Pro ⭐",
+      "premium": "Premium"
+    },
+    "categories": {
+      "foundation": {
+        "name": "Foundation",
+        "rows": [
+          "Custom luxury homepage with animated hero",
+          "About / founder story",
+          "Services / loan programs page",
+          "Contact + FAQ pages",
+          "Custom domain + Vercel deploy",
+          "Mobile-responsive design",
+          "Performance optimization"
+        ]
+      },
+      "conversion": {
+        "name": "Conversion",
+        "rows": [
+          "Automated Booking Calendar",
+          "Lead-Capture Quiz"
+        ]
+      },
+      "contentSeo": {
+        "name": "Content & SEO",
+        "rows": [
+          "Professional Blog",
+          "Photo Gallery",
+          "Testimonials Showcase",
+          "AEO-optimized content architecture"
+        ]
+      },
+      "commerce": {
+        "name": "Commerce",
+        "rows": [
+          "Branded Merch Shop (Stripe + Printful)"
+        ]
+      },
+      "support": {
+        "name": "Support",
+        "rows": [
+          "Standard support",
+          "Priority revisions",
+          "White-glove launch package"
+        ]
+      }
+    }
+  },
+  "finalCta": {
+    "eyebrow": "Next step",
+    "headline": "Ready to start?",
+    "body": "Pick a tier on the call. Walk away with a build date and a launch plan.",
+    "primary": "Schedule a Consultation"
+  },
+  "modal": {
+    "ariaLabel": "Schedule a consultation",
+    "closeBackdropAria": "Close booking dialog",
+    "closeAria": "Close"
+  }
+}

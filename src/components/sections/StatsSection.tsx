@@ -10,19 +10,20 @@
  * Parse rules:
  *   "9"        → CountUp end={9}
  *   "22"       → CountUp end={22}
- *   "$10,662"  → CountUp end={10662} prefix="$" — formatted with thousands sep
- *                via wrapper since CountUp uses toFixed() (no commas).
- *                Approach: render literal "$10,662" + still animate → use literal
- *                because CountUp would show "10662" without grouping. Trade-off:
- *                animation vs. correct number format. We prioritize format.
+ *   "$10,662"  → literal (CountUp would lose the comma).
  *   "14 days"  → CountUp end={14} suffix=" days"
  *   "4.9/5"    → literal text
+ *
+ * Phase i18n — eyebrow / headline / per-stat label/flag pulled from
+ * `home` namespace. Stat numeric value strings come from the translated
+ * array as well so suffix words like "days" / "días" localize correctly.
  */
 
 import type { Stat } from '@/data/site';
 import { siteConfig } from '@/data/site';
 import FadeUp from '@/components/animations/FadeUp';
 import CountUp from '@/components/animations/CountUp';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface ParsedStat {
   mode: 'countup' | 'literal';
@@ -71,15 +72,16 @@ function StatValue({ stat }: { stat: Stat }) {
 }
 
 export default function StatsSection() {
-  const { stats } = siteConfig;
+  const { t, ta } = useTranslation('home');
+  const stats = ta<Stat[]>('stats.items') ?? siteConfig.stats;
 
   return (
     <section className="section-light-gradient section-pad-base">
       <div className="container-base px-6">
         <FadeUp>
-          <p className="text-eyebrow text-[var(--accent-deep)]">By the Numbers</p>
+          <p className="text-eyebrow text-[var(--accent-deep)]">{t('stats.eyebrow')}</p>
           <h2 className="font-display text-h2 text-[var(--text-on-light)] mt-3 max-w-3xl">
-            Specific numbers, sourced.
+            {t('stats.headline')}
           </h2>
         </FadeUp>
 

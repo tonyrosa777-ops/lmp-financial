@@ -1,1 +1,237 @@
-{}
+{
+  "indexPage": {
+    "eyebrow": "Calculators",
+    "headline": "Run the numbers.",
+    "subheadline": "Five calculators, native to lmpfinancial.com, fast on mobile, and grounded in the same wholesale-lender math we use every day. Estimates today, real numbers from a loan officer when you are ready.",
+    "pickATool": {
+      "eyebrow": "Pick a Tool",
+      "headline": "Five calculators. One source of truth.",
+      "body": "Each calculator runs the same amortization, DTI, and threshold math your lender will run. The output is an estimate. The conversation that follows is where the real number gets built."
+    },
+    "cards": {
+      "affordability": {
+        "name": "Affordability",
+        "description": "How much home can I afford? Income, debts, and DTI math."
+      },
+      "monthlyPayment": {
+        "name": "Monthly Payment",
+        "description": "Principal + interest + tax + insurance + PMI breakdown."
+      },
+      "refinance": {
+        "name": "Refinance",
+        "description": "Current loan vs new loan. Breakeven months. Lifetime savings."
+      },
+      "downPayment": {
+        "name": "Down Payment",
+        "description": "FHA, VA, USDA, Conventional thresholds side-by-side."
+      },
+      "dti": {
+        "name": "DTI",
+        "description": "Front-end and back-end debt-to-income, with lender thresholds."
+      }
+    },
+    "useCalculatorCta": "Use calculator →",
+    "talkToReal": {
+      "eyebrow": "Talk To A Real Person",
+      "headline": "The calculator is the start. The loan officer is the answer.",
+      "body": "Calculators are estimates, not commitments. Real rates, real terms, and a real approval start with a 15-minute call. Pick a time that works.",
+      "primary": "Get Pre-Approved",
+      "secondary": "Meet the Team",
+      "disclaimer": "[NOT-A-COMMITMENT] Calculators output estimates only. Actual rates, terms, and approval determined at application. [COMPLIANCE-REVIEW-PENDING]"
+    }
+  },
+  "shared": {
+    "yourNumbers": "Your numbers",
+    "slideToAdjust": "Slide to adjust. Estimates update live.",
+    "slideToAdjustRatios": "Slide to adjust. Ratios update live.",
+    "wantRealNumber": "Want a real number?",
+    "getPreApproved": "Get Pre-Approved",
+    "notACommitment": "[NOT-A-COMMITMENT]",
+    "complianceReviewPending": "[COMPLIANCE-REVIEW-PENDING]",
+    "headsUp": "Heads up"
+  },
+  "affordability": {
+    "eyebrow": "Affordability Calculator",
+    "headline": "How much home can I afford?",
+    "subheadline": "Enter your income, monthly debts, and target DTI. We will run the same amortization math your lender will. The number you see is the ceiling, not the recommendation.",
+    "inputs": {
+      "annualIncome": "Annual income",
+      "monthlyDebts": "Monthly debts (car, student loans, credit cards)",
+      "downPayment": "Down payment available",
+      "interestRate": "Interest rate",
+      "loanTerm": "Loan term",
+      "targetDti": "Target back-end DTI",
+      "yrs": "yrs"
+    },
+    "results": {
+      "title": "What it means",
+      "subtitle": "Estimate based on the inputs you entered.",
+      "debtsTooHigh": "Your current debts exceed the target DTI threshold. Reduce monthly debts or increase income to get an estimate. A loan officer can also walk through compensating factors.",
+      "maxPayment": "Max monthly housing payment",
+      "maxPaymentSub": "Income times target DTI, minus current debts.",
+      "maxLoan": "Max loan amount",
+      "maxLoanSubTemplate": "Loan supported by that payment at {rate} for {term} years.",
+      "maxHomePrice": "Max home price",
+      "maxHomePriceSubTemplate": "Loan amount plus your down payment of {downPayment}."
+    },
+    "disclaimerBody": "These numbers are estimates. Actual rates, terms, and approval depend on your full file: credit, income documentation, assets, property, and program guidelines. Talk to a loan officer for a real quote.",
+    "ctaBody": "Fifteen minutes with a loan officer turns the estimate into a pre-approval letter you can hand a realtor."
+  },
+  "dti": {
+    "eyebrow": "Debt-to-Income",
+    "headline": "Will my DTI clear underwriting?",
+    "subheadline": "Front-end and back-end debt-to-income ratios, scored against the guidelines four major programs actually use. The badges show where you stand at a glance.",
+    "inputs": {
+      "grossMonthlyIncome": "Gross monthly income",
+      "monthlyDebts": "Current monthly debts (car, student, credit cards, etc.)",
+      "mortgagePayment": "Target mortgage payment (PITI)"
+    },
+    "results": {
+      "frontEnd": "Front-end DTI",
+      "frontEndFormula": "Mortgage / income",
+      "backEnd": "Back-end DTI",
+      "backEndFormula": "(Mortgage + debts) / income",
+      "byProgramTitle": "By program",
+      "byProgramSubtitle": "Pass / tight / comp factors needed at a glance.",
+      "compFactorsNote": "Compensating factors include cash reserves, residual income, longer employment history, and stronger credit. A loan officer can map yours."
+    },
+    "badges": {
+      "pass": "Pass",
+      "tight": "Tight",
+      "compNeeded": "Comp factors needed",
+      "residual": "Residual income test",
+      "specialProgram": "Special program"
+    },
+    "programs": {
+      "fha": {
+        "name": "FHA",
+        "description": "Front 31% / Back 43% (50% with comp factors)",
+        "note": "Most flexible thresholds. Compensating factors include reserves, residual income, and credit depth."
+      },
+      "conventional": {
+        "name": "Conventional",
+        "description": "Front 28% / Back 36% (up to 50% extended)",
+        "note": "Tightest at the standard threshold; many lenders extend to 45-50% with strong files."
+      },
+      "va": {
+        "name": "VA",
+        "description": "Residual income method (not traditional DTI)",
+        "note": "VA evaluates residual income (cash left after debts and taxes) by family size and region, not a back-end DTI ceiling."
+      },
+      "usda": {
+        "name": "USDA",
+        "description": "Front 29% / Back 41%",
+        "note": "Property must be in USDA-eligible geography. Income limits apply by county."
+      }
+    },
+    "disclaimerBody": "These numbers are estimates. DTI thresholds vary by lender, program version, and AUS findings. Compensating factors and residual income calculations are evaluated by underwriting on a per-file basis. Talk to a loan officer for a real read on your file.",
+    "ctaBody": "A loan officer can run your full file through wholesale AUS, factor in compensating factors, and tell you exactly which programs clear."
+  },
+  "monthlyPayment": {
+    "eyebrow": "Monthly Payment",
+    "headline": "What will my payment be?",
+    "subheadline": "Principal plus interest plus tax plus insurance plus PMI. The full picture, not just the part the rate-shopping calculators show.",
+    "inputs": {
+      "loanAmount": "Loan amount",
+      "interestRate": "Interest rate",
+      "loanTerm": "Loan term",
+      "annualTax": "Annual property tax",
+      "annualInsurance": "Annual home insurance",
+      "pmiRate": "PMI rate (annual % of loan, 0 if 20%+ down)"
+    },
+    "yourLoan": "Your loan",
+    "results": {
+      "title": "Your payment",
+      "subtitle": "The full PITI breakdown.",
+      "totalMonthly": "Total monthly payment",
+      "totalMonthlySub": "Per month, all-in.",
+      "principalAndInterest": "Principal & interest",
+      "propertyTax": "Property tax",
+      "homeInsurance": "Home insurance",
+      "pmi": "PMI",
+      "lifetimeInterest": "Lifetime interest paid",
+      "lifetimeInterestSubTemplate": "Total interest across the full {term}-year term, before any extra principal payments."
+    },
+    "disclaimerBody": "These numbers are estimates. Actual rates, terms, and approval depend on your full file. Property tax, insurance, and PMI vary by property and program. Talk to a loan officer for a real quote.",
+    "ctaBody": "A loan officer can match this calculator to a real wholesale quote, with the actual fees, lender credits, and program-specific math."
+  },
+  "refinance": {
+    "eyebrow": "Refinance",
+    "headline": "Should I refinance?",
+    "subheadline": "Current loan vs new loan. Real break-even math, ten-year savings, and a clear answer when the numbers do not pencil.",
+    "inputs": {
+      "yourLoans": "Your loans",
+      "yourLoansSub": "Current loan on the left. New loan on the right.",
+      "currentLoan": "Current loan",
+      "newLoan": "New loan",
+      "currentBalance": "Current balance",
+      "currentRate": "Current rate",
+      "currentTermRemaining": "Current term remaining (years)",
+      "newRate": "New rate",
+      "newTerm": "New term",
+      "closingCosts": "Closing costs",
+      "rollClosingCosts": "Roll closing costs into the new loan"
+    },
+    "results": {
+      "title": "The math",
+      "subtitle": "Side by side, with the answer at the bottom.",
+      "current": "Current",
+      "new": "New",
+      "perMonthPi": "/mo P&I",
+      "noBenefit": "Refinancing at the rates you have entered would not lower your monthly payment. Consider whether you are optimizing for term length or cash-out instead. A loan officer can model alternatives.",
+      "monthlySavings": "Monthly savings",
+      "monthlySavingsSub": "Per month, every month, for the life of the new loan.",
+      "breakEven": "Break-even",
+      "breakEvenSub": "Closing costs recovered.",
+      "tenYearSavings": "10-year savings",
+      "tenYearSavingsSub": "Net of closing costs.",
+      "newLoanAmountTemplate": "New loan amount with closing costs rolled in: {amount}.",
+      "moSuffix": "mo"
+    },
+    "disclaimerBody": "These numbers are estimates. Actual rates, terms, and approval depend on your full file. Refinancing resets the amortization schedule, which can change lifetime interest paid even when monthly payment drops. Talk to a loan officer for the full picture.",
+    "ctaBody": "We will shop your refi to multiple wholesale lenders and bring back the numbers that actually clear closing."
+  },
+  "downPayment": {
+    "eyebrow": "Down Payment",
+    "headline": "How much do I need down?",
+    "subheadline": "Six programs, side by side. The number depends on the program. The program depends on your file. Both depend on a real conversation.",
+    "inputs": {
+      "homePrice": "Home price",
+      "homePriceSub": "Drag the slider. Down payment thresholds and total cash to close update live for every program."
+    },
+    "results": {
+      "downPayment": "Down payment",
+      "totalCashToClose": "Total cash to close (est.)",
+      "totalCashSub": "Down payment + ~3% closing costs.",
+      "learnAboutTemplate": "Learn about {programName} →"
+    },
+    "programs": {
+      "fha": {
+        "name": "FHA",
+        "note": "3.5% down. 580+ credit. Primary residence only."
+      },
+      "va": {
+        "name": "VA",
+        "note": "0% down. Eligible veterans, active duty, and qualifying spouses."
+      },
+      "usda": {
+        "name": "USDA",
+        "note": "0% down. Property must be in USDA-eligible geography. Income limits apply."
+      },
+      "conv5": {
+        "name": "Conventional 5%",
+        "note": "5% down. PMI required until 20% equity. Standard credit qualifying."
+      },
+      "conv20": {
+        "name": "Conventional 20%",
+        "note": "20% down. No PMI. The cleanest conventional path when reserves allow."
+      },
+      "jumbo": {
+        "name": "Jumbo (10%)",
+        "note": "Above $766,550 conforming limit. Stronger credit and reserve requirements."
+      }
+    },
+    "disclaimerBody": "These numbers are estimates. Closing costs vary by state, property, and program (often 2 to 5% of price). Down payment minimums shown are program floors; many borrowers benefit from putting more down to lower PMI or improve rate. Talk to a loan officer to model your specific scenario.",
+    "ctaBody": "State down-payment assistance programs (MassHousing, NHHFA, MaineHousing, CHFA, RIHousing, TSAHC, and more) can reduce these numbers further. We know which ones you qualify for."
+  }
+}

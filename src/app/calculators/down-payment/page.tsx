@@ -18,67 +18,28 @@ import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import FadeUp from '@/components/animations/FadeUp';
 import PhotoBackground from '@/components/PhotoBackground';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const CLOSING_COST_RATE = 0.03;
 
+type DownPaymentProgramKey = 'fha' | 'va' | 'usda' | 'conv5' | 'conv20' | 'jumbo';
+
 interface ProgramSpec {
   emoji: string;
-  name: string;
+  /** Translation key under downPayment.programs.<key> for name/note */
+  key: DownPaymentProgramKey;
   slug: string;
   rate: number; // 0..1
-  note: string;
   programLink: string;
 }
 
 const PROGRAMS: ProgramSpec[] = [
-  {
-    emoji: '🔑',
-    name: 'FHA',
-    slug: 'fha',
-    rate: 0.035,
-    note: '3.5% down. 580+ credit. Primary residence only.',
-    programLink: '/services/fha',
-  },
-  {
-    emoji: '🇺🇸',
-    name: 'VA',
-    slug: 'va',
-    rate: 0,
-    note: '0% down. Eligible veterans, active duty, and qualifying spouses.',
-    programLink: '/services/va',
-  },
-  {
-    emoji: '🌾',
-    name: 'USDA',
-    slug: 'usda',
-    rate: 0,
-    note: '0% down. Property must be in USDA-eligible geography. Income limits apply.',
-    programLink: '/services/usda',
-  },
-  {
-    emoji: '🏠',
-    name: 'Conventional 5%',
-    slug: 'fixed-rate',
-    rate: 0.05,
-    note: '5% down. PMI required until 20% equity. Standard credit qualifying.',
-    programLink: '/services/fixed-rate',
-  },
-  {
-    emoji: '🏛️',
-    name: 'Conventional 20%',
-    slug: 'fixed-rate-20',
-    rate: 0.2,
-    note: '20% down. No PMI. The cleanest conventional path when reserves allow.',
-    programLink: '/services/fixed-rate',
-  },
-  {
-    emoji: '💎',
-    name: 'Jumbo (10%)',
-    slug: 'jumbo',
-    rate: 0.1,
-    note: 'Above $766,550 conforming limit. Stronger credit and reserve requirements.',
-    programLink: '/services/jumbo',
-  },
+  { emoji: '🔑', key: 'fha', slug: 'fha', rate: 0.035, programLink: '/services/fha' },
+  { emoji: '🇺🇸', key: 'va', slug: 'va', rate: 0, programLink: '/services/va' },
+  { emoji: '🌾', key: 'usda', slug: 'usda', rate: 0, programLink: '/services/usda' },
+  { emoji: '🏠', key: 'conv5', slug: 'fixed-rate', rate: 0.05, programLink: '/services/fixed-rate' },
+  { emoji: '🏛️', key: 'conv20', slug: 'fixed-rate-20', rate: 0.2, programLink: '/services/fixed-rate' },
+  { emoji: '💎', key: 'jumbo', slug: 'jumbo', rate: 0.1, programLink: '/services/jumbo' },
 ];
 
 function formatUSD(n: number): string {
@@ -119,6 +80,7 @@ function SliderInput({ label, min, max, step, value, onChange, format }: SliderI
 }
 
 export default function DownPaymentCalculatorPage() {
+  const { t } = useTranslation('calculators');
   const [homePrice, setHomePrice] = useState(475000);
 
   const rows = useMemo(() => {
@@ -148,17 +110,16 @@ export default function DownPaymentCalculatorPage() {
         />
         <div className="container-wide px-6 relative z-10">
           <FadeUp delay={0.1}>
-            <p className="text-eyebrow text-[var(--accent)]">Down Payment</p>
+            <p className="text-eyebrow text-[var(--accent)]">{t('downPayment.eyebrow')}</p>
           </FadeUp>
           <FadeUp delay={0.2}>
             <h1 className="hero-shimmer font-display text-h1 mt-3 max-w-3xl">
-              How much do I need down?
+              {t('downPayment.headline')}
             </h1>
           </FadeUp>
           <FadeUp delay={0.3}>
             <p className="text-body text-[var(--text-secondary)] mt-6 max-w-2xl">
-              Six programs, side by side. The number depends on the program. The
-              program depends on your file. Both depend on a real conversation.
+              {t('downPayment.subheadline')}
             </p>
           </FadeUp>
         </div>
@@ -169,7 +130,7 @@ export default function DownPaymentCalculatorPage() {
           {/* Single full-width input row */}
           <Card variant="light" hover={false} className="mb-10">
             <SliderInput
-              label="Home price"
+              label={t('downPayment.inputs.homePrice')}
               min={100000}
               max={2500000}
               step={5000}
@@ -178,73 +139,77 @@ export default function DownPaymentCalculatorPage() {
               format={formatUSD}
             />
             <p className="text-micro text-[var(--text-on-light-muted)] mt-4">
-              Drag the slider. Down payment thresholds and total cash to close update
-              live for every program.
+              {t('downPayment.inputs.homePriceSub')}
             </p>
           </Card>
 
           {/* Program cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {rows.map((row, idx) => (
-              <FadeUp key={row.name} delay={0.05 + idx * 0.05}>
-                <Card variant="light" hover={false} className="h-full">
-                  <div className="text-4xl" aria-hidden="true">
-                    {row.emoji}
-                  </div>
-                  <h3 className="font-display text-h4 text-[var(--text-on-light)] mt-3">
-                    {row.name}
-                  </h3>
-                  <div className="mt-5 pb-5 border-b border-[rgba(14,27,51,0.10)]">
-                    <p className="text-eyebrow text-[var(--text-on-light-secondary)]">
-                      Down payment
+            {rows.map((row, idx) => {
+              const programName = t(`downPayment.programs.${row.key}.name`);
+              return (
+                <FadeUp key={row.key} delay={0.05 + idx * 0.05}>
+                  <Card variant="light" hover={false} className="h-full">
+                    <div className="text-4xl" aria-hidden="true">
+                      {row.emoji}
+                    </div>
+                    <h3 className="font-display text-h4 text-[var(--text-on-light)] mt-3">
+                      {programName}
+                    </h3>
+                    <div className="mt-5 pb-5 border-b border-[rgba(14,27,51,0.10)]">
+                      <p className="text-eyebrow text-[var(--text-on-light-secondary)]">
+                        {t('downPayment.results.downPayment')}
+                      </p>
+                      <p className="font-display text-h2 text-[var(--accent-deep)] mt-1">
+                        {formatUSD(row.downPayment)}
+                      </p>
+                    </div>
+                    <div className="mt-4">
+                      <p className="text-eyebrow text-[var(--text-on-light-secondary)]">
+                        {t('downPayment.results.totalCashToClose')}
+                      </p>
+                      <p className="font-display text-h4 text-[var(--text-on-light)] mt-1">
+                        {formatUSD(row.totalCash)}
+                      </p>
+                      <p className="text-micro text-[var(--text-on-light-muted)] mt-1">
+                        {t('downPayment.results.totalCashSub')}
+                      </p>
+                    </div>
+                    <p className="text-body-sm text-[var(--text-on-light-secondary)] mt-5">
+                      {t(`downPayment.programs.${row.key}.note`)}
                     </p>
-                    <p className="font-display text-h2 text-[var(--accent-deep)] mt-1">
-                      {formatUSD(row.downPayment)}
-                    </p>
-                  </div>
-                  <div className="mt-4">
-                    <p className="text-eyebrow text-[var(--text-on-light-secondary)]">
-                      Total cash to close (est.)
-                    </p>
-                    <p className="font-display text-h4 text-[var(--text-on-light)] mt-1">
-                      {formatUSD(row.totalCash)}
-                    </p>
-                    <p className="text-micro text-[var(--text-on-light-muted)] mt-1">
-                      Down payment + ~3% closing costs.
-                    </p>
-                  </div>
-                  <p className="text-body-sm text-[var(--text-on-light-secondary)] mt-5">
-                    {row.note}
-                  </p>
-                  {row.programLink && (
-                    <a
-                      href={row.programLink}
-                      className="inline-block mt-5 font-mono text-eyebrow text-[var(--accent-deep)] hover:underline"
-                    >
-                      Learn about {row.name} →
-                    </a>
-                  )}
-                </Card>
-              </FadeUp>
-            ))}
+                    {row.programLink && (
+                      <a
+                        href={row.programLink}
+                        className="inline-block mt-5 font-mono text-eyebrow text-[var(--accent-deep)] hover:underline"
+                      >
+                        {t('downPayment.results.learnAboutTemplate').replace(
+                          '{programName}',
+                          programName,
+                        )}
+                      </a>
+                    )}
+                  </Card>
+                </FadeUp>
+              );
+            })}
           </div>
         </div>
       </section>
 
+      {/* [COMPLIANCE-REVIEW-PENDING] disclaimer copy below per CLAUDE.md
+          Compliance Rule. JSON dictionary is source; ES needs LMP review. */}
       <section className="section-light-gradient pb-16">
         <div className="container-base px-6">
           <div className="rounded-[var(--radius-md)] p-6 border border-[rgba(14,27,51,0.10)] bg-[var(--bg-card)]">
             <p className="font-mono text-eyebrow text-[var(--accent-deep)] mb-3">
-              [NOT-A-COMMITMENT]
+              {t('shared.notACommitment')}
             </p>
             <p className="text-body-sm text-[var(--text-on-light-secondary)]">
-              These numbers are estimates. Closing costs vary by state, property, and
-              program (often 2 to 5% of price). Down payment minimums shown are program
-              floors; many borrowers benefit from putting more down to lower PMI or
-              improve rate. Talk to a loan officer to model your specific scenario.
+              {t('downPayment.disclaimerBody')}
             </p>
             <p className="font-mono text-micro text-[var(--text-on-light-muted)] mt-4">
-              [COMPLIANCE-REVIEW-PENDING]
+              {t('shared.complianceReviewPending')}
             </p>
           </div>
         </div>
@@ -262,20 +227,18 @@ export default function DownPaymentCalculatorPage() {
         <div className="container-base px-6 text-center relative z-10">
           <FadeUp>
             <h2 className="font-display text-h2 text-[var(--text-primary)] max-w-2xl mx-auto">
-              Want a real number?
+              {t('shared.wantRealNumber')}
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="text-body text-[var(--text-secondary)] mt-6 max-w-xl mx-auto">
-              State down-payment assistance programs (MassHousing, NHHFA, MaineHousing,
-              CHFA, RIHousing, TSAHC, and more) can reduce these numbers further. We
-              know which ones you qualify for.
+              {t('downPayment.ctaBody')}
             </p>
           </FadeUp>
           <FadeUp delay={0.2}>
             <div className="mt-8">
               <Button href="/booking" size="lg">
-                Get Pre-Approved
+                {t('shared.getPreApproved')}
               </Button>
             </div>
           </FadeUp>

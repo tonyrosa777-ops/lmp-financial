@@ -1,1 +1,69 @@
-{}
+{
+  "page": {
+    "eyebrow": "Get Pre-Approved",
+    "headline": "Pick a time. We'll call.",
+    "subheadline": "Free 30-minute call. No pressure. No commitment. We'll walk through your situation and talk through which programs fit."
+  },
+  "calendar": {
+    "headerEyebrow": "Schedule a call",
+    "headerEyebrowWithLoTemplate": "Schedule with {loFirstName}",
+    "stepDate": "Pick a day",
+    "stepTime": "Pick a time",
+    "stepForm": "Your details",
+    "stepConfirmed": "You're booked",
+    "back": "← Back",
+    "weekendsNote": "Weekends are out of the office. Pick a weekday and we'll show available times.",
+    "loadingTimes": "Loading times...",
+    "noTimesAvailable": "No times available that day. Try another date.",
+    "errorLoad": "Could not load times. Please try again.",
+    "errorBooking": "Booking failed. Please try again or call us directly.",
+    "fields": {
+      "fullName": "Full name",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "quizContext": {
+      "eyebrow": "From your quiz",
+      "recommendedProgramLabel": "Recommended program:",
+      "bestFitLabel": "Best fit:",
+      "note": "We'll bring this context into the call so you don't have to repeat yourself."
+    },
+    "submit": "Confirm booking",
+    "submitting": "Booking...",
+    "bookingForTemplate": "Booking for {dateTime}",
+    "confirmed": {
+      "headline": "You're booked.",
+      "bodyDefault": "Confirmation email on the way. We'll call you at the scheduled time.",
+      "bodyWithLoTemplate": "Confirmation email on the way. {loFirstName} will call you at the scheduled time.",
+      "reschedule": "Need to reschedule? Reply to the confirmation email."
+    },
+    "modeBadge": {
+      "demo": "Demo mode",
+      "live": "Live booking",
+      "demoSub": "Sample availability for preview.",
+      "liveSub": "Live availability."
+    }
+  },
+  "faq": {
+    "headline": "A few common questions",
+    "items": [
+      {
+        "question": "What should I expect on the call?",
+        "answer": "A 30-minute conversation. We talk through your situation, your goals, what programs might fit. No commitment, no pitch."
+      },
+      {
+        "question": "What documents should I have ready?",
+        "answer": "Nothing required for the first call. If you want a soft pre-approval estimate during the call, have your most recent pay stub and a sense of your credit score handy."
+      },
+      {
+        "question": "Will this affect my credit score?",
+        "answer": "Not for the call. We do a soft pull only if you ask for a pre-approval estimate, and only with your written consent."
+      },
+      {
+        "question": "Can I reschedule?",
+        "answer": "Yes. Reply to the confirmation email or pick a new time on this page."
+      }
+    ],
+    "demoNote": "Demo copy pending client review."
+  }
+}

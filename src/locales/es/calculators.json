@@ -1,1 +1,244 @@
-{}
+{
+  "_meta": { "status": "ai-demo-pending-review", "reviewer": null, "reviewed_at": null },
+  "_compliance_flags": [
+    "Todas las calculadoras: las cifras son estimaciones, no compromisos. Los disclaimers [NOT-A-COMMITMENT] y [COMPLIANCE-REVIEW-PENDING] requieren revisión.",
+    "dti.programs: umbrales de DTI (FHA 31/43, Convencional 28/36, USDA 29/41) requieren revisión de cumplimiento.",
+    "downPayment.programs: porcentajes de enganche por programa (FHA 3.5%, Conv 5%/20%, Jumbo 10%) y el límite jumbo $766,550 requieren revisión de cumplimiento.",
+    "downPayment.programs.fha.note: '580+ credit' requiere revisión de cumplimiento."
+  ],
+  "indexPage": {
+    "eyebrow": "Calculadoras",
+    "headline": "Haga los cálculos.",
+    "subheadline": "Cinco calculadoras nativas de lmpfinancial.com, rápidas en móvil, fundamentadas en las mismas matemáticas mayoristas que usamos todos los días. Estimaciones hoy, cifras reales de un oficial de préstamos cuando esté listo.",
+    "pickATool": {
+      "eyebrow": "Elija una Herramienta",
+      "headline": "Cinco calculadoras. Una fuente de verdad.",
+      "body": "Cada calculadora ejecuta las mismas matemáticas de amortización, DTI y umbrales que usará su prestamista. El resultado es una estimación. La conversación que sigue es donde se construye la cifra real."
+    },
+    "cards": {
+      "affordability": {
+        "name": "Capacidad de Compra",
+        "description": "¿Cuánta casa puedo pagar? Ingresos, deudas y matemáticas de DTI."
+      },
+      "monthlyPayment": {
+        "name": "Pago Mensual",
+        "description": "Capital + interés + impuestos + seguro + desglose de PMI."
+      },
+      "refinance": {
+        "name": "Refinanciamiento",
+        "description": "Préstamo actual vs nuevo. Meses de punto de equilibrio. Ahorro de por vida."
+      },
+      "downPayment": {
+        "name": "Enganche",
+        "description": "Umbrales de FHA, VA, USDA y Convencional, lado a lado."
+      },
+      "dti": {
+        "name": "DTI",
+        "description": "Deuda-ingreso de front-end y back-end, con umbrales del prestamista."
+      }
+    },
+    "useCalculatorCta": "Usar calculadora →",
+    "talkToReal": {
+      "eyebrow": "Hable con una Persona Real",
+      "headline": "La calculadora es el comienzo. El oficial de préstamos es la respuesta.",
+      "body": "Las calculadoras son estimaciones, no compromisos. Tasas reales, términos reales, y una aprobación real comienzan con una llamada de 15 minutos. Elija una hora que le funcione.",
+      "primary": "Obtener Preaprobación",
+      "secondary": "Conozca al Equipo",
+      "disclaimer": "[NOT-A-COMMITMENT] Las calculadoras solo entregan estimaciones. Las tasas, términos y aprobación reales se determinan en la solicitud. [COMPLIANCE-REVIEW-PENDING]"
+    }
+  },
+  "shared": {
+    "yourNumbers": "Sus cifras",
+    "slideToAdjust": "Deslice para ajustar. Las estimaciones se actualizan en vivo.",
+    "slideToAdjustRatios": "Deslice para ajustar. Los ratios se actualizan en vivo.",
+    "wantRealNumber": "¿Quiere una cifra real?",
+    "getPreApproved": "Obtener Preaprobación",
+    "notACommitment": "[NOT-A-COMMITMENT]",
+    "complianceReviewPending": "[COMPLIANCE-REVIEW-PENDING]",
+    "headsUp": "Atención"
+  },
+  "affordability": {
+    "eyebrow": "Calculadora de Capacidad de Compra",
+    "headline": "¿Cuánta casa puedo pagar?",
+    "subheadline": "Ingrese sus ingresos, deudas mensuales y DTI objetivo. Ejecutaremos las mismas matemáticas de amortización que usará su prestamista. La cifra que vea es el techo, no la recomendación.",
+    "inputs": {
+      "annualIncome": "Ingreso anual",
+      "monthlyDebts": "Deudas mensuales (auto, préstamos estudiantiles, tarjetas de crédito)",
+      "downPayment": "Enganche disponible",
+      "interestRate": "Tasa de interés",
+      "loanTerm": "Plazo del préstamo",
+      "targetDti": "DTI back-end objetivo",
+      "yrs": "años"
+    },
+    "results": {
+      "title": "Qué significa",
+      "subtitle": "Estimación basada en los datos que ingresó.",
+      "debtsTooHigh": "Sus deudas actuales superan el umbral de DTI objetivo. Reduzca las deudas mensuales o aumente sus ingresos para obtener una estimación. Un oficial de préstamos también puede revisar factores compensatorios.",
+      "maxPayment": "Pago mensual máximo de vivienda",
+      "maxPaymentSub": "Ingreso por DTI objetivo, menos las deudas actuales.",
+      "maxLoan": "Monto máximo de préstamo",
+      "maxLoanSubTemplate": "Préstamo soportado por ese pago a {rate} durante {term} años.",
+      "maxHomePrice": "Precio máximo de vivienda",
+      "maxHomePriceSubTemplate": "Monto del préstamo más su enganche de {downPayment}."
+    },
+    "disclaimerBody": "Estas cifras son estimaciones. Las tasas, términos y aprobación reales dependen de su expediente completo: crédito, documentación de ingresos, activos, propiedad y guías del programa. Hable con un oficial de préstamos para una cotización real.",
+    "ctaBody": "Quince minutos con un oficial de préstamos convierten la estimación en una carta de preaprobación que puede entregar a un agente inmobiliario."
+  },
+  "dti": {
+    "eyebrow": "Deuda-Ingreso",
+    "headline": "¿Mi DTI pasará la suscripción?",
+    "subheadline": "Ratios de deuda-ingreso de front-end y back-end, evaluados contra las guías que cuatro programas principales realmente usan. Las insignias muestran su situación de un vistazo.",
+    "inputs": {
+      "grossMonthlyIncome": "Ingreso mensual bruto",
+      "monthlyDebts": "Deudas mensuales actuales (auto, estudiantil, tarjetas de crédito, etc.)",
+      "mortgagePayment": "Pago hipotecario objetivo (PITI)"
+    },
+    "results": {
+      "frontEnd": "DTI front-end",
+      "frontEndFormula": "Hipoteca / ingreso",
+      "backEnd": "DTI back-end",
+      "backEndFormula": "(Hipoteca + deudas) / ingreso",
+      "byProgramTitle": "Por programa",
+      "byProgramSubtitle": "Aprobado / ajustado / factores compensatorios necesarios, de un vistazo.",
+      "compFactorsNote": "Los factores compensatorios incluyen reservas en efectivo, ingreso residual, historial laboral más largo y crédito más sólido. Un oficial de préstamos puede mapear los suyos."
+    },
+    "badges": {
+      "pass": "Aprobado",
+      "tight": "Ajustado",
+      "compNeeded": "Factores compensatorios necesarios",
+      "residual": "Prueba de ingreso residual",
+      "specialProgram": "Programa especial"
+    },
+    "programs": {
+      "fha": {
+        "name": "FHA",
+        "description": "Front 31% / Back 43% (50% con factores compensatorios)",
+        "note": "Umbrales más flexibles. Los factores compensatorios incluyen reservas, ingreso residual y profundidad crediticia."
+      },
+      "conventional": {
+        "name": "Convencional",
+        "description": "Front 28% / Back 36% (hasta 50% extendido)",
+        "note": "El más ajustado en el umbral estándar; muchos prestamistas extienden hasta 45-50% con expedientes sólidos."
+      },
+      "va": {
+        "name": "VA",
+        "description": "Método de ingreso residual (no DTI tradicional)",
+        "note": "VA evalúa ingreso residual (efectivo restante después de deudas e impuestos) por tamaño de familia y región, no un techo de DTI back-end."
+      },
+      "usda": {
+        "name": "USDA",
+        "description": "Front 29% / Back 41%",
+        "note": "La propiedad debe estar en geografía elegible para USDA. Aplican límites de ingresos por condado."
+      }
+    },
+    "disclaimerBody": "Estas cifras son estimaciones. Los umbrales de DTI varían según el prestamista, la versión del programa y los hallazgos del AUS. Los factores compensatorios y los cálculos de ingreso residual son evaluados por suscripción, expediente por expediente. Hable con un oficial de préstamos para una lectura real de su expediente.",
+    "ctaBody": "Un oficial de préstamos puede ejecutar su expediente completo a través del AUS mayorista, considerar factores compensatorios, y decirle exactamente qué programas pasan."
+  },
+  "monthlyPayment": {
+    "eyebrow": "Pago Mensual",
+    "headline": "¿Cuál será mi pago?",
+    "subheadline": "Capital más interés más impuestos más seguro más PMI. La imagen completa, no solo la parte que muestran las calculadoras de comparación de tasas.",
+    "inputs": {
+      "loanAmount": "Monto del préstamo",
+      "interestRate": "Tasa de interés",
+      "loanTerm": "Plazo del préstamo",
+      "annualTax": "Impuesto a la propiedad anual",
+      "annualInsurance": "Seguro de vivienda anual",
+      "pmiRate": "Tasa de PMI (% anual del préstamo, 0 si enganche del 20% o más)"
+    },
+    "yourLoan": "Su préstamo",
+    "results": {
+      "title": "Su pago",
+      "subtitle": "El desglose completo de PITI.",
+      "totalMonthly": "Pago mensual total",
+      "totalMonthlySub": "Por mes, todo incluido.",
+      "principalAndInterest": "Capital e interés",
+      "propertyTax": "Impuesto a la propiedad",
+      "homeInsurance": "Seguro de vivienda",
+      "pmi": "PMI",
+      "lifetimeInterest": "Interés total de por vida",
+      "lifetimeInterestSubTemplate": "Interés total durante el plazo completo de {term} años, antes de cualquier pago adicional al capital."
+    },
+    "disclaimerBody": "Estas cifras son estimaciones. Las tasas, términos y aprobación reales dependen de su expediente completo. El impuesto a la propiedad, el seguro y el PMI varían según la propiedad y el programa. Hable con un oficial de préstamos para una cotización real.",
+    "ctaBody": "Un oficial de préstamos puede ajustar esta calculadora a una cotización mayorista real, con las comisiones reales, créditos del prestamista y matemáticas específicas del programa."
+  },
+  "refinance": {
+    "eyebrow": "Refinanciamiento",
+    "headline": "¿Debería refinanciar?",
+    "subheadline": "Préstamo actual vs nuevo. Matemáticas reales de punto de equilibrio, ahorro a diez años, y una respuesta clara cuando las cifras no cuadran.",
+    "inputs": {
+      "yourLoans": "Sus préstamos",
+      "yourLoansSub": "Préstamo actual a la izquierda. Préstamo nuevo a la derecha.",
+      "currentLoan": "Préstamo actual",
+      "newLoan": "Préstamo nuevo",
+      "currentBalance": "Saldo actual",
+      "currentRate": "Tasa actual",
+      "currentTermRemaining": "Plazo actual restante (años)",
+      "newRate": "Nueva tasa",
+      "newTerm": "Nuevo plazo",
+      "closingCosts": "Costos de cierre",
+      "rollClosingCosts": "Incluir los costos de cierre en el nuevo préstamo"
+    },
+    "results": {
+      "title": "Las matemáticas",
+      "subtitle": "Lado a lado, con la respuesta al final.",
+      "current": "Actual",
+      "new": "Nuevo",
+      "perMonthPi": "/mes C&I",
+      "noBenefit": "Refinanciar a las tasas que ingresó no reduciría su pago mensual. Considere si está optimizando por plazo o por retiro de efectivo. Un oficial de préstamos puede modelar alternativas.",
+      "monthlySavings": "Ahorro mensual",
+      "monthlySavingsSub": "Por mes, todos los meses, durante toda la vida del nuevo préstamo.",
+      "breakEven": "Punto de equilibrio",
+      "breakEvenSub": "Costos de cierre recuperados.",
+      "tenYearSavings": "Ahorro a 10 años",
+      "tenYearSavingsSub": "Neto de costos de cierre.",
+      "newLoanAmountTemplate": "Nuevo monto del préstamo con costos de cierre incluidos: {amount}.",
+      "moSuffix": "meses"
+    },
+    "disclaimerBody": "Estas cifras son estimaciones. Las tasas, términos y aprobación reales dependen de su expediente completo. Refinanciar reinicia el cronograma de amortización, lo que puede cambiar el interés total pagado de por vida incluso cuando el pago mensual baja. Hable con un oficial de préstamos para la imagen completa.",
+    "ctaBody": "Compararemos su refinanciamiento con múltiples prestamistas mayoristas y le traeremos las cifras que realmente cierran."
+  },
+  "downPayment": {
+    "eyebrow": "Enganche",
+    "headline": "¿Cuánto necesito de enganche?",
+    "subheadline": "Seis programas, lado a lado. La cifra depende del programa. El programa depende de su expediente. Ambos dependen de una conversación real.",
+    "inputs": {
+      "homePrice": "Precio de la vivienda",
+      "homePriceSub": "Arrastre el deslizador. Los umbrales de enganche y el efectivo total al cierre se actualizan en vivo para cada programa."
+    },
+    "results": {
+      "downPayment": "Enganche",
+      "totalCashToClose": "Efectivo total al cierre (est.)",
+      "totalCashSub": "Enganche + ~3% costos de cierre.",
+      "learnAboutTemplate": "Conozca {programName} →"
+    },
+    "programs": {
+      "fha": {
+        "name": "FHA",
+        "note": "3,5% de enganche. Crédito 580+. Solo residencia principal."
+      },
+      "va": {
+        "name": "VA",
+        "note": "0% de enganche. Veteranos elegibles, militares en servicio activo y cónyuges que califiquen."
+      },
+      "usda": {
+        "name": "USDA",
+        "note": "0% de enganche. La propiedad debe estar en geografía elegible para USDA. Aplican límites de ingresos."
+      },
+      "conv5": {
+        "name": "Convencional 5%",
+        "note": "5% de enganche. PMI requerido hasta 20% de capital propio. Calificación crediticia estándar."
+      },
+      "conv20": {
+        "name": "Convencional 20%",
+        "note": "20% de enganche. Sin PMI. La ruta convencional más limpia cuando las reservas lo permiten."
+      },
+      "jumbo": {
+        "name": "Jumbo (10%)",
+        "note": "Por encima del límite conformante de $766.550. Requisitos más fuertes de crédito y reservas."
+      }
+    },
+    "disclaimerBody": "Estas cifras son estimaciones. Los costos de cierre varían según el estado, la propiedad y el programa (a menudo 2 a 5% del precio). Los enganches mínimos mostrados son los pisos del programa; muchos prestatarios se benefician de aportar más para reducir el PMI o mejorar la tasa. Hable con un oficial de préstamos para modelar su escenario específico.",
+    "ctaBody": "Los programas estatales de asistencia para el enganche (MassHousing, NHHFA, MaineHousing, CHFA, RIHousing, TSAHC y más) pueden reducir aún más estas cifras. Sabemos para cuáles califica."
+  }
+}

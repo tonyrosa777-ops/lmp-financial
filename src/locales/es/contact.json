@@ -1,1 +1,57 @@
-{}
+{
+  "_meta": { "status": "ai-demo-pending-review", "reviewer": null, "reviewed_at": null },
+  "_compliance_flags": [
+    "form: el SMS opt-in disclaimer y el broker disclosure verbatim se mantienen en inglés via siteConfig.compliance, no se traducen aquí.",
+    "page.subheadline: 'mismo día en días hábiles, y fines de semana cuando la vida lo exige' es claim de servicio; revisar."
+  ],
+  "page": {
+    "eyebrow": "Contáctenos",
+    "headline": "Apretón de manos de Lowell. Velocidad de correo o texto.",
+    "subheadline": "Personas reales, en nuestra oficina de Cabot Street, al otro lado de cada mensaje que envía. Respuesta el mismo día entre semana, y fines de semana cuando la vida lo exige.",
+    "metaTemplate": "NMLS #{nmls} · {stateCount} estados licenciados · {loCount} oficiales de préstamos"
+  },
+  "form": {
+    "eyebrow": "Envíe un Mensaje",
+    "headline": "Cuéntenos qué necesita.",
+    "subheadline": "Preaprobación, refinanciamiento, consulta de socio, preferencia de idioma, lo que sea. Dirigiremos su nota al oficial de préstamos correcto el mismo día.",
+    "fields": {
+      "firstName": "Nombre",
+      "firstNamePlaceholder": "María",
+      "lastName": "Apellido",
+      "lastNamePlaceholder": "Silva",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "usted@correo.com",
+      "phone": "Teléfono",
+      "phonePlaceholder": "(555) 123-4567",
+      "message": "¿En qué podemos ayudarle?",
+      "messagePlaceholder": "Comprador de primera vivienda en NH, mirando FHA. ¿Cuál es el siguiente paso?"
+    },
+    "submit": "Enviar Mensaje"
+  },
+  "info": {
+    "eyebrow": "Líneas Directas",
+    "headline": "Contáctenos por donde le funcione mejor.",
+    "labels": {
+      "office": "Oficina",
+      "phone": "Teléfono",
+      "generalEmail": "Correo General",
+      "founder": "Mike Comerford, Presidente",
+      "linkedin": "LinkedIn",
+      "officeHours": "Horario de Oficina",
+      "linkedinLabel": "Mike Comerford en LinkedIn"
+    },
+    "officeHoursLine1": "Lun a Vie, 9am a 6pm ET",
+    "officeHoursLine2": "Sábados con cita previa",
+    "officeHoursDemoFlag": "[DEMO COPY — pendiente revisión del cliente]"
+  },
+  "trust": {
+    "eyebrow": "Broker Local, Alcance Multiestatal",
+    "stats": {
+      "companyNmls": "NMLS de la Empresa",
+      "statesLicensed": "Estados Licenciados",
+      "loanOfficers": "Oficiales de Préstamos",
+      "lowellLabel": "Lowell",
+      "lowellSub": "Massachusetts"
+    }
+  }
+}

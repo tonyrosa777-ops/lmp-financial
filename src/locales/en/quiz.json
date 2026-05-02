@@ -1,1 +1,155 @@
-{}
+{
+  "intro": {
+    "eyebrow": "Find Your Loan Path",
+    "headline": "Three minutes. Five questions. The right loan officer.",
+    "subheadline": "We will type your situation, recommend the loan program that fits, and put you on the calendar with the loan officer best suited for it.",
+    "badge": "Quiz · 5 questions",
+    "bodyHeadline": "Tell us your situation. We will tell you the program.",
+    "bodyParagraph": "We built this quiz the way we open intro calls in our office. Five fast questions, no credit pull, no documents, no commitment. By the end you will know which loan program fits your situation and which loan officer on our team is best for it.",
+    "ctaStart": "Start the quiz",
+    "estimatedTime": "Three minutes. Five questions."
+  },
+  "progress": {
+    "questionLabel": "Question",
+    "ofLabel": "of",
+    "back": "Back",
+    "backToIntroAria": "Back to intro",
+    "previousQuestionAria": "Previous question"
+  },
+  "questions": [
+    {
+      "id": "situation",
+      "prompt": "Where are you right now in your home journey?",
+      "answers": [
+        { "label": "🌱 Buying my first home", "type": "FirstTimeFoundation" },
+        { "label": "🎖️ I served, and I want to use my VA benefit", "type": "VeteranPath" },
+        { "label": "🏡 Selling, moving up, or buying a second home", "type": "MoveUpBuyer" },
+        { "label": "🔄 I already own and want to refinance", "type": "RefinanceOptimizer" }
+      ]
+    },
+    {
+      "id": "credit",
+      "prompt": "What credit range are you working with today?",
+      "answers": [
+        { "label": "🌱 Under 620, still building", "type": "FirstTimeFoundation" },
+        { "label": "🎖️ 620 to 699, solid mid-band", "type": "VeteranPath" },
+        { "label": "🔄 700 to 739, healthy", "type": "RefinanceOptimizer" },
+        { "label": "🏡 740 and above, top tier", "type": "MoveUpBuyer" }
+      ]
+    },
+    {
+      "id": "property",
+      "prompt": "What kind of property are we talking about?",
+      "answers": [
+        { "label": "🔑 Primary residence I will live in", "type": "FirstTimeFoundation" },
+        { "label": "🇺🇸 Primary residence, using VA eligibility", "type": "VeteranPath" },
+        { "label": "🏛️ Move-up home or second home", "type": "MoveUpBuyer" },
+        { "label": "🏠 The home I already own and live in", "type": "RefinanceOptimizer" }
+      ]
+    },
+    {
+      "id": "state",
+      "prompt": "Which state is the property in (or going to be)?",
+      "answers": [
+        { "label": "🦞 Massachusetts, Maine, or Rhode Island", "type": "FirstTimeFoundation" },
+        { "label": "🌲 New Hampshire, Vermont, or Connecticut", "type": "RefinanceOptimizer" },
+        { "label": "🌴 Florida or Texas", "type": "VeteranPath" },
+        { "label": "⛰️ Colorado", "type": "MoveUpBuyer" }
+      ]
+    },
+    {
+      "id": "down-payment",
+      "prompt": "How much do you have set aside for a down payment?",
+      "answers": [
+        { "label": "🌱 Under 3.5 percent, or just starting", "type": "FirstTimeFoundation" },
+        { "label": "🎖️ Zero, I plan to use VA", "type": "VeteranPath" },
+        { "label": "🏡 10 to 20 percent ready to deploy", "type": "MoveUpBuyer" },
+        { "label": "🔄 Not buying, I have equity in my current home", "type": "RefinanceOptimizer" }
+      ]
+    },
+    {
+      "id": "timeline",
+      "prompt": "What is your timeline?",
+      "answers": [
+        { "label": "⏳ Just exploring, no pressure yet", "type": "FirstTimeFoundation" },
+        { "label": "⚡ I need to close in the next 30 days", "type": "VeteranPath" },
+        { "label": "📅 1 to 3 months out", "type": "RefinanceOptimizer" },
+        { "label": "🗓️ 3 to 6 months out", "type": "MoveUpBuyer" }
+      ]
+    }
+  ],
+  "results": {
+    "labels": {
+      "yourMatch": "Your match",
+      "recommendedProgram": "Recommended program",
+      "yourLoanOfficer": "Your loan officer",
+      "readFullProgram": "Read the full program details →",
+      "bookHeadline": "Book your 15-minute intro call",
+      "restartCta": "Restart the quiz",
+      "errorMessage": "Something went sideways. Please retry."
+    },
+    "archetypes": {
+      "FirstTimeFoundation": {
+        "name": "First-Time Foundation",
+        "tagline": "You are buying your first home. Let's make the math actually work.",
+        "body": [
+          "First homes are a math problem and an emotion problem at the same time. Most lenders only solve one. We solve both. The right program for a first-time buyer is rarely the one a single bank pushes. It is whichever combination of FHA, conventional, and state down-payment assistance gets you into the home you actually want at a payment you can actually live with.",
+          "We shop your file across thirty-plus wholesale lenders and we know every state DPA program in our footprint by name. MassHousing, NHHFA, MaineHousing, RIHousing, CHFA, VHFA, FL Hometown Heroes, TSAHC, CHFA-CO. The grants and forgivable seconds you might qualify for can be the difference between renting another year and closing this fall.",
+          "Your next step is a 15-minute intro call. No credit pull, no documents, no pressure. We listen first, recommend programs second, and tell you straight what you qualify for and what the numbers look like."
+        ],
+        "recommendedProgram": {
+          "name": "FHA Loan",
+          "reason": "FHA is the most common starting point for first-time buyers because the down payment is 3.5 percent and the credit threshold is friendlier than conventional. We almost always layer it with state DPA programs for an even lower out-of-pocket close."
+        }
+      },
+      "VeteranPath": {
+        "name": "Veteran Path",
+        "tagline": "You served. The VA loan was built for exactly this moment.",
+        "body": [
+          "The VA loan is the single most powerful purchase tool in the residential market and almost no retail lender treats it that way. Zero down, no private mortgage insurance, no maximum loan amount in most counties since 2020, and a funding fee that gets waived entirely for many disability-rated veterans. If you served, this benefit was earned, and we will make sure the lender treats it that way.",
+          "We close VA loans across all nine of our licensed states. Active duty, retired, reserve, surviving spouse, all eras. Doug Danzey on our team has been originating VA loans since before some of our other LOs were in the industry and he comes to closings whenever the borrower wants him there.",
+          "Your next step is a Certificate of Eligibility check and a 15-minute intro call. We will pull the COE for you. No credit hit, no commitment, just clarity on what you qualify for and what the math looks like."
+        ],
+        "recommendedProgram": {
+          "name": "VA Loan",
+          "reason": "Zero down, no PMI, competitive rates. For most veterans this is the right answer the first time we run the numbers, and we shop VA wholesale lenders to find the best rate-and-fee combination on your specific file."
+        }
+      },
+      "MoveUpBuyer": {
+        "name": "Move-Up Buyer",
+        "tagline": "You are not new to this. Let's get you the rate the market actually gives.",
+        "body": [
+          "You have done this before. You know what a closing disclosure looks like, you know what an escrow waiver costs you, and you are not going to be impressed by a teaser rate. Good. Move-up buyers usually get the worst service in this industry because lenders assume you do not need explanation. We assume the opposite. You deserve more detail, not less, because the dollars are bigger.",
+          "For move-up purchases we typically run a contingency analysis on your current home, model the rate-give-up math against a permanent buy-down or a 2-1 temp buy-down, and shop conventional and jumbo wholesale lenders side by side. If a piggyback second makes more sense than a jumbo first, we will tell you. If a bridge loan is the cleaner play, we will tell you that too.",
+          "Your next step is a 15-minute consult. Bring your current loan number and your equity estimate. We will run real numbers, not pitch numbers."
+        ],
+        "recommendedProgram": {
+          "name": "Jumbo Mortgage",
+          "reason": "Move-up buyers often cross the conforming loan limit. We shop wholesale jumbo investors so the financing on your bigger home prices competitively, not punitively. If a conforming loan is the right answer, we will tell you that instead."
+        }
+      },
+      "RefinanceOptimizer": {
+        "name": "Refinance Optimizer",
+        "tagline": "You already own. Now make the loan work harder for you.",
+        "body": [
+          "A refinance is the most underrated wealth move in residential finance because it is the only loan transaction where you already know the property, you already know the borrower, and you already know what the old payment was. The only question is whether the new math beats the old math, and by how much, and how fast.",
+          "We model the break-even on a rate-and-term refi to the month, not the year. We shop cash-out, no-cash-out, and HELOC structures side by side so you see the trade-offs. We will tell you when it is not the right time, which is something most lenders will never do because they are paid to close, not to advise.",
+          "Your next step is a 15-minute call. Have your current loan statement handy. We will run the breakeven on the spot."
+        ],
+        "recommendedProgram": {
+          "name": "Fixed-Rate Mortgage",
+          "reason": "Most refinances land on a 15 or 30-year fixed because the goal is locking the new payment in for the long haul. If a different structure (ARM, interest-only, HELOC second) actually serves your goal better, we will route you there instead."
+        }
+      }
+    }
+  },
+  "_compliance_flags": {
+    "DEMO_COPY_PENDING_CLIENT_REVIEW": "All result body paragraphs are demo copy pending client review per quiz.ts source comments.",
+    "COMPLIANCE_REVIEW_PENDING": "All qualifying questions in this dictionary require LMP compliance review before publish. Quiz copy that influences program recommendation is regulated mortgage advertising.",
+    "QUANTIFIABLE_CLAIMS": [
+      "30-plus wholesale lenders (FirstTimeFoundation body[1]) — substantiation required",
+      "9 licensed states (VeteranPath body[1]) — accurate per CLAUDE.md project variables",
+      "VA funding fee waiver for disability-rated veterans (VeteranPath body[0]) — verify current VA policy"
+    ]
+  }
+}

@@ -19,6 +19,7 @@ import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import FadeUp from '@/components/animations/FadeUp';
 import PhotoBackground from '@/components/PhotoBackground';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const NEW_TERM_OPTIONS = [15, 20, 30] as const;
 type NewTerm = (typeof NEW_TERM_OPTIONS)[number];
@@ -111,6 +112,7 @@ function calcPI(loan: number, ratePct: number, years: number): number {
 }
 
 export default function RefinanceCalculatorPage() {
+  const { t } = useTranslation('calculators');
   const [currentBalance, setCurrentBalance] = useState(325000);
   const [currentRate, setCurrentRate] = useState(7.5);
   const [currentTermRemaining, setCurrentTermRemaining] = useState(25);
@@ -160,17 +162,16 @@ export default function RefinanceCalculatorPage() {
         />
         <div className="container-wide px-6 relative z-10">
           <FadeUp delay={0.1}>
-            <p className="text-eyebrow text-[var(--accent)]">Refinance</p>
+            <p className="text-eyebrow text-[var(--accent)]">{t('refinance.eyebrow')}</p>
           </FadeUp>
           <FadeUp delay={0.2}>
             <h1 className="hero-shimmer font-display text-h1 mt-3 max-w-3xl">
-              Should I refinance?
+              {t('refinance.headline')}
             </h1>
           </FadeUp>
           <FadeUp delay={0.3}>
             <p className="text-body text-[var(--text-secondary)] mt-6 max-w-2xl">
-              Current loan vs new loan. Real break-even math, ten-year savings, and a
-              clear answer when the numbers do not pencil.
+              {t('refinance.subheadline')}
             </p>
           </FadeUp>
         </div>
@@ -181,15 +182,17 @@ export default function RefinanceCalculatorPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <Card variant="light" hover={false} className="h-full">
               <h2 className="font-display text-h3 text-[var(--text-on-light)] mb-2">
-                Your loans
+                {t('refinance.inputs.yourLoans')}
               </h2>
               <p className="text-body-sm text-[var(--text-on-light-secondary)] mb-8">
-                Current loan on the left. New loan on the right.
+                {t('refinance.inputs.yourLoansSub')}
               </p>
               <div className="flex flex-col gap-6">
-                <p className="font-mono text-eyebrow text-[var(--accent-deep)]">Current loan</p>
+                <p className="font-mono text-eyebrow text-[var(--accent-deep)]">
+                  {t('refinance.inputs.currentLoan')}
+                </p>
                 <SliderInput
-                  label="Current balance"
+                  label={t('refinance.inputs.currentBalance')}
                   min={50000}
                   max={1500000}
                   step={5000}
@@ -198,7 +201,7 @@ export default function RefinanceCalculatorPage() {
                   format={formatUSD}
                 />
                 <SliderInput
-                  label="Current rate"
+                  label={t('refinance.inputs.currentRate')}
                   min={3}
                   max={9}
                   step={0.125}
@@ -207,20 +210,22 @@ export default function RefinanceCalculatorPage() {
                   format={formatPercent}
                 />
                 <SliderInput
-                  label="Current term remaining (years)"
+                  label={t('refinance.inputs.currentTermRemaining')}
                   min={5}
                   max={30}
                   step={1}
                   value={currentTermRemaining}
                   onChange={setCurrentTermRemaining}
-                  format={(v) => `${v} yrs`}
+                  format={(v) => `${v} ${t('affordability.inputs.yrs')}`}
                 />
 
                 <div className="border-t border-[rgba(14,27,51,0.10)] my-2" />
 
-                <p className="font-mono text-eyebrow text-[var(--accent-deep)]">New loan</p>
+                <p className="font-mono text-eyebrow text-[var(--accent-deep)]">
+                  {t('refinance.inputs.newLoan')}
+                </p>
                 <SliderInput
-                  label="New rate"
+                  label={t('refinance.inputs.newRate')}
                   min={3}
                   max={9}
                   step={0.125}
@@ -229,14 +234,14 @@ export default function RefinanceCalculatorPage() {
                   format={formatPercent}
                 />
                 <RadioGroup
-                  label="New term"
+                  label={t('refinance.inputs.newTerm')}
                   options={NEW_TERM_OPTIONS}
                   value={newTerm}
                   onChange={setNewTerm}
-                  format={(v) => `${v} yrs`}
+                  format={(v) => `${v} ${t('affordability.inputs.yrs')}`}
                 />
                 <SliderInput
-                  label="Closing costs"
+                  label={t('refinance.inputs.closingCosts')}
                   min={0}
                   max={20000}
                   step={250}
@@ -253,7 +258,7 @@ export default function RefinanceCalculatorPage() {
                     className="w-5 h-5 accent-[var(--accent-deep)] cursor-pointer"
                   />
                   <span className="text-body-sm text-[var(--text-on-light)]">
-                    Roll closing costs into the new loan
+                    {t('refinance.inputs.rollClosingCosts')}
                   </span>
                 </label>
               </div>
@@ -261,10 +266,10 @@ export default function RefinanceCalculatorPage() {
 
             <Card variant="light" hover={false} className="h-full">
               <h2 className="font-display text-h3 text-[var(--text-on-light)] mb-2">
-                The math
+                {t('refinance.results.title')}
               </h2>
               <p className="text-body-sm text-[var(--text-on-light-secondary)] mb-8">
-                Side by side, with the answer at the bottom.
+                {t('refinance.results.subtitle')}
               </p>
 
               <div className="grid grid-cols-2 gap-4">
@@ -273,13 +278,13 @@ export default function RefinanceCalculatorPage() {
                   style={{ backgroundColor: 'rgba(14,27,51,0.03)' }}
                 >
                   <p className="text-eyebrow text-[var(--text-on-light-secondary)]">
-                    Current
+                    {t('refinance.results.current')}
                   </p>
                   <p className="font-display text-h3 text-[var(--text-on-light)] mt-2">
                     {formatUSD(result.currentMonthly)}
                   </p>
                   <p className="text-micro text-[var(--text-on-light-muted)] mt-1">
-                    /mo P&amp;I
+                    {t('refinance.results.perMonthPi')}
                   </p>
                 </div>
                 <div
@@ -290,12 +295,14 @@ export default function RefinanceCalculatorPage() {
                     border: '1.5px solid var(--accent-muted)',
                   }}
                 >
-                  <p className="text-eyebrow text-[var(--accent-deep)]">New</p>
+                  <p className="text-eyebrow text-[var(--accent-deep)]">
+                    {t('refinance.results.new')}
+                  </p>
                   <p className="font-display text-h3 text-[var(--text-on-light)] mt-2">
                     {formatUSD(result.newMonthly)}
                   </p>
                   <p className="text-micro text-[var(--text-on-light-muted)] mt-1">
-                    /mo P&amp;I
+                    {t('refinance.results.perMonthPi')}
                   </p>
                 </div>
               </div>
@@ -309,11 +316,11 @@ export default function RefinanceCalculatorPage() {
                       borderColor: 'var(--warning)',
                     }}
                   >
-                    <p className="text-eyebrow text-[var(--warning)] mb-2">Heads up</p>
+                    <p className="text-eyebrow text-[var(--warning)] mb-2">
+                      {t('shared.headsUp')}
+                    </p>
                     <p className="text-body-sm text-[var(--text-on-light)]">
-                      Refinancing at the rates you have entered would not lower your
-                      monthly payment. Consider whether you are optimizing for term
-                      length or cash-out instead. A loan officer can model alternatives.
+                      {t('refinance.results.noBenefit')}
                     </p>
                   </div>
                 ) : (
@@ -327,39 +334,39 @@ export default function RefinanceCalculatorPage() {
                       }}
                     >
                       <p className="text-eyebrow text-[var(--success)]">
-                        Monthly savings
+                        {t('refinance.results.monthlySavings')}
                       </p>
                       <p className="font-display text-h1 text-[var(--text-on-light)] mt-2">
                         {formatUSD(result.monthlySavings)}
                       </p>
                       <p className="text-micro text-[var(--text-on-light-muted)] mt-2">
-                        Per month, every month, for the life of the new loan.
+                        {t('refinance.results.monthlySavingsSub')}
                       </p>
                     </div>
 
                     <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <p className="text-eyebrow text-[var(--text-on-light-secondary)]">
-                          Break-even
+                          {t('refinance.results.breakEven')}
                         </p>
                         <p className="font-display text-h3 text-[var(--text-on-light)] mt-2">
                           {result.breakeven !== null
-                            ? `${Math.ceil(result.breakeven)} mo`
+                            ? `${Math.ceil(result.breakeven)} ${t('refinance.results.moSuffix')}`
                             : '—'}
                         </p>
                         <p className="text-micro text-[var(--text-on-light-muted)] mt-1">
-                          Closing costs recovered.
+                          {t('refinance.results.breakEvenSub')}
                         </p>
                       </div>
                       <div>
                         <p className="text-eyebrow text-[var(--text-on-light-secondary)]">
-                          10-year savings
+                          {t('refinance.results.tenYearSavings')}
                         </p>
                         <p className="font-display text-h3 text-[var(--accent-deep)] mt-2">
                           {formatUSD(result.tenYrSavings)}
                         </p>
                         <p className="text-micro text-[var(--text-on-light-muted)] mt-1">
-                          Net of closing costs.
+                          {t('refinance.results.tenYearSavingsSub')}
                         </p>
                       </div>
                     </div>
@@ -369,8 +376,10 @@ export default function RefinanceCalculatorPage() {
 
               {rollClosingCosts && (
                 <p className="text-micro text-[var(--text-on-light-muted)] mt-6">
-                  New loan amount with closing costs rolled in:{' '}
-                  {formatUSD(result.newLoanAmount)}.
+                  {t('refinance.results.newLoanAmountTemplate').replace(
+                    '{amount}',
+                    formatUSD(result.newLoanAmount),
+                  )}
                 </p>
               )}
             </Card>
@@ -378,20 +387,19 @@ export default function RefinanceCalculatorPage() {
         </div>
       </section>
 
+      {/* [COMPLIANCE-REVIEW-PENDING] disclaimer copy below per CLAUDE.md
+          Compliance Rule. JSON dictionary is source; ES needs LMP review. */}
       <section className="section-light-gradient pb-16">
         <div className="container-base px-6">
           <div className="rounded-[var(--radius-md)] p-6 border border-[rgba(14,27,51,0.10)] bg-[var(--bg-card)]">
             <p className="font-mono text-eyebrow text-[var(--accent-deep)] mb-3">
-              [NOT-A-COMMITMENT]
+              {t('shared.notACommitment')}
             </p>
             <p className="text-body-sm text-[var(--text-on-light-secondary)]">
-              These numbers are estimates. Actual rates, terms, and approval depend on
-              your full file. Refinancing resets the amortization schedule, which can
-              change lifetime interest paid even when monthly payment drops. Talk to a
-              loan officer for the full picture.
+              {t('refinance.disclaimerBody')}
             </p>
             <p className="font-mono text-micro text-[var(--text-on-light-muted)] mt-4">
-              [COMPLIANCE-REVIEW-PENDING]
+              {t('shared.complianceReviewPending')}
             </p>
           </div>
         </div>
@@ -409,19 +417,18 @@ export default function RefinanceCalculatorPage() {
         <div className="container-base px-6 text-center relative z-10">
           <FadeUp>
             <h2 className="font-display text-h2 text-[var(--text-primary)] max-w-2xl mx-auto">
-              Want a real number?
+              {t('shared.wantRealNumber')}
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="text-body text-[var(--text-secondary)] mt-6 max-w-xl mx-auto">
-              We will shop your refi to multiple wholesale lenders and bring back the
-              numbers that actually clear closing.
+              {t('refinance.ctaBody')}
             </p>
           </FadeUp>
           <FadeUp delay={0.2}>
             <div className="mt-8">
               <Button href="/booking" size="lg">
-                Get Pre-Approved
+                {t('shared.getPreApproved')}
               </Button>
             </div>
           </FadeUp>

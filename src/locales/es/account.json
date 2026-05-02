@@ -1,1 +1,80 @@
-{}
+{
+  "_meta": { "status": "ai-demo-pending-review", "reviewer": null, "reviewed_at": null },
+  "_compliance_flags": [
+    "signIn: el flujo de autenticación está marcado [COMPLIANCE-REVIEW-PENDING] en EN. La firma de cumplimiento del cliente debe revisar el flujo de inicio de sesión y la plantilla de correo antes del lanzamiento.",
+    "application.body: 'portal seguro' y mención de manejo de SSN/empleo/historial de domicilios requieren revisión por la firma de TI de cumplimiento del cliente."
+  ],
+  "portal": {
+    "metaTitle": "Su Portal del Prestatario",
+    "metaDescription": "Su Portal del Prestatario de LMP Financial: próximas consultas, su recomendación guardada del cuestionario, y el progreso de su solicitud.",
+    "eyebrow": "Portal del Prestatario",
+    "welcomeBack": "Bienvenido de nuevo",
+    "signOut": "Cerrar sesión",
+    "backToSiteTemplate": "← Volver a {businessName}"
+  },
+  "bookings": {
+    "eyebrow": "Próximas consultas",
+    "headline": "Sus llamadas agendadas",
+    "loading": "Cargando sus consultas...",
+    "loadError": "No pudimos cargar sus consultas. Intente recargar la página.",
+    "emptyBody": "Aún no tiene consultas próximas.",
+    "emptyCta": "Agendar una llamada →",
+    "callWithTemplate": "Llamada con {loName}",
+    "joinLink": "Enlace para unirse",
+    "aboutLoTemplate": "Sobre {loFirstName} →",
+    "demoBadge": "Modo demo",
+    "demoNote": "Mostrando reservas de muestra hasta que Calendly se conecte en la Fase 2A."
+  },
+  "savedQuiz": {
+    "eyebrow": "Su recomendación",
+    "headline": "Recomendado para usted",
+    "loading": "Cargando...",
+    "noQuizBody": "Aún no ha realizado nuestro cuestionario de 5 preguntas. Le recomendará el programa de préstamo correcto y el oficial de préstamos correcto para su situación.",
+    "noQuizCta": "Realizar el cuestionario",
+    "outdatedBody": "Su resultado guardado del cuestionario hace referencia a una recomendación desactualizada.",
+    "outdatedCta": "Vuelva a realizar el cuestionario",
+    "outdatedSuffix": " para obtener una recomendación actualizada.",
+    "programLabel": "Programa",
+    "programDetailsLink": "Lea los detalles completos del programa →",
+    "loLabel": "Su oficial de préstamos",
+    "loProfileLink": "Ver su perfil →",
+    "savedDateTemplate": "Guardado el {date}",
+    "retakeLink": "Volver a realizar el cuestionario →"
+  },
+  "application": {
+    "eyebrow": "Solicitud",
+    "headline": "Continúe su solicitud",
+    "body": "Retome donde lo dejó en nuestro portal seguro de solicitudes. Pasará a un formulario alojado, diseñado para solicitudes hipotecarias: número de seguro social, empleo e historial de domicilios. Lo dirigimos hacia allá con sus datos de contacto ya conocidos por nosotros.",
+    "helperPrefix": "¿No sabe con qué oficial de préstamos comenzar? ",
+    "helperQuizLink": "Realice el cuestionario de 5 preguntas",
+    "helperOr": " o ",
+    "helperTeamLink": "explore a nuestros oficiales de préstamos",
+    "helperSuffix": ".",
+    "secureBadge": "Alojado con nuestro socio de solicitudes · Seguro"
+  },
+  "signIn": {
+    "metaTitle": "Inicie Sesión en Su Portal del Prestatario",
+    "metaDescription": "Inicie sesión en su Portal del Prestatario de LMP Financial para ver próximas consultas, el resultado guardado de su cuestionario, y el progreso de su solicitud.",
+    "eyebrow": "Portal del Prestatario",
+    "headline": "Inicie sesión en su cuenta",
+    "subheadline": "No necesita contraseña. Ingrese el correo que usó para reservar una llamada o realizar el cuestionario, y habrá iniciado sesión.",
+    "form": {
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "usted@ejemplo.com",
+      "submit": "Iniciar sesión",
+      "submitting": "Iniciando sesión...",
+      "errorGeneric": "No pudimos iniciar su sesión con ese correo. Inténtelo de nuevo.",
+      "errorUnexpected": "Algo salió mal al iniciar su sesión. Por favor, inténtelo de nuevo.",
+      "modeBadge": "Sin contraseña · Modo demo"
+    },
+    "checkInbox": {
+      "headline": "Revise su bandeja de entrada",
+      "bodyTemplate": "Enviamos un enlace de inicio de sesión a {email}. Haga clic en el enlace del correo para acceder a su portal. El enlace expira en 24 horas.",
+      "fallbackEmail": "su correo",
+      "missingPrefix": "¿No le llegó? Revise spam, o ",
+      "tryDifferent": "pruebe otro correo",
+      "missingSuffix": "."
+    },
+    "complianceFlag": "[COMPLIANCE-REVIEW-PENDING]"
+  }
+}

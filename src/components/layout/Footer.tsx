@@ -1,9 +1,35 @@
+'use client';
+
 import Link from 'next/link';
 import { siteConfig } from '@/data/site';
+import { useTranslation } from '@/hooks/useTranslation';
+
+interface FooterColumn {
+  title: string;
+  links: { label: string; href: string }[];
+}
+
+interface FooterLegalLink {
+  label: string;
+  href: string;
+}
 
 export default function Footer() {
   const { business, compliance, footer } = siteConfig;
   const { address } = business;
+
+  // Footer chrome (column titles + link labels + copyright + legal links)
+  // localizes via the `common` namespace. The 7 verbatim regulatory items
+  // (broker disclosure, Equal Housing Lender, NMLS link) stay English in
+  // both locales per CLAUDE.md Compliance Rule.
+  const { t, ta, locale } = useTranslation('common');
+  const compliance_t = useTranslation('compliance');
+
+  const columns =
+    ta<FooterColumn[]>('footer.columns') ?? footer.columns;
+  const legalLinks =
+    ta<FooterLegalLink[]>('footer.legalLinks') ?? footer.legalLinks;
+  const copyright = t('footer.copyright');
 
   return (
     <footer
@@ -61,8 +87,8 @@ export default function Footer() {
             ) : null}
           </div>
 
-          {/* Columns 2-4 — link clusters from siteConfig.footer.columns */}
-          {footer.columns.map((col) => (
+          {/* Columns 2-4 — link clusters from translated common.footer.columns */}
+          {columns.map((col) => (
             <div key={col.title} className="flex flex-col gap-3">
               <h2
                 className="text-eyebrow"
@@ -90,6 +116,9 @@ export default function Footer() {
         {/* ============================================================
             BAND 2 — Compliance band (border above + below)
             Equal Housing Lender · Broker disclosure · NMLS Consumer Access
+            All three render English in BOTH locales per Compliance Rule.
+            When locale === 'es', a small italic note below the band cites
+            the regulatory reason.
             ============================================================ */}
         <div
           className="mt-12 py-8 flex flex-col lg:flex-row items-center lg:items-center justify-between gap-6 lg:gap-8"
@@ -127,6 +156,16 @@ export default function Footer() {
           </a>
         </div>
 
+        {/* ES regulatory notice — explains why the band above is in English. */}
+        {locale === 'es' ? (
+          <p
+            className="mt-4 text-center font-body text-micro italic"
+            style={{ color: 'var(--text-muted)' }}
+          >
+            {compliance_t.t('legalNotice')}
+          </p>
+        ) : null}
+
         {/* ============================================================
             BAND 3 — Legal links + copyright + licensed states
             ============================================================ */}
@@ -138,11 +177,11 @@ export default function Footer() {
             className="font-mono text-micro"
             style={{ color: 'var(--text-muted)' }}
           >
-            {footer.copyright}
+            {copyright}
           </p>
 
           <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            {footer.legalLinks.map((link) => (
+            {legalLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}

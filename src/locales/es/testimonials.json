@@ -1,1 +1,37 @@
-{}
+{
+  "_meta": { "status": "ai-demo-pending-review", "reviewer": null, "reviewed_at": null },
+  "_compliance_flags": [
+    "Las 36 reseñas no se traducen y permanecen en su idioma original (inglés). originalLanguageNote es la nota fija mostrada bajo la grilla cuando locale === 'es'."
+  ],
+  "page": {
+    "eyebrow": "Reseñas y Testimonios",
+    "headline": "Prestatarios reales, cierres reales.",
+    "subheadlineTemplate": "{count} reseñas en 9 estados. Cada programa. Cada estado donde operamos."
+  },
+  "filters": {
+    "groupAriaLabel": "Filtrar testimonios por programa de préstamo",
+    "allLabelTemplate": "Todos ({count})",
+    "programLabelTemplate": "{program} ({count})"
+  },
+  "grid": {
+    "noResultsPrefix": "Aún no hay reseñas para este programa. Pruebe otro filtro, o ",
+    "noResultsLink": "inicie una preaprobación",
+    "noResultsSuffix": " y sea el primero."
+  },
+  "pagination": {
+    "pageOfTemplate": "Página {current} de {total}",
+    "reviewSingular": "reseña",
+    "reviewPlural": "reseñas",
+    "previous": "← Anterior",
+    "next": "Siguiente →",
+    "previousAria": "Página anterior de testimonios",
+    "nextAria": "Página siguiente de testimonios"
+  },
+  "cta": {
+    "headline": "¿Se ve reflejado en estas historias?",
+    "body": "El mismo equipo, el mismo enfoque de comparar el mercado, la misma promesa de cerrar a tiempo. Inicie su preaprobación y le emparejaremos con el oficial de préstamos que encaje con su estado, su idioma y su situación.",
+    "primary": "Obtener Preaprobación",
+    "secondary": "Realizar el Cuestionario"
+  },
+  "originalLanguageNote": "Reseñas de clientes en su idioma original."
+}

@@ -1,1 +1,146 @@
-{}
+{
+  "_meta": {
+    "status": "source-of-truth",
+    "reviewer": null,
+    "reviewed_at": null
+  },
+  "indexPage": {
+    "eyebrow": "Our Team",
+    "headline": "22 loan officers, one Lowell HQ.",
+    "subheadline": "Every LMP loan officer is licensed individually with their own NMLS. We work in 9 states and three languages.",
+    "filterLabel": "Filter:",
+    "filterAllStates": "All states",
+    "filterAllLanguages": "All languages",
+    "scheduleWithPrefix": "Schedule with",
+    "ctaSection": {
+      "headline": "Not sure who to talk to?",
+      "subheadline": "Take the 5-question quiz. We'll match you to the right LO based on your situation.",
+      "ctaPrimary": "Take the Quiz",
+      "ctaSecondary": "Get Pre-Approved"
+    }
+  },
+  "loPage": {
+    "labels": {
+      "nmlsPrefix": "NMLS #",
+      "licensedIn": "Licensed in",
+      "statesPending": "States: [CONFIRM-WITH-CLIENT]",
+      "statesPendingShort": "[STATE-LICENSURE CONFIRM-WITH-CLIENT]",
+      "aboutSection": "About",
+      "scheduleEyebrow": "Schedule with",
+      "scheduleHeadline": "Book a 30-minute call.",
+      "scheduleSubheadline": "Pick a time that works. {firstName} will call you to walk through your situation, talk through programs, and answer questions.",
+      "messageHeadline": "Or send a message",
+      "messageSubheadline": "Prefer email? Drop {firstName} a note. Replies typically within one business day.",
+      "emailCta": "Email {firstName}",
+      "preApprovalCta": "Continue your application",
+      "sendCta": "Send to {firstName}",
+      "languagesLabel": "Languages",
+      "specialtiesLabel": "Specialties",
+      "demoCopyNote": "[DEMO COPY, pending client review]",
+      "portraitPending": "[ASSET-PENDING, {name} portrait]",
+      "form": {
+        "firstName": "First name",
+        "lastName": "Last name",
+        "email": "Email",
+        "phone": "Phone",
+        "situation": "What's your situation?",
+        "situationPlaceholder": "First-time buyer, refinance, wondering about FHA, etc."
+      },
+      "languageNames": {
+        "en": "English",
+        "es": "Spanish",
+        "pt": "Portuguese"
+      }
+    }
+  },
+  "officers": {
+    "mike-comerford": {
+      "title": "President / CEO / Loan Officer",
+      "bio": "Hi, I'm Mike. I founded LMP Financial because borrowers in Lowell, in Cape Coral, in Denver deserve a broker who shops the market, not a bank pushing one product. I have been originating loans for two decades and I still take Saturday calls. I still close loans in person when I can. And I still believe the best mortgage is the one you understand cold by the time we get to the closing table. Twenty-two LOs, nine states, three languages. We are independent on purpose."
+    },
+    "allen-carmody": {
+      "title": "Loan Officer",
+      "bio": "I came up in this business by listening more than I talked. Every borrower walks in with a story, an income situation, a reason they have not bought yet. My job is to match yours to the loan that actually fits, not the one a bank wants to sell that month. I work New England and the Mountain West, and I have a soft spot for first-time buyers who think they cannot afford it yet. Half the time, they can."
+    },
+    "edward": {
+      "title": "Loan Officer",
+      "bio": "I work the phones late, I answer texts on weekends, and I remember the names of the kids in every borrower family I have helped close. Mortgages are math. The relationship is everything else. I work primarily in the Northeast and I have closed loans for veterans, first-time buyers, and self-employed borrowers other shops turned away. If your file is unusual, that is exactly when you want me on it."
+    },
+    "rocco": {
+      "title": "Loan Officer",
+      "bio": "I have been originating loans long enough to know that the rate matters less than the closing date. If you do not close on time, the rate you locked is theoretical and the seller you lost is real. I get my borrowers to the table on the day we promised. I work New England and Vermont especially, and I close my Friday afternoons walking neighborhoods I have helped families move into."
+    },
+    "tim": {
+      "title": "Loan Officer",
+      "bio": "First-time buyers, move-up families, veterans, refinance optimizers. I have walked every kind of borrower through every kind of program in the Northeast. I run buy-down math the way other people run fantasy lineups. Bring me your situation and the rate you are afraid to give up, and I will bring you the path that actually pencils. Saturdays I am at my kid's hockey game with my phone on."
+    },
+    "doug": {
+      "title": "Loan Officer",
+      "bio": "I have been in this industry since before online lenders existed and I am still here for one reason. Borrowers remember who picked up the phone when their deal was about to fall apart at closing. I specialize in VA loans across our nine-state footprint, and I have closed for veterans of every branch and every era. If you served, you earned the benefit, and I will make sure the lender treats it that way. I come to closings."
+    },
+    "juan": {
+      "title": "Loan Officer",
+      "bio": "Hablo español. I work with borrowers who deserve to understand every page of every disclosure, in the language they think in. The biggest financial decision of your life should never come down to a language barrier or a rushed translation. I have closed loans for first-generation buyers in Lawrence, in Lowell, in Brockton, and in Houston. If your mom or your tía wants to be on the call, that is exactly how I want to do it."
+    },
+    "ryan": {
+      "title": "Loan Officer",
+      "bio": "I love this work because every loan changes a family's life. I treat your file like it is the only one on my desk, because for you, it is. I work primarily in New England and Rhode Island, and I take my Sunday afternoons to call borrowers a year out from their closing to see how the house is treating them. The best part of this job is not the closing. It is the housewarming photo I get six months later."
+    },
+    "scott-jones": {
+      "title": "Loan Officer",
+      "bio": "I have sat in the closing chair on hundreds of loans. The pattern is clear. Borrowers who understand their loan are happier years later. So I slow down on the parts that look small, like the escrow waiver, the impound math, the hazard insurance line. I work primarily in Florida and the Northeast, and I am the LO who calls the HOA myself when the underwriter has a question. It saves a week."
+    },
+    "amy-mcbrair": {
+      "title": "Loan Officer",
+      "bio": "I work hard, I move fast, and I tell the truth. If your file has a wrinkle, I will find it on day one and we will work the problem together. No surprises at the closing table, no late-stage panic, no calls from the underwriter you did not see coming. I work jumbo, conventional, and the kind of unique condo financing that scares retail lenders. I came to this business because my parents were first-time buyers once. I do not forget that."
+    },
+    "mike-comerford-jr": {
+      "title": "Loan Officer",
+      "bio": "I grew up around this business, which means I learned the trade from someone who has been doing it for two decades. I bring fresh hustle and old-school standards to every file. I have closed CHFA loans in Colorado, jumbos in Massachusetts, and FHA in New Hampshire. The product names change. The promise does not. I close on time, and if I cannot, I tell you the day before, not the day of."
+    },
+    "david-serrano": {
+      "title": "Loan Officer",
+      "bio": "Hablo español. I spend extra time with first-time buyers because the first home is a once-in-a-lifetime moment. I work primarily Texas and the Northeast, and I have closed TSAHC, TDHCA, and MCC stacks for teachers, firefighters, and EMTs. If you qualify for Homes for Texas Heroes, I want you on the call with your spouse and your mom, in whichever language is comfortable. We get it right or we do not close."
+    },
+    "aisha-barbosa": {
+      "title": "Loan Officer",
+      "bio": "Falo português. I work with families across New England's Portuguese-speaking communities and beyond, from Lowell to Lawrence to Brockton to Framingham. Every borrower deserves a clear path, in the language they think in, and a broker who understands that big decisions get made in family councils, not solo. I close ITIN loans, FHA, MassHousing DPA stacks, and I answer WhatsApp at speeds my husband finds excessive."
+    },
+    "ryan-mcconihe": {
+      "title": "Loan Officer",
+      "bio": "I learned this business by closing tough files for tough situations. Self-employed income, asset-backed loans, jumbo deals, DSCR for investors, bank-statement programs for the gig economy. If your file is complicated, that is exactly when you want me on it. I read tax returns the way some people read mystery novels. I work primarily Florida and the Northeast, and my sweet spot is borrowers who have heard no three times before they get to me."
+    },
+    "lew-calhoun": {
+      "title": "Loan Officer",
+      "bio": "I have originated through every market cycle since the early 2000s. The cycle changes. The job does not. Listen, work the file, get the borrower home. I work mostly New England, with a steady book of refinances and move-up purchases. I send weekly written status updates because I learned the hard way that silence is the worst customer experience in this industry. My borrowers know what is happening every week of the file."
+    },
+    "kwame": {
+      "title": "Loan Officer",
+      "bio": "I take the time to teach. Every borrower I work with closes knowing what every line on their disclosure means, what their PMI does and when it goes away, what their escrow holds and why. Knowledge is the part of the loan you keep forever. I work New England and Maine, and I refinance my own borrowers when the math says it is time. I do not chase the next deal at the cost of the one I already closed."
+    },
+    "nick-anastasi": {
+      "title": "Loan Officer",
+      "bio": "I treat your goal as the brief. Whether it is the lowest payment, the fastest close, or the smartest long-term play, I build the loan that actually serves it. I work primarily Connecticut and the Northeast, and I close a lot of CHFA Time To Own and DAP files for first-time buyers in Hartford and New Haven. If you qualify for the program, I want it on the table. If you do not, I will tell you straight."
+    },
+    "jamal-azweem": {
+      "title": "Loan Officer",
+      "bio": "Communication is the whole game. I keep you, your realtor, and the underwriter on the same page from pre-approval through clear-to-close. No silent stretches, no surprise conditions on the day before closing, no weekend emails left unread until Monday. I work New England and Connecticut, and I send a Friday afternoon update on every active file because I would want one if I were the borrower."
+    },
+    "alexa-parra-magalhaes": {
+      "title": "Loan Officer",
+      "bio": "Hablo español, falo português. I work across our New England communities to make sure every borrower walks into their closing knowing exactly what they signed and what comes next. ITIN files, MassHousing DPA, FHA stacks for first-generation buyers in Lowell, Lawrence, Methuen, and Framingham. I do calls on weekends, in three languages, and I welcome family members on the line. That is how this should work."
+    },
+    "jayne-bolton": {
+      "title": "Loan Officer",
+      "bio": "I have been in mortgage long enough to remember when fax machines were the bottleneck. The tools change. The promise stays the same. I will close your loan on time and tell you the truth at every step. I specialize in reverse mortgages and refinances for retirement-age homeowners across our nine-state footprint, and I am the LO most likely to take a long phone call with your daughter on the line. That is exactly how it should work."
+    },
+    "lily-perez": {
+      "title": "Loan Officer",
+      "bio": "Hablo español. I work with families putting down their first roots in this country, and with neighbors who have been here for generations. Every story gets the same care, the same patience, the same calls answered after hours when life only allows after-hours calls. I close FHA, conventional, MassHousing DPA, and CHFA-CO programs across the Northeast and Colorado. I want your spouse, your mom, and your CPA on the call if that helps."
+    },
+    "brian-walsh": {
+      "title": "Recruiter",
+      "bio": "I help loan officers find their next chapter at LMP. Better splits, better wholesale access, real mentorship from Mike, in-person training in Lowell or fully remote, and bilingual marketing assets if you serve a Portuguese or Spanish community. We have UWM, Rocket Pro, and 30-plus wholesale lender relationships. If you are tired of a comp plan you cannot read or overlays that decline your borrowers for no reason, let's have a confidential intro call. Text me direct."
+    }
+  }
+}

@@ -1,1 +1,52 @@
-{}
+{
+  "page": {
+    "eyebrow": "Get in Touch",
+    "headline": "Lowell handshake. Email-or-text speed.",
+    "subheadline": "Real people, in our Cabot Street office, on the other side of every message you send. Same-day reply on weekdays, and weekends when life demands it.",
+    "metaTemplate": "NMLS #{nmls} · {stateCount} licensed states · {loCount} loan officers"
+  },
+  "form": {
+    "eyebrow": "Send a Message",
+    "headline": "Tell us what you need.",
+    "subheadline": "Pre-approval, refinance, partner inquiry, language preference, anything. We will route your note to the right loan officer the same day.",
+    "fields": {
+      "firstName": "First name",
+      "firstNamePlaceholder": "Maria",
+      "lastName": "Last name",
+      "lastNamePlaceholder": "Silva",
+      "email": "Email",
+      "emailPlaceholder": "you@email.com",
+      "phone": "Phone",
+      "phonePlaceholder": "(555) 123-4567",
+      "message": "How can we help?",
+      "messagePlaceholder": "First-time buyer in NH, looking at FHA. What is the next step?"
+    },
+    "submit": "Send Message"
+  },
+  "info": {
+    "eyebrow": "Direct Lines",
+    "headline": "Reach us where it works for you.",
+    "labels": {
+      "office": "Office",
+      "phone": "Phone",
+      "generalEmail": "General Email",
+      "founder": "Mike Comerford, President",
+      "linkedin": "LinkedIn",
+      "officeHours": "Office Hours",
+      "linkedinLabel": "Mike Comerford on LinkedIn"
+    },
+    "officeHoursLine1": "Mon to Fri, 9am to 6pm ET",
+    "officeHoursLine2": "Sat by appointment",
+    "officeHoursDemoFlag": "[DEMO COPY — pending client review]"
+  },
+  "trust": {
+    "eyebrow": "Local Broker, Multi-State Reach",
+    "stats": {
+      "companyNmls": "Company NMLS",
+      "statesLicensed": "States Licensed",
+      "loanOfficers": "Loan Officers",
+      "lowellLabel": "Lowell",
+      "lowellSub": "Massachusetts"
+    }
+  }
+}

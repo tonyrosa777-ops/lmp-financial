@@ -21,6 +21,7 @@ import Link from 'next/link';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import { siteConfig } from '@/data/site';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface SavedQuiz {
   resultType: string;
@@ -32,6 +33,7 @@ interface SavedQuiz {
 const STORAGE_KEY = 'lmp.quizResult.v1';
 
 export default function AccountSavedQuiz() {
+  const { t, locale } = useTranslation('account');
   const [quiz, setQuiz] = useState<SavedQuiz | null>(null);
   const [loaded, setLoaded] = useState(false);
 
@@ -58,7 +60,7 @@ export default function AccountSavedQuiz() {
     return (
       <Card variant="light" hover={false}>
         <p className="text-body text-[var(--text-on-light-muted)]">
-          Loading...
+          {t('savedQuiz.loading')}
         </p>
       </Card>
     );
@@ -70,12 +72,12 @@ export default function AccountSavedQuiz() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <p className="text-body text-[var(--text-on-light-secondary)]">
-              You haven&apos;t taken our 5-question quiz yet. It will recommend the right loan program and the right loan officer for your situation.
+              {t('savedQuiz.noQuizBody')}
             </p>
           </div>
           <div className="flex-shrink-0">
             <Button href="/quiz" variant="primary" size="md">
-              Take the quiz
+              {t('savedQuiz.noQuizCta')}
             </Button>
           </div>
         </div>
@@ -96,14 +98,14 @@ export default function AccountSavedQuiz() {
     return (
       <Card variant="light" hover={false}>
         <p className="text-body text-[var(--text-on-light-secondary)]">
-          Your saved quiz result references an outdated recommendation.{' '}
+          {t('savedQuiz.outdatedBody')}{' '}
           <Link
             href="/quiz"
             className="text-[var(--accent-deep)] underline hover:text-[var(--accent)]"
           >
-            Retake the quiz
-          </Link>{' '}
-          to get an updated match.
+            {t('savedQuiz.outdatedCta')}
+          </Link>
+          {t('savedQuiz.outdatedSuffix')}
         </p>
       </Card>
     );
@@ -126,7 +128,7 @@ export default function AccountSavedQuiz() {
           className="block group"
         >
           <p className="text-eyebrow text-[var(--accent-deep)]">
-            Program
+            {t('savedQuiz.programLabel')}
           </p>
           <div className="flex items-start gap-4 mt-3">
             <span className="text-4xl flex-shrink-0" aria-hidden="true">
@@ -137,7 +139,7 @@ export default function AccountSavedQuiz() {
                 {program.name}
               </h3>
               <p className="text-body-sm text-[var(--text-on-light-muted)] mt-1">
-                Read the full program details →
+                {t('savedQuiz.programDetailsLink')}
               </p>
             </div>
           </div>
@@ -149,7 +151,7 @@ export default function AccountSavedQuiz() {
           className="block group"
         >
           <p className="text-eyebrow text-[var(--accent-deep)]">
-            Your loan officer
+            {t('savedQuiz.loLabel')}
           </p>
           <div className="flex items-start gap-4 mt-3">
             <div
@@ -166,7 +168,7 @@ export default function AccountSavedQuiz() {
                 NMLS #{lo.nmls}
               </p>
               <p className="text-body-sm text-[var(--text-on-light-muted)] mt-1">
-                See their profile →
+                {t('savedQuiz.loProfileLink')}
               </p>
             </div>
           </div>
@@ -174,18 +176,23 @@ export default function AccountSavedQuiz() {
       </div>
       <div className="mt-6 pt-6 border-t border-[rgba(14,27,51,0.08)] flex flex-wrap items-center justify-between gap-4">
         <p className="text-micro text-[var(--text-on-light-muted)]">
-          Saved{' '}
-          {new Date(quiz.savedAt).toLocaleDateString('en-US', {
-            month: 'long',
-            day: 'numeric',
-            year: 'numeric',
-          })}
+          {t('savedQuiz.savedDateTemplate').replace(
+            '{date}',
+            new Date(quiz.savedAt).toLocaleDateString(
+              locale === 'es' ? 'es-ES' : 'en-US',
+              {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric',
+              },
+            ),
+          )}
         </p>
         <Link
           href="/quiz"
           className="text-body-sm text-[var(--accent-deep)] underline hover:text-[var(--accent)]"
         >
-          Retake the quiz →
+          {t('savedQuiz.retakeLink')}
         </Link>
       </div>
     </Card>

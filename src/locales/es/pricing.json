@@ -1,1 +1,156 @@
-{}
+{
+  "_meta": { "status": "ai-demo-pending-review", "reviewer": null, "reviewed_at": null },
+  "_compliance_flags": [
+    "Esta página es una herramienta de ventas interna de Optimus, marcada para eliminación antes del lanzamiento al cliente per CLAUDE.md Always-Built Features Rule. No es contenido para el cliente final.",
+    "Los precios ($1,500 / $3,000 / $5,500) no se traducen y permanecen en USD según las reglas de la página de precios.",
+    "roi: la calculadora de ROI usa rangos de comisión hipotecaria como ejemplo; las cifras son solo ilustrativas."
+  ],
+  "page": {
+    "metaTitle": "⬥ Precios · Herramienta Interna de Ventas",
+    "metaDescription": "Precios por nivel del sitio web Optimus. Herramienta interna de ventas, eliminada antes del lanzamiento.",
+    "eyebrow": "⬥ Precios",
+    "headline": "Tres niveles. Un sitio web que cierra operaciones.",
+    "subheadline": "Cada sitio que construimos se entrega con la misma base de lujo. Los niveles agregan funciones que componen la conversión. La mayoría de los clientes elige Pro."
+  },
+  "tiers": {
+    "popularBadge": "⭐ Más Popular",
+    "starter": {
+      "name": "Starter",
+      "tagline": "Base premium. Páginas principales. Hero animado.",
+      "features": [
+        "Página de inicio personalizada de lujo con hero animado",
+        "Página Acerca de con la historia del fundador",
+        "Página de programas de préstamos (o servicios para clientes no hipotecarios)",
+        "Página de contacto con enrutamiento del formulario",
+        "Página de Preguntas Frecuentes",
+        "Dominio personalizado + despliegue en Vercel",
+        "Diseño responsivo móvil en todas las medidas",
+        "Optimizado para rendimiento (Lighthouse 90+)",
+        "Calendario de Reservas Automatizado",
+        "Cuestionario de Captura de Leads",
+        "Blog Profesional",
+        "Galería de Fotos",
+        "Vitrina de Testimonios",
+        "Tienda de Mercancía con Marca"
+      ]
+    },
+    "pro": {
+      "name": "Pro",
+      "tagline": "Todo lo que la mayoría de los clientes realmente necesita para convertir.",
+      "features": [
+        "Todo lo de Starter",
+        "Calendario de Reservas Automatizado (con marca personalizada, sin iframe de terceros)",
+        "Cuestionario de Captura de Leads (embudo con puntaje, resultados por arquetipo)",
+        "Blog Profesional (arquitectura de artículos, listo para SEO, optimizado para AEO)",
+        "Galería de Fotos (12 a 16 imágenes, totalmente con marca)",
+        "Vitrina de Testimonios (página completa de reseñas, paginada)",
+        "Tienda de Mercancía con Marca",
+        "Funciones del nivel Premium"
+      ]
+    },
+    "premium": {
+      "name": "Premium",
+      "tagline": "Lanzamiento de guante blanco con comercio y soporte prioritario.",
+      "features": [
+        "Todo lo de Pro",
+        "Tienda de Mercancía con Marca (integración con Stripe y Printful, con marca personalizada)",
+        "Soporte y revisiones prioritarias",
+        "Paquete de lanzamiento de guante blanco",
+        "Arquitectura de soporte multilingüe (cuando aplique)"
+      ]
+    },
+    "ctaButton": "Comenzar",
+    "includedAria": "Incluido",
+    "notIncludedAria": "No incluido"
+  },
+  "roi": {
+    "eyebrow": "Calculadora de ROI",
+    "headline": "¿Cuál es el ROI?",
+    "body": "Deslice hasta sus cifras. El nivel correcto se paga en días, no en trimestres.",
+    "labels": {
+      "avgCommission": "Comisión promedio por préstamo",
+      "loansPerMonth": "Préstamos por mes",
+      "tier": "Nivel",
+      "tierPriceTemplate": "Precio del nivel seleccionado: ${price}"
+    },
+    "tierAriaLabel": "Nivel de precios",
+    "outputs": {
+      "eyebrow": "Sus cifras",
+      "subtitle": "Actualización en vivo mientras desliza.",
+      "monthlyRevenue": "Ingreso mensual",
+      "monthlyRevenueSub": "Solo de su pipeline de préstamos.",
+      "breakEven": "Punto de equilibrio",
+      "breakEvenSubTemplate": "Para amortizar {tierName}.",
+      "breakEvenDays": "días",
+      "twelveMonthRoi": "ROI a 12 meses",
+      "twelveMonthRoiSub": "Retorno neto sobre la construcción en un año."
+    },
+    "lockInTemplate": "Asegurar {tierName}"
+  },
+  "comparison": {
+    "eyebrow": "Lado a lado",
+    "headline": "Cada función, cada nivel.",
+    "body": "Pro es el punto óptimo de la mayoría de los clientes: todas las funciones de conversión, sin la sobrecarga de comercio.",
+    "headers": {
+      "feature": "Función",
+      "starter": "Starter",
+      "pro": "Pro ⭐",
+      "premium": "Premium"
+    },
+    "categories": {
+      "foundation": {
+        "name": "Base",
+        "rows": [
+          "Página de inicio personalizada de lujo con hero animado",
+          "Acerca de / historia del fundador",
+          "Página de servicios / programas de préstamos",
+          "Páginas de contacto y Preguntas Frecuentes",
+          "Dominio personalizado + despliegue en Vercel",
+          "Diseño responsivo móvil",
+          "Optimización de rendimiento"
+        ]
+      },
+      "conversion": {
+        "name": "Conversión",
+        "rows": [
+          "Calendario de Reservas Automatizado",
+          "Cuestionario de Captura de Leads"
+        ]
+      },
+      "contentSeo": {
+        "name": "Contenido y SEO",
+        "rows": [
+          "Blog Profesional",
+          "Galería de Fotos",
+          "Vitrina de Testimonios",
+          "Arquitectura de contenido optimizada para AEO"
+        ]
+      },
+      "commerce": {
+        "name": "Comercio",
+        "rows": [
+          "Tienda de Mercancía con Marca (Stripe + Printful)"
+        ]
+      },
+      "support": {
+        "name": "Soporte",
+        "rows": [
+          "Soporte estándar",
+          "Revisiones prioritarias",
+          "Paquete de lanzamiento de guante blanco"
+        ]
+      }
+    }
+  },
+  "finalCta": {
+    "eyebrow": "Siguiente paso",
+    "headline": "¿Listo para comenzar?",
+    "body": "Elija un nivel en la llamada. Salga con una fecha de construcción y un plan de lanzamiento.",
+    "primary": "Agendar una Consulta"
+  },
+  "modal": {
+    "ariaLabel": "Agendar una consulta",
+    "closeBackdropAria": "Cerrar diálogo de reserva",
+    "closeAria": "Cerrar"
+  }
+}

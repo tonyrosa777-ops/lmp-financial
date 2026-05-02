@@ -1,1 +1,126 @@
-{}
+{
+  "indexPage": {
+    "eyebrow": "Where We're Licensed",
+    "headline": "Nine states. One Lowell handshake.",
+    "subheadline": "We are licensed to originate residential mortgages across nine states. Each one has its own housing finance agency, its own DPA stack, and its own quirks. We know them all by name.",
+    "mapHelpText": "Click a state to see what we offer there"
+  },
+  "statePage": {
+    "labels": {
+      "regionLabel": "Region",
+      "primaryCityLabel": "Primary city",
+      "programsAvailable": "Programs available in this state",
+      "loanOfficersInState": "Loan officers serving this state",
+      "specialPrograms": "State-specific programs",
+      "downPaymentAssistance": "Down payment assistance",
+      "eligibility": "Eligibility",
+      "agency": "Agency",
+      "viewAgencyLink": "View agency site →",
+      "ctaSection": "Get pre-approved in {state}",
+      "ctaSubheadline": "A 15-minute intro call. No credit pull, no documents, no commitment.",
+      "ctaButton": "Schedule with a {state} loan officer",
+      "preApprovalCta": "Start your pre-approval"
+    },
+    "compliance": {
+      "figuresFlag": "Figures current as of 2026 Q1. Verify with the agency website. Compliance review pending.",
+      "disclaimer": "Programs, eligibility, and figures are subject to change. Confirm current details with the issuing agency before applying."
+    }
+  },
+  "states": {
+    "massachusetts": {
+      "code": "MA",
+      "shortName": "MA",
+      "fullName": "Massachusetts",
+      "primaryCity": "Lowell",
+      "region": "New England",
+      "blurb": "Massachusetts is home. Our Lowell office sits five minutes from the Acre, ten from Centralville, and we work the Merrimack Valley, the South Shore, the Brazilian and Hispanic communities in Lawrence and Brockton, and the Cape every week. We close MassHousing DPA stacks, ONE Mortgage files, and FHA in three languages."
+    },
+    "new-hampshire": {
+      "code": "NH",
+      "shortName": "NH",
+      "fullName": "New Hampshire",
+      "primaryCity": "Manchester",
+      "region": "New England",
+      "blurb": "Salem, Nashua, Manchester, Concord. NH is fifteen minutes north of our Lowell HQ and our second-densest book of business. We stack NHHFA Home Flex Plus with the conventional first, run the Community Heroes Initiative for first responders, and we know the move-up market in southern NH cold."
+    },
+    "maine": {
+      "code": "ME",
+      "shortName": "ME",
+      "fullName": "Maine",
+      "primaryCity": "Portland",
+      "region": "New England",
+      "blurb": "Portland to Bangor, the Midcoast and Down East, mobile-home and modular financing other shops walk away from. MaineHousing's First Home Loan plus Advantage stack is one of the most generous DPA structures in New England, and the new First Generation grant is a real wedge for buyers whose parents never owned. We close it."
+    },
+    "rhode-island": {
+      "code": "RI",
+      "shortName": "RI",
+      "fullName": "Rhode Island",
+      "primaryCity": "Providence",
+      "region": "New England",
+      "blurb": "Providence, Cranston, Pawtucket, Newport, Woonsocket. RI is a dense first-time-buyer market and RIHousing has built one of the most layerable DPA stacks in the country: 15kDPA on top of FirstGenHomeRI on top of an MCC tax credit. We have closed all three on the same file."
+    },
+    "connecticut": {
+      "code": "CT",
+      "shortName": "CT",
+      "fullName": "Connecticut",
+      "primaryCity": "Hartford",
+      "region": "New England",
+      "blurb": "Hartford, New Haven, Bridgeport, Stamford, the Fairfield County jumbo market. CHFA Time To Own can put up to $50,000 of forgivable cash toward a first home, layered on the CHFA first. Most retail lenders treat CT bond programs as a checkbox. We treat them as the file."
+    },
+    "vermont": {
+      "code": "VT",
+      "shortName": "VT",
+      "fullName": "Vermont",
+      "primaryCity": "Burlington",
+      "region": "New England",
+      "blurb": "Burlington, South Burlington, Montpelier, Rutland. Vermont is a small market with an outsized DPA toolkit. VHFA stacks MOVE plus ASSIST plus First Generation on a single file, and the MOVE MCC layers a federal tax credit on top of all of it. We close them."
+    },
+    "florida": {
+      "code": "FL",
+      "shortName": "FL",
+      "fullName": "Florida",
+      "primaryCity": "Tampa",
+      "region": "Florida",
+      "blurb": "Tampa, Miami, Orlando, Cape Coral, Naples, Jacksonville. Florida is the snowbird market, the condo market, and the essential-worker market. Hometown Heroes puts $35,000 of DPA on the table for nurses, teachers, firefighters, police, and EMS. Non-warrantable condo financing scares retail lenders. It does not scare us."
+    },
+    "colorado": {
+      "code": "CO",
+      "shortName": "CO",
+      "fullName": "Colorado",
+      "primaryCity": "Denver",
+      "region": "Mountain West",
+      "blurb": "Denver, Boulder, Aurora, Colorado Springs, the Front Range. CHFA-CO updated income limits in January 2026 and the metroDPA forgivable second is one of the most layerable assistance programs in the country. We pair CHFA Preferred with metroDPA on the same file, and we know the high-cost-county jumbo dance in Boulder cold."
+    },
+    "texas": {
+      "code": "TX",
+      "shortName": "TX",
+      "fullName": "Texas",
+      "primaryCity": "Houston",
+      "region": "Texas",
+      "blurb": "Houston, Dallas, Austin, San Antonio, the Rio Grande Valley. Texas runs two parallel state housing systems (TSAHC and TDHCA), each with its own DPA, MCC, and essential-worker program. Bilingual files close faster here than anywhere else in our footprint, and we have closed Homes for Texas Heroes for teachers, EMS, firefighters, and police."
+    }
+  },
+  "regions": {
+    "New England": "New England",
+    "Florida": "Florida",
+    "Mountain West": "Mountain West",
+    "Texas": "Texas"
+  },
+  "_compliance_flags": {
+    "DEMO_COPY_PENDING_CLIENT_REVIEW": "All state intros (blurb fields) are demo copy pending client review per state-programs.ts source comments.",
+    "FIGURES_CURRENT_AS_OF_2026_Q1": "All program figures (DPA amounts, percentages, eligibility income tiers) flagged in source. Verify against agency websites before publish.",
+    "COMPLIANCE_REVIEW_PENDING": "All program copy requires LMP compliance review before publish. State-specific advertising copy must comply with each state's mortgage advertising rules (MA, NH, ME, RI, CT, FL, CO, VT, TX).",
+    "FEATURED_LO_LICENSURE_UNCONFIRMED": "Per-state LO licensure (featuredLOSlugs in source) is unconfirmed pending Mike Comerford's regulatory verification. Display only LOs confirmed licensed in each state.",
+    "QUANTIFIABLE_CLAIMS": [
+      "MA — MassHousing up to $30,000 DPA (verify with agency)",
+      "NH — NHHFA Home Flex Plus up to 4 percent forgivable (verify)",
+      "ME — Advantage $5,000 cash grant + First Generation $5,000 (verify)",
+      "RI — 15kDPA $15,000, Extra Assistance up to $25,000, FirstGenHomeRI $25,000 forgivable (verify)",
+      "CT — Time To Own up to $50,000 forgivable, DAP up to $25,000 (verify)",
+      "VT — ASSIST up to $15,000, First Generation $15,000 (verify)",
+      "FL — Hometown Heroes up to $35,000, Florida Assist up to $10,000 (verify)",
+      "CO — FirstGeneration $25,000, HomeAccess up to $25,000, metroDPA up to 6 percent forgivable (verify)",
+      "TX — TSAHC Heroes up to 5 percent, Home Sweet Texas up to 5 percent, TDHCA programs up to 5 percent (verify)"
+    ]
+  }
+}

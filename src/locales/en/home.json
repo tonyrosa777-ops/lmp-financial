@@ -1,1 +1,159 @@
-{}
+{
+  "hero": {
+    "eyebrowTemplate": "NMLS #{nmls} · {stateCount} states · {loCount} loan officers",
+    "tagline": "Settle into your home, not a rate you'll regret.",
+    "subheadline": "We are an independent mortgage broker out of Lowell, Massachusetts. Twenty-two loan officers, nine licensed states, thirty-plus wholesale lenders shopping every file we touch. One application, one team, one closing.",
+    "ctaPrimary": { "label": "Get Pre-Approved", "href": "/booking" },
+    "ctaSecondary": { "label": "Take the Quiz", "href": "/quiz" },
+    "trustStrip": [
+      "NMLS #2754084",
+      "9 states licensed",
+      "22 loan officers",
+      "Lowell, MA",
+      "EN · PT · ES"
+    ],
+    "founderStrip": {
+      "eyebrow": "From Mike Comerford, President",
+      "body": "We started LMP in Lowell because the borrowers we wanted to serve were our neighbors. Today we are 22 loan officers across 9 states, shopping 30-plus wholesale lenders on every file. We answer Saturday calls. We come to closings. Lowell handshake, Stripe execution.",
+      "linkLabel": "Meet the team →"
+    }
+  },
+  "painPoints": {
+    "eyebrow": "Common Pain Points",
+    "headline": "We've heard every version of this story.",
+    "items": [
+      {
+        "emoji": "🔍",
+        "title": "Shopping multiple banks yourself",
+        "body": "Three banks, three answers, no clarity. We submit one application to thirty-plus wholesale lenders, then bring back the strongest combination so you compare apples to apples."
+      },
+      {
+        "emoji": "💰",
+        "title": "Confusing rates and hidden fees",
+        "body": "Teaser rates, points, lender credits, junk fees. We sit with the loan estimate line by line so you know exactly what you are paying for and what you are not."
+      },
+      {
+        "emoji": "⏳",
+        "title": "Slow underwriting that kills deals",
+        "body": "Most retail lenders move on their own clock. Wholesale shops pick up the phone. Our team works conditions the same day they hit, so the closing date holds."
+      },
+      {
+        "emoji": "❓",
+        "title": "Uncertain whether you'll be approved",
+        "body": "Pre-approval should be a yes, or a clear path to yes. We tell you where you stand on day one, then build the file that gets you across. No vague maybes."
+      },
+      {
+        "emoji": "🗣️",
+        "title": "Language barriers in a major life decision",
+        "body": "We work in English, Portuguese, and Spanish across our team. The biggest financial decision of your life should never get lost in translation, and your family should be able to follow along."
+      },
+      {
+        "emoji": "📈",
+        "title": "Self-employed income that confuses lenders",
+        "body": "1099, K-1, bank-statement, DSCR, rental income. We work with wholesale investors who actually underwrite non-W-2 income, not just check boxes and decline."
+      }
+    ]
+  },
+  "loanPrograms": {
+    "eyebrow": "Loan Programs",
+    "headline": "Nine programs. 9 ways home.",
+    "learnMore": "Learn more →"
+  },
+  "stats": {
+    "eyebrow": "By the Numbers",
+    "headline": "Specific numbers, sourced.",
+    "items": [
+      { "emoji": "⚡", "value": "14 days", "label": "Average close time", "flag": "[SOURCING-REQUIRED]" },
+      { "emoji": "⭐", "value": "4.9/5", "label": "Average rating", "flag": "[SOURCING-REQUIRED]" },
+      { "emoji": "🌎", "value": "9", "label": "States licensed" },
+      { "emoji": "👥", "value": "22", "label": "Loan officers" },
+      { "emoji": "💰", "value": "$10,662", "label": "Average lifetime savings vs retail (Polygon Research / UWM, 2023 HMDA)", "flag": "[COMPLIANCE-REVIEW-PENDING]" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "In Their Words",
+    "headline": "Real borrowers, real closings.",
+    "seeAllTemplate": "See all {count} testimonials"
+  },
+  "quizCTA": {
+    "eyebrow": "Not Sure Where to Start?",
+    "headline": "Three minutes. Five questions. The right loan officer.",
+    "body": "Tell us a little about your situation. We'll match you to the right program and the right LO.",
+    "ctaLabel": "Take the Quiz"
+  },
+  "meetTheTeam": {
+    "eyebrow": "Meet the Team",
+    "headline": "22 loan officers, one Lowell HQ.",
+    "ctaLabelTemplate": "Meet all {count} loan officers"
+  },
+  "blogPreview": {
+    "eyebrow": "Reading Room",
+    "headline": "State programs, explained.",
+    "stubFlag": "[STUB, Phase 1F: Sanity wiring]",
+    "articles": [
+      {
+        "title": "FHA vs Conventional in NH",
+        "excerpt": "When 3.5% down and a 580 score makes more sense than 5% down and 620.",
+        "category": "Loan Programs"
+      },
+      {
+        "title": "MassHousing $30K Down Payment Assistance",
+        "excerpt": "Income tiers, eligibility, and how it stacks with FHA.",
+        "category": "State Programs"
+      },
+      {
+        "title": "Wholesale vs Retail: Why It Matters",
+        "excerpt": "What it means when we shop 30+ wholesale lenders for you.",
+        "category": "How We Work"
+      }
+    ]
+  },
+  "preApprovalCTA": {
+    "headline": "Get Pre-Approved.",
+    "bodyTemplate": "One application. {loCount} loan officers. {stateCount} states.",
+    "ctaPrimary": { "label": "Get Pre-Approved", "href": "/booking" },
+    "ctaSecondary": { "label": "Take the Quiz", "href": "/quiz" }
+  },
+  "processSteps": {
+    "eyebrow": "How It Works",
+    "headline": "Six steps from intro call to keys.",
+    "items": [
+      {
+        "number": "1️⃣",
+        "emoji": "🤝",
+        "title": "Intro Call",
+        "body": "A 15-minute conversation with the LO who fits your state, your language, and your situation. We listen first, ask questions second, recommend programs third."
+      },
+      {
+        "number": "2️⃣",
+        "emoji": "📋",
+        "title": "Documents",
+        "body": "Income, assets, ID. We send a clean checklist, you upload securely, we handle the rest. Most files are document-complete within 2 to 3 days."
+      },
+      {
+        "number": "3️⃣",
+        "emoji": "🔍",
+        "title": "Lender Shop",
+        "body": "We submit your file to multiple wholesale lenders and bring back the strongest combination of rate, fees, and program fit. Same week, every time."
+      },
+      {
+        "number": "4️⃣",
+        "emoji": "📝",
+        "title": "Application",
+        "body": "Pre-approval letter in hand, you make the offer. When the offer wins, we move straight to full application with the chosen lender, no restart, no re-typing."
+      },
+      {
+        "number": "5️⃣",
+        "emoji": "🏠",
+        "title": "Underwriting",
+        "body": "We push the file through, work conditions same-day, and keep you and your realtor in the loop with weekly written updates. No silent stretches."
+      },
+      {
+        "number": "6️⃣",
+        "emoji": "🎉",
+        "title": "Close",
+        "body": "Final numbers, closing disclosure, signing day. You get the keys. We send a closing gift, and we are still here for the refinance, the next home, your kids' first home."
+      }
+    ]
+  }
+}

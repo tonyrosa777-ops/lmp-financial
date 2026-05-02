@@ -26,12 +26,14 @@ import FadeUp from '@/components/animations/FadeUp';
 import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
 import Badge from '@/components/ui/Badge';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface SignInClientProps {
   searchParamsPromise: Promise<{ verify?: string; demo?: string }>;
 }
 
 export default function SignInClient({ searchParamsPromise }: SignInClientProps) {
+  const { t } = useTranslation('account');
   const params = use(searchParamsPromise);
   const arrivedFromVerify = params.verify === '1';
   const router = useRouter();
@@ -58,7 +60,7 @@ export default function SignInClient({ searchParamsPromise }: SignInClientProps)
         redirect: false,
       });
       if (result?.error) {
-        setError('Could not sign you in with that email. Try again.');
+        setError(t('signIn.form.errorGeneric'));
         return;
       }
       // Demo mode: Credentials provider issues a session JWT immediately on
@@ -67,7 +69,7 @@ export default function SignInClient({ searchParamsPromise }: SignInClientProps)
       router.push('/account');
       router.refresh();
     } catch {
-      setError('Something went wrong signing you in. Please try again.');
+      setError(t('signIn.form.errorUnexpected'));
     } finally {
       setSubmitting(false);
     }
@@ -89,16 +91,16 @@ export default function SignInClient({ searchParamsPromise }: SignInClientProps)
         />
         <div className="container-narrow px-6 relative z-10">
           <FadeUp delay={0.1}>
-            <p className="text-eyebrow text-[var(--accent)]">Borrower Portal</p>
+            <p className="text-eyebrow text-[var(--accent)]">{t('signIn.eyebrow')}</p>
           </FadeUp>
           <FadeUp delay={0.2}>
             <h1 className="hero-shimmer font-display text-h1 mt-3">
-              Sign in to your account
+              {t('signIn.headline')}
             </h1>
           </FadeUp>
           <FadeUp delay={0.3}>
             <p className="text-body text-[var(--text-secondary)] mt-6 max-w-2xl">
-              No password needed. Enter the email you used to book a call or take the quiz, and you&apos;ll be signed in.
+              {t('signIn.subheadline')}
             </p>
           </FadeUp>
         </div>
@@ -115,22 +117,24 @@ export default function SignInClient({ searchParamsPromise }: SignInClientProps)
                     📬
                   </div>
                   <h2 className="font-display text-h3 text-[var(--text-on-light)]">
-                    Check your inbox
+                    {t('signIn.checkInbox.headline')}
                   </h2>
                   <p className="text-body text-[var(--text-on-light-secondary)] mt-4">
-                    We sent a sign-in link to{' '}
-                    <span className="font-semibold">{email || 'your email'}</span>. Click the link in the email to access your portal. The link expires in 24 hours.
+                    {t('signIn.checkInbox.bodyTemplate').replace(
+                      '{email}',
+                      email || t('signIn.checkInbox.fallbackEmail'),
+                    )}
                   </p>
                   <p className="text-body-sm text-[var(--text-on-light-muted)] mt-6">
-                    Did not get it? Check spam, or{' '}
+                    {t('signIn.checkInbox.missingPrefix')}
                     <button
                       type="button"
                       onClick={() => setSubmitted(false)}
                       className="text-[var(--accent-deep)] underline hover:text-[var(--accent)]"
                     >
-                      try a different email
+                      {t('signIn.checkInbox.tryDifferent')}
                     </button>
-                    .
+                    {t('signIn.checkInbox.missingSuffix')}
                   </p>
                 </div>
               </FadeUp>
@@ -139,10 +143,10 @@ export default function SignInClient({ searchParamsPromise }: SignInClientProps)
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <Input
                     name="email"
-                    label="Email"
+                    label={t('signIn.form.emailLabel')}
                     type="email"
                     required
-                    placeholder="you@example.com"
+                    placeholder={t('signIn.form.emailPlaceholder')}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     variant="light"
@@ -156,11 +160,11 @@ export default function SignInClient({ searchParamsPromise }: SignInClientProps)
                     </p>
                   )}
                   <Button type="submit" loading={submitting} fullWidth>
-                    {submitting ? 'Signing in...' : 'Sign in'}
+                    {submitting ? t('signIn.form.submitting') : t('signIn.form.submit')}
                   </Button>
                   <div className="flex items-center justify-center pt-2">
                     <Badge color="neutral">
-                      No password · Demo mode
+                      {t('signIn.form.modeBadge')}
                     </Badge>
                   </div>
                 </form>
@@ -171,7 +175,7 @@ export default function SignInClient({ searchParamsPromise }: SignInClientProps)
           {/* [DEMO COPY · COMPLIANCE-REVIEW-PENDING] — Mike's compliance IT firm
               should review this sign-in flow + email template before launch. */}
           <p className="mt-12 text-center text-micro text-[var(--text-on-light-muted)] italic">
-            [COMPLIANCE-REVIEW-PENDING]
+            {t('signIn.complianceFlag')}
           </p>
         </div>
       </section>

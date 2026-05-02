@@ -26,8 +26,13 @@ import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
 import FadeUp from '@/components/animations/FadeUp';
 import BookingCalendar from '@/components/BookingCalendar';
+import { useTranslation } from '@/hooks/useTranslation';
 
 // ---------- Tier data ----------
+//
+// Tier keys, prices, and per-feature included flags are NOT translatable —
+// they're product-config. Tier name, tagline, feature labels, and comparison
+// row labels translate via the `pricing` namespace. Prices stay numeric.
 
 type TierKey = 'starter' | 'pro' | 'premium';
 
@@ -45,64 +50,41 @@ interface Tier {
   highlighted: boolean;
 }
 
-const TIERS: Tier[] = [
-  {
-    key: 'starter',
-    name: 'Starter',
-    price: 1500,
-    tagline: 'Premium foundation. Core pages. Animated hero.',
-    highlighted: false,
-    features: [
-      { label: 'Custom luxury homepage with animated hero', included: true },
-      { label: 'About page with founder story', included: true },
-      { label: 'Loan programs page (or services for non-mortgage clients)', included: true },
-      { label: 'Contact page with form routing', included: true },
-      { label: 'FAQ page', included: true },
-      { label: 'Custom domain + Vercel deployment', included: true },
-      { label: 'Mobile-responsive across all breakpoints', included: true },
-      { label: 'Performance optimized (90+ Lighthouse)', included: true },
-      { label: 'Automated Booking Calendar', included: false },
-      { label: 'Lead-Capture Quiz', included: false },
-      { label: 'Professional Blog', included: false },
-      { label: 'Photo Gallery', included: false },
-      { label: 'Testimonials Showcase', included: false },
-      { label: 'Branded Merch Shop', included: false },
-    ],
-  },
-  {
-    key: 'pro',
-    name: 'Pro',
-    price: 3000,
-    tagline: 'Everything most clients actually need to convert.',
-    highlighted: true,
-    features: [
-      { label: 'Everything in Starter', included: true },
-      { label: 'Automated Booking Calendar (custom-branded, no third-party iframe)', included: true },
-      { label: 'Lead-Capture Quiz (scored funnel, archetype results)', included: true },
-      { label: 'Professional Blog (article architecture, SEO-ready, AEO-optimized)', included: true },
-      { label: 'Photo Gallery (12-16 images, fully branded)', included: true },
-      { label: 'Testimonials Showcase (full review page, paginated)', included: true },
-      { label: 'Branded Merch Shop', included: false },
-      { label: 'Premium tier features', included: false },
-    ],
-  },
-  {
-    key: 'premium',
-    name: 'Premium',
-    price: 5500,
-    tagline: 'White-glove launch with commerce + priority support.',
-    highlighted: false,
-    features: [
-      { label: 'Everything in Pro', included: true },
-      { label: 'Branded Merch Shop (Stripe + Printful integration, custom-branded)', included: true },
-      { label: 'Priority support and revisions', included: true },
-      { label: 'White-glove launch package', included: true },
-      { label: 'Multi-language support architecture (when applicable)', included: true },
-    ],
-  },
-];
+const TIER_PRICES: Record<TierKey, number> = {
+  starter: 1500,
+  pro: 3000,
+  premium: 5500,
+};
+
+// Inclusion masks per tier. Index aligns with the i18n features array order.
+// Truth-table is the single source of which features are in/out at each tier.
+const TIER_INCLUSION: Record<TierKey, boolean[]> = {
+  // Starter: 8 included foundation rows + 6 not-included conversion/content/commerce rows
+  starter: [
+    true, true, true, true, true, true, true, true,
+    false, false, false, false, false, false,
+  ],
+  // Pro: 6 included rows + 2 not-included (commerce + premium-tier)
+  pro: [true, true, true, true, true, true, false, false],
+  // Premium: 5 included rows
+  premium: [true, true, true, true, true],
+};
+
+const TIER_HIGHLIGHTED: Record<TierKey, boolean> = {
+  starter: false,
+  pro: true,
+  premium: false,
+};
+
+const TIER_KEYS: TierKey[] = ['starter', 'pro', 'premium'];
 
 // ---------- Comparison chart data ----------
+//
+// Categories + per-row inclusion are product-config. Labels (category name,
+// row feature label) translate. The arrays here align by index with
+// pricing.json comparison.categories.<key>.rows.
+
+type CategoryKey = 'foundation' | 'conversion' | 'contentSeo' | 'commerce' | 'support';
 
 interface ComparisonRow {
   feature: string;
@@ -112,54 +94,50 @@ interface ComparisonRow {
 }
 
 interface ComparisonCategory {
+  key: CategoryKey;
   name: string;
   rows: ComparisonRow[];
 }
 
-const COMPARISON: ComparisonCategory[] = [
-  {
-    name: 'Foundation',
-    rows: [
-      { feature: 'Custom luxury homepage with animated hero', starter: true, pro: true, premium: true },
-      { feature: 'About / founder story', starter: true, pro: true, premium: true },
-      { feature: 'Services / loan programs page', starter: true, pro: true, premium: true },
-      { feature: 'Contact + FAQ pages', starter: true, pro: true, premium: true },
-      { feature: 'Custom domain + Vercel deploy', starter: true, pro: true, premium: true },
-      { feature: 'Mobile-responsive design', starter: true, pro: true, premium: true },
-      { feature: 'Performance optimization', starter: true, pro: true, premium: true },
-    ],
-  },
-  {
-    name: 'Conversion',
-    rows: [
-      { feature: 'Automated Booking Calendar', starter: false, pro: true, premium: true },
-      { feature: 'Lead-Capture Quiz', starter: false, pro: true, premium: true },
-    ],
-  },
-  {
-    name: 'Content & SEO',
-    rows: [
-      { feature: 'Professional Blog', starter: false, pro: true, premium: true },
-      { feature: 'Photo Gallery', starter: false, pro: true, premium: true },
-      { feature: 'Testimonials Showcase', starter: false, pro: true, premium: true },
-      { feature: 'AEO-optimized content architecture', starter: false, pro: true, premium: true },
-    ],
-  },
-  {
-    name: 'Commerce',
-    rows: [
-      { feature: 'Branded Merch Shop (Stripe + Printful)', starter: false, pro: false, premium: true },
-    ],
-  },
-  {
-    name: 'Support',
-    rows: [
-      { feature: 'Standard support', starter: true, pro: true, premium: true },
-      { feature: 'Priority revisions', starter: false, pro: false, premium: true },
-      { feature: 'White-glove launch package', starter: false, pro: false, premium: true },
-    ],
-  },
+const CATEGORY_KEYS: CategoryKey[] = [
+  'foundation',
+  'conversion',
+  'contentSeo',
+  'commerce',
+  'support',
 ];
+
+// Per-category, per-row inclusion. Index aligns with the translated rows array.
+const CATEGORY_INCLUSION: Record<
+  CategoryKey,
+  Array<{ starter: boolean; pro: boolean; premium: boolean }>
+> = {
+  foundation: [
+    { starter: true, pro: true, premium: true },
+    { starter: true, pro: true, premium: true },
+    { starter: true, pro: true, premium: true },
+    { starter: true, pro: true, premium: true },
+    { starter: true, pro: true, premium: true },
+    { starter: true, pro: true, premium: true },
+    { starter: true, pro: true, premium: true },
+  ],
+  conversion: [
+    { starter: false, pro: true, premium: true },
+    { starter: false, pro: true, premium: true },
+  ],
+  contentSeo: [
+    { starter: false, pro: true, premium: true },
+    { starter: false, pro: true, premium: true },
+    { starter: false, pro: true, premium: true },
+    { starter: false, pro: true, premium: true },
+  ],
+  commerce: [{ starter: false, pro: false, premium: true }],
+  support: [
+    { starter: true, pro: true, premium: true },
+    { starter: false, pro: false, premium: true },
+    { starter: false, pro: false, premium: true },
+  ],
+};
 
 // ---------- Helpers ----------
 
@@ -175,6 +153,8 @@ interface BookingModalProps {
 }
 
 function BookingModal({ open, onClose }: BookingModalProps) {
+  const { t } = useTranslation('pricing');
+
   // ESC key + body scroll lock while open.
   useEffect(() => {
     if (!open) return;
@@ -199,13 +179,13 @@ function BookingModal({ open, onClose }: BookingModalProps) {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Schedule a consultation"
+      aria-label={t('modal.ariaLabel')}
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
     >
       {/* Backdrop */}
       <button
         type="button"
-        aria-label="Close booking dialog"
+        aria-label={t('modal.closeBackdropAria')}
         onClick={onClose}
         className="absolute inset-0 bg-black/70 backdrop-blur-sm cursor-default"
       />
@@ -216,7 +196,7 @@ function BookingModal({ open, onClose }: BookingModalProps) {
           <button
             type="button"
             onClick={onClose}
-            aria-label="Close"
+            aria-label={t('modal.closeAria')}
             className="absolute top-4 right-4 z-20 w-9 h-9 inline-flex items-center justify-center rounded-full bg-[var(--bg-card-dark)] border border-[var(--border-dark)] text-[var(--text-secondary)] hover:text-[var(--accent)] hover:border-[var(--accent-muted)] transition-colors"
           >
             <span aria-hidden="true" className="text-lg leading-none">✕</span>
@@ -238,13 +218,14 @@ interface TierCardProps {
 }
 
 function TierCard({ tier, onSelect }: TierCardProps) {
+  const { t } = useTranslation('pricing');
   const isPro = tier.highlighted;
 
   return (
     <div className="relative h-full flex">
       {isPro && (
         <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-          <Badge color="gold">⭐ Most Popular</Badge>
+          <Badge color="gold">{t('tiers.popularBadge')}</Badge>
         </div>
       )}
 
@@ -302,7 +283,7 @@ function TierCard({ tier, onSelect }: TierCardProps) {
           fullWidth
           onClick={onSelect}
         >
-          Get Started
+          {t('tiers.ctaButton')}
         </Button>
       </Card>
     </div>
@@ -316,43 +297,39 @@ interface RoiCalculatorProps {
 }
 
 function RoiCalculator({ onCtaClick }: RoiCalculatorProps) {
+  const { t } = useTranslation('pricing');
   const [avgCommission, setAvgCommission] = useState<number>(3500);
   const [loansPerMonth, setLoansPerMonth] = useState<number>(4);
   const [selectedTier, setSelectedTier] = useState<TierKey>('pro');
 
-  const tierPrice: Record<TierKey, number> = {
-    starter: 1500,
-    pro: 3000,
-    premium: 5500,
-  };
-
   const monthlyRevenue = avgCommission * loansPerMonth;
   const breakEvenDays =
     monthlyRevenue > 0
-      ? Math.max(1, Math.ceil((tierPrice[selectedTier] / monthlyRevenue) * 30))
+      ? Math.max(1, Math.ceil((TIER_PRICES[selectedTier] / monthlyRevenue) * 30))
       : 0;
   const twelveMonthROI =
-    tierPrice[selectedTier] > 0
-      ? Math.round(((monthlyRevenue * 12 - tierPrice[selectedTier]) / tierPrice[selectedTier]) * 100)
+    TIER_PRICES[selectedTier] > 0
+      ? Math.round(((monthlyRevenue * 12 - TIER_PRICES[selectedTier]) / TIER_PRICES[selectedTier]) * 100)
       : 0;
 
-  const tierChips: { key: TierKey; label: string }[] = [
-    { key: 'starter', label: 'Starter' },
-    { key: 'pro', label: 'Pro' },
-    { key: 'premium', label: 'Premium' },
-  ];
+  // Tier chip labels translate via tiers.<key>.name. Order is product-config.
+  const tierChips: { key: TierKey; label: string }[] = TIER_KEYS.map((key) => ({
+    key,
+    label: t(`tiers.${key}.name`),
+  }));
+  const selectedTierLabel = tierChips.find((c) => c.key === selectedTier)?.label ?? '';
 
   return (
     <div className="grid lg:grid-cols-2 gap-10 items-start">
       {/* Left: inputs */}
       <div className="flex flex-col gap-8">
         <div>
-          <p className="text-eyebrow text-[var(--accent)]">ROI Calculator</p>
+          <p className="text-eyebrow text-[var(--accent)]">{t('roi.eyebrow')}</p>
           <h2 className="font-display text-h2 mt-3 text-[var(--text-primary)]">
-            What&apos;s the ROI?
+            {t('roi.headline')}
           </h2>
           <p className="text-body text-[var(--text-secondary)] mt-3">
-            Slide to your numbers. The right tier pays for itself in days, not quarters.
+            {t('roi.body')}
           </p>
         </div>
 
@@ -363,7 +340,7 @@ function RoiCalculator({ onCtaClick }: RoiCalculatorProps) {
               htmlFor="avg-commission"
               className="text-eyebrow text-[var(--text-secondary)]"
             >
-              Average commission per loan
+              {t('roi.labels.avgCommission')}
             </label>
             <span className="font-mono text-base text-[var(--accent)]">
               ${formatUSD(avgCommission)}
@@ -392,7 +369,7 @@ function RoiCalculator({ onCtaClick }: RoiCalculatorProps) {
               htmlFor="loans-per-month"
               className="text-eyebrow text-[var(--text-secondary)]"
             >
-              Loans per month
+              {t('roi.labels.loansPerMonth')}
             </label>
             <span className="font-mono text-base text-[var(--accent)]">{loansPerMonth}</span>
           </div>
@@ -414,10 +391,10 @@ function RoiCalculator({ onCtaClick }: RoiCalculatorProps) {
 
         {/* Tier chip group */}
         <div className="flex flex-col gap-3">
-          <p className="text-eyebrow text-[var(--text-secondary)]">Tier</p>
+          <p className="text-eyebrow text-[var(--text-secondary)]">{t('roi.labels.tier')}</p>
           <div
             role="tablist"
-            aria-label="Pricing tier"
+            aria-label={t('roi.tierAriaLabel')}
             className="grid grid-cols-3 gap-2 p-1 bg-[var(--bg-card-dark)] border border-[var(--border-dark)] rounded-[var(--radius-md)]"
           >
             {tierChips.map((chip) => {
@@ -442,7 +419,10 @@ function RoiCalculator({ onCtaClick }: RoiCalculatorProps) {
             })}
           </div>
           <p className="text-micro text-[var(--text-muted)]">
-            Selected tier price: ${formatUSD(tierPrice[selectedTier])}
+            {t('roi.labels.tierPriceTemplate').replace(
+              '{price}',
+              formatUSD(TIER_PRICES[selectedTier]),
+            )}
           </p>
         </div>
       </div>
@@ -450,31 +430,31 @@ function RoiCalculator({ onCtaClick }: RoiCalculatorProps) {
       {/* Right: outputs */}
       <Card variant="dark" hover={false} className="flex flex-col gap-6 p-8">
         <div>
-          <p className="text-eyebrow text-[var(--accent)]">Your numbers</p>
+          <p className="text-eyebrow text-[var(--accent)]">{t('roi.outputs.eyebrow')}</p>
           <p className="text-body-sm text-[var(--text-secondary)] mt-2">
-            Live updates as you slide.
+            {t('roi.outputs.subtitle')}
           </p>
         </div>
 
         <RoiOutput
-          label="Monthly revenue"
+          label={t('roi.outputs.monthlyRevenue')}
           value={`$${formatUSD(monthlyRevenue)}`}
-          sub="From your loan pipeline alone."
+          sub={t('roi.outputs.monthlyRevenueSub')}
         />
         <RoiOutput
-          label="Break-even"
-          value={`${breakEvenDays} days`}
-          sub={`To pay off ${tierChips.find((c) => c.key === selectedTier)?.label}.`}
+          label={t('roi.outputs.breakEven')}
+          value={`${breakEvenDays} ${t('roi.outputs.breakEvenDays')}`}
+          sub={t('roi.outputs.breakEvenSubTemplate').replace('{tierName}', selectedTierLabel)}
         />
         <RoiOutput
-          label="12-month ROI"
+          label={t('roi.outputs.twelveMonthRoi')}
           value={`${twelveMonthROI}%`}
-          sub="Net return on the build over a year."
+          sub={t('roi.outputs.twelveMonthRoiSub')}
           accent
         />
 
         <Button variant="primary" size="md" fullWidth onClick={onCtaClick}>
-          Lock in {tierChips.find((c) => c.key === selectedTier)?.label}
+          {t('roi.lockInTemplate').replace('{tierName}', selectedTierLabel)}
         </Button>
       </Card>
     </div>
@@ -508,6 +488,25 @@ function RoiOutput({ label, value, sub, accent = false }: RoiOutputProps) {
 // ---------- Comparison Chart ----------
 
 function ComparisonChart() {
+  const { t, ta } = useTranslation('pricing');
+
+  // Build categories from translated row labels + product-config inclusion masks.
+  const categories: ComparisonCategory[] = CATEGORY_KEYS.map((catKey) => {
+    const rowLabels = ta<string[]>(`comparison.categories.${catKey}.rows`) ?? [];
+    const inclusion = CATEGORY_INCLUSION[catKey];
+    const rows: ComparisonRow[] = rowLabels.map((label, idx) => ({
+      feature: label,
+      starter: inclusion[idx]?.starter ?? false,
+      pro: inclusion[idx]?.pro ?? false,
+      premium: inclusion[idx]?.premium ?? false,
+    }));
+    return {
+      key: catKey,
+      name: t(`comparison.categories.${catKey}.name`),
+      rows,
+    };
+  });
+
   return (
     <div className="overflow-x-auto">
       <table className="w-full border-collapse text-left">
@@ -517,13 +516,13 @@ function ComparisonChart() {
               scope="col"
               className="py-4 px-4 text-eyebrow text-[var(--text-on-light-secondary)]"
             >
-              Feature
+              {t('comparison.headers.feature')}
             </th>
             <th
               scope="col"
               className="py-4 px-4 text-center text-eyebrow text-[var(--text-on-light-secondary)]"
             >
-              Starter
+              {t('comparison.headers.starter')}
               <div className="font-mono text-sm text-[var(--text-on-light)] mt-1 normal-case tracking-normal">
                 $1,500
               </div>
@@ -532,7 +531,7 @@ function ComparisonChart() {
               scope="col"
               className="py-4 px-4 text-center text-eyebrow text-[var(--accent)]"
             >
-              Pro ⭐
+              {t('comparison.headers.pro')}
               <div className="font-mono text-sm text-[var(--text-on-light)] mt-1 normal-case tracking-normal">
                 $3,000
               </div>
@@ -541,7 +540,7 @@ function ComparisonChart() {
               scope="col"
               className="py-4 px-4 text-center text-eyebrow text-[var(--text-on-light-secondary)]"
             >
-              Premium
+              {t('comparison.headers.premium')}
               <div className="font-mono text-sm text-[var(--text-on-light)] mt-1 normal-case tracking-normal">
                 $5,500
               </div>
@@ -549,8 +548,8 @@ function ComparisonChart() {
           </tr>
         </thead>
 
-        {COMPARISON.map((category) => (
-          <tbody key={category.name}>
+        {categories.map((category) => (
+          <tbody key={category.key}>
             <tr>
               <td
                 colSpan={4}
@@ -586,12 +585,13 @@ function ComparisonChart() {
 }
 
 function CheckMark({ included }: { included: boolean }) {
+  const { t } = useTranslation('pricing');
   return included ? (
-    <span className="text-[var(--accent)] text-lg" aria-label="Included">
+    <span className="text-[var(--accent)] text-lg" aria-label={t('tiers.includedAria')}>
       ✅
     </span>
   ) : (
-    <span className="text-[var(--text-on-light-muted)] text-lg" aria-label="Not included">
+    <span className="text-[var(--text-on-light-muted)] text-lg" aria-label={t('tiers.notIncludedAria')}>
       ❌
     </span>
   );
@@ -600,19 +600,52 @@ function CheckMark({ included }: { included: boolean }) {
 // ---------- Main client component ----------
 
 export default function PricingClient() {
+  const { t, ta } = useTranslation('pricing');
   const [modalOpen, setModalOpen] = useState<boolean>(false);
 
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
 
+  // Assemble tiers from translation namespace + product-config (price, included masks).
+  // Feature labels translate; included flags are static product config aligned by index.
+  const tiers: Tier[] = TIER_KEYS.map((key) => {
+    const featureLabels = ta<string[]>(`tiers.${key}.features`) ?? [];
+    const inclusion = TIER_INCLUSION[key];
+    return {
+      key,
+      name: t(`tiers.${key}.name`),
+      price: TIER_PRICES[key],
+      tagline: t(`tiers.${key}.tagline`),
+      highlighted: TIER_HIGHLIGHTED[key],
+      features: featureLabels.map((label, idx) => ({
+        label,
+        included: inclusion[idx] ?? false,
+      })),
+    };
+  });
+
   return (
     <>
+      {/* Page header — dark gradient (moved here from page.tsx so the headline,
+          eyebrow, and sub translate via useTranslation('pricing')) */}
+      <section className="relative overflow-hidden section-dark-gradient pt-32 pb-16">
+        <div className="container-base px-6 relative z-10 text-center">
+          <p className="text-eyebrow text-[var(--accent)]">{t('page.eyebrow')}</p>
+          <h1 className="hero-shimmer font-display text-h1 mt-3 max-w-3xl mx-auto">
+            {t('page.headline')}
+          </h1>
+          <p className="text-body text-[var(--text-secondary)] mt-6 max-w-2xl mx-auto">
+            {t('page.subheadline')}
+          </p>
+        </div>
+      </section>
+
       {/* Section 1: Tier cards — light gradient */}
       <section className="relative overflow-hidden section-light-gradient section-pad-base">
         <div className="container-base px-6 relative z-10">
           <FadeUp>
             <div className="grid md:grid-cols-3 gap-8 md:gap-6 lg:gap-8 pt-6 items-stretch">
-              {TIERS.map((tier) => (
+              {tiers.map((tier) => (
                 <TierCard key={tier.key} tier={tier} onSelect={openModal} />
               ))}
             </div>
@@ -634,12 +667,12 @@ export default function PricingClient() {
         <div className="container-base px-6 relative z-10">
           <FadeUp>
             <div className="text-center max-w-2xl mx-auto mb-12">
-              <p className="text-eyebrow text-[var(--accent)]">Side by side</p>
+              <p className="text-eyebrow text-[var(--accent)]">{t('comparison.eyebrow')}</p>
               <h2 className="font-display text-h2 mt-3 text-[var(--text-on-light)]">
-                Every feature, every tier.
+                {t('comparison.headline')}
               </h2>
               <p className="text-body text-[var(--text-on-light-secondary)] mt-4">
-                Pro is most clients&apos; sweet spot — every conversion feature, none of the commerce overhead.
+                {t('comparison.body')}
               </p>
             </div>
             <ComparisonChart />
@@ -651,16 +684,16 @@ export default function PricingClient() {
       <section className="relative overflow-hidden section-dark-gradient section-pad-base">
         <div className="container-base px-6 relative z-10 text-center">
           <FadeUp>
-            <p className="text-eyebrow text-[var(--accent)]">Next step</p>
+            <p className="text-eyebrow text-[var(--accent)]">{t('finalCta.eyebrow')}</p>
             <h2 className="hero-shimmer font-display text-h2 mt-3 max-w-2xl mx-auto">
-              Ready to start?
+              {t('finalCta.headline')}
             </h2>
             <p className="text-body text-[var(--text-secondary)] mt-6 max-w-xl mx-auto">
-              Pick a tier on the call. Walk away with a build date and a launch plan.
+              {t('finalCta.body')}
             </p>
             <div className="mt-8 flex justify-center">
               <Button variant="primary" size="lg" onClick={openModal}>
-                Schedule a Consultation
+                {t('finalCta.primary')}
               </Button>
             </div>
           </FadeUp>

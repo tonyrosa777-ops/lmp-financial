@@ -1,1 +1,89 @@
-{}
+{
+  "_meta": { "status": "ai-demo-pending-review", "reviewer": null, "reviewed_at": null },
+  "_compliance_flags": [],
+  "nav": {
+    "items": [
+      { "href": "/services", "label": "Programas de préstamo" },
+      { "href": "/calculators", "label": "Calculadoras" },
+      { "href": "/team", "label": "Equipo" },
+      { "href": "/partners", "label": "Agentes inmobiliarios" },
+      { "href": "/careers", "label": "Carreras" },
+      { "href": "/blog", "label": "Blog" },
+      { "href": "/contact", "label": "Contacto" },
+      { "href": "/pricing", "label": "Precios", "isInternal": true }
+    ],
+    "ctaPrimary": { "label": "Obtenga su pre-aprobación", "href": "/booking" },
+    "openNav": "Abrir navegación",
+    "closeNav": "Cerrar navegación",
+    "homeAriaTemplate": "Inicio de {businessName}",
+    "primaryAriaLabel": "Principal",
+    "drawerAriaLabel": "Navegación del sitio"
+  },
+  "auth": {
+    "signIn": "Iniciar sesión",
+    "myAccount": "Mi cuenta",
+    "signInArrow": "Iniciar sesión →",
+    "myAccountArrow": "Mi cuenta →"
+  },
+  "footer": {
+    "columns": [
+      {
+        "title": "Compañía",
+        "links": [
+          { "label": "Sobre nosotros", "href": "/about" },
+          { "label": "Equipo", "href": "/team" },
+          { "label": "Agentes inmobiliarios", "href": "/partners" },
+          { "label": "Carreras", "href": "/careers" },
+          { "label": "Contacto", "href": "/contact" }
+        ]
+      },
+      {
+        "title": "Programas de préstamo",
+        "links": [
+          { "label": "Hipoteca a tasa fija", "href": "/services/fixed-rate" },
+          { "label": "Préstamo FHA", "href": "/services/fha" },
+          { "label": "Préstamo VA", "href": "/services/va" },
+          { "label": "Hipoteca Jumbo", "href": "/services/jumbo" },
+          { "label": "Hipoteca a tasa ajustable", "href": "/services/arm" },
+          { "label": "Hipoteca USDA", "href": "/services/usda" },
+          { "label": "Comprador por primera vez", "href": "/services/first-time-buyer" },
+          { "label": "Hipoteca inversa", "href": "/services/reverse" },
+          { "label": "Hipoteca de solo interés", "href": "/services/interest-only" }
+        ]
+      },
+      {
+        "title": "Recursos",
+        "links": [
+          { "label": "Calculadoras", "href": "/calculators" },
+          { "label": "Preguntas frecuentes", "href": "/faq" },
+          { "label": "Blog", "href": "/blog" },
+          { "label": "Reseñas", "href": "/testimonials" },
+          { "label": "Áreas de servicio", "href": "/service-areas" }
+        ]
+      },
+      {
+        "title": "Contacto",
+        "links": [
+          { "label": "(978) 453-LOAN", "href": "tel:+19784535626" },
+          { "label": "info@lmpfinancial.com", "href": "mailto:info@lmpfinancial.com" },
+          { "label": "LinkedIn", "href": "https://www.linkedin.com/in/mike-comerford-aa134887/" }
+        ]
+      }
+    ],
+    "copyright": "© 2026 LMP Financial. Todos los derechos reservados.",
+    "legalLinks": [
+      { "label": "Política de privacidad", "href": "/privacy-policy" },
+      { "label": "Términos de uso", "href": "/terms-of-use" },
+      { "label": "Declaración de accesibilidad ADA", "href": "/ada-accessibility-statement" }
+    ],
+    "verbatimNote": "Aviso legal en inglés según requerimientos regulatorios."
+  },
+  "buttons": {
+    "getPreApproved": "Obtenga su pre-aprobación",
+    "talkToLO": "Hable con un oficial de préstamos",
+    "takeQuiz": "Haga el cuestionario",
+    "learnMore": "Más información →",
+    "meetTheTeam": "Conozca al equipo →",
+    "viewAll": "Ver todo"
+  }
+}

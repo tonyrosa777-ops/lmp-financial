@@ -16,6 +16,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Card from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface Booking {
   startTime: string; // ISO datetime
@@ -30,6 +31,7 @@ interface AccountBookingsProps {
 }
 
 export default function AccountBookings({ userEmail }: AccountBookingsProps) {
+  const { t, locale } = useTranslation('account');
   const [bookings, setBookings] = useState<Booking[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -47,7 +49,7 @@ export default function AccountBookings({ userEmail }: AccountBookingsProps) {
       })
       .catch(() => {
         if (cancelled) return;
-        setError('Could not load your consultations. Try refreshing the page.');
+        setError(t('bookings.loadError'));
       })
       .finally(() => {
         if (cancelled) return;
@@ -56,13 +58,13 @@ export default function AccountBookings({ userEmail }: AccountBookingsProps) {
     return () => {
       cancelled = true;
     };
-  }, [userEmail]);
+  }, [userEmail, t]);
 
   if (loading) {
     return (
       <Card variant="light" hover={false}>
         <p className="text-body text-[var(--text-on-light-muted)]">
-          Loading your consultations...
+          {t('bookings.loading')}
         </p>
       </Card>
     );
@@ -80,30 +82,34 @@ export default function AccountBookings({ userEmail }: AccountBookingsProps) {
     return (
       <Card variant="light" hover={false}>
         <p className="text-body text-[var(--text-on-light-secondary)]">
-          You don&apos;t have any upcoming consultations yet.
+          {t('bookings.emptyBody')}
         </p>
         <p className="text-body-sm text-[var(--text-on-light-muted)] mt-3">
           <Link
             href="/booking"
             className="text-[var(--accent-deep)] underline hover:text-[var(--accent)]"
           >
-            Schedule a call →
+            {t('bookings.emptyCta')}
           </Link>
         </p>
       </Card>
     );
   }
 
+  // Format date/time in the active locale (es-ES vs en-US). Falls back to the
+  // browser's Intl resolution for unknown locale tags.
+  const intlLocale = locale === 'es' ? 'es-ES' : 'en-US';
+
   return (
     <div className="space-y-4">
       {bookings.map((b) => {
         const start = new Date(b.startTime);
-        const dateLabel = start.toLocaleDateString('en-US', {
+        const dateLabel = start.toLocaleDateString(intlLocale, {
           weekday: 'long',
           month: 'long',
           day: 'numeric',
         });
-        const timeLabel = start.toLocaleTimeString('en-US', {
+        const timeLabel = start.toLocaleTimeString(intlLocale, {
           hour: 'numeric',
           minute: '2-digit',
           hour12: true,
@@ -116,7 +122,7 @@ export default function AccountBookings({ userEmail }: AccountBookingsProps) {
                   {dateLabel} · {timeLabel}
                 </p>
                 <h3 className="font-display text-xl text-[var(--text-on-light)] mt-2">
-                  Call with {b.loName}
+                  {t('bookings.callWithTemplate').replace('{loName}', b.loName)}
                 </h3>
                 {b.location && (
                   <p className="text-body-sm text-[var(--text-on-light-muted)] mt-1">
@@ -132,14 +138,17 @@ export default function AccountBookings({ userEmail }: AccountBookingsProps) {
                     rel="noopener noreferrer"
                     className="text-body-sm text-[var(--accent-deep)] underline hover:text-[var(--accent)]"
                   >
-                    Join link
+                    {t('bookings.joinLink')}
                   </a>
                 )}
                 <Link
                   href={`/team/${b.loSlug}`}
                   className="text-body-sm text-[var(--accent-deep)] underline hover:text-[var(--accent)]"
                 >
-                  About {b.loName.split(' ')[0]} →
+                  {t('bookings.aboutLoTemplate').replace(
+                    '{loFirstName}',
+                    b.loName.split(' ')[0],
+                  )}
                 </Link>
               </div>
             </div>
@@ -148,8 +157,8 @@ export default function AccountBookings({ userEmail }: AccountBookingsProps) {
       })}
       {demoMode && (
         <p className="text-micro text-[var(--text-on-light-muted)] text-center pt-2">
-          <Badge color="neutral">Demo mode</Badge>{' '}
-          <span className="ml-2">Showing sample bookings until Calendly is wired in Phase 2A.</span>
+          <Badge color="neutral">{t('bookings.demoBadge')}</Badge>{' '}
+          <span className="ml-2">{t('bookings.demoNote')}</span>
         </p>
       )}
     </div>

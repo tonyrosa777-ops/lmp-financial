@@ -7,12 +7,18 @@
  * /team/{slug} per CLAUDE.md LMP-specific custom build (per-LO landing page).
  *
  * Language → flag emoji map matches design-system.md §9 emoji shortlist.
+ *
+ * Phase i18n — eyebrow / headline / "Meet all N loan officers" CTA pulled
+ * from `home.meetTheTeam.*`. LO data (name, role, NMLS, slug, languages)
+ * stays in siteConfig — `team` namespace owns per-LO bio localization on
+ * /team pages.
  */
 
 import { siteConfig } from '@/data/site';
 import FadeUp from '@/components/animations/FadeUp';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const LANGUAGE_FLAGS: Record<string, string> = {
   en: '🇺🇸',
@@ -38,16 +44,21 @@ function initialsFor(name: string): string {
 export default function MeetTheTeamSection() {
   const { loanOfficers } = siteConfig;
   const featured = loanOfficers.slice(0, 8);
+  const { t } = useTranslation('home');
+  const ctaLabel = t('meetTheTeam.ctaLabelTemplate').replace(
+    '{count}',
+    String(loanOfficers.length),
+  );
 
   return (
     <section className="section-dark-gradient section-pad-base">
       <div className="container-base px-6">
         <FadeUp>
-          <p className="text-eyebrow text-[var(--accent)]">Meet the Team</p>
+          <p className="text-eyebrow text-[var(--accent)]">{t('meetTheTeam.eyebrow')}</p>
         </FadeUp>
         <FadeUp delay={0.1}>
           <h2 className="font-display text-h2 mt-3 max-w-3xl">
-            {loanOfficers.length} loan officers, one Lowell HQ.
+            {t('meetTheTeam.headline')}
           </h2>
         </FadeUp>
 
@@ -75,7 +86,7 @@ export default function MeetTheTeamSection() {
 
         <div className="text-center mt-12">
           <Button variant="secondary" href="/team">
-            Meet all {loanOfficers.length} loan officers
+            {ctaLabel}
           </Button>
         </div>
       </div>

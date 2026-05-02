@@ -18,6 +18,7 @@ import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import FadeUp from '@/components/animations/FadeUp';
 import PhotoBackground from '@/components/PhotoBackground';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const TERM_OPTIONS = [15, 20, 30] as const;
 const DTI_OPTIONS = [36, 43, 50] as const;
@@ -104,6 +105,7 @@ function RadioGroup<T extends number>({ label, options, value, onChange, format 
 }
 
 export default function AffordabilityCalculatorPage() {
+  const { t } = useTranslation('calculators');
   const [annualIncome, setAnnualIncome] = useState(85000);
   const [monthlyDebts, setMonthlyDebts] = useState(400);
   const [downPayment, setDownPayment] = useState(20000);
@@ -155,18 +157,16 @@ export default function AffordabilityCalculatorPage() {
         />
         <div className="container-wide px-6 relative z-10">
           <FadeUp delay={0.1}>
-            <p className="text-eyebrow text-[var(--accent)]">Affordability Calculator</p>
+            <p className="text-eyebrow text-[var(--accent)]">{t('affordability.eyebrow')}</p>
           </FadeUp>
           <FadeUp delay={0.2}>
             <h1 className="hero-shimmer font-display text-h1 mt-3 max-w-3xl">
-              How much home can I afford?
+              {t('affordability.headline')}
             </h1>
           </FadeUp>
           <FadeUp delay={0.3}>
             <p className="text-body text-[var(--text-secondary)] mt-6 max-w-2xl">
-              Enter your income, monthly debts, and target DTI. We will run the same
-              amortization math your lender will. The number you see is the ceiling, not
-              the recommendation.
+              {t('affordability.subheadline')}
             </p>
           </FadeUp>
         </div>
@@ -181,14 +181,14 @@ export default function AffordabilityCalculatorPage() {
             {/* INPUTS */}
             <Card variant="light" hover={false} className="h-full">
               <h2 className="font-display text-h3 text-[var(--text-on-light)] mb-2">
-                Your numbers
+                {t('shared.yourNumbers')}
               </h2>
               <p className="text-body-sm text-[var(--text-on-light-secondary)] mb-8">
-                Slide to adjust. Estimates update live.
+                {t('shared.slideToAdjust')}
               </p>
               <div className="flex flex-col gap-6">
                 <SliderInput
-                  label="Annual income"
+                  label={t('affordability.inputs.annualIncome')}
                   min={40000}
                   max={500000}
                   step={1000}
@@ -197,7 +197,7 @@ export default function AffordabilityCalculatorPage() {
                   format={formatUSD}
                 />
                 <SliderInput
-                  label="Monthly debts (car, student loans, credit cards)"
+                  label={t('affordability.inputs.monthlyDebts')}
                   min={0}
                   max={5000}
                   step={50}
@@ -206,7 +206,7 @@ export default function AffordabilityCalculatorPage() {
                   format={formatUSD}
                 />
                 <SliderInput
-                  label="Down payment available"
+                  label={t('affordability.inputs.downPayment')}
                   min={0}
                   max={200000}
                   step={1000}
@@ -215,7 +215,7 @@ export default function AffordabilityCalculatorPage() {
                   format={formatUSD}
                 />
                 <SliderInput
-                  label="Interest rate"
+                  label={t('affordability.inputs.interestRate')}
                   min={4}
                   max={9}
                   step={0.125}
@@ -224,14 +224,14 @@ export default function AffordabilityCalculatorPage() {
                   format={formatPercent}
                 />
                 <RadioGroup
-                  label="Loan term"
+                  label={t('affordability.inputs.loanTerm')}
                   options={TERM_OPTIONS}
                   value={term}
                   onChange={setTerm}
-                  format={(v) => `${v} yrs`}
+                  format={(v) => `${v} ${t('affordability.inputs.yrs')}`}
                 />
                 <RadioGroup
-                  label="Target back-end DTI"
+                  label={t('affordability.inputs.targetDti')}
                   options={DTI_OPTIONS}
                   value={dti}
                   onChange={setDti}
@@ -243,10 +243,10 @@ export default function AffordabilityCalculatorPage() {
             {/* OUTPUTS */}
             <Card variant="light" hover={false} className="h-full">
               <h2 className="font-display text-h3 text-[var(--text-on-light)] mb-2">
-                What it means
+                {t('affordability.results.title')}
               </h2>
               <p className="text-body-sm text-[var(--text-on-light-secondary)] mb-8">
-                Estimate based on the inputs you entered.
+                {t('affordability.results.subtitle')}
               </p>
 
               {result.debtsTooHigh ? (
@@ -257,47 +257,51 @@ export default function AffordabilityCalculatorPage() {
                     borderColor: 'var(--error)',
                   }}
                 >
-                  <p className="text-eyebrow text-[var(--error)] mb-2">Heads up</p>
+                  <p className="text-eyebrow text-[var(--error)] mb-2">
+                    {t('shared.headsUp')}
+                  </p>
                   <p className="text-body text-[var(--text-on-light)]">
-                    Your current debts exceed the target DTI threshold. Reduce monthly
-                    debts or increase income to get an estimate. A loan officer can also
-                    walk through compensating factors.
+                    {t('affordability.results.debtsTooHigh')}
                   </p>
                 </div>
               ) : (
                 <div className="flex flex-col gap-6">
                   <div className="border-b border-[rgba(14,27,51,0.10)] pb-6">
                     <p className="text-eyebrow text-[var(--text-on-light-secondary)]">
-                      Max monthly housing payment
+                      {t('affordability.results.maxPayment')}
                     </p>
                     <p className="font-display text-h2 text-[var(--text-on-light)] mt-2">
                       {formatUSD(result.maxPayment)}
                     </p>
                     <p className="text-micro text-[var(--text-on-light-muted)] mt-2">
-                      Income times target DTI, minus current debts.
+                      {t('affordability.results.maxPaymentSub')}
                     </p>
                   </div>
                   <div className="border-b border-[rgba(14,27,51,0.10)] pb-6">
                     <p className="text-eyebrow text-[var(--text-on-light-secondary)]">
-                      Max loan amount
+                      {t('affordability.results.maxLoan')}
                     </p>
                     <p className="font-display text-h2 text-[var(--accent-deep)] mt-2">
                       {formatUSD(result.loanAmount)}
                     </p>
                     <p className="text-micro text-[var(--text-on-light-muted)] mt-2">
-                      Loan supported by that payment at {formatPercent(rate)} for{' '}
-                      {term} years.
+                      {t('affordability.results.maxLoanSubTemplate')
+                        .replace('{rate}', formatPercent(rate))
+                        .replace('{term}', String(term))}
                     </p>
                   </div>
                   <div>
                     <p className="text-eyebrow text-[var(--text-on-light-secondary)]">
-                      Max home price
+                      {t('affordability.results.maxHomePrice')}
                     </p>
                     <p className="font-display text-h1 text-[var(--accent-deep)] mt-2">
                       {formatUSD(result.maxHomePrice)}
                     </p>
                     <p className="text-micro text-[var(--text-on-light-muted)] mt-2">
-                      Loan amount plus your down payment of {formatUSD(downPayment)}.
+                      {t('affordability.results.maxHomePriceSubTemplate').replace(
+                        '{downPayment}',
+                        formatUSD(downPayment),
+                      )}
                     </p>
                   </div>
                 </div>
@@ -309,20 +313,20 @@ export default function AffordabilityCalculatorPage() {
 
       {/* ============================================================ */}
       {/* SECTION 3 — Disclosure (light)                                 */}
+      {/* [COMPLIANCE-REVIEW-PENDING] disclaimer copy below per CLAUDE.md  */}
+      {/* Compliance Rule. JSON dictionary is source; ES needs LMP review. */}
       {/* ============================================================ */}
       <section className="section-light-gradient pb-16">
         <div className="container-base px-6">
           <div className="rounded-[var(--radius-md)] p-6 border border-[rgba(14,27,51,0.10)] bg-[var(--bg-card)]">
             <p className="font-mono text-eyebrow text-[var(--accent-deep)] mb-3">
-              [NOT-A-COMMITMENT]
+              {t('shared.notACommitment')}
             </p>
             <p className="text-body-sm text-[var(--text-on-light-secondary)]">
-              These numbers are estimates. Actual rates, terms, and approval depend on
-              your full file: credit, income documentation, assets, property, and program
-              guidelines. Talk to a loan officer for a real quote.
+              {t('affordability.disclaimerBody')}
             </p>
             <p className="font-mono text-micro text-[var(--text-on-light-muted)] mt-4">
-              [COMPLIANCE-REVIEW-PENDING]
+              {t('shared.complianceReviewPending')}
             </p>
           </div>
         </div>
@@ -343,19 +347,18 @@ export default function AffordabilityCalculatorPage() {
         <div className="container-base px-6 text-center relative z-10">
           <FadeUp>
             <h2 className="font-display text-h2 text-[var(--text-primary)] max-w-2xl mx-auto">
-              Want a real number?
+              {t('shared.wantRealNumber')}
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="text-body text-[var(--text-secondary)] mt-6 max-w-xl mx-auto">
-              Fifteen minutes with a loan officer turns the estimate into a pre-approval
-              letter you can hand a realtor.
+              {t('affordability.ctaBody')}
             </p>
           </FadeUp>
           <FadeUp delay={0.2}>
             <div className="mt-8">
               <Button href="/booking" size="lg">
-                Get Pre-Approved
+                {t('shared.getPreApproved')}
               </Button>
             </div>
           </FadeUp>

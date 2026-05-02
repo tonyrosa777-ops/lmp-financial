@@ -1,1 +1,75 @@
-{}
+{
+  "portal": {
+    "metaTitle": "Your Borrower Portal",
+    "metaDescription": "Your LMP Financial Borrower Portal: upcoming consultations, your saved quiz match, and your application progress.",
+    "eyebrow": "Borrower Portal",
+    "welcomeBack": "Welcome back",
+    "signOut": "Sign out",
+    "backToSiteTemplate": "← Back to {businessName}"
+  },
+  "bookings": {
+    "eyebrow": "Upcoming consultations",
+    "headline": "Your scheduled calls",
+    "loading": "Loading your consultations...",
+    "loadError": "Could not load your consultations. Try refreshing the page.",
+    "emptyBody": "You don't have any upcoming consultations yet.",
+    "emptyCta": "Schedule a call →",
+    "callWithTemplate": "Call with {loName}",
+    "joinLink": "Join link",
+    "aboutLoTemplate": "About {loFirstName} →",
+    "demoBadge": "Demo mode",
+    "demoNote": "Showing sample bookings until Calendly is wired in Phase 2A."
+  },
+  "savedQuiz": {
+    "eyebrow": "Your match",
+    "headline": "Recommended for you",
+    "loading": "Loading...",
+    "noQuizBody": "You haven't taken our 5-question quiz yet. It will recommend the right loan program and the right loan officer for your situation.",
+    "noQuizCta": "Take the quiz",
+    "outdatedBody": "Your saved quiz result references an outdated recommendation.",
+    "outdatedCta": "Retake the quiz",
+    "outdatedSuffix": " to get an updated match.",
+    "programLabel": "Program",
+    "programDetailsLink": "Read the full program details →",
+    "loLabel": "Your loan officer",
+    "loProfileLink": "See their profile →",
+    "savedDateTemplate": "Saved {date}",
+    "retakeLink": "Retake the quiz →"
+  },
+  "application": {
+    "eyebrow": "Application",
+    "headline": "Continue your application",
+    "body": "Pick up where you left off in our secure application portal. You will move into a hosted form built for mortgage applications: SSN, employment, and address history. We hand you off there with your contact info already known to us.",
+    "helperPrefix": "Not sure which loan officer to start with? ",
+    "helperQuizLink": "Take the 5-question quiz",
+    "helperOr": " or ",
+    "helperTeamLink": "browse our loan officers",
+    "helperSuffix": ".",
+    "secureBadge": "Hosted with our application partner · Secure"
+  },
+  "signIn": {
+    "metaTitle": "Sign In to Your Borrower Portal",
+    "metaDescription": "Sign in to your LMP Financial Borrower Portal to see upcoming consultations, your saved quiz result, and your application progress.",
+    "eyebrow": "Borrower Portal",
+    "headline": "Sign in to your account",
+    "subheadline": "No password needed. Enter the email you used to book a call or take the quiz, and you'll be signed in.",
+    "form": {
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "submit": "Sign in",
+      "submitting": "Signing in...",
+      "errorGeneric": "Could not sign you in with that email. Try again.",
+      "errorUnexpected": "Something went wrong signing you in. Please try again.",
+      "modeBadge": "No password · Demo mode"
+    },
+    "checkInbox": {
+      "headline": "Check your inbox",
+      "bodyTemplate": "We sent a sign-in link to {email}. Click the link in the email to access your portal. The link expires in 24 hours.",
+      "fallbackEmail": "your email",
+      "missingPrefix": "Did not get it? Check spam, or ",
+      "tryDifferent": "try a different email",
+      "missingSuffix": "."
+    },
+    "complianceFlag": "[COMPLIANCE-REVIEW-PENDING]"
+  }
+}

@@ -1,1 +1,74 @@
-{}
+{
+  "_meta": { "status": "ai-demo-pending-review", "reviewer": null, "reviewed_at": null },
+  "_compliance_flags": [
+    "calendar.fields: el formulario de reserva incluye SMS opt-in; el disclaimer SMS verbatim se mantiene en inglés bajo siteConfig.compliance.smsOptInDisclaimer y NO debe traducirse aquí.",
+    "page.subheadline: 'llamada gratuita de 30 minutos' es claim cuantificable; revisar."
+  ],
+  "page": {
+    "eyebrow": "Obtener Preaprobación",
+    "headline": "Elija una hora. Le llamaremos.",
+    "subheadline": "Llamada gratuita de 30 minutos. Sin presión. Sin compromiso. Revisaremos su situación y conversaremos sobre qué programas se ajustan."
+  },
+  "calendar": {
+    "headerEyebrow": "Agendar una llamada",
+    "headerEyebrowWithLoTemplate": "Agendar con {loFirstName}",
+    "stepDate": "Elija un día",
+    "stepTime": "Elija una hora",
+    "stepForm": "Sus datos",
+    "stepConfirmed": "Está agendado",
+    "back": "← Atrás",
+    "weekendsNote": "Los fines de semana estamos fuera de la oficina. Elija un día entre semana y le mostraremos las horas disponibles.",
+    "loadingTimes": "Cargando horas...",
+    "noTimesAvailable": "No hay horas disponibles ese día. Pruebe otra fecha.",
+    "errorLoad": "No pudimos cargar las horas. Inténtelo de nuevo.",
+    "errorBooking": "La reserva falló. Inténtelo de nuevo o llámenos directamente.",
+    "fields": {
+      "fullName": "Nombre completo",
+      "email": "Correo electrónico",
+      "phone": "Teléfono"
+    },
+    "quizContext": {
+      "eyebrow": "De su cuestionario",
+      "recommendedProgramLabel": "Programa recomendado:",
+      "bestFitLabel": "Mejor opción:",
+      "note": "Llevaremos este contexto a la llamada para que no tenga que repetirse."
+    },
+    "submit": "Confirmar reserva",
+    "submitting": "Reservando...",
+    "bookingForTemplate": "Reserva para {dateTime}",
+    "confirmed": {
+      "headline": "Está agendado.",
+      "bodyDefault": "Correo de confirmación en camino. Le llamaremos a la hora acordada.",
+      "bodyWithLoTemplate": "Correo de confirmación en camino. {loFirstName} le llamará a la hora acordada.",
+      "reschedule": "¿Necesita reagendar? Responda al correo de confirmación."
+    },
+    "modeBadge": {
+      "demo": "Modo demo",
+      "live": "Reserva en vivo",
+      "demoSub": "Disponibilidad de muestra para vista previa.",
+      "liveSub": "Disponibilidad en vivo."
+    }
+  },
+  "faq": {
+    "headline": "Algunas preguntas comunes",
+    "items": [
+      {
+        "question": "¿Qué debo esperar en la llamada?",
+        "answer": "Una conversación de 30 minutos. Hablamos de su situación, sus objetivos, qué programas podrían ajustarse. Sin compromiso, sin discurso de venta."
+      },
+      {
+        "question": "¿Qué documentos debo tener listos?",
+        "answer": "Nada requerido para la primera llamada. Si desea una estimación de preaprobación suave durante la llamada, tenga a la mano su recibo de pago más reciente y una idea de su puntaje crediticio."
+      },
+      {
+        "question": "¿Esto afectará mi puntaje de crédito?",
+        "answer": "No para la llamada. Solo hacemos una consulta suave si pide una estimación de preaprobación, y únicamente con su consentimiento por escrito."
+      },
+      {
+        "question": "¿Puedo reagendar?",
+        "answer": "Sí. Responda al correo de confirmación o elija una nueva hora en esta página."
+      }
+    ],
+    "demoNote": "Texto demo pendiente de revisión del cliente."
+  }
+}

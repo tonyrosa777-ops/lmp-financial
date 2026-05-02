@@ -1,1 +1,171 @@
-{}
+{
+  "page": {
+    "eyebrow": "For Loan Officers",
+    "headline": "More book. More tools. More money.",
+    "subheadline": "220 to 275 bps. In-person Lowell training. Bilingual marketing assets in EN, PT, ES. Thirty-plus wholesale lenders, every file. You bring the book, we bring the rest.",
+    "primaryCta": "Talk to Brian",
+    "secondaryCta": "Why LMP",
+    "metaTemplate": "[COMPLIANCE-REVIEW-PENDING] · NMLS #{nmls} · {stateCount} states · 22 active LOs"
+  },
+  "whyLmp": {
+    "eyebrow": "Why LMP",
+    "headline": "A note from Mike Comerford, founder.",
+    "demoFlag": "[DEMO COPY — pending client review]",
+    "paragraphs": [
+      "I have been originating loans for two decades and training LOs for most of them. The reason I built LMP is simple. The LO is the product. Not the bank, not the brand, not the website. The relationship between a loan officer and a borrower is the entire business, and every decision we make at LMP starts from that.",
+      "That is why we run a real wholesale bench instead of pushing one lender's product. Why we put together full bilingual marketing kits in English, Portuguese, and Spanish, because most retail shops still pretend the entire borrower base speaks one language. Why we offer in-person training at our Lowell HQ for new LOs and a fully remote option for everyone else. And why we expand state by state alongside our LOs, not on a corporate map drawn by someone who has never met our book.",
+      "If you are reading this and you are tired of a comp plan you cannot read, captive overlays declining your borrowers for no reason, or a shop where nobody picks up the phone, get in touch. Brian Walsh is our recruiter. He will set up a confidential intro call this week. Twenty two LOs and counting. We are still hiring."
+    ],
+    "signature": "Mike Comerford",
+    "signatureTitle": "President & CEO · NMLS #184368"
+  },
+  "comp": {
+    "eyebrow": "What We Pay",
+    "headline": "Comp on the page. Not in the closet.",
+    "rangeEyebrow": "Comp Range",
+    "rangeValue": "220 to 275",
+    "rangeUnit": "bps",
+    "rangeBody": "Anchored to NEXA's published comp structure. Daily and weekly draw options available. Comp tier set during onboarding, no surprises, documented in your offer letter.",
+    "rangeFlag": "[COMPLIANCE-REVIEW-PENDING] — final published comp range pending Mike Comerford sign-off + compliance partner review.",
+    "vsSolo": {
+      "eyebrow": "vs Going Solo",
+      "headline": "What you get that you would not have alone.",
+      "items": [
+        {
+          "boldLabel": "W-2 with comp split.",
+          "rest": "Tax simplicity, benefits eligibility on qualifying tiers."
+        },
+        {
+          "boldLabel": "Marketing assets included.",
+          "rest": "Bilingual flyers, social templates, email sequences."
+        },
+        {
+          "boldLabel": "Multi-state license assistance.",
+          "rest": "We pay testing and SAFE filings once you commit."
+        }
+      ]
+    }
+  },
+  "archetypes": {
+    "eyebrow": "Who Fits",
+    "headline": "Four kinds of LO who thrive at LMP.",
+    "subheadline": "Recognize yourself in any of these? Brian wants to hear from you.",
+    "items": [
+      {
+        "title": "Multi-state operator",
+        "body": "You have a book in two or more states and you are tired of license headaches at your current shop. We carry MA, NH, ME, RI, CT, FL, CO, VT, and TX. License extension help is built in."
+      },
+      {
+        "title": "Bilingual specialist",
+        "body": "Spanish or Portuguese fluency, serving communities most retail lenders ignore. Marketing assets in EN, PT, and ES. ITIN comfort. Your community deserves a broker that talks the way they talk."
+      },
+      {
+        "title": "State-program expert",
+        "body": "You know MassHousing, NHHFA, MaineHousing, RIHousing, CHFA, VHFA, FL Hometown Heroes, TSAHC, TDHCA, and metroDPA cold. We do too. Your DPA stacks close, every time."
+      },
+      {
+        "title": "Self-employed-borrower closer",
+        "body": "Bank-statement loans, DSCR, 1099, ITIN. You read tax returns the way some people read mystery novels. Our wholesale bench actually underwrites non-W-2 income, instead of just declining it."
+      }
+    ]
+  },
+  "tools": {
+    "eyebrow": "Tools You Will Have",
+    "headline": "Everything you need to close. Nothing in your way.",
+    "items": [
+      {
+        "badge": "30+ Lenders",
+        "title": "Full wholesale bench",
+        "body": "UWM, Rocket Pro TPO, and 30-plus wholesale lender relationships. The right pricing, every file, no captive overlays."
+      },
+      {
+        "badge": "Non-QM",
+        "title": "ITIN, DSCR, Bank Statement",
+        "body": "Programs your retail shop probably will not approve. Our investors do, and our processors know how to package the file."
+      },
+      {
+        "badge": "State DPA",
+        "title": "Every state program",
+        "body": "MassHousing, NHHFA, MaineHousing, RIHousing, CHFA, VHFA, TSAHC, TDHCA, FL Hometown Heroes, metroDPA. Stacked, layered, closed."
+      },
+      {
+        "badge": "EN · PT · ES",
+        "title": "Bilingual marketing kits",
+        "body": "Co-branded flyers and email templates in three languages. If you serve a Portuguese or Spanish community, you are not building from scratch."
+      },
+      {
+        "badge": "Lowell HQ",
+        "title": "In-person training",
+        "body": "New to wholesale? Spend a week at the Lowell HQ with Mike and the senior LOs. Or stay fully remote. Both options open."
+      },
+      {
+        "badge": "9 States",
+        "title": "License extension help",
+        "body": "Want to add MA, NH, FL, TX, CO? We pay the testing and SAFE filing costs once you commit. Your book grows where you grow."
+      }
+    ]
+  },
+  "loTestimonials": {
+    "eyebrow": "In Their Words",
+    "headline": "Mike, plus two senior LOs on what changed when they joined.",
+    "demoFlag": "[DEMO COPY — pending client review]",
+    "items": [
+      {
+        "name": "Mike Comerford",
+        "title": "President & CEO, originating since 2003",
+        "body": "I built LMP because I wanted a place where the LO is the product. Not the bank. Not the brand. The LO. Everything we do is engineered around that simple idea, and the team we have is proof it works. Twenty-two LOs, three languages, nine states, and we are still hiring."
+      },
+      {
+        "name": "Senior LO, originated $42M in 2024",
+        "title": "Joined LMP from a national retail shop",
+        "body": "I moved my book over because I was tired of a comp plan I could not read. Two-twenty-five bps from day one, weekly draw available, full lender shop, and Mike actually picks up the phone. My pull-through is up. My take-home is up. My weekends are mine again."
+      },
+      {
+        "name": "Bilingual LO, originated $28M in 2024",
+        "title": "Joined LMP after running a remote-only shop solo",
+        "body": "Going remote solo was good for the comp. Lonely for the work. At LMP I get the splits I had as an indie plus an actual processor, real marketing kits in Portuguese, and a recruiter who returns texts. I close more files now and I work fewer hours doing it."
+      }
+    ]
+  },
+  "form": {
+    "eyebrow": "Talk to Brian",
+    "headline": "Confidential intro call this week.",
+    "fields": {
+      "firstName": "First name",
+      "firstNamePlaceholder": "Alex",
+      "lastName": "Last name",
+      "lastNamePlaceholder": "Rivera",
+      "currentEmployer": "Current employer",
+      "currentEmployerPlaceholder": "loanDepot, CrossCountry, indie shop, between roles...",
+      "email": "Email",
+      "emailPlaceholder": "you@personal.com",
+      "emailHelper": "Personal email preferred for confidentiality.",
+      "phone": "Phone",
+      "phonePlaceholder": "(555) 123-4567",
+      "statesLabelTemplate": "States licensed ({statesList})",
+      "statesPlaceholder": "MA, NH, FL...",
+      "statesHelper": "Where you currently hold an MLO license.",
+      "annualVolume": "Annual production volume (USD)",
+      "annualVolumePlaceholder": "$18M",
+      "annualVolumeHelper": "Most recent full-year origination total. Range OK.",
+      "missing": "What's missing from your current shop?",
+      "missingPlaceholder": "Comp clarity, lender bench, marketing support, mentorship, multi-state path..."
+    },
+    "submit": "Send to Brian"
+  },
+  "brianCard": {
+    "labels": {
+      "email": "Email",
+      "nmls": "NMLS",
+      "nmlsNote": "(recruiter, not LO)",
+      "office": "Office"
+    },
+    "directButton": "Email Brian Direct"
+  },
+  "finalCta": {
+    "headline": "Ready to talk?",
+    "body": "Confidential intro call with Brian this week. Or read Mike's note again first. Both work.",
+    "primary": "Email Brian Walsh",
+    "secondary": "Read Mike's note"
+  }
+}

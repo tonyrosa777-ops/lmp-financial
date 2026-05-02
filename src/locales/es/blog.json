@@ -1,1 +1,33 @@
-{}
+{
+  "_meta": { "status": "ai-demo-pending-review", "reviewer": null, "reviewed_at": null },
+  "_compliance_flags": [
+    "Los cuerpos de los artículos se manejan por separado vía src/lib/blog-translations.ts (Fase F). Solo el chrome (cabeceras, filtros, paginación, CTAs) se traduce aquí.",
+    "untranslatedNote es la nota fija mostrada cuando un artículo no tiene traducción al español."
+  ],
+  "index": {
+    "metaTitle": "Sala de Lectura",
+    "metaDescription": "Programas estatales, comparaciones de programas de préstamos, y cómo funciona el modelo de broker mayorista. Escrito por oficiales de préstamos de LMP.",
+    "eyebrow": "Sala de Lectura",
+    "headline": "Programas estatales, explicados.",
+    "subheadline": "Comparaciones de programas de préstamos, explicaciones de DPA estatales, y cómo funciona realmente el modelo de broker mayorista. Escrito por oficiales de préstamos de LMP, con texto demo marcado pendiente de revisión del cliente.",
+    "noArticles": "Aún no hay artículos.",
+    "cta": {
+      "headline": "¿Quiere conversarlo?",
+      "body": "Los artículos son un buen comienzo. Las conversaciones cierran préstamos.",
+      "primary": "Obtener Preaprobación",
+      "secondary": "Realizar el Cuestionario"
+    }
+  },
+  "article": {
+    "byTemplate": "Por {author}",
+    "byWithRoleTemplate": "Por {author}, {role}",
+    "publishedSeparator": "·",
+    "notFoundTitle": "Artículo No Encontrado",
+    "cta": {
+      "headline": "¿Listo para conversar sobre su situación?",
+      "primary": "Obtener Preaprobación",
+      "secondary": "Más artículos"
+    }
+  },
+  "untranslatedNote": "Disponible próximamente en español."
+}

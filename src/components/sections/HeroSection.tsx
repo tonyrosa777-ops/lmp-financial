@@ -15,6 +15,9 @@
  * same <section> so it shares the dark gradient + HeroParticles backdrop.
  * Folds the former AboutSection into the hero to resolve the L-L adjacency
  * with StatsSection. FadeUp delay 2.0 — arrives after the trust strip (1.8).
+ *
+ * Phase i18n — display strings sourced from `home` namespace via useTranslation.
+ * Structural data (CTA hrefs, business numbers, LO count) stays in siteConfig.
  */
 
 import Link from 'next/link';
@@ -22,9 +25,19 @@ import { siteConfig } from '@/data/site';
 import HeroParticles from '@/components/HeroParticles';
 import KeyringCanvas from '@/components/KeyringCanvas';
 import FadeUp from '@/components/animations/FadeUp';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function HeroSection() {
-  const { hero, business, loanOfficers } = siteConfig;
+  const { business, loanOfficers, hero } = siteConfig;
+  const { t, ta } = useTranslation('home');
+
+  const trustStrip = ta<string[]>('hero.trustStrip') ?? hero.trustStrip;
+  const eyebrowTemplate = t('hero.eyebrowTemplate');
+  // Token replacement: {nmls}, {stateCount}, {loCount}
+  const eyebrow = eyebrowTemplate
+    .replace('{nmls}', business.nmls)
+    .replace('{stateCount}', String(business.licensedStates.length))
+    .replace('{loCount}', String(loanOfficers.length));
 
   return (
     <section className="relative min-h-[calc(100vh-96px)] overflow-hidden flex flex-col items-stretch pt-20 md:pt-32 section-dark-gradient">
@@ -37,17 +50,17 @@ export default function HeroSection() {
         <div className="w-full lg:w-1/2 lg:pr-12">
           <FadeUp delay={0.1}>
             <p className="text-eyebrow text-[var(--accent)]">
-              NMLS #{business.nmls} · {business.licensedStates.length} states · {loanOfficers.length} loan officers
+              {eyebrow}
             </p>
           </FadeUp>
           <FadeUp delay={0.3}>
             <h1 className="hero-shimmer font-display text-display max-w-2xl mt-4">
-              {hero.tagline}
+              {t('hero.tagline')}
             </h1>
           </FadeUp>
           <FadeUp delay={0.5}>
             <p className="text-body text-[var(--text-secondary)] max-w-xl mt-6">
-              {hero.subheadline}
+              {t('hero.subheadline')}
             </p>
           </FadeUp>
           <FadeUp delay={1.4}>
@@ -56,19 +69,19 @@ export default function HeroSection() {
                 href={hero.ctaPrimary.href}
                 className="inline-flex items-center justify-center bg-[var(--accent)] text-[var(--primary-deep)] font-body font-semibold px-7 py-3.5 rounded-[var(--radius-md)] transition-all hover:bg-[var(--accent-deep)] hover:-translate-y-0.5"
               >
-                {hero.ctaPrimary.label}
+                {t('hero.ctaPrimary.label')}
               </a>
               <a
                 href={hero.ctaSecondary.href}
                 className="inline-flex items-center justify-center bg-transparent text-[var(--accent)] border-[1.5px] border-[var(--accent)] font-body font-semibold px-7 py-3.5 rounded-[var(--radius-md)] transition-colors hover:bg-[rgba(197,165,114,0.08)]"
               >
-                {hero.ctaSecondary.label}
+                {t('hero.ctaSecondary.label')}
               </a>
             </div>
           </FadeUp>
           <FadeUp delay={1.8}>
             <p className="font-mono text-micro text-[var(--text-muted)] mt-8 max-w-xl">
-              {hero.trustStrip.join(' · ')}
+              {trustStrip.join(' · ')}
             </p>
           </FadeUp>
         </div>
@@ -98,21 +111,17 @@ export default function HeroSection() {
 
             {/* Founder paragraph + link to /team */}
             <div className="lg:col-span-10">
-              <p className="text-eyebrow text-[var(--accent)]">From Mike Comerford, President</p>
+              <p className="text-eyebrow text-[var(--accent)]">{t('hero.founderStrip.eyebrow')}</p>
               {/* [DEMO COPY — pending client review] */}
               <p className="text-body text-[var(--text-secondary)] mt-3 max-w-3xl">
-                We started LMP in Lowell because the borrowers we wanted to serve were our
-                neighbors. Today we are {loanOfficers.length} loan officers across{' '}
-                {business.licensedStates.length} states, shopping 30-plus wholesale lenders on
-                every file. We answer Saturday calls. We come to closings. Lowell handshake,
-                Stripe execution.
+                {t('hero.founderStrip.body')}
               </p>
               {/* [DEMO COPY — pending client review] */}
               <Link
                 href="/team"
                 className="text-eyebrow text-[var(--accent)] mt-4 inline-block hover:text-[var(--accent-light)] transition-colors"
               >
-                Meet the team →
+                {t('hero.founderStrip.linkLabel')}
               </Link>
             </div>
           </div>

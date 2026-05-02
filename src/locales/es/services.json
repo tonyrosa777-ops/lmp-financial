@@ -1,1 +1,125 @@
-{}
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "reviewer": null,
+    "reviewed_at": null
+  },
+  "_compliance_flags": [
+    "FHA: 3.5% de inicial, puntaje de crédito 580+, requiere verificación con la firma de TI de LMP",
+    "VA: Cero de inicial, sin PMI, lenguaje estándar pero verificar reglas publicitarias VA",
+    "Jumbo: Hasta $3M, 10% de inicial mínimo, puntaje 680+, verificar con hojas vigentes de inversionistas mayoristas",
+    "USDA: Cero de inicial, verificar lenguaje del programa USDA",
+    "Hipoteca de solo intereses: Período de 5 a 10 años, verificar con inversionistas de portafolio actuales",
+    "Hipoteca inversa: Requisito de 62 años o más, estándar federal HECM, aceptable",
+    "ARM: Estructuras 3/1, 5/1, 7/1, 10/1, verificar disponibilidad actual con la mesa mayorista"
+  ],
+  "indexPage": {
+    "metaTitle": "Programas de Préstamo",
+    "metaDescription": "9 programas hipotecarios, comparados entre más de 30 prestamistas mayoristas. FHA, VA, Jumbo, USDA, Comprador por primera vez, Inversa, Solo intereses, ARM, Tasa fija. Disponibles en MA, NH, ME, RI, CT, FL, CO, VT, TX.",
+    "eyebrow": "Programas de Préstamo",
+    "headline": "Nueve programas. 9 caminos a casa.",
+    "subheadline": "Cada prestatario es diferente. Cada préstamo también debería serlo. Comparamos más de 30 prestamistas mayoristas para que se ajuste a su situación, no a la de ellos.",
+    "ctaSection": {
+      "headline": "¿No está seguro de qué programa le conviene?",
+      "body": "Conteste el cuestionario de 5 preguntas. Le emparejamos con el programa correcto y el oficial de préstamos adecuado.",
+      "ctaPrimary": "Hacer el cuestionario",
+      "ctaSecondary": "Obtener pre-aprobación"
+    }
+  },
+  "detailPage": {
+    "eyebrowSuffix": "Programa de Préstamo",
+    "complianceFlag": "[REVISIÓN-DE-CUMPLIMIENTO-PENDIENTE]",
+    "eligibilityHeadline": "Elegibilidad",
+    "documentsHeadline": "Lo que necesitará",
+    "documentsNote": "[COPIA DEMO, pendiente revisión del cliente. La lista de documentos puede variar según el programa.]",
+    "documentChecklist": [
+      "Identificación emitida por el gobierno",
+      "Los dos recibos de pago más recientes",
+      "Dos años de formularios W-2 o declaraciones de impuestos",
+      "Dos meses de estados de cuenta bancarios",
+      "Estado de cuenta hipotecario más reciente (solo refinanciamiento)"
+    ],
+    "faqHeadline": "Preguntas frecuentes",
+    "faqNote": "[REVISIÓN-DE-CUMPLIMIENTO-PENDIENTE, toda copia específica del programa requiere aprobación de la firma de TI de LMP antes de publicar.]",
+    "faq": {
+      "timeline": {
+        "q": "¿Cuál es el plazo típico para un {programName}?",
+        "a": "Desde la solicitud hasta el cierre, la mayoría de los expedientes se resuelven en 14 a 30 días. Anclamos plazos específicos una vez que comparamos su expediente con nuestra mesa de prestamistas mayoristas."
+      },
+      "creditScore": {
+        "q": "¿Qué puntaje de crédito necesito?",
+        "a": "{eligibility}. Podemos conversar sobre alternativas si su expediente queda por debajo de esos umbrales."
+      },
+      "rateLock": {
+        "q": "¿Puedo bloquear mi tasa?",
+        "a": "Sí. El bloqueo de tasa forma parte del proceso del estimado del préstamo. Le explicamos la ventana de bloqueo y cualquier costo asociado antes de que usted se comprometa."
+      },
+      "giftDownPayment": {
+        "q": "¿Puedo usar un regalo para el pago inicial?",
+        "a": "Sí, para la mayoría de los programas. Le explicaremos la documentación necesaria (carta de regalo, depósitos bancarios documentados) cuando nos sentemos a conversar."
+      }
+    },
+    "ctaHeadline": "¿Listo para comenzar con un {programName}?",
+    "ctaPrimary": "Obtener pre-aprobación",
+    "ctaSecondary": "Hacer el cuestionario"
+  },
+  "homepageSection": {
+    "eyebrow": "Programas de Préstamo",
+    "headline": "Nueve programas. 9 caminos a casa.",
+    "cardCta": "Más información →"
+  },
+  "sectionLabels": {
+    "blurb": "Resumen",
+    "eligibility": "Quién califica",
+    "nextSteps": "Próximos pasos",
+    "cta": "Obtener pre-aprobación",
+    "learnMore": "Más información →"
+  },
+  "programs": {
+    "fixed-rate": {
+      "name": "Hipoteca de Tasa Fija",
+      "blurb": "Bloquee su tasa por 15 o 30 años. El pago que firma al cierre es el pago que hace cada mes, sin importar lo que haga el mercado después.",
+      "eligibility": "Plazos de 30 y 15 años. Aplican las pautas convencionales de crédito e ingresos."
+    },
+    "fha": {
+      "name": "Préstamo FHA",
+      "blurb": "Respaldado por el gobierno y diseñado para compradores primerizos y para quienes aportan un pago inicial menor. Pago inicial más pequeño, umbrales de crédito más amigables, solo residencia principal.",
+      "eligibility": "3.5% de inicial, puntaje de crédito 580 o más, solo residencia principal."
+    },
+    "va": {
+      "name": "Préstamo VA",
+      "blurb": "Un beneficio que usted ganó. Cero de inicial, sin seguro hipotecario privado, tasas competitivas para veteranos, miembros en servicio activo y cónyuges que califiquen.",
+      "eligibility": "Cero de inicial, sin PMI. Veteranos elegibles, miembros en servicio activo y cónyuges que califiquen."
+    },
+    "jumbo": {
+      "name": "Préstamo Jumbo",
+      "blurb": "Financiamiento por encima de los límites de préstamo conformes. Comparamos inversionistas mayoristas Jumbo para que los préstamos de alto saldo tengan precios competitivos, no punitivos.",
+      "eligibility": "Hasta $3M, 10% de inicial mínimo, puntaje de crédito de 680 o más."
+    },
+    "arm": {
+      "name": "Hipoteca de Tasa Ajustable (ARM)",
+      "blurb": "Tasa inicial más baja durante un período fijo de introducción, luego se ajusta. Una jugada inteligente si usted planea mudarse, refinanciar o cambiar de casa antes del reajuste.",
+      "eligibility": "Estructuras ARM 3/1, 5/1, 7/1 y 10/1. Calificación estándar de ingresos y crédito."
+    },
+    "usda": {
+      "name": "Hipoteca USDA",
+      "blurb": "Financiamiento sin pago inicial para viviendas elegibles en zonas rurales y suburbanas. Discretamente poderoso para la dirección correcta, especialmente en el norte de Nueva Inglaterra y zonas rurales de CT.",
+      "eligibility": "Cero de inicial. La propiedad debe estar dentro de la geografía elegible USDA. Aplican límites de ingresos por condado."
+    },
+    "first-time-buyer": {
+      "name": "Comprador de Vivienda por Primera Vez",
+      "blurb": "Programas y subvenciones diseñados para la primera vivienda, incluida la asistencia estatal para el pago inicial: MassHousing, NHHFA, MaineHousing, RIHousing, CHFA, VHFA, FL Hometown Heroes, TSAHC, CHFA-CO.",
+      "eligibility": "La elegibilidad varía según el estado y el programa. Le guiamos por cada opción para la que califique."
+    },
+    "reverse": {
+      "name": "Hipoteca Inversa",
+      "blurb": "Convierta el patrimonio de su vivienda en ingresos o en una línea de crédito mientras permanece en la casa que ama. Diseñada para propietarios en etapa de jubilación, de 62 años o más.",
+      "eligibility": "El prestatario principal debe tener 62 años o más. Se requiere residencia principal ocupada por el propietario."
+    },
+    "interest-only": {
+      "name": "Hipoteca de Solo Intereses",
+      "blurb": "Pague solo los intereses durante los primeros 5 a 10 años, liberando flujo de efectivo para inversión, negocio o una renovación. Programa especializado, casos de uso específicos, y le diremos cuando no le convenga.",
+      "eligibility": "Período de solo intereses de 5 a 10 años. Suelen requerirse crédito y reservas más sólidas."
+    }
+  }
+}

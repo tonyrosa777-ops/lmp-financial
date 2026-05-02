@@ -5,24 +5,38 @@
  *
  * Each card links to /services/{slug}. Eligibility line uses font-mono per
  * design-system.md §3 (mono for license numbers + structured-data labels).
+ *
+ * Phase i18n — eyebrow / headline / "Learn more" pulled from `home` namespace.
+ * Loan-program data (name, blurb, eligibility, slug, emoji) stays in
+ * siteConfig — services-namespace localization handled at /services pages,
+ * not in this homepage teaser.
  */
 
 import { siteConfig } from '@/data/site';
 import FadeUp from '@/components/animations/FadeUp';
 import Card from '@/components/ui/Card';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function ServicesSection() {
   const { loanPrograms } = siteConfig;
+  const { t } = useTranslation('home');
+
+  // Headline reads "Nine programs. 9 ways home." — count is part of the
+  // translated string in both EN/ES (count-of-9 is fixed by the loanPrograms
+  // catalog and won't change without a copy update). No token replacement.
+  const headline = t('loanPrograms.headline');
 
   return (
     <section className="section-dark-gradient section-pad-base">
       <div className="container-base px-6">
         <FadeUp>
-          <p className="text-eyebrow text-[var(--accent)]">Loan Programs</p>
+          <p className="text-eyebrow text-[var(--accent)]">
+            {t('loanPrograms.eyebrow')}
+          </p>
         </FadeUp>
         <FadeUp delay={0.1}>
           <h2 className="font-display text-h2 mt-3 max-w-3xl">
-            Nine programs. {loanPrograms.length} ways home.
+            {headline}
           </h2>
         </FadeUp>
 
@@ -37,7 +51,7 @@ export default function ServicesSection() {
                   {p.eligibility}
                 </p>
                 <span className="text-eyebrow text-[var(--accent)] mt-4 inline-block">
-                  Learn more →
+                  {t('loanPrograms.learnMore')}
                 </span>
               </Card>
             </FadeUp>

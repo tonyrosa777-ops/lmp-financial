@@ -4,25 +4,37 @@
  * PainPointsSection — light section, "Three Audiences"-adjacent slot
  * (renamed in homepage rhythm to "Pain Points / Common Pain Points").
  *
- * Renders siteConfig.painPoints as a 3-column card grid (responsive).
- * Each card uses FadeUp with a computed per-index delay so stagger works
- * cleanly without forcing motion.div children inside StaggerContainer.
+ * Renders translated pain points (siteConfig.painPoints kept as English
+ * structural fallback). Each card uses FadeUp with a computed per-index delay
+ * so stagger works cleanly without forcing motion.div children inside
+ * StaggerContainer.
  */
 
 import { siteConfig } from '@/data/site';
 import FadeUp from '@/components/animations/FadeUp';
 import Card from '@/components/ui/Card';
+import { useTranslation } from '@/hooks/useTranslation';
+
+interface PainPointItem {
+  emoji: string;
+  title: string;
+  body: string;
+}
 
 export default function PainPointsSection() {
-  const { painPoints } = siteConfig;
+  const { t, ta } = useTranslation('home');
+  const painPoints =
+    ta<PainPointItem[]>('painPoints.items') ?? siteConfig.painPoints;
 
   return (
     <section className="section-light-gradient section-pad-base">
       <div className="container-base px-6">
         <FadeUp>
-          <p className="text-eyebrow text-[var(--accent-deep)]">Common Pain Points</p>
+          <p className="text-eyebrow text-[var(--accent-deep)]">
+            {t('painPoints.eyebrow')}
+          </p>
           <h2 className="font-display text-h2 text-[var(--text-on-light)] mt-3 max-w-3xl">
-            We&apos;ve heard every version of this story.
+            {t('painPoints.headline')}
           </h2>
         </FadeUp>
 

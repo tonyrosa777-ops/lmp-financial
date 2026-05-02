@@ -21,22 +21,8 @@ export const metadata: Metadata = {
 };
 
 export default function PricingPage() {
-  return (
-    <>
-      {/* Page header — dark gradient */}
-      <section className="relative overflow-hidden section-dark-gradient pt-32 pb-16">
-        <div className="container-base px-6 relative z-10 text-center">
-          <p className="text-eyebrow text-[var(--accent)]">⬥ Pricing</p>
-          <h1 className="hero-shimmer font-display text-h1 mt-3 max-w-3xl mx-auto">
-            Three tiers. One website that closes deals.
-          </h1>
-          <p className="text-body text-[var(--text-secondary)] mt-6 max-w-2xl mx-auto">
-            Every site we build ships with the same luxury foundation. Tiers add features that compound conversion. Most clients pick Pro.
-          </p>
-        </div>
-      </section>
-
-      <PricingClient />
-    </>
-  );
+  // Header section is rendered inside PricingClient so the page-level eyebrow,
+  // H1, and subheadline translate via useTranslation('pricing'). page.tsx
+  // remains a Server Component for metadata.
+  return <PricingClient />;
 }

@@ -1,1 +1,125 @@
-{}
+{
+  "_meta": {
+    "status": "extracted-from-source",
+    "reviewer": null,
+    "reviewed_at": null
+  },
+  "_compliance_flags": [
+    "FHA: 3.5% down, 580+ credit score claim — needs LMP IT firm verification",
+    "VA: Zero down, no PMI claim — standard but verify language for VA advertising rules",
+    "Jumbo: Up to $3M, 10% down minimum, 680+ credit score — verify with current wholesale investor sheets",
+    "USDA: Zero down claim — verify USDA program language",
+    "Interest-Only: 5 to 10 year interest-only period claim — verify with current portfolio investors",
+    "Reverse: 62+ age requirement — federal HECM standard, OK to state",
+    "ARM: 3/1, 5/1, 7/1, 10/1 structures — verify currently available with wholesale bench"
+  ],
+  "indexPage": {
+    "metaTitle": "Loan Programs",
+    "metaDescription": "9 mortgage programs, shopped across 30+ wholesale lenders. FHA, VA, Jumbo, USDA, First-Time Buyer, Reverse, Interest-Only, ARM, Fixed-Rate. Available in MA, NH, ME, RI, CT, FL, CO, VT, TX.",
+    "eyebrow": "Loan Programs",
+    "headline": "Nine programs. 9 ways home.",
+    "subheadline": "Every borrower is different. Every loan should be too. We shop 30+ wholesale lenders to fit your situation, not theirs.",
+    "ctaSection": {
+      "headline": "Not sure which program fits?",
+      "body": "Take the 5-question quiz. We'll match you to the right program and the right LO.",
+      "ctaPrimary": "Take the Quiz",
+      "ctaSecondary": "Get Pre-Approved"
+    }
+  },
+  "detailPage": {
+    "eyebrowSuffix": "Loan Program",
+    "complianceFlag": "[COMPLIANCE-REVIEW-PENDING]",
+    "eligibilityHeadline": "Eligibility",
+    "documentsHeadline": "What you'll need",
+    "documentsNote": "[DEMO COPY — pending client review. Document checklist may vary by program.]",
+    "documentChecklist": [
+      "Government-issued ID",
+      "Most recent two pay stubs",
+      "Two years of W-2s or tax returns",
+      "Two months of bank statements",
+      "Most recent mortgage statement (refinance only)"
+    ],
+    "faqHeadline": "Common questions",
+    "faqNote": "[COMPLIANCE-REVIEW-PENDING — all program-specific copy needs LMP IT firm signoff before publish.]",
+    "faq": {
+      "timeline": {
+        "q": "What's the typical timeline for a {programName}?",
+        "a": "From application to closing, most files clear in 14 to 30 days. We anchor specific timelines once we shop your file across our wholesale lender bench."
+      },
+      "creditScore": {
+        "q": "What credit score do I need?",
+        "a": "{eligibility}. We can talk through alternatives if your file sits below those thresholds."
+      },
+      "rateLock": {
+        "q": "Can I lock my rate?",
+        "a": "Yes. Rate locks are part of the loan estimate process. We walk through the lock window and any associated cost before you commit."
+      },
+      "giftDownPayment": {
+        "q": "Can I use a gift for my down payment?",
+        "a": "Yes for most programs. We'll walk through the documentation needed (gift letter, sourced bank deposits) when we sit down."
+      }
+    },
+    "ctaHeadline": "Ready to start with a {programName}?",
+    "ctaPrimary": "Get Pre-Approved",
+    "ctaSecondary": "Take the Quiz"
+  },
+  "homepageSection": {
+    "eyebrow": "Loan Programs",
+    "headline": "Nine programs. 9 ways home.",
+    "cardCta": "Learn more →"
+  },
+  "sectionLabels": {
+    "blurb": "Overview",
+    "eligibility": "Who qualifies",
+    "nextSteps": "Next steps",
+    "cta": "Get pre-approved",
+    "learnMore": "Learn more →"
+  },
+  "programs": {
+    "fixed-rate": {
+      "name": "Fixed-Rate Mortgage",
+      "blurb": "Lock your rate for 15 or 30 years. The payment you sign at closing is the payment you make every month, no matter what the market does next.",
+      "eligibility": "30-year and 15-year terms. Conventional credit and income guidelines apply."
+    },
+    "fha": {
+      "name": "FHA Loan",
+      "blurb": "Government-backed and built for first-time and lower-down-payment buyers. Smaller down payment, friendlier credit thresholds, primary residence only.",
+      "eligibility": "3.5% down, 580+ credit score, primary residence only."
+    },
+    "va": {
+      "name": "VA Loan",
+      "blurb": "A benefit you earned. Zero down, no private mortgage insurance, competitive rates for veterans, active duty service members, and qualifying spouses.",
+      "eligibility": "Zero down, no PMI. Eligible veterans, active duty service members, and qualifying spouses."
+    },
+    "jumbo": {
+      "name": "Jumbo Mortgage",
+      "blurb": "Financing above conforming loan limits. We shop wholesale jumbo investors so high-balance loans price competitively, not punitively.",
+      "eligibility": "Up to $3M, 10% down minimum, 680+ credit score."
+    },
+    "arm": {
+      "name": "Adjustable-Rate Mortgage",
+      "blurb": "Lower starting rate for a fixed intro period, then it adjusts. Smart play if you plan to move, refinance, or upgrade before the reset.",
+      "eligibility": "3/1, 5/1, 7/1, and 10/1 ARM structures. Standard income and credit qualifying."
+    },
+    "usda": {
+      "name": "USDA Mortgage",
+      "blurb": "Zero-down financing for eligible rural and suburban homes. Quietly powerful for the right address, especially across northern New England and rural CT.",
+      "eligibility": "Zero down. Property must fall inside USDA-eligible geography. Income limits apply by county."
+    },
+    "first-time-buyer": {
+      "name": "First-Time Home Buyer",
+      "blurb": "Programs and grants built for the first home, including state down-payment assistance: MassHousing, NHHFA, MaineHousing, RIHousing, CHFA, VHFA, FL Hometown Heroes, TSAHC, CHFA-CO.",
+      "eligibility": "Eligibility varies by state and program. We walk you through every option you qualify for."
+    },
+    "reverse": {
+      "name": "Reverse Mortgage",
+      "blurb": "Convert home equity into income or a line of credit while staying in the home you love. Built for retirement-stage homeowners 62 and older.",
+      "eligibility": "Primary borrower must be 62 or older. Owner-occupied primary residence required."
+    },
+    "interest-only": {
+      "name": "Interest-Only Mortgage",
+      "blurb": "Pay interest only for the first 5 to 10 years, freeing cash flow for investment, business, or a renovation. Specialized program, specific use cases, and we will tell you when it does not fit.",
+      "eligibility": "5 to 10 year interest-only period. Stronger credit and reserve requirements typical."
+    }
+  }
+}

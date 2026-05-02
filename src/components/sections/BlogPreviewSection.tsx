@@ -6,11 +6,15 @@
  * Phase 1F replaces with Sanity CMS-backed real articles. Stub article
  * topics tied to MI §6 AEO targets (state programs, FHA-vs-conventional,
  * wholesale-vs-retail explainer).
+ *
+ * Phase i18n — eyebrow / headline / per-card title/excerpt/category sourced
+ * from `home.blogPreview.*`. Stub flag and structural fallback retained.
  */
 
 import FadeUp from '@/components/animations/FadeUp';
 import Card from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface StubArticle {
   title: string;
@@ -19,7 +23,7 @@ interface StubArticle {
 }
 
 // [STUB — Phase 1F replaces with Sanity CMS data]
-const STUB_ARTICLES: StubArticle[] = [
+const STUB_ARTICLES_FALLBACK: StubArticle[] = [
   {
     title: 'FHA vs Conventional in NH',
     excerpt:
@@ -39,20 +43,27 @@ const STUB_ARTICLES: StubArticle[] = [
 ];
 
 export default function BlogPreviewSection() {
+  const { t, ta } = useTranslation('home');
+  const articles =
+    ta<StubArticle[]>('blogPreview.articles') ?? STUB_ARTICLES_FALLBACK;
+  const stubFlag = t('blogPreview.stubFlag');
+
   return (
     <section className="section-light-gradient section-pad-base">
       <div className="container-base px-6">
         <FadeUp>
-          <p className="text-eyebrow text-[var(--accent-deep)]">Reading Room</p>
+          <p className="text-eyebrow text-[var(--accent-deep)]">
+            {t('blogPreview.eyebrow')}
+          </p>
         </FadeUp>
         <FadeUp delay={0.1}>
           <h2 className="font-display text-h2 text-[var(--text-on-light)] mt-3 max-w-3xl">
-            State programs, explained.
+            {t('blogPreview.headline')}
           </h2>
         </FadeUp>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-          {STUB_ARTICLES.map((a, i) => (
+          {articles.map((a, i) => (
             <FadeUp key={a.title} delay={i * 0.1} className="h-full">
               <Card variant="light" className="h-full">
                 <Badge color="gold">{a.category}</Badge>
@@ -63,7 +74,7 @@ export default function BlogPreviewSection() {
                   {a.excerpt}
                 </p>
                 <p className="text-micro text-[var(--text-on-light-muted)] mt-4 italic">
-                  [STUB — Phase 1F: Sanity wiring]
+                  {stubFlag}
                 </p>
               </Card>
             </FadeUp>

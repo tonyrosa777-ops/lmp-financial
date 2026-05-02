@@ -33,6 +33,7 @@ import FadeUp from '@/components/animations/FadeUp';
 import PhotoBackground from '@/components/PhotoBackground';
 import ScaleIn from '@/components/animations/ScaleIn';
 import SlideIn from '@/components/animations/SlideIn';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const PAGE_SIZE = 9;
 
@@ -69,6 +70,11 @@ function uniquePrograms(items: readonly Testimonial[]): string[] {
 }
 
 export default function TestimonialsClient() {
+  const { t, locale } = useTranslation('testimonials');
+  // The 36 testimonial QUOTES themselves stay in English regardless of locale —
+  // they're real-borrower reviews. Only chrome (eyebrows, headlines, filter
+  // labels, pagination, CTA) translates. When locale === 'es', a small italic
+  // "original-language" note renders below the grid.
   const all = siteConfig.testimonials;
   const [program, setProgram] = useState<ProgramFilter>('all');
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -151,18 +157,17 @@ export default function TestimonialsClient() {
         <div className="container-wide px-6 relative z-10">
           <FadeUp delay={0.1}>
             <p className="text-eyebrow text-[var(--accent)]">
-              Reviews &amp; Testimonials
+              {t('page.eyebrow')}
             </p>
           </FadeUp>
           <FadeUp delay={0.2}>
             <h1 className="hero-shimmer font-display text-h1 mt-3 max-w-3xl">
-              Real borrowers, real closings.
+              {t('page.headline')}
             </h1>
           </FadeUp>
           <FadeUp delay={0.3}>
             <p className="text-body text-[var(--text-secondary)] mt-6 max-w-2xl">
-              {allCount} reviews across 9 states. Every program. Every state we
-              operate in.
+              {t('page.subheadlineTemplate').replace('{count}', String(allCount))}
             </p>
           </FadeUp>
         </div>
@@ -206,7 +211,7 @@ export default function TestimonialsClient() {
             <div
               className="flex flex-wrap gap-3 justify-center mb-10"
               role="group"
-              aria-label="Filter testimonials by loan program"
+              aria-label={t('filters.groupAriaLabel')}
             >
               <button
                 type="button"
@@ -215,11 +220,11 @@ export default function TestimonialsClient() {
                 className="rounded-[var(--radius-pill)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]"
               >
                 <Badge color={program === 'all' ? 'gold' : 'neutral'}>
-                  All ({allCount})
+                  {t('filters.allLabelTemplate').replace('{count}', String(allCount))}
                 </Badge>
               </button>
               {programs.map((p) => {
-                const count = all.filter((t) => t.program === p).length;
+                const count = all.filter((tItem) => tItem.program === p).length;
                 const isActive = program === p;
                 return (
                   <button
@@ -230,7 +235,9 @@ export default function TestimonialsClient() {
                     className="rounded-[var(--radius-pill)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]"
                   >
                     <Badge color={isActive ? 'gold' : 'neutral'}>
-                      {p} ({count})
+                      {t('filters.programLabelTemplate')
+                        .replace('{program}', p)
+                        .replace('{count}', String(count))}
                     </Badge>
                   </button>
                 );
@@ -245,25 +252,25 @@ export default function TestimonialsClient() {
               // Re-key on filter+page so ScaleIn re-fires when content changes.
               key={`${program}-${safePage}`}
             >
-              {paginatedTestimonials.map((t, i) => (
+              {paginatedTestimonials.map((item, i) => (
                 <ScaleIn
-                  key={`${t.name}-${t.city}-${i}`}
+                  key={`${item.name}-${item.city}-${i}`}
                   delay={i * 0.04}
                 >
                   <Card variant="light" hover={false} as="article">
                     <p className="text-body italic text-[var(--text-on-light)]">
-                      {`"${t.quote}"`}
+                      {`"${item.quote}"`}
                     </p>
                     <div className="mt-6 flex items-center justify-between gap-3">
                       <div>
                         <p className="text-body-sm font-semibold text-[var(--text-on-light)]">
-                          {t.name}
+                          {item.name}
                         </p>
                         <p className="text-micro text-[var(--text-on-light-muted)]">
-                          {t.city}, {t.state}
+                          {item.city}, {item.state}
                         </p>
                       </div>
-                      <Badge color="gold">{t.program}</Badge>
+                      <Badge color="gold">{item.program}</Badge>
                     </div>
                   </Card>
                 </ScaleIn>
@@ -272,16 +279,24 @@ export default function TestimonialsClient() {
           ) : (
             <FadeUp>
               <p className="text-center text-body text-[var(--text-on-light-secondary)] py-12">
-                No reviews yet for this program. Try another filter, or{' '}
+                {t('grid.noResultsPrefix')}
                 <a
                   href="/booking"
                   className="text-[var(--accent-deep)] underline"
                 >
-                  start a pre-approval
-                </a>{' '}
-                and be the first.
+                  {t('grid.noResultsLink')}
+                </a>
+                {t('grid.noResultsSuffix')}
               </p>
             </FadeUp>
+          )}
+
+          {/* Original-language note — only renders in non-English locales,
+              since the 36 quotes themselves stay in their original English. */}
+          {locale !== 'en' && (
+            <p className="mt-8 text-center text-body-sm italic text-[var(--text-on-light-muted)]">
+              {t('originalLanguageNote')}
+            </p>
           )}
 
           {/* Pagination */}
@@ -289,11 +304,16 @@ export default function TestimonialsClient() {
             <FadeUp>
               <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <p className="font-mono text-eyebrow text-[var(--text-on-light-muted)]">
-                  Page {safePage} of {totalPages}
+                  {t('pagination.pageOfTemplate')
+                    .replace('{current}', String(safePage))
+                    .replace('{total}', String(totalPages))}
                   {program !== 'all' && (
                     <>
                       {' '}
-                      · {filteredCount} {filteredCount === 1 ? 'review' : 'reviews'}
+                      · {filteredCount}{' '}
+                      {filteredCount === 1
+                        ? t('pagination.reviewSingular')
+                        : t('pagination.reviewPlural')}
                     </>
                   )}
                 </p>
@@ -303,18 +323,18 @@ export default function TestimonialsClient() {
                     size="sm"
                     onClick={handlePrev}
                     disabled={safePage <= 1}
-                    ariaLabel="Previous page of testimonials"
+                    ariaLabel={t('pagination.previousAria')}
                   >
-                    ← Previous
+                    {t('pagination.previous')}
                   </Button>
                   <Button
                     variant="secondary"
                     size="sm"
                     onClick={handleNext}
                     disabled={safePage >= totalPages}
-                    ariaLabel="Next page of testimonials"
+                    ariaLabel={t('pagination.nextAria')}
                   >
-                    Next →
+                    {t('pagination.next')}
                   </Button>
                 </div>
               </div>
@@ -330,19 +350,17 @@ export default function TestimonialsClient() {
         <div className="container-base px-6 text-center">
           <FadeUp>
             <h2 className="font-display text-h2 max-w-2xl mx-auto">
-              See yourself in these stories?
+              {t('cta.headline')}
             </h2>
             <p className="text-body text-[var(--text-secondary)] mt-4 max-w-xl mx-auto">
-              Same team, same shop-the-market approach, same close-on-time promise.
-              Start your pre-approval and we will match you to the LO who fits your
-              state, your language, and your situation.
+              {t('cta.body')}
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
               <Button href="/booking" size="lg">
-                Get Pre-Approved
+                {t('cta.primary')}
               </Button>
               <Button href="/quiz" variant="secondary" size="lg">
-                Take the Quiz
+                {t('cta.secondary')}
               </Button>
             </div>
           </FadeUp>

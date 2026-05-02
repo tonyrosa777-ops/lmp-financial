@@ -326,6 +326,46 @@ This is cardinal: we never hassle the business owner for details we can reasonab
 
 ---
 
+## Bilingual Copy Rule (LMP-specific — non-negotiable)
+LMP Financial ships in EN and ES via a custom React Context i18n system (Sylvia pattern — `src/lib/i18n.ts`, `src/contexts/I18nContext.tsx`, `src/hooks/useTranslation.ts`, `src/locales/`). Locale persists via `NEXT_LOCALE` cookie; `<html lang>` is set server-side from the cookie at every request. No middleware, no `/es` URL prefix, no `next-intl` — see `C:\Projects\Optimus Assets\knowledge\patterns\bilingual-toggle-react-context-pattern.md` for the full pattern.
+
+**Every new user-facing string ships in BOTH locales in the same commit.** Adding a key to `src/locales/en/<namespace>.json` without a matching key path in `src/locales/es/<namespace>.json` (and vice versa) is a build failure. The pre-launch-auditor enforces this with a deep key-path diff. Never push a half-translated namespace; never split EN and ES across commits.
+
+**Components consume copy via `useTranslation()`, never via hardcoded strings, and never directly from `siteConfig` for translatable fields.** The pattern:
+```tsx
+'use client';
+import { useTranslation } from '@/hooks/useTranslation';
+import { siteConfig } from '@/data/site';
+
+export default function MyComponent() {
+  const { t, ta } = useTranslation('home');
+  const items = ta<Item[]>('section.items') ?? siteConfig.section.items;
+  return <h2>{t('section.headline')}</h2>;
+}
+```
+Use `t()` for strings, `ta<T>()` for typed arrays/objects, and structural fallback (`?? siteConfig.foo`) when the dictionary may not yet contain the key. Components that consume `useTranslation` MUST be `'use client'` — server components cannot read context.
+
+**The 7 verbatim compliance items in `siteConfig.compliance` are the only exception** — broker disclosure, SMS opt-in disclaimer, NMLS Consumer Access link, Privacy Policy, Terms of Use, ADA Accessibility Statement, Equal Housing Lender. They render English in BOTH locales (regulatory requirement — see Compliance Rule). When `locale === 'es'`, render the small italic ES regulatory note from `t('compliance.legalNotice')` adjacent to the verbatim block. Never paraphrase, translate, or summarize the 7 items into Spanish.
+
+**Spanish translation discipline:**
+- Castellano-neutral, "usted" register (not "tú"); first-person plural for LMP voice ("nosotros," "nuestro equipo")
+- NEVER use the em dash (`—`) — same rule as English. Use commas, periods, semicolons, ellipses only.
+- AI-translated strings ship with `_meta.status: "ai-demo-pending-review"` at the top of each ES JSON file. A native-speaker review + LMP compliance IT firm review is required before production launch — `_meta.status` flips to `"reviewed"` when both are signed off.
+- Quantifiable claims that appear in ES copy (e.g., "14 días promedio," "100+ reseñas") get listed in `_compliance_flags: [...]` at the top of the ES file. Same substantiation rule as English (see Compliance Rule).
+
+**Untranslatable content** that intentionally stays English in BOTH locales:
+- The 36 testimonial quotes (`siteConfig.testimonials`) — voice artifacts; translation destroys the human-on-a-phone register the brand depends on. Render the small note `t('testimonials.originalLanguageNote')` ("Reseñas de clientes en su idioma original") below the grid in ES.
+- Per-LO NMLS numbers, license-state codes, email addresses, phone numbers
+- Loan-program acronyms (FHA, VA, USDA, ARM, Jumbo) — render verbatim in both locales; gloss in surrounding sentence text only when needed
+- US state proper nouns ("Massachusetts," "New Hampshire" — regulatory + legal convention)
+- Dollar amounts, dates, percentages, NMLS IDs
+
+**Sanity blog**: article bodies translate via `src/lib/blog-translations.ts` — a hand-curated `Record<postId, { es: BlogTranslation }>` keyed by Sanity post ID. Blog index + article chrome translates via `t('blog.*')` from `blog.json`. Articles without an ES translation render English with `t('blog.untranslatedNote')` ("Disponible próximamente en español") below the title — never silently render English with no acknowledgement under ES locale.
+
+**When migrating a component:** grep its current source for hardcoded strings, move every translatable string into the matching `en/<namespace>.json` AND `es/<namespace>.json` in one commit, replace the JSX with `t()` / `ta<T>()`, and verify no string regression in EN by toggling between locales in dev. Hardcoded English strings discovered post-merge are a build failure surfaced by the pre-launch-auditor.
+
+---
+
 ## Compliance Rule (LMP-specific — non-negotiable)
 LMP Financial is a regulated mortgage broker. Compliance posture is set by `initial-business-data.md` Section 9D and overrides all generic copy/design preferences when they conflict.
 

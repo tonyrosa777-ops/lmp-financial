@@ -1,1 +1,87 @@
-{}
+{
+  "_meta": { "status": "ai-demo-pending-review", "reviewer": null, "reviewed_at": null },
+  "_compliance_flags": [
+    "groups.process.items[2].answer: '14 a 30 días desde clear-to-close' requiere fuente verificable.",
+    "groups.programs.items[0].answer + items[1].answer: porcentajes de enganche y umbrales de programa requieren revisión de cumplimiento.",
+    "groups.programs.items[3].answer: '30+ prestamistas mayoristas' requiere fuente verificable."
+  ],
+  "page": {
+    "eyebrow": "Preguntas Frecuentes",
+    "headline": "Las más comunes. Respondidas con honestidad.",
+    "subheadline": "Doce preguntas que recibimos casi todas las semanas, de compradores de primera vivienda, clientes de refinanciamiento, agentes inmobiliarios aliados y oficiales de préstamos pensando en cambiar de empresa. Si la suya no está aquí, envíenosla."
+  },
+  "groups": {
+    "process": {
+      "eyebrow": "Grupo 1",
+      "title": "Preaprobación y Proceso",
+      "items": [
+        {
+          "question": "¿Cómo obtengo una preaprobación?",
+          "answer": "Comience con una llamada de 30 minutos. Su oficial de préstamos le preguntará sobre su objetivo, su plazo y sus cifras. Hacemos una consulta de crédito suave, solicitamos una lista corta de documentos (ingresos, activos, identificación), y la mayoría de los expedientes tienen una carta de preaprobación en 24 a 48 horas."
+        },
+        {
+          "question": "¿Qué documentos necesito?",
+          "answer": "Identificación oficial, sus dos recibos de pago más recientes, dos años de formularios W-2 o declaraciones de impuestos, dos meses de estados de cuenta bancarios, y su estado de cuenta hipotecario actual si está refinanciando. Los prestatarios autoempleados envían K-1, 1099 o declaraciones de negocios en su lugar. Su oficial le envía una lista de verificación clara para que cargue todo una vez, no tres."
+        },
+        {
+          "question": "¿Cuánto tarda el cierre?",
+          "answer": "Nuestro equipo apunta a 14 a 30 días desde clear-to-close. El número exacto depende del programa, la propiedad y la rapidez con la que se resuelvan las condiciones. Empujamos fuerte en lo que controlamos y le decimos la verdad sobre lo que no."
+        },
+        {
+          "question": "¿Esto afectará mi puntaje de crédito?",
+          "answer": "La primera conversación usa una consulta suave, que no afecta su puntaje. Una consulta dura solo ocurre en la solicitud completa, con su consentimiento por escrito. Si decide no avanzar después de la preaprobación, su crédito queda intacto."
+        }
+      ]
+    },
+    "programs": {
+      "eyebrow": "Grupo 2",
+      "title": "Conceptos Básicos de los Programas de Préstamos",
+      "items": [
+        {
+          "question": "FHA o Convencional, ¿cuál me conviene?",
+          "answer": "Depende de su puntaje de crédito, su enganche y su relación deuda-ingreso. FHA es más flexible en crédito y acepta un enganche del 3,5%. Convencional ofrece mejor tasa si su crédito es sólido y puede aportar al menos 5% de enganche. Hacemos los cálculos en ambos sentidos y le mostramos el costo mensual real, lado a lado."
+        },
+        {
+          "question": "¿Cuál es el enganche mínimo?",
+          "answer": "Varía según el programa. FHA comienza en 3,5%, VA y USDA en 0%, Convencional en 3 a 5% para compradores de primera vivienda, y Jumbo típicamente en 10% o más. La asistencia estatal de enganche puede sumarse, en algunos casos dejando su desembolso cerca de cero."
+        },
+        {
+          "question": "¿Ofrecen refinanciamiento?",
+          "answer": "Sí. Refinanciamientos de tasa y plazo, refinanciamientos con retiro de efectivo, y HELOCs en los nueve estados donde estamos licenciados. Cada refinanciamiento comienza con un análisis de punto de equilibrio, donde calculamos cuántos meses tarda el ahorro en cubrir los costos de cierre. Si las cifras no cuadran, se lo decimos."
+        },
+        {
+          "question": "¿Por qué usar un broker en lugar de ir a mi banco?",
+          "answer": "Su banco compara con un solo prestamista, el suyo. Nosotros comparamos con más de 30 prestamistas mayoristas, y le traemos la mejor combinación de tasa, comisiones y ajuste de programa. Una sola solicitud, múltiples ofertas de prestamistas, sin consultas de crédito adicionales. El mercado mayorista típicamente cotiza por debajo del minorista porque el prestamista no paga por sucursales ni por un departamento de marketing."
+        }
+      ]
+    },
+    "workingWith": {
+      "eyebrow": "Grupo 3",
+      "title": "Trabajar con LMP",
+      "items": [
+        {
+          "question": "¿Qué idiomas hablan?",
+          "answer": "Inglés en todo el equipo. Español con tres de nuestros oficiales de préstamos. Portugués con dos. Lowell, Lawrence y el área metropolitana de Boston tienen una de las poblaciones brasileñas y de habla portuguesa más densas del país, y armamos el equipo para reflejarlo."
+        },
+        {
+          "question": "¿Trabajan con compradores de primera vivienda?",
+          "answer": "Sí, y es una parte importante de lo que hacemos. Manejamos una biblioteca profunda de programas estatales: MassHousing, NHHFA, MaineHousing, RIHousing, CHFA-CT, VHFA, FL Hometown Heroes, TSAHC y TDHCA en Texas, y CHFA-CO con metroDPA en Colorado. La mayoría de los compradores de primera vivienda califican para más de un programa. Los alineamos todos y dejamos que usted elija."
+        },
+        {
+          "question": "¿Trabajan con agentes inmobiliarios?",
+          "answer": "Sí. Tenemos un programa dedicado de socios para agentes inmobiliarios, con kits de comarketing, cartas de preaprobación rápidas el mismo día, y presencia en persona en cada cierre que la geografía permita. Vea la página de Agentes Inmobiliarios para más detalles y para presentarse."
+        },
+        {
+          "question": "Soy oficial de préstamos buscando una nueva empresa. ¿Con quién hablo?",
+          "answer": "Brian Walsh maneja el reclutamiento de oficiales de préstamos. Llamadas introductorias confidenciales, un plan de compensación claro, acceso real a mayoristas a través de UWM, Rocket Pro y más de 30 otros prestamistas. Vea la página de Carreras o envíele un mensaje de texto directo a Brian."
+        }
+      ]
+    }
+  },
+  "cta": {
+    "headline": "¿Una pregunta que no respondimos?",
+    "body": "Reserve una llamada introductoria de 15 minutos o realice el cuestionario para ver qué programa de préstamo se ajusta a su situación. De cualquier forma, hablará con un oficial de préstamos real a continuación.",
+    "primary": "Agendar una Llamada",
+    "secondary": "Realizar el Cuestionario"
+  }
+}

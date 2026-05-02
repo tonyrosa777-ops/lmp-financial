@@ -1,1 +1,136 @@
-{}
+{
+  "page": {
+    "eyebrow": "For Real Estate Agents",
+    "headline": "Close more deals. Faster.",
+    "subheadlineTemplate": "Your buyer needs pre-approval today, not next week. We pre-approve in hours, work conditions same-day, and show up at the closing table. One partnership across {stateCount} licensed states.",
+    "primaryCta": "Become a Referral Partner",
+    "secondaryCta": "How it works",
+    "metaTemplate": "NMLS #{nmls} · {stateCount} states · RESPA-compliant co-marketing"
+  },
+  "valueProps": {
+    "eyebrow": "Why Partner With LMP",
+    "headline": "We close on time. We communicate weekly. We show up.",
+    "subheadline": "The five reasons local realtors send us their next pre-approval and the one after that.",
+    "items": [
+      {
+        "title": "14-day average close",
+        "body": "Our team works conditions same-day. Your closing date holds, your buyer stays calm, you keep your reputation."
+      },
+      {
+        "title": "In-person at every closing",
+        "body": "Mike or your assigned LO comes to the closing table when geography allows. The deal is too important for a phone call."
+      },
+      {
+        "title": "Pre-approval in hours",
+        "body": "Same-day pre-approval letters for clean files. Your buyer makes a credible offer the moment they walk out of the open house."
+      },
+      {
+        "title": "Co-branded marketing kits at no cost",
+        "body": "RESPA-compliant joint flyers, open-house collateral, email blast templates. We split the marketing lift, not the disclosure."
+      },
+      {
+        "title": "9 states, 22 loan officers",
+        "body": "Cross-state buyer? We are licensed in MA, NH, ME, RI, CT, FL, CO, VT, and TX. One partnership covers your relocation pipeline."
+      }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "How It Works",
+    "headline": "Three steps. No surprises.",
+    "stepLabel": "Step",
+    "steps": [
+      {
+        "title": "Refer",
+        "body": "Introduce your buyer or refinance client to your LMP loan officer of choice. Not sure who fits? Ask us and we will assign based on state, language, and program need."
+      },
+      {
+        "title": "We work",
+        "body": "Pre-approval, lender shop across 30-plus wholesale lenders, document collection, conditions, underwriting. Communication stays tight with you the whole way."
+      },
+      {
+        "title": "Close together",
+        "body": "In person at the closing table when geography allows. Both signs on the table. Your buyer remembers who showed up. So do you."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "In Their Words",
+    "headline": "Realtors who send their next deal to LMP.",
+    "demoFlag": "[DEMO COPY — pending client review]",
+    "items": [
+      {
+        "name": "Tina C.",
+        "title": "Realtor, Lowell MA",
+        "body": "I send everyone I can to LMP now. Last month I had a first-time buyer with a tricky 1099 file. Aisha had the pre-approval back the same afternoon, and Mike showed up to the closing with a card for the buyer. That is the level I expect from a partner."
+      },
+      {
+        "name": "Mark D.",
+        "title": "Realtor, Salem NH",
+        "body": "Most lenders ghost you between the loan estimate and the closing disclosure. LMP sends a Friday update, every week, on every active file. I have not had a deal die at LMP in two years. That number alone is why I refer."
+      },
+      {
+        "name": "Hector M.",
+        "title": "Investor agent, Houston TX",
+        "body": "DSCR, bank-statement, multi-state buyers. Ryan McConihe knows wholesale cold and the file moves the way it should. Closed three of mine in 21 days or less last quarter. The co-branded flyers helped me run a full open-house circuit too."
+      }
+    ]
+  },
+  "coMarketing": {
+    "eyebrow": "Co-Marketing Kits",
+    "headline": "RESPA-compliant assets. Free to our partners.",
+    "subheadline": "We share the marketing lift, never the disclosure. Every asset reviewed by our compliance partner before it hits print or pixel.",
+    "assetFlag": "[ASSET-PENDING — kits PDF set, Phase 1G]",
+    "items": [
+      {
+        "title": "Open-house flyers",
+        "body": "Co-branded one-pagers with your photo, your contact info, our pre-approval CTA. Print-ready PDFs, your brokerage compliance line included."
+      },
+      {
+        "title": "Email blast templates",
+        "body": "New-listing announcements, just-sold updates, market-shift refinance nudges. RESPA-compliant joint marketing language reviewed by our compliance partner."
+      },
+      {
+        "title": "Social-ready graphics",
+        "body": "Square and story-format Instagram and Facebook templates, swap your headshot in, post the same day. State-program callouts ready for MassHousing, NHHFA, CHFA, RIHousing, FL Hometown Heroes, TSAHC."
+      }
+    ]
+  },
+  "form": {
+    "eyebrow": "Become a Partner",
+    "headline": "Send us your next pre-approval. We will take it from there.",
+    "fields": {
+      "firstName": "First name",
+      "firstNamePlaceholder": "Tina",
+      "lastName": "Last name",
+      "lastNamePlaceholder": "Costa",
+      "brokerage": "Brokerage",
+      "brokeragePlaceholder": "Coldwell Banker, Compass, KW, independent...",
+      "email": "Email",
+      "emailPlaceholder": "you@brokerage.com",
+      "phone": "Phone",
+      "phonePlaceholder": "(555) 123-4567",
+      "statesLabelTemplate": "States you work in ({statesList})",
+      "statesPlaceholder": "MA, NH...",
+      "statesHelper": "Tell us where your active book is.",
+      "message": "Tell us about your typical buyer",
+      "messagePlaceholder": "First-time buyers, jumbo, investor, multi-family, relocation..."
+    },
+    "submit": "Send to LMP"
+  },
+  "directContact": {
+    "eyebrow": "Direct Contact",
+    "headline": "Talk to us directly.",
+    "body": "Mike Comerford, President & CEO, takes partner introductions personally. Reach out and we will reply same business day.",
+    "labels": {
+      "email": "Email",
+      "phone": "Phone",
+      "office": "Office",
+      "licensed": "Licensed"
+    }
+  },
+  "finalCta": {
+    "headline": "Ready to send your next pre-approval to LMP?",
+    "bodyTemplate": "One partnership. {stateCount} states. {loCount} loan officers ready to work your next file.",
+    "primary": "Become a Referral Partner"
+  }
+}

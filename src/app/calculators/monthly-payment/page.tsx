@@ -20,6 +20,7 @@ import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import FadeUp from '@/components/animations/FadeUp';
 import PhotoBackground from '@/components/PhotoBackground';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const TERM_OPTIONS = [15, 20, 30] as const;
 type Term = (typeof TERM_OPTIONS)[number];
@@ -103,6 +104,7 @@ function RadioGroup<T extends number>({ label, options, value, onChange, format 
 }
 
 export default function MonthlyPaymentCalculatorPage() {
+  const { t } = useTranslation('calculators');
   const [loanAmount, setLoanAmount] = useState(375000);
   const [rate, setRate] = useState(6.75);
   const [term, setTerm] = useState<Term>(30);
@@ -142,17 +144,18 @@ export default function MonthlyPaymentCalculatorPage() {
         />
         <div className="container-wide px-6 relative z-10">
           <FadeUp delay={0.1}>
-            <p className="text-eyebrow text-[var(--accent)]">Monthly Payment</p>
+            <p className="text-eyebrow text-[var(--accent)]">
+              {t('monthlyPayment.eyebrow')}
+            </p>
           </FadeUp>
           <FadeUp delay={0.2}>
             <h1 className="hero-shimmer font-display text-h1 mt-3 max-w-3xl">
-              What will my payment be?
+              {t('monthlyPayment.headline')}
             </h1>
           </FadeUp>
           <FadeUp delay={0.3}>
             <p className="text-body text-[var(--text-secondary)] mt-6 max-w-2xl">
-              Principal plus interest plus tax plus insurance plus PMI. The full
-              picture, not just the part the rate-shopping calculators show.
+              {t('monthlyPayment.subheadline')}
             </p>
           </FadeUp>
         </div>
@@ -163,14 +166,14 @@ export default function MonthlyPaymentCalculatorPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <Card variant="light" hover={false} className="h-full">
               <h2 className="font-display text-h3 text-[var(--text-on-light)] mb-2">
-                Your loan
+                {t('monthlyPayment.yourLoan')}
               </h2>
               <p className="text-body-sm text-[var(--text-on-light-secondary)] mb-8">
-                Slide to adjust. Estimates update live.
+                {t('shared.slideToAdjust')}
               </p>
               <div className="flex flex-col gap-6">
                 <SliderInput
-                  label="Loan amount"
+                  label={t('monthlyPayment.inputs.loanAmount')}
                   min={50000}
                   max={1500000}
                   step={5000}
@@ -179,7 +182,7 @@ export default function MonthlyPaymentCalculatorPage() {
                   format={formatUSD}
                 />
                 <SliderInput
-                  label="Interest rate"
+                  label={t('monthlyPayment.inputs.interestRate')}
                   min={3}
                   max={9.5}
                   step={0.125}
@@ -188,14 +191,14 @@ export default function MonthlyPaymentCalculatorPage() {
                   format={formatPercent}
                 />
                 <RadioGroup
-                  label="Loan term"
+                  label={t('monthlyPayment.inputs.loanTerm')}
                   options={TERM_OPTIONS}
                   value={term}
                   onChange={setTerm}
-                  format={(v) => `${v} yrs`}
+                  format={(v) => `${v} ${t('affordability.inputs.yrs')}`}
                 />
                 <SliderInput
-                  label="Annual property tax"
+                  label={t('monthlyPayment.inputs.annualTax')}
                   min={0}
                   max={30000}
                   step={100}
@@ -204,7 +207,7 @@ export default function MonthlyPaymentCalculatorPage() {
                   format={formatUSD}
                 />
                 <SliderInput
-                  label="Annual home insurance"
+                  label={t('monthlyPayment.inputs.annualInsurance')}
                   min={0}
                   max={5000}
                   step={50}
@@ -213,7 +216,7 @@ export default function MonthlyPaymentCalculatorPage() {
                   format={formatUSD}
                 />
                 <SliderInput
-                  label="PMI rate (annual % of loan, 0 if 20%+ down)"
+                  label={t('monthlyPayment.inputs.pmiRate')}
                   min={0}
                   max={1.5}
                   step={0.05}
@@ -226,10 +229,10 @@ export default function MonthlyPaymentCalculatorPage() {
 
             <Card variant="light" hover={false} className="h-full">
               <h2 className="font-display text-h3 text-[var(--text-on-light)] mb-2">
-                Your payment
+                {t('monthlyPayment.results.title')}
               </h2>
               <p className="text-body-sm text-[var(--text-on-light-secondary)] mb-8">
-                The full PITI breakdown.
+                {t('monthlyPayment.results.subtitle')}
               </p>
 
               <div
@@ -241,39 +244,47 @@ export default function MonthlyPaymentCalculatorPage() {
                 }}
               >
                 <p className="text-eyebrow text-[var(--accent-deep)]">
-                  Total monthly payment
+                  {t('monthlyPayment.results.totalMonthly')}
                 </p>
                 <p className="font-display text-h1 text-[var(--text-on-light)] mt-2">
                   {formatUSD(result.total)}
                 </p>
                 <p className="text-micro text-[var(--text-on-light-muted)] mt-2">
-                  Per month, all-in.
+                  {t('monthlyPayment.results.totalMonthlySub')}
                 </p>
               </div>
 
               <div className="flex flex-col gap-3">
                 <BreakdownRow
-                  label="Principal & interest"
+                  label={t('monthlyPayment.results.principalAndInterest')}
                   value={formatUSD(result.pi)}
                 />
-                <BreakdownRow label="Property tax" value={formatUSD(result.monthlyTax)} />
                 <BreakdownRow
-                  label="Home insurance"
+                  label={t('monthlyPayment.results.propertyTax')}
+                  value={formatUSD(result.monthlyTax)}
+                />
+                <BreakdownRow
+                  label={t('monthlyPayment.results.homeInsurance')}
                   value={formatUSD(result.monthlyInsurance)}
                 />
-                <BreakdownRow label="PMI" value={formatUSD(result.monthlyPmi)} />
+                <BreakdownRow
+                  label={t('monthlyPayment.results.pmi')}
+                  value={formatUSD(result.monthlyPmi)}
+                />
               </div>
 
               <div className="mt-8 pt-6 border-t border-[rgba(14,27,51,0.10)]">
                 <p className="text-eyebrow text-[var(--text-on-light-secondary)]">
-                  Lifetime interest paid
+                  {t('monthlyPayment.results.lifetimeInterest')}
                 </p>
                 <p className="font-display text-h3 text-[var(--text-on-light)] mt-2">
                   {formatUSD(result.lifetimeInterest)}
                 </p>
                 <p className="text-micro text-[var(--text-on-light-muted)] mt-2">
-                  Total interest across the full {term}-year term, before any extra
-                  principal payments.
+                  {t('monthlyPayment.results.lifetimeInterestSubTemplate').replace(
+                    '{term}',
+                    String(term),
+                  )}
                 </p>
               </div>
             </Card>
@@ -281,19 +292,19 @@ export default function MonthlyPaymentCalculatorPage() {
         </div>
       </section>
 
+      {/* [COMPLIANCE-REVIEW-PENDING] disclaimer copy below per CLAUDE.md
+          Compliance Rule. JSON dictionary is source; ES needs LMP review. */}
       <section className="section-light-gradient pb-16">
         <div className="container-base px-6">
           <div className="rounded-[var(--radius-md)] p-6 border border-[rgba(14,27,51,0.10)] bg-[var(--bg-card)]">
             <p className="font-mono text-eyebrow text-[var(--accent-deep)] mb-3">
-              [NOT-A-COMMITMENT]
+              {t('shared.notACommitment')}
             </p>
             <p className="text-body-sm text-[var(--text-on-light-secondary)]">
-              These numbers are estimates. Actual rates, terms, and approval depend on
-              your full file. Property tax, insurance, and PMI vary by property and
-              program. Talk to a loan officer for a real quote.
+              {t('monthlyPayment.disclaimerBody')}
             </p>
             <p className="font-mono text-micro text-[var(--text-on-light-muted)] mt-4">
-              [COMPLIANCE-REVIEW-PENDING]
+              {t('shared.complianceReviewPending')}
             </p>
           </div>
         </div>
@@ -311,19 +322,18 @@ export default function MonthlyPaymentCalculatorPage() {
         <div className="container-base px-6 text-center relative z-10">
           <FadeUp>
             <h2 className="font-display text-h2 text-[var(--text-primary)] max-w-2xl mx-auto">
-              Want a real number?
+              {t('shared.wantRealNumber')}
             </h2>
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="text-body text-[var(--text-secondary)] mt-6 max-w-xl mx-auto">
-              A loan officer can match this calculator to a real wholesale quote, with
-              the actual fees, lender credits, and program-specific math.
+              {t('monthlyPayment.ctaBody')}
             </p>
           </FadeUp>
           <FadeUp delay={0.2}>
             <div className="mt-8">
               <Button href="/booking" size="lg">
-                Get Pre-Approved
+                {t('shared.getPreApproved')}
               </Button>
             </div>
           </FadeUp>

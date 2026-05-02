@@ -1,1 +1,162 @@
-{}
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "reviewer": null,
+    "reviewed_at": null,
+    "notes": "Traducción al español castellano-neutral, registro 'usted'. Sin guiones largos. Las claves 'type' permanecen en inglés porque son identificadores internos, no texto visible."
+  },
+  "intro": {
+    "eyebrow": "Encuentre su camino hipotecario",
+    "headline": "Tres minutos. Cinco preguntas. El oficial de préstamos correcto.",
+    "subheadline": "Identificaremos su situación, le recomendaremos el programa hipotecario que le corresponde y lo pondremos en el calendario con el oficial de préstamos más adecuado para usted.",
+    "badge": "Cuestionario · 5 preguntas",
+    "bodyHeadline": "Cuéntenos su situación. Le diremos cuál es el programa.",
+    "bodyParagraph": "Diseñamos este cuestionario igual que abrimos las llamadas iniciales en nuestra oficina. Cinco preguntas rápidas, sin consulta de crédito, sin documentos, sin compromiso. Al final sabrá qué programa hipotecario se ajusta a su situación y qué oficial de préstamos de nuestro equipo es el mejor para usted.",
+    "ctaStart": "Comenzar el cuestionario",
+    "estimatedTime": "Tres minutos. Cinco preguntas."
+  },
+  "progress": {
+    "questionLabel": "Pregunta",
+    "ofLabel": "de",
+    "back": "Atrás",
+    "backToIntroAria": "Volver a la introducción",
+    "previousQuestionAria": "Pregunta anterior"
+  },
+  "questions": [
+    {
+      "id": "situation",
+      "prompt": "¿En qué punto está hoy de su trayecto hacia la vivienda?",
+      "answers": [
+        { "label": "🌱 Voy a comprar mi primera vivienda", "type": "FirstTimeFoundation" },
+        { "label": "🎖️ Soy veterano y quiero usar mi beneficio VA", "type": "VeteranPath" },
+        { "label": "🏡 Vendo, cambio a una mayor o compro una segunda vivienda", "type": "MoveUpBuyer" },
+        { "label": "🔄 Ya soy propietario y quiero refinanciar", "type": "RefinanceOptimizer" }
+      ]
+    },
+    {
+      "id": "credit",
+      "prompt": "¿Con qué rango de crédito cuenta hoy?",
+      "answers": [
+        { "label": "🌱 Por debajo de 620, todavía construyendo", "type": "FirstTimeFoundation" },
+        { "label": "🎖️ Entre 620 y 699, rango medio sólido", "type": "VeteranPath" },
+        { "label": "🔄 Entre 700 y 739, saludable", "type": "RefinanceOptimizer" },
+        { "label": "🏡 740 o más, nivel superior", "type": "MoveUpBuyer" }
+      ]
+    },
+    {
+      "id": "property",
+      "prompt": "¿De qué tipo de propiedad estamos hablando?",
+      "answers": [
+        { "label": "🔑 Residencia principal donde voy a vivir", "type": "FirstTimeFoundation" },
+        { "label": "🇺🇸 Residencia principal, usando elegibilidad VA", "type": "VeteranPath" },
+        { "label": "🏛️ Vivienda más grande o segunda residencia", "type": "MoveUpBuyer" },
+        { "label": "🏠 La vivienda en la que ya vivo y soy propietario", "type": "RefinanceOptimizer" }
+      ]
+    },
+    {
+      "id": "state",
+      "prompt": "¿En qué estado está la propiedad (o estará)?",
+      "answers": [
+        { "label": "🦞 Massachusetts, Maine o Rhode Island", "type": "FirstTimeFoundation" },
+        { "label": "🌲 New Hampshire, Vermont o Connecticut", "type": "RefinanceOptimizer" },
+        { "label": "🌴 Florida o Texas", "type": "VeteranPath" },
+        { "label": "⛰️ Colorado", "type": "MoveUpBuyer" }
+      ]
+    },
+    {
+      "id": "down-payment",
+      "prompt": "¿Cuánto tiene reservado para el pago inicial?",
+      "answers": [
+        { "label": "🌱 Menos del 3,5 por ciento, o apenas comenzando", "type": "FirstTimeFoundation" },
+        { "label": "🎖️ Cero, planeo usar VA", "type": "VeteranPath" },
+        { "label": "🏡 Entre 10 y 20 por ciento listos para usar", "type": "MoveUpBuyer" },
+        { "label": "🔄 No estoy comprando, tengo plusvalía en mi vivienda actual", "type": "RefinanceOptimizer" }
+      ]
+    },
+    {
+      "id": "timeline",
+      "prompt": "¿Cuál es su plazo?",
+      "answers": [
+        { "label": "⏳ Solo explorando, sin presión todavía", "type": "FirstTimeFoundation" },
+        { "label": "⚡ Necesito cerrar en los próximos 30 días", "type": "VeteranPath" },
+        { "label": "📅 De 1 a 3 meses", "type": "RefinanceOptimizer" },
+        { "label": "🗓️ De 3 a 6 meses", "type": "MoveUpBuyer" }
+      ]
+    }
+  ],
+  "results": {
+    "labels": {
+      "yourMatch": "Su coincidencia",
+      "recommendedProgram": "Programa recomendado",
+      "yourLoanOfficer": "Su oficial de préstamos",
+      "readFullProgram": "Lea los detalles completos del programa →",
+      "bookHeadline": "Reserve su llamada inicial de 15 minutos",
+      "restartCta": "Reiniciar el cuestionario",
+      "errorMessage": "Algo salió mal. Por favor, vuelva a intentarlo."
+    },
+    "archetypes": {
+      "FirstTimeFoundation": {
+        "name": "Cimientos de Primera Vivienda",
+        "tagline": "Va a comprar su primera vivienda. Hagamos que las cuentas funcionen de verdad.",
+        "body": [
+          "Una primera vivienda es a la vez un problema matemático y un problema emocional. La mayoría de los prestamistas solo resuelven uno. Nosotros resolvemos los dos. El programa correcto para un comprador primerizo rara vez es el que un solo banco impulsa. Es la combinación de FHA, convencional y asistencia estatal para el pago inicial que le permita entrar en la vivienda que realmente quiere con un pago que realmente pueda asumir.",
+          "Comparamos su expediente entre más de treinta prestamistas mayoristas y conocemos cada programa estatal de asistencia para el pago inicial dentro de nuestra cobertura por nombre. MassHousing, NHHFA, MaineHousing, RIHousing, CHFA, VHFA, FL Hometown Heroes, TSAHC, CHFA-CO. Las subvenciones y segundos préstamos perdonables a los que podría calificar pueden marcar la diferencia entre alquilar otro año o cerrar este otoño.",
+          "Su siguiente paso es una llamada inicial de 15 minutos. Sin consulta de crédito, sin documentos, sin presión. Primero escuchamos, después recomendamos programas y le decimos con franqueza para qué califica y qué muestran los números."
+        ],
+        "recommendedProgram": {
+          "name": "Préstamo FHA",
+          "reason": "FHA es el punto de partida más común para compradores primerizos porque el pago inicial es del 3,5 por ciento y el umbral de crédito es más amigable que el convencional. Casi siempre lo combinamos con programas estatales de DPA para un cierre con aún menos dinero de bolsillo."
+        }
+      },
+      "VeteranPath": {
+        "name": "Camino del Veterano",
+        "tagline": "Usted sirvió. El préstamo VA fue creado exactamente para este momento.",
+        "body": [
+          "El préstamo VA es la herramienta de compra más poderosa del mercado residencial y casi ningún prestamista minorista lo trata así. Cero pago inicial, sin seguro hipotecario privado, sin monto máximo de préstamo en la mayoría de los condados desde 2020 y una tarifa de financiación que se elimina por completo para muchos veteranos con calificación de discapacidad. Si usted sirvió, este beneficio se ganó, y nos aseguraremos de que el prestamista lo trate como tal.",
+          "Cerramos préstamos VA en los nueve estados donde tenemos licencia. Servicio activo, retirados, reservistas, cónyuges sobrevivientes, todas las épocas. Doug Danzey, en nuestro equipo, lleva originando préstamos VA desde antes de que algunos de nuestros otros oficiales de préstamos estuvieran en el sector, y acude a los cierres siempre que el prestatario lo desea.",
+          "Su siguiente paso es una verificación de Certificado de Elegibilidad y una llamada inicial de 15 minutos. Nosotros obtendremos el COE por usted. Sin afectar su crédito, sin compromiso, solo claridad sobre para qué califica y cómo son los números."
+        ],
+        "recommendedProgram": {
+          "name": "Préstamo VA",
+          "reason": "Cero pago inicial, sin PMI, tasas competitivas. Para la mayoría de los veteranos esta es la respuesta correcta la primera vez que hacemos los números, y comparamos prestamistas mayoristas VA para encontrar la mejor combinación de tasa y costos sobre su expediente específico."
+        }
+      },
+      "MoveUpBuyer": {
+        "name": "Comprador que Cambia a una Vivienda Mayor",
+        "tagline": "Esto no es nuevo para usted. Consigamos la tasa que el mercado realmente ofrece.",
+        "body": [
+          "Usted ya ha pasado por esto. Sabe cómo es un closing disclosure, sabe lo que le cuesta una exención de escrow y no se va a impresionar con una tasa promocional. Bien. Los compradores que cambian a una vivienda mayor suelen recibir el peor servicio de este sector porque los prestamistas asumen que no necesitan explicaciones. Nosotros asumimos lo contrario. Usted merece más detalle, no menos, porque las cifras son mayores.",
+          "Para compras de cambio a vivienda mayor solemos correr un análisis de contingencia sobre su vivienda actual, modelar las matemáticas de renunciar a la tasa frente a un buy-down permanente o un buy-down temporal 2-1, y comparar prestamistas mayoristas convencionales y jumbo lado a lado. Si un segundo piggyback tiene más sentido que un primer jumbo, se lo diremos. Si un préstamo puente es la jugada más limpia, también se lo diremos.",
+          "Su siguiente paso es una consulta de 15 minutos. Traiga su número de préstamo actual y su estimación de plusvalía. Haremos números reales, no números de presentación."
+        ],
+        "recommendedProgram": {
+          "name": "Hipoteca Jumbo",
+          "reason": "Los compradores que cambian a una vivienda mayor suelen sobrepasar el límite de préstamo conforme. Comparamos inversionistas mayoristas jumbo para que la financiación de su vivienda más grande tenga un precio competitivo, no punitivo. Si un préstamo conforme es la respuesta correcta, se lo diremos en su lugar."
+        }
+      },
+      "RefinanceOptimizer": {
+        "name": "Optimizador de Refinanciación",
+        "tagline": "Ya es propietario. Ahora haga que el préstamo trabaje más para usted.",
+        "body": [
+          "Una refinanciación es la jugada de patrimonio más subestimada en las finanzas residenciales porque es la única transacción de préstamo en la que ya conoce la propiedad, ya conoce al prestatario y ya sabe cuál era el pago anterior. La única pregunta es si las nuevas matemáticas superan a las antiguas, en cuánto y en cuánto tiempo.",
+          "Modelamos el punto de equilibrio en una refinanciación de tasa y plazo al mes, no al año. Comparamos estructuras cash-out, no-cash-out y HELOC lado a lado para que vea las compensaciones. Le diremos cuándo no es el momento adecuado, algo que la mayoría de los prestamistas nunca harán porque les pagan por cerrar, no por asesorar.",
+          "Su siguiente paso es una llamada de 15 minutos. Tenga a mano el extracto de su préstamo actual. Calcularemos el punto de equilibrio en el momento."
+        ],
+        "recommendedProgram": {
+          "name": "Hipoteca de Tasa Fija",
+          "reason": "La mayoría de las refinanciaciones terminan en una tasa fija a 15 o 30 años porque el objetivo es asegurar el nuevo pago a largo plazo. Si una estructura distinta (ARM, solo intereses, segunda HELOC) realmente sirve mejor a su objetivo, lo orientaremos hacia ella."
+        }
+      }
+    }
+  },
+  "_compliance_flags": {
+    "DEMO_COPY_PENDING_CLIENT_REVIEW": "Todo el cuerpo de los resultados es copia demo pendiente de revisión del cliente.",
+    "COMPLIANCE_REVIEW_PENDING": "Todas las preguntas de cualificación requieren revisión de cumplimiento de LMP antes de publicar. La copia del cuestionario que influye en la recomendación de programa es publicidad hipotecaria regulada.",
+    "TRANSLATION_REVIEW_PENDING": "Traducción generada por IA. Requiere revisión nativa antes de publicar, especialmente terminología técnica hipotecaria (cash-out, buy-down, piggyback, escrow, HELOC, COE, DPA).",
+    "QUANTIFIABLE_CLAIMS": [
+      "Más de treinta prestamistas mayoristas (FirstTimeFoundation body[1]): substanciación requerida",
+      "Nueve estados con licencia (VeteranPath body[1]): coincide con CLAUDE.md",
+      "Exención de tarifa de financiación VA para veteranos con discapacidad (VeteranPath body[0]): verificar política VA actual"
+    ]
+  }
+}

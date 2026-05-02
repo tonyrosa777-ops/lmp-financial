@@ -6,15 +6,23 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useSession } from 'next-auth/react';
 import { siteConfig } from '@/data/site';
 import { LanguageToggle } from '@/components/ui/LanguageToggle';
+import { useTranslation } from '@/hooks/useTranslation';
 
 interface MobileNavProps {
   open: boolean;
   onClose: () => void;
 }
 
+interface TranslatedNavItem {
+  href: string;
+  label: string;
+  isInternal?: boolean;
+}
+
 export default function MobileNav({ open, onClose }: MobileNavProps) {
   const { status } = useSession();
   const isAuthed = status === 'authenticated';
+  const { t, ta } = useTranslation('common');
 
   // Lock body scroll while drawer is open
   useEffect(() => {
@@ -38,8 +46,16 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
     return () => window.removeEventListener('keydown', onKey);
   }, [open, onClose]);
 
-  const ctaPrimary = siteConfig.hero.ctaPrimary;
   const phone = siteConfig.business.phone;
+  const businessName = siteConfig.business.name;
+
+  const navItems =
+    ta<TranslatedNavItem[]>('nav.items') ??
+    siteConfig.nav.filter((n) => !n.isCta);
+
+  const ctaPrimary =
+    ta<{ label: string; href: string }>('nav.ctaPrimary') ??
+    siteConfig.hero.ctaPrimary;
 
   return (
     <AnimatePresence>
@@ -62,7 +78,7 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
             key="drawer"
             role="dialog"
             aria-modal="true"
-            aria-label="Site navigation"
+            aria-label={t('nav.drawerAriaLabel')}
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
@@ -84,13 +100,13 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
                 className="font-display text-h3 transition-colors"
                 style={{ color: 'var(--text-primary)' }}
               >
-                {siteConfig.business.name}
+                {businessName}
               </Link>
 
               <button
                 type="button"
                 onClick={onClose}
-                aria-label="Close navigation"
+                aria-label={t('nav.closeNav')}
                 className="flex h-11 w-11 items-center justify-center rounded-md transition-colors"
                 style={{ color: 'var(--text-primary)' }}
               >
@@ -103,9 +119,7 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
             {/* Nav list */}
             <nav className="flex-1 overflow-y-auto px-6 py-6">
               <ul className="flex flex-col gap-1">
-                {siteConfig.nav.map((item) => {
-                  const isCta = item.isCta === true;
-                  if (isCta) return null; // CTA rendered below in fixed footer
+                {navItems.map((item) => {
                   return (
                     <li key={item.href}>
                       <Link
@@ -161,7 +175,7 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
                 className="font-body text-body-sm transition-colors"
                 style={{ color: 'var(--text-secondary)' }}
               >
-                {isAuthed ? 'My Account →' : 'Sign In →'}
+                {isAuthed ? t('auth.myAccountArrow') : t('auth.signInArrow')}
               </Link>
 
               {/* Primary CTA */}

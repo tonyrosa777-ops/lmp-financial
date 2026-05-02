@@ -1,1 +1,157 @@
-{}
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "reviewer": null,
+    "reviewed_at": null,
+    "_compliance_flags": [
+      "officers.mike-comerford.bio:claim:two-decades-originating",
+      "officers.mike-comerford.bio:claim:22-LOs-9-states-3-languages",
+      "officers.lew-calhoun.bio:claim:every-market-cycle-since-early-2000s",
+      "officers.mike-comerford-jr.bio:claim:learned-from-someone-with-two-decades",
+      "officers.brian-walsh.bio:claim:30-plus-wholesale-lender-relationships",
+      "officers.jayne-bolton.bio:claim:nine-state-footprint",
+      "officers.doug.bio:claim:nine-state-footprint",
+      "indexPage.headline:claim:22-loan-officers",
+      "indexPage.subheadline:claim:9-states-three-languages"
+    ]
+  },
+  "indexPage": {
+    "eyebrow": "Nuestro Equipo",
+    "headline": "22 oficiales de préstamos, una sede en Lowell.",
+    "subheadline": "Cada oficial de préstamos de LMP está licenciado individualmente con su propio NMLS. Trabajamos en 9 estados y en tres idiomas.",
+    "filterLabel": "Filtrar:",
+    "filterAllStates": "Todos los estados",
+    "filterAllLanguages": "Todos los idiomas",
+    "scheduleWithPrefix": "Agende con",
+    "ctaSection": {
+      "headline": "¿No sabe con quién hablar?",
+      "subheadline": "Conteste el cuestionario de 5 preguntas. Le emparejamos con el oficial de préstamos adecuado según su situación.",
+      "ctaPrimary": "Hacer el Cuestionario",
+      "ctaSecondary": "Obtener Pre-Aprobación"
+    }
+  },
+  "loPage": {
+    "labels": {
+      "nmlsPrefix": "NMLS #",
+      "licensedIn": "Licenciado en",
+      "statesPending": "Estados: [CONFIRM-WITH-CLIENT]",
+      "statesPendingShort": "[STATE-LICENSURE CONFIRM-WITH-CLIENT]",
+      "aboutSection": "Sobre",
+      "scheduleEyebrow": "Agende con",
+      "scheduleHeadline": "Reserve una llamada de 30 minutos.",
+      "scheduleSubheadline": "Elija un horario que le funcione. {firstName} le llamará para repasar su situación, conversar sobre los programas y responder sus preguntas.",
+      "messageHeadline": "O envíe un mensaje",
+      "messageSubheadline": "¿Prefiere correo electrónico? Escríbale a {firstName}. Las respuestas suelen llegar dentro de un día hábil.",
+      "emailCta": "Envíe correo a {firstName}",
+      "preApprovalCta": "Continuar su solicitud",
+      "sendCta": "Enviar a {firstName}",
+      "languagesLabel": "Idiomas",
+      "specialtiesLabel": "Especialidades",
+      "demoCopyNote": "[DEMO COPY, pendiente de revisión del cliente]",
+      "portraitPending": "[ASSET-PENDING, retrato de {name}]",
+      "form": {
+        "firstName": "Nombre",
+        "lastName": "Apellido",
+        "email": "Correo electrónico",
+        "phone": "Teléfono",
+        "situation": "¿Cuál es su situación?",
+        "situationPlaceholder": "Comprador por primera vez, refinanciamiento, dudas sobre FHA, etc."
+      },
+      "languageNames": {
+        "en": "Inglés",
+        "es": "Español",
+        "pt": "Portugués"
+      }
+    }
+  },
+  "officers": {
+    "mike-comerford": {
+      "title": "Presidente / Director Ejecutivo / Oficial de Préstamos",
+      "bio": "Hola, soy Mike. Fundé LMP Financial porque los prestatarios en Lowell, en Cape Coral, en Denver merecen un broker que compare el mercado, no un banco que empuja un solo producto. Llevo dos décadas originando préstamos y todavía atiendo llamadas los sábados. Todavía cierro préstamos en persona cuando puedo. Y sigo creyendo que la mejor hipoteca es la que usted entiende a fondo cuando llegamos a la mesa de cierre. Veintidós oficiales de préstamos, nueve estados, tres idiomas. Somos independientes a propósito."
+    },
+    "allen-carmody": {
+      "title": "Oficial de Préstamos",
+      "bio": "Llegué a este negocio escuchando más de lo que hablo. Cada prestatario entra con una historia, una situación de ingresos, una razón por la cual aún no ha comprado. Mi trabajo es emparejar la suya con el préstamo que realmente le encaja, no con el que un banco quiere vender ese mes. Trabajo en Nueva Inglaterra y en el oeste montañoso, y tengo debilidad por los compradores primerizos que creen que aún no pueden permitírselo. La mitad de las veces, sí pueden."
+    },
+    "edward": {
+      "title": "Oficial de Préstamos",
+      "bio": "Trabajo el teléfono hasta tarde, contesto mensajes los fines de semana, y recuerdo los nombres de los hijos de cada familia prestataria que he ayudado a cerrar. Las hipotecas son matemática. La relación es todo lo demás. Trabajo principalmente en el noreste y he cerrado préstamos para veteranos, compradores primerizos y prestatarios autoempleados que otras firmas rechazaron. Si su expediente es inusual, ese es exactamente el momento en que me quiere a mí."
+    },
+    "rocco": {
+      "title": "Oficial de Préstamos",
+      "bio": "Llevo originando préstamos lo suficiente para saber que la tasa importa menos que la fecha de cierre. Si usted no cierra a tiempo, la tasa que aseguró es teórica y el vendedor que perdió es real. Llevo a mis prestatarios a la mesa el día que prometimos. Trabajo Nueva Inglaterra y especialmente Vermont, y termino mis viernes por la tarde caminando los barrios a los que he ayudado a familias a mudarse."
+    },
+    "tim": {
+      "title": "Oficial de Préstamos",
+      "bio": "Compradores primerizos, familias que se mudan a una casa más grande, veteranos, optimizadores de refinanciamiento. He acompañado a todo tipo de prestatario a través de todo tipo de programa en el noreste. Hago las matemáticas de los buy-down como otros arman alineaciones de fantasy. Tráigame su situación y la tasa que teme dejar atrás, y le traigo el camino que de verdad sale en la cuenta. Los sábados estoy en el partido de hockey de mi hijo con el teléfono encendido."
+    },
+    "doug": {
+      "title": "Oficial de Préstamos",
+      "bio": "He estado en esta industria desde antes de que existieran los prestamistas en línea y sigo aquí por una sola razón. Los prestatarios recuerdan a quién le contestó el teléfono cuando su operación estaba a punto de caerse en el cierre. Me especializo en préstamos VA en nuestra cobertura de nueve estados, y he cerrado para veteranos de cada rama y de cada época. Si usted sirvió, se ganó el beneficio, y yo me aseguro de que el prestamista lo trate como tal. Voy a los cierres en persona."
+    },
+    "juan": {
+      "title": "Oficial de Préstamos",
+      "bio": "Hablo español. Trabajo con prestatarios que merecen entender cada página de cada documento, en el idioma en el que piensan. La decisión financiera más grande de su vida nunca debería reducirse a una barrera lingüística o a una traducción apurada. He cerrado préstamos para compradores de primera generación en Lawrence, en Lowell, en Brockton, y en Houston. Si su mamá o su tía quieren estar en la llamada, así es exactamente como me gusta hacerlo."
+    },
+    "ryan": {
+      "title": "Oficial de Préstamos",
+      "bio": "Amo este trabajo porque cada préstamo cambia la vida de una familia. Trato su expediente como si fuera el único en mi escritorio, porque para usted lo es. Trabajo principalmente en Nueva Inglaterra y Rhode Island, y dedico mis domingos por la tarde a llamar a prestatarios un año después de su cierre para ver cómo les trata la casa. La mejor parte de este trabajo no es el cierre. Es la foto del estreno que recibo seis meses después."
+    },
+    "scott-jones": {
+      "title": "Oficial de Préstamos",
+      "bio": "Me he sentado en la silla del cierre en cientos de préstamos. El patrón es claro. Los prestatarios que entienden su préstamo están más contentos años después. Por eso voy más despacio en las partes que parecen pequeñas, como la renuncia al escrow, la matemática del impound, la línea del seguro de riesgo. Trabajo principalmente en Florida y el noreste, y soy el oficial de préstamos que llama a la asociación de propietarios cuando el suscriptor tiene una pregunta. Eso ahorra una semana."
+    },
+    "amy-mcbrair": {
+      "title": "Oficial de Préstamos",
+      "bio": "Trabajo duro, me muevo rápido y digo la verdad. Si su expediente tiene una arruga, la encuentro el primer día y trabajamos el problema juntos. Sin sorpresas en la mesa de cierre, sin pánico de última hora, sin llamadas del suscriptor que usted no vio venir. Trabajo jumbo, convencional, y el tipo de financiamiento de condominios únicos que asusta a los prestamistas minoristas. Llegué a este negocio porque mis padres fueron compradores primerizos en su día. No lo olvido."
+    },
+    "mike-comerford-jr": {
+      "title": "Oficial de Préstamos",
+      "bio": "Crecí alrededor de este negocio, lo que significa que aprendí el oficio de alguien que lleva dos décadas haciéndolo. Aporto empuje fresco y estándares de la vieja escuela a cada expediente. He cerrado préstamos CHFA en Colorado, jumbos en Massachusetts y FHA en New Hampshire. Los nombres de los productos cambian. La promesa, no. Cierro a tiempo, y si no puedo, le aviso el día anterior, no el mismo día."
+    },
+    "david-serrano": {
+      "title": "Oficial de Préstamos",
+      "bio": "Hablo español. Dedico tiempo extra a los compradores primerizos porque la primera casa es un momento único en la vida. Trabajo principalmente Texas y el noreste, y he cerrado paquetes de TSAHC, TDHCA y MCC para maestros, bomberos y técnicos de emergencias médicas. Si usted califica para Homes for Texas Heroes, le quiero en la llamada con su cónyuge y con su mamá, en el idioma que sea más cómodo. Lo hacemos bien o no lo cerramos."
+    },
+    "aisha-barbosa": {
+      "title": "Oficial de Préstamos",
+      "bio": "Falo português. Trabajo con familias en las comunidades de habla portuguesa de Nueva Inglaterra y más allá, desde Lowell hasta Lawrence, Brockton y Framingham. Cada prestatario merece un camino claro, en el idioma en el que piensa, y un broker que entienda que las grandes decisiones se toman en consejo familiar, no en solitario. Cierro préstamos ITIN, FHA, paquetes de MassHousing DPA, y respondo WhatsApp a una velocidad que mi esposo encuentra excesiva."
+    },
+    "ryan-mcconihe": {
+      "title": "Oficial de Préstamos",
+      "bio": "Aprendí este negocio cerrando expedientes difíciles para situaciones difíciles. Ingresos por cuenta propia, préstamos respaldados por activos, operaciones jumbo, DSCR para inversionistas, programas de estados de cuenta para la economía gig. Si su expediente es complicado, ese es exactamente el momento en que me quiere a mí. Leo declaraciones de impuestos como otros leen novelas de misterio. Trabajo principalmente Florida y el noreste, y mi punto fuerte son los prestatarios que han escuchado un no tres veces antes de llegar a mí."
+    },
+    "lew-calhoun": {
+      "title": "Oficial de Préstamos",
+      "bio": "He originado a través de cada ciclo del mercado desde principios de los 2000. El ciclo cambia. El trabajo no. Escuchar, trabajar el expediente, llevar al prestatario a su casa. Trabajo sobre todo en Nueva Inglaterra, con una cartera estable de refinanciamientos y compras de mejora. Envío actualizaciones por escrito cada semana porque aprendí por las malas que el silencio es la peor experiencia para el cliente en esta industria. Mis prestatarios saben qué está pasando cada semana del expediente."
+    },
+    "kwame": {
+      "title": "Oficial de Préstamos",
+      "bio": "Me tomo el tiempo de enseñar. Cada prestatario con el que trabajo cierra sabiendo lo que significa cada línea de su documento, qué hace su PMI y cuándo desaparece, qué guarda su escrow y por qué. El conocimiento es la parte del préstamo que se queda con usted para siempre. Trabajo Nueva Inglaterra y Maine, y refinancio a mis propios prestatarios cuando las matemáticas dicen que es momento. No persigo la siguiente operación a costa de la que ya cerré."
+    },
+    "nick-anastasi": {
+      "title": "Oficial de Préstamos",
+      "bio": "Trato su objetivo como el encargo. Sea el pago más bajo, el cierre más rápido o la jugada más inteligente a largo plazo, construyo el préstamo que de verdad lo sirve. Trabajo principalmente Connecticut y el noreste, y cierro muchos expedientes de CHFA Time To Own y DAP para compradores primerizos en Hartford y New Haven. Si usted califica para el programa, lo quiero sobre la mesa. Si no, se lo digo de frente."
+    },
+    "jamal-azweem": {
+      "title": "Oficial de Préstamos",
+      "bio": "La comunicación lo es todo. Le mantengo a usted, a su agente inmobiliario y al suscriptor en la misma página, desde la pre-aprobación hasta el clear-to-close. Sin tramos en silencio, sin condiciones sorpresa el día antes del cierre, sin correos de fin de semana sin leer hasta el lunes. Trabajo Nueva Inglaterra y Connecticut, y mando una actualización los viernes por la tarde de cada expediente activo, porque la querría yo si fuera el prestatario."
+    },
+    "alexa-parra-magalhaes": {
+      "title": "Oficial de Préstamos",
+      "bio": "Hablo español, falo português. Trabajo en nuestras comunidades de Nueva Inglaterra para asegurar que cada prestatario llegue a su cierre sabiendo exactamente qué firmó y qué viene después. Expedientes ITIN, MassHousing DPA, paquetes FHA para compradores de primera generación en Lowell, Lawrence, Methuen y Framingham. Hago llamadas los fines de semana, en tres idiomas, y recibo con gusto a los familiares en la línea. Así es como esto debería funcionar."
+    },
+    "jayne-bolton": {
+      "title": "Oficial de Préstamos",
+      "bio": "Llevo en hipotecas el tiempo suficiente para recordar cuando los faxes eran el cuello de botella. Las herramientas cambian. La promesa permanece. Cerraré su préstamo a tiempo y le diré la verdad en cada paso. Me especializo en hipotecas inversas y refinanciamientos para propietarios en edad de jubilación en nuestra cobertura de nueve estados, y soy la oficial de préstamos con más probabilidad de aceptar una llamada larga con su hija en la línea. Así es exactamente como debería funcionar."
+    },
+    "lily-perez": {
+      "title": "Oficial de Préstamos",
+      "bio": "Hablo español. Trabajo con familias que están echando sus primeras raíces en este país, y con vecinos que llevan generaciones aquí. Cada historia recibe el mismo cuidado, la misma paciencia, las mismas llamadas atendidas fuera de horario cuando la vida solo permite llamadas fuera de horario. Cierro programas de FHA, convencional, MassHousing DPA y CHFA-CO en el noreste y Colorado. Quiero a su cónyuge, a su mamá y a su contador en la llamada si eso ayuda."
+    },
+    "brian-walsh": {
+      "title": "Reclutador",
+      "bio": "Ayudo a oficiales de préstamos a encontrar su próximo capítulo en LMP. Mejores splits, mejor acceso a mayoristas, mentoría real de Mike, capacitación presencial en Lowell o totalmente remota, y materiales de marketing bilingües si usted atiende a una comunidad de habla portuguesa o española. Tenemos UWM, Rocket Pro y más de 30 relaciones con prestamistas mayoristas. Si usted está cansado de un plan de compensación que no puede leer o de overlays que rechazan a sus prestatarios sin razón, tengamos una llamada confidencial de presentación. Escríbame directamente."
+    }
+  }
+}

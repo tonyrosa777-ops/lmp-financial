@@ -9,8 +9,11 @@
 
 import type { Metadata } from 'next';
 import PhotoBackground from '@/components/PhotoBackground';
-import QuizClient from './QuizClient';
+import QuizClient, { QuizHeader } from './QuizClient';
 
+// Metadata stays English — page-level <title>/<meta description> render at
+// request time before client locale resolves; ES locale users get translated
+// in-page UI via QuizHeader + QuizClient. Future: SSR locale-aware metadata.
 export const metadata: Metadata = {
   title: 'Find Your Loan Path | LMP Financial',
   description:
@@ -20,19 +23,10 @@ export const metadata: Metadata = {
 export default function QuizPage() {
   return (
     <>
-      {/* Page header — dark gradient with shimmer H1 */}
+      {/* Page header — dark gradient with shimmer H1 (translated copy via QuizHeader) */}
       <section className="relative overflow-hidden section-dark-gradient pt-32 pb-12">
         <PhotoBackground src="/images/pages/quiz.jpg" priority />
-        <div className="container-base px-6 relative z-10 text-center">
-          <p className="text-eyebrow text-[var(--accent)]">Find Your Loan Path</p>
-          <h1 className="hero-shimmer font-display text-h1 mt-3 max-w-3xl mx-auto">
-            Three minutes. Five questions. The right loan officer.
-          </h1>
-          <p className="mt-6 max-w-2xl mx-auto text-[var(--text-secondary)] text-lg">
-            We will type your situation, recommend the loan program that fits, and
-            put you on the calendar with the loan officer best suited for it.
-          </p>
-        </div>
+        <QuizHeader />
       </section>
 
       {/* Quiz body — light gradient section */}

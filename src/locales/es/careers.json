@@ -1,1 +1,180 @@
-{}
+{
+  "_meta": { "status": "ai-demo-pending-review", "reviewer": null, "reviewed_at": null },
+  "_compliance_flags": [
+    "page.subheadline + comp.rangeValue/rangeUnit/rangeBody/rangeFlag: rango de compensación '220 a 275 bps' es claim cuantificable y está marcado [COMPLIANCE-REVIEW-PENDING] en EN. Pendiente de aprobación de Mike Comerford y revisión del socio de cumplimiento.",
+    "comp.vsSolo: 'W-2 con división de compensación' y 'pagamos exámenes y trámites SAFE' son claims contractuales; revisar.",
+    "tools.items[0]: '30+ prestamistas mayoristas' requiere fuente verificable.",
+    "tools.items[5]: oferta de pagar costos de licenciamiento es claim contractual; revisar.",
+    "loTestimonials: testimonios marcados [DEMO COPY], incluyen volúmenes de originación específicos ($42M, $28M) que son ficticios y requieren revisión del cliente.",
+    "whyLmp: ensayo del fundador es [DEMO COPY], requiere revisión y firma de Mike Comerford."
+  ],
+  "page": {
+    "eyebrow": "Para Oficiales de Préstamos",
+    "headline": "Más libro. Más herramientas. Más dinero.",
+    "subheadline": "220 a 275 bps. Capacitación presencial en Lowell. Activos de marketing bilingües en EN, PT, ES. Más de 30 prestamistas mayoristas, en cada expediente. Usted trae el libro, nosotros traemos el resto.",
+    "primaryCta": "Hablar con Brian",
+    "secondaryCta": "Por Qué LMP",
+    "metaTemplate": "[COMPLIANCE-REVIEW-PENDING] · NMLS #{nmls} · {stateCount} estados · 22 oficiales de préstamos activos"
+  },
+  "whyLmp": {
+    "eyebrow": "Por Qué LMP",
+    "headline": "Una nota de Mike Comerford, fundador.",
+    "demoFlag": "[DEMO COPY — pendiente revisión del cliente]",
+    "paragraphs": [
+      "Llevo dos décadas originando préstamos, y la mayor parte de ellas también capacitando oficiales de préstamos. La razón por la que construí LMP es simple. El oficial de préstamos es el producto. No el banco, no la marca, no el sitio web. La relación entre un oficial de préstamos y un prestatario es todo el negocio, y cada decisión que tomamos en LMP parte de ahí.",
+      "Por eso operamos un banco mayorista real en lugar de empujar el producto de un solo prestamista. Por eso armamos kits completos de marketing bilingüe en inglés, portugués y español, porque la mayoría de los corredores minoristas todavía finge que toda la base de prestatarios habla un solo idioma. Por eso ofrecemos capacitación presencial en nuestra sede de Lowell para los oficiales nuevos, y una opción totalmente remota para todos los demás. Y por eso expandimos estado por estado al lado de nuestros oficiales, no en un mapa corporativo dibujado por alguien que nunca ha conocido nuestro libro.",
+      "Si está leyendo esto y está cansado de un plan de compensación que no puede leer, de overlays cautivos que rechazan a sus prestatarios sin razón, o de una empresa donde nadie contesta el teléfono, contáctenos. Brian Walsh es nuestro reclutador. Coordinará una llamada introductoria confidencial esta semana. Veintidós oficiales de préstamos y contando. Seguimos contratando."
+    ],
+    "signature": "Mike Comerford",
+    "signatureTitle": "Presidente y CEO · NMLS #184368"
+  },
+  "comp": {
+    "eyebrow": "Lo Que Pagamos",
+    "headline": "Compensación en la página. No en el armario.",
+    "rangeEyebrow": "Rango de Compensación",
+    "rangeValue": "220 a 275",
+    "rangeUnit": "bps",
+    "rangeBody": "Anclado a la estructura de compensación publicada de NEXA. Opciones de adelantos diarios y semanales disponibles. El nivel de compensación se establece durante el onboarding, sin sorpresas, documentado en su carta oferta.",
+    "rangeFlag": "[COMPLIANCE-REVIEW-PENDING] — el rango de compensación final publicado está pendiente de la aprobación de Mike Comerford y de la revisión del socio de cumplimiento.",
+    "vsSolo": {
+      "eyebrow": "vs Trabajar Solo",
+      "headline": "Lo que obtiene que no tendría por su cuenta.",
+      "items": [
+        {
+          "boldLabel": "W-2 con división de compensación.",
+          "rest": "Simplicidad fiscal, elegibilidad para beneficios en niveles que califiquen."
+        },
+        {
+          "boldLabel": "Activos de marketing incluidos.",
+          "rest": "Volantes bilingües, plantillas para redes sociales, secuencias de correo."
+        },
+        {
+          "boldLabel": "Asistencia con licencias multiestatales.",
+          "rest": "Pagamos exámenes y trámites SAFE una vez que usted se compromete."
+        }
+      ]
+    }
+  },
+  "archetypes": {
+    "eyebrow": "Quién Encaja",
+    "headline": "Cuatro tipos de oficial de préstamos que prosperan en LMP.",
+    "subheadline": "¿Se reconoce en alguno? Brian quiere saber de usted.",
+    "items": [
+      {
+        "title": "Operador multiestatal",
+        "body": "Tiene un libro en dos o más estados y está cansado de los dolores de cabeza con licencias en su empresa actual. Manejamos MA, NH, ME, RI, CT, FL, CO, VT y TX. La ayuda para extender licencias está incluida."
+      },
+      {
+        "title": "Especialista bilingüe",
+        "body": "Fluidez en español o portugués, atendiendo a comunidades que la mayoría de los prestamistas minoristas ignora. Activos de marketing en EN, PT y ES. Comodidad con ITIN. Su comunidad merece un broker que hable como ellos hablan."
+      },
+      {
+        "title": "Experto en programas estatales",
+        "body": "Conoce MassHousing, NHHFA, MaineHousing, RIHousing, CHFA, VHFA, FL Hometown Heroes, TSAHC, TDHCA y metroDPA al detalle. Nosotros también. Sus combinaciones de DPA cierran, cada vez."
+      },
+      {
+        "title": "Cerrador de prestatarios autoempleados",
+        "body": "Préstamos bank-statement, DSCR, 1099, ITIN. Lee declaraciones de impuestos como otros leen novelas de misterio. Nuestro banco mayorista realmente suscribe ingresos no-W-2, en lugar de simplemente rechazarlos."
+      }
+    ]
+  },
+  "tools": {
+    "eyebrow": "Herramientas Que Tendrá",
+    "headline": "Todo lo que necesita para cerrar. Nada en su camino.",
+    "items": [
+      {
+        "badge": "30+ Prestamistas",
+        "title": "Banco mayorista completo",
+        "body": "UWM, Rocket Pro TPO, y más de 30 relaciones con prestamistas mayoristas. El precio correcto, en cada expediente, sin overlays cautivos."
+      },
+      {
+        "badge": "Non-QM",
+        "title": "ITIN, DSCR, Bank Statement",
+        "body": "Programas que su empresa minorista probablemente no aprobará. Nuestros inversionistas sí, y nuestros procesadores saben cómo armar el expediente."
+      },
+      {
+        "badge": "DPA Estatal",
+        "title": "Cada programa estatal",
+        "body": "MassHousing, NHHFA, MaineHousing, RIHousing, CHFA, VHFA, TSAHC, TDHCA, FL Hometown Heroes, metroDPA. Apilados, en capas, cerrados."
+      },
+      {
+        "badge": "EN · PT · ES",
+        "title": "Kits de marketing bilingües",
+        "body": "Volantes comarcados y plantillas de correo en tres idiomas. Si atiende a una comunidad portuguesa o hispana, no está construyendo desde cero."
+      },
+      {
+        "badge": "Sede en Lowell",
+        "title": "Capacitación presencial",
+        "body": "¿Nuevo en el mayorista? Pase una semana en la sede de Lowell con Mike y los oficiales de préstamos sénior. O quédese totalmente remoto. Ambas opciones están abiertas."
+      },
+      {
+        "badge": "9 Estados",
+        "title": "Ayuda para extender licencias",
+        "body": "¿Quiere agregar MA, NH, FL, TX, CO? Pagamos los costos de exámenes y trámites SAFE una vez que se compromete. Su libro crece donde usted crece."
+      }
+    ]
+  },
+  "loTestimonials": {
+    "eyebrow": "En Sus Palabras",
+    "headline": "Mike, más dos oficiales de préstamos sénior sobre lo que cambió cuando se unieron.",
+    "demoFlag": "[DEMO COPY — pendiente revisión del cliente]",
+    "items": [
+      {
+        "name": "Mike Comerford",
+        "title": "Presidente y CEO, originando desde 2003",
+        "body": "Construí LMP porque quería un lugar donde el oficial de préstamos sea el producto. No el banco. No la marca. El oficial. Todo lo que hacemos está diseñado en torno a esa idea simple, y el equipo que tenemos es prueba de que funciona. Veintidós oficiales, tres idiomas, nueve estados, y seguimos contratando."
+      },
+      {
+        "name": "Oficial de préstamos sénior, originó $42M en 2024",
+        "title": "Se unió a LMP desde un broker minorista nacional",
+        "body": "Moví mi libro porque estaba cansado de un plan de compensación que no podía leer. Doscientos veinticinco bps desde el primer día, adelanto semanal disponible, comparación completa con prestamistas, y Mike de verdad contesta el teléfono. Mi pull-through subió. Mi take-home subió. Mis fines de semana son míos otra vez."
+      },
+      {
+        "name": "Oficial bilingüe, originó $28M en 2024",
+        "title": "Se unió a LMP tras dirigir un broker remoto en solitario",
+        "body": "Trabajar remoto en solitario fue bueno para la compensación. Solitario para el trabajo. En LMP obtengo los splits que tenía como independiente más un procesador real, kits de marketing reales en portugués, y un reclutador que responde los textos. Cierro más expedientes ahora y trabajo menos horas haciéndolo."
+      }
+    ]
+  },
+  "form": {
+    "eyebrow": "Hablar con Brian",
+    "headline": "Llamada introductoria confidencial esta semana.",
+    "fields": {
+      "firstName": "Nombre",
+      "firstNamePlaceholder": "Alex",
+      "lastName": "Apellido",
+      "lastNamePlaceholder": "Rivera",
+      "currentEmployer": "Empleador actual",
+      "currentEmployerPlaceholder": "loanDepot, CrossCountry, broker independiente, entre roles...",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "usted@personal.com",
+      "emailHelper": "Correo personal preferido por confidencialidad.",
+      "phone": "Teléfono",
+      "phonePlaceholder": "(555) 123-4567",
+      "statesLabelTemplate": "Estados licenciados ({statesList})",
+      "statesPlaceholder": "MA, NH, FL...",
+      "statesHelper": "Donde mantiene actualmente una licencia MLO.",
+      "annualVolume": "Volumen anual de producción (USD)",
+      "annualVolumePlaceholder": "$18M",
+      "annualVolumeHelper": "Total de originación más reciente del año completo. Rango está bien.",
+      "missing": "¿Qué le falta a su empresa actual?",
+      "missingPlaceholder": "Claridad de compensación, banco de prestamistas, soporte de marketing, mentoría, ruta multiestatal..."
+    },
+    "submit": "Enviar a Brian"
+  },
+  "brianCard": {
+    "labels": {
+      "email": "Correo electrónico",
+      "nmls": "NMLS",
+      "nmlsNote": "(reclutador, no oficial de préstamos)",
+      "office": "Oficina"
+    },
+    "directButton": "Enviar Correo Directo a Brian"
+  },
+  "finalCta": {
+    "headline": "¿Listo para hablar?",
+    "body": "Llamada introductoria confidencial con Brian esta semana. O lea de nuevo la nota de Mike primero. Ambas funcionan.",
+    "primary": "Enviar Correo a Brian Walsh",
+    "secondary": "Leer la nota de Mike"
+  }
+}

@@ -5,13 +5,21 @@ import Link from 'next/link';
 import { useSession } from 'next-auth/react';
 import { siteConfig } from '@/data/site';
 import { LanguageToggle } from '@/components/ui/LanguageToggle';
+import { useTranslation } from '@/hooks/useTranslation';
 import MobileNav from './MobileNav';
+
+interface TranslatedNavItem {
+  href: string;
+  label: string;
+  isInternal?: boolean;
+}
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { status } = useSession();
   const isAuthed = status === 'authenticated';
+  const { t, ta } = useTranslation('common');
 
   // Scroll-state listener — flips nav from transparent to navy backdrop after 20px
   useEffect(() => {
@@ -23,8 +31,24 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const ctaPrimary = siteConfig.hero.ctaPrimary;
   const phone = siteConfig.business.phone;
+  const businessName = siteConfig.business.name;
+
+  // Navigation labels come from the translated nav.items array; CTA fields
+  // come from the translated nav.ctaPrimary object. siteConfig.nav stays as
+  // fallback if the JSON lookup misses (defensive — JSON should always have it).
+  const navItems =
+    ta<TranslatedNavItem[]>('nav.items') ??
+    siteConfig.nav.filter((n) => !n.isCta);
+
+  const ctaPrimary =
+    ta<{ label: string; href: string }>('nav.ctaPrimary') ??
+    siteConfig.hero.ctaPrimary;
+
+  const homeAriaLabel = t('nav.homeAriaTemplate').replace(
+    '{businessName}',
+    businessName,
+  );
 
   return (
     <>
@@ -44,19 +68,18 @@ export default function Navigation() {
             href="/"
             className="font-display text-h3 transition-colors"
             style={{ color: 'var(--text-primary)' }}
-            aria-label={`${siteConfig.business.name} home`}
+            aria-label={homeAriaLabel}
           >
-            {siteConfig.business.name}
+            {businessName}
           </Link>
 
           {/* Center — desktop nav links (lg+) */}
           <nav
             className="hidden lg:flex items-center gap-7"
-            aria-label="Primary"
+            aria-label={t('nav.primaryAriaLabel')}
           >
             <ul className="flex items-center gap-7">
-              {siteConfig.nav.map((item) => {
-                if (item.isCta) return null; // CTA rendered in right cluster
+              {navItems.map((item) => {
                 return (
                   <li key={item.href}>
                     <Link
@@ -110,7 +133,7 @@ export default function Navigation() {
               className="hidden lg:inline font-body text-sm transition-colors"
               style={{ color: 'var(--text-secondary)' }}
             >
-              {isAuthed ? 'My Account' : 'Sign In'}
+              {isAuthed ? t('auth.myAccount') : t('auth.signIn')}
             </Link>
 
             {/* Primary CTA — desktop */}
@@ -133,7 +156,7 @@ export default function Navigation() {
               type="button"
               className="lg:hidden flex h-11 w-11 items-center justify-center rounded-md"
               onClick={() => setMobileOpen(true)}
-              aria-label="Open navigation"
+              aria-label={t('nav.openNav')}
               aria-expanded={mobileOpen}
               style={{ color: 'var(--text-primary)' }}
             >

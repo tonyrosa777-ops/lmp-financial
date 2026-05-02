@@ -15,6 +15,11 @@
 //
 // Trust contract: <BookingCalendar /> is built by the parallel Booking Agent.
 // Expected API: <BookingCalendar loSlug="..." />.
+//
+// Phase i18n — display strings sourced from `quiz` namespace via useTranslation.
+// Question text + answer labels are pulled from JSON when available (per quiz.json
+// `questions[]`) and fall back to QUIZ_QUESTIONS (English from quiz.ts) when keys
+// are missing. Quiz scoring logic + QuizType union stays in quiz.ts (structural).
 
 import { useMemo, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -29,14 +34,37 @@ import {
   QUIZ_RESULTS,
   scoreQuiz,
   type QuizType,
+  type QuizQuestion,
 } from '@/data/quiz';
 import { cn, easings, prefersReducedMotion } from '@/lib/utils';
+import { useTranslation } from '@/hooks/useTranslation';
+
+// ============================================================================
+// QuizHeader — small client component used by the server page.tsx so the
+// dark hero header (H1 + subheadline) translates with the locale toggle.
+// Server page.tsx still owns metadata + PhotoBackground.
+// ============================================================================
+export function QuizHeader() {
+  const { t } = useTranslation('quiz');
+  return (
+    <div className="container-base px-6 relative z-10 text-center">
+      <p className="text-eyebrow text-[var(--accent)]">{t('intro.eyebrow')}</p>
+      <h1 className="hero-shimmer font-display text-h1 mt-3 max-w-3xl mx-auto">
+        {t('intro.headline')}
+      </h1>
+      <p className="mt-6 max-w-2xl mx-auto text-[var(--text-secondary)] text-lg">
+        {t('intro.subheadline')}
+      </p>
+    </div>
+  );
+}
 
 type QuizPhase = 'intro' | 'question' | 'results';
 
 const PENDING_GLOW_MS = 400;
 
 export default function QuizClient() {
+  const { t, ta } = useTranslation('quiz');
   const [phase, setPhase] = useState<QuizPhase>('intro');
   const [questionIndex, setQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<QuizType[]>([]);
@@ -50,8 +78,32 @@ export default function QuizClient() {
     setReducedMotion(prefersReducedMotion());
   }, []);
 
-  const totalQuestions = QUIZ_QUESTIONS.length;
-  const currentQuestion = QUIZ_QUESTIONS[questionIndex];
+  // Translated questions array, falling back to quiz.ts (English) on miss.
+  // Structural integrity: array length + answer-type mapping must match quiz.ts
+  // so scoreQuiz() keeps working. We splice translated label/prompt over the
+  // structural source (quiz.ts) — never replace the type tags.
+  const translatedQuestions = useMemo<QuizQuestion[]>(() => {
+    const fromJson = ta<Array<{ id: string; prompt: string; answers: Array<{ label: string; type: QuizType }> }>>('questions');
+    if (!fromJson || fromJson.length !== QUIZ_QUESTIONS.length) {
+      return QUIZ_QUESTIONS;
+    }
+    return QUIZ_QUESTIONS.map((q, i) => {
+      const tq = fromJson[i];
+      if (!tq || tq.answers.length !== q.answers.length) return q;
+      return {
+        id: q.id,
+        prompt: tq.prompt || q.prompt,
+        answers: q.answers.map((a, j) => ({
+          // Trust the type tag from quiz.ts (structural source); only override label.
+          type: a.type,
+          label: tq.answers[j]?.label || a.label,
+        })),
+      };
+    });
+  }, [ta]);
+
+  const totalQuestions = translatedQuestions.length;
+  const currentQuestion = translatedQuestions[questionIndex];
 
   // Find the previously-saved answer for the current question (used for re-highlight on back nav).
   const savedAnswerIndex = useMemo(() => {
@@ -150,9 +202,9 @@ export default function QuizClient() {
     // Defensive — shouldn't happen, but render restart button if it does.
     return (
       <div className="text-center">
-        <p className="text-[var(--text-secondary)]">Something went sideways. Please retry.</p>
+        <p className="text-[var(--text-secondary)]">{t('results.labels.errorMessage')}</p>
         <Button onClick={handleRestart} variant="primary" className="mt-4">
-          Restart the quiz
+          {t('results.labels.restartCta')}
         </Button>
       </div>
     );
@@ -165,22 +217,20 @@ export default function QuizClient() {
 // ===========================================================================
 
 function IntroPhase({ onStart }: { onStart: () => void }) {
+  const { t } = useTranslation('quiz');
   return (
     <FadeUp>
       <div className="text-center max-w-2xl mx-auto">
-        <Badge color="gold">Quiz · 5 questions</Badge>
+        <Badge color="gold">{t('intro.badge')}</Badge>
         <h2 className="font-display text-h2 mt-4 text-[var(--text-on-light)]">
-          Tell us your situation. We will tell you the program.
+          {t('intro.bodyHeadline')}
         </h2>
         <p className="mt-6 text-lg text-[var(--text-on-light-muted)]">
-          We built this quiz the way we open intro calls in our office. Five
-          fast questions, no credit pull, no documents, no commitment. By the
-          end you will know which loan program fits your situation and which
-          loan officer on our team is best for it.
+          {t('intro.bodyParagraph')}
         </p>
         <div className="mt-10">
           <Button onClick={onStart} variant="primary" size="lg">
-            Start the quiz
+            {t('intro.ctaStart')}
           </Button>
         </div>
       </div>
@@ -195,7 +245,7 @@ function IntroPhase({ onStart }: { onStart: () => void }) {
 interface QuestionPhaseProps {
   questionIndex: number;
   totalQuestions: number;
-  question: (typeof QUIZ_QUESTIONS)[number];
+  question: QuizQuestion;
   pendingAnswer: number | null;
   savedAnswerIndex: number | null;
   direction: 1 | -1;
@@ -215,6 +265,7 @@ function QuestionPhase({
   onAnswerClick,
   onBack,
 }: QuestionPhaseProps) {
+  const { t } = useTranslation('quiz');
   // Slide x-offset — short-circuited under reduced motion.
   const slideOffset = reducedMotion ? 0 : 40;
 
@@ -226,10 +277,14 @@ function QuestionPhase({
           onClick={onBack}
           className="text-[var(--text-on-light-muted)] hover:text-[var(--accent-deep)] font-body font-semibold transition-colors duration-200 inline-flex items-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)] rounded"
           type="button"
-          aria-label={questionIndex === 0 ? 'Back to intro' : 'Previous question'}
+          aria-label={
+            questionIndex === 0
+              ? t('progress.backToIntroAria')
+              : t('progress.previousQuestionAria')
+          }
         >
           <span aria-hidden="true">←</span>
-          <span>Back</span>
+          <span>{t('progress.back')}</span>
         </button>
         <Badge color="neutral">
           {questionIndex + 1} / {totalQuestions}
@@ -310,11 +365,29 @@ interface ResultsPhaseProps {
 }
 
 function ResultsPhase({ resultType, onRestart }: ResultsPhaseProps) {
+  const { t, ta } = useTranslation('quiz');
   const result = QUIZ_RESULTS[resultType];
   const lo = siteConfig.loanOfficers.find((l) => l.slug === result.recommendedLOSlug);
   const program = siteConfig.loanPrograms.find(
     (p) => p.slug === result.recommendedProgram.slug,
   );
+
+  // Translated archetype copy with fallback to QUIZ_RESULTS (English).
+  const archetypeBase = `results.archetypes.${resultType}`;
+  const tName = t(`${archetypeBase}.name`);
+  const tTagline = t(`${archetypeBase}.tagline`);
+  const tBody = ta<string[]>(`${archetypeBase}.body`) ?? result.body;
+  const tProgramReason = t(`${archetypeBase}.recommendedProgram.reason`);
+
+  // Fallback: if a translation key is missing, t() returns the raw key string.
+  // Detect that by string equality with the key path itself, then fall back.
+  const resultName = tName === `${archetypeBase}.name` ? result.name : tName;
+  const resultTagline =
+    tTagline === `${archetypeBase}.tagline` ? result.tagline : tTagline;
+  const programReason =
+    tProgramReason === `${archetypeBase}.recommendedProgram.reason`
+      ? result.recommendedProgram.reason
+      : tProgramReason;
 
   // Phase 1J: persist the result to localStorage so the Borrower Portal
   // (/account) can surface "Your match" after sign-in. Key + shape are the
@@ -352,12 +425,12 @@ function ResultsPhase({ resultType, onRestart }: ResultsPhaseProps) {
       {/* Result hero */}
       <FadeUp>
         <div className="text-center mb-12">
-          <Badge color="gold">Your match</Badge>
+          <Badge color="gold">{t('results.labels.yourMatch')}</Badge>
           <h2 className="font-display text-h2 mt-4 text-[var(--text-on-light)]">
-            {result.name}
+            {resultName}
           </h2>
           <p className="mt-4 text-lg md:text-xl text-[var(--text-on-light-muted)] max-w-2xl mx-auto">
-            {result.tagline}
+            {resultTagline}
           </p>
         </div>
       </FadeUp>
@@ -365,7 +438,7 @@ function ResultsPhase({ resultType, onRestart }: ResultsPhaseProps) {
       {/* Body paragraphs */}
       <FadeUp delay={0.1}>
         <div className="max-w-2xl mx-auto mb-14 space-y-5 text-[var(--text-on-light)]">
-          {result.body.map((paragraph, i) => (
+          {tBody.map((paragraph, i) => (
             <p key={i} className="text-base md:text-lg leading-relaxed">
               {paragraph}
             </p>
@@ -378,7 +451,7 @@ function ResultsPhase({ resultType, onRestart }: ResultsPhaseProps) {
         <FadeUp delay={0.2}>
           <div className="mb-10">
             <p className="text-eyebrow text-[var(--accent-deep)] mb-3">
-              Recommended program
+              {t('results.labels.recommendedProgram')}
             </p>
             <Card variant="light" href={`/services/${program.slug}`}>
               <div className="flex items-start gap-5">
@@ -390,10 +463,10 @@ function ResultsPhase({ resultType, onRestart }: ResultsPhaseProps) {
                     {program.name}
                   </h3>
                   <p className="mt-2 text-[var(--text-on-light-muted)]">
-                    {result.recommendedProgram.reason}
+                    {programReason}
                   </p>
                   <p className="mt-4 text-sm font-semibold text-[var(--accent-deep)]">
-                    Read the full program details →
+                    {t('results.labels.readFullProgram')}
                   </p>
                 </div>
               </div>
@@ -407,7 +480,7 @@ function ResultsPhase({ resultType, onRestart }: ResultsPhaseProps) {
         <FadeUp delay={0.3}>
           <div className="mb-10">
             <p className="text-eyebrow text-[var(--accent-deep)] mb-3">
-              Your loan officer
+              {t('results.labels.yourLoanOfficer')}
             </p>
             <Card variant="light" hover={false}>
               <div className="flex flex-col md:flex-row md:items-start gap-6">
@@ -437,7 +510,7 @@ function ResultsPhase({ resultType, onRestart }: ResultsPhaseProps) {
                   signal to the LO without forcing the user to repeat themselves. */}
               <div className="mt-8 pt-8 border-t border-[rgba(14,27,51,0.08)]">
                 <h4 className="font-display text-xl text-[var(--text-on-light)] mb-4 text-center md:text-left">
-                  Book your 15-minute intro call
+                  {t('results.labels.bookHeadline')}
                 </h4>
                 <BookingCalendar
                   loSlug={lo.slug}
@@ -462,7 +535,7 @@ function ResultsPhase({ resultType, onRestart }: ResultsPhaseProps) {
       <FadeUp delay={0.4}>
         <div className="text-center mt-12">
           <Button onClick={onRestart} variant="tertiary" size="md">
-            Restart the quiz
+            {t('results.labels.restartCta')}
           </Button>
         </div>
       </FadeUp>

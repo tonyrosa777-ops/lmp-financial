@@ -1,1 +1,28 @@
-{}
+{
+  "index": {
+    "metaTitle": "Reading Room",
+    "metaDescription": "State programs, loan-program comparisons, and how the wholesale-broker model works. Written by LMP loan officers.",
+    "eyebrow": "Reading Room",
+    "headline": "State programs, explained.",
+    "subheadline": "Loan-program comparisons, state DPA explainers, and how the wholesale-broker model actually works. Written by LMP loan officers, flagged demo copy pending client review.",
+    "noArticles": "No articles yet.",
+    "cta": {
+      "headline": "Want to talk it through?",
+      "body": "Articles are a good start. Conversations close loans.",
+      "primary": "Get Pre-Approved",
+      "secondary": "Take the Quiz"
+    }
+  },
+  "article": {
+    "byTemplate": "By {author}",
+    "byWithRoleTemplate": "By {author}, {role}",
+    "publishedSeparator": "·",
+    "notFoundTitle": "Article Not Found",
+    "cta": {
+      "headline": "Ready to talk through your situation?",
+      "primary": "Get Pre-Approved",
+      "secondary": "More articles"
+    }
+  },
+  "untranslatedNote": "Available soon in Spanish."
+}

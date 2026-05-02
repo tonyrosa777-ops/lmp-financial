@@ -1,1 +1,33 @@
-{}
+{
+  "page": {
+    "eyebrow": "Reviews & Testimonials",
+    "headline": "Real borrowers, real closings.",
+    "subheadlineTemplate": "{count} reviews across 9 states. Every program. Every state we operate in."
+  },
+  "filters": {
+    "groupAriaLabel": "Filter testimonials by loan program",
+    "allLabelTemplate": "All ({count})",
+    "programLabelTemplate": "{program} ({count})"
+  },
+  "grid": {
+    "noResultsPrefix": "No reviews yet for this program. Try another filter, or ",
+    "noResultsLink": "start a pre-approval",
+    "noResultsSuffix": " and be the first."
+  },
+  "pagination": {
+    "pageOfTemplate": "Page {current} of {total}",
+    "reviewSingular": "review",
+    "reviewPlural": "reviews",
+    "previous": "← Previous",
+    "next": "Next →",
+    "previousAria": "Previous page of testimonials",
+    "nextAria": "Next page of testimonials"
+  },
+  "cta": {
+    "headline": "See yourself in these stories?",
+    "body": "Same team, same shop-the-market approach, same close-on-time promise. Start your pre-approval and we will match you to the LO who fits your state, your language, and your situation.",
+    "primary": "Get Pre-Approved",
+    "secondary": "Take the Quiz"
+  },
+  "originalLanguageNote": "Customer reviews shown in their original language."
+}

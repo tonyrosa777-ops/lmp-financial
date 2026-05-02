@@ -1,1 +1,81 @@
-{}
+{
+  "page": {
+    "eyebrow": "Common Questions",
+    "headline": "Most asked. Honestly answered.",
+    "subheadline": "Twelve questions that come up almost every week, from first-time buyers, refinance shoppers, realtor partners, and loan officers thinking about a move. If yours is not here, send it our way."
+  },
+  "groups": {
+    "process": {
+      "eyebrow": "Group 1",
+      "title": "Pre-Approval & Process",
+      "items": [
+        {
+          "question": "How do I get pre-approved?",
+          "answer": "Start with a 30-minute call. Your loan officer asks about your goal, your timeline, and your numbers. We run a soft credit pull, request a short document list (income, assets, ID), and most files have a pre-approval letter within 24 to 48 hours."
+        },
+        {
+          "question": "What documents do I need?",
+          "answer": "Government-issued ID, your two most recent pay stubs, two years of W-2s or tax returns, two months of bank statements, and your current mortgage statement if you are refinancing. Self-employed borrowers send K-1s, 1099s, or business returns instead. Your LO sends a clean checklist so you upload once, not three times."
+        },
+        {
+          "question": "How long does closing take?",
+          "answer": "Our team targets 14 to 30 days from clear-to-close. The exact number depends on the program, the property, and how quickly conditions clear. We push hard on the parts we control and tell you the truth on the parts we do not."
+        },
+        {
+          "question": "Will this affect my credit score?",
+          "answer": "The first conversation uses a soft pull, which does not affect your score. A hard inquiry only happens at full application, with your written consent. If you decide not to move forward after pre-approval, your credit stays untouched."
+        }
+      ]
+    },
+    "programs": {
+      "eyebrow": "Group 2",
+      "title": "Loan Program Basics",
+      "items": [
+        {
+          "question": "FHA vs Conventional, which one is right for me?",
+          "answer": "It depends on your credit score, your down payment, and your debt-to-income ratio. FHA is friendlier on credit and accepts a 3.5% down payment. Conventional is sharper on rate if your credit is strong and you can put down at least 5%. We run the math both ways and show you the actual monthly cost side by side."
+        },
+        {
+          "question": "What is the minimum down payment?",
+          "answer": "It varies by program. FHA starts at 3.5%, VA and USDA at 0%, Conventional at 3 to 5% for first-time buyers, and Jumbo typically at 10% or more. State down-payment assistance can stack on top, in some cases bringing your out-of-pocket close to zero."
+        },
+        {
+          "question": "Do you offer refinancing?",
+          "answer": "Yes. Rate-and-term refinances, cash-out refinances, and HELOCs across all nine licensed states. Every refinance starts with a breakeven analysis, where we calculate how many months it takes for the savings to cover the closing costs. If the math does not work, we say so."
+        },
+        {
+          "question": "Why use a broker instead of going to my bank?",
+          "answer": "Your bank shops one lender, theirs. We shop more than 30 wholesale lenders, then bring back the strongest combination of rate, fees, and program fit. Same application, multiple lender bids, no extra credit pulls. The wholesale market typically prices below retail because the lender is not paying for branches and a marketing department."
+        }
+      ]
+    },
+    "workingWith": {
+      "eyebrow": "Group 3",
+      "title": "Working With LMP",
+      "items": [
+        {
+          "question": "What languages do you speak?",
+          "answer": "English across the team. Spanish with three of our loan officers. Portuguese with two. Lowell, Lawrence, and the Greater Boston metro have one of the densest Brazilian and Portuguese-speaking populations in the country, and we built the team to match."
+        },
+        {
+          "question": "Do you work with first-time buyers?",
+          "answer": "Yes, and it is a big part of what we do. We carry a deep state-program library: MassHousing, NHHFA, MaineHousing, RIHousing, CHFA-CT, VHFA, FL Hometown Heroes, TSAHC and TDHCA in Texas, and CHFA-CO with metroDPA in Colorado. Most first-time buyers qualify for more than one program. We line them all up and let you pick."
+        },
+        {
+          "question": "Do you work with realtors?",
+          "answer": "Yes. We have a dedicated realtor partner program with co-marketing kits, fast same-day pre-approval letters, and in-person attendance at every closing the geography allows. See the Realtors page for details and to introduce yourself."
+        },
+        {
+          "question": "I am an LO looking for a new shop. Who do I talk to?",
+          "answer": "Brian Walsh handles loan-officer recruiting. Confidential intro calls, a clear comp plan, real wholesale access through UWM, Rocket Pro, and 30-plus other lenders. See the Careers page or text Brian directly."
+        }
+      ]
+    }
+  },
+  "cta": {
+    "headline": "Question we did not answer?",
+    "body": "Book a 15-minute intro call or take the quiz to see which loan program fits your situation. Either way, you talk to a real loan officer next.",
+    "primary": "Schedule a Call",
+    "secondary": "Take the Quiz"
+  }
+}
