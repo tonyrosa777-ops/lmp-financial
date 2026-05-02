@@ -24,10 +24,10 @@
 
 import { useState, useEffect } from 'react';
 import type { FormEvent } from 'react';
-import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
 import Badge from '@/components/ui/Badge';
+import { cn } from '@/lib/utils';
 import { siteConfig } from '@/data/site';
 
 /**
@@ -177,8 +177,24 @@ export default function BookingCalendar({
     }
   }
 
+  // Self-sufficient solid dark surface — renders the same on a dark section
+  // (LO landing page) and on a light section (quiz results, /booking, modal).
+  // The translucent --bg-card-dark token is intentionally NOT used here: that
+  // overlay is invisible on cream sections and would hide cream-colored text
+  // on cream-colored background. Solid var(--primary) with shadow keeps the
+  // calendar legible everywhere and reads as an elevated focused surface on
+  // light sections (Stripe-style inline embed pattern).
   return (
-    <Card variant="dark" hover={false} className={className}>
+    <div
+      className={cn(
+        'rounded-[var(--radius-xl)] p-6 border backdrop-blur-sm shadow-[var(--shadow-lg)]',
+        className,
+      )}
+      style={{
+        background: 'var(--primary)',
+        borderColor: 'var(--border-dark)',
+      }}
+    >
       {/* Header — title shifts by step. Single H3 for the whole flow. */}
       <div className="flex items-start justify-between gap-4 mb-6">
         <div>
@@ -407,6 +423,6 @@ export default function BookingCalendar({
             : 'Live availability.'}
         </span>
       </div>
-    </Card>
+    </div>
   );
 }
