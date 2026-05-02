@@ -1,10 +1,13 @@
 import type { Metadata, Viewport } from 'next';
+import { cookies } from 'next/headers';
 import { Fraunces, JetBrains_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
 import Providers from '@/components/Providers';
+import { I18nProvider } from '@/contexts/I18nContext';
 import { siteConfig } from '@/data/site';
+import { type Locale, DEFAULT_LOCALE, LOCALE_COOKIE, SUPPORTED_LOCALES, ogLocale } from '@/lib/i18n';
 import {
   financialServiceSchema,
   localBusinessSchema,
@@ -34,23 +37,32 @@ const generalSans = localFont({
   display: 'swap',
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: `${siteConfig.business.name} — ${siteConfig.business.tagline}`,
-    template: `%s · ${siteConfig.business.name}`,
-  },
-  description: siteConfig.hero.subheadline,
-  metadataBase: new URL('https://lmpfinancial.com'),
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    siteName: siteConfig.business.name,
-    title: `${siteConfig.business.name} — ${siteConfig.business.tagline}`,
+async function readLocale(): Promise<Locale> {
+  const store = await cookies();
+  const value = store.get(LOCALE_COOKIE)?.value;
+  return SUPPORTED_LOCALES.includes(value as Locale) ? (value as Locale) : DEFAULT_LOCALE;
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await readLocale();
+  return {
+    title: {
+      default: `${siteConfig.business.name} — ${siteConfig.business.tagline}`,
+      template: `%s · ${siteConfig.business.name}`,
+    },
     description: siteConfig.hero.subheadline,
-  },
-  twitter: { card: 'summary_large_image' },
-  robots: { index: true, follow: true },
-};
+    metadataBase: new URL('https://lmpfinancial.com'),
+    openGraph: {
+      type: 'website',
+      locale: ogLocale(locale),
+      siteName: siteConfig.business.name,
+      title: `${siteConfig.business.name} — ${siteConfig.business.tagline}`,
+      description: siteConfig.hero.subheadline,
+    },
+    twitter: { card: 'summary_large_image' },
+    robots: { index: true, follow: true },
+  };
+}
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -58,12 +70,13 @@ export const viewport: Viewport = {
   themeColor: '#0E1B33',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const locale = await readLocale();
   return (
     <html
-      lang="en"
+      lang={locale}
       className={`${fraunces.variable} ${generalSans.variable} ${jetbrainsMono.variable}`}
     >
       <body className="min-h-screen overflow-x-hidden bg-[var(--primary)] text-[var(--text-primary)] antialiased">
@@ -76,11 +89,13 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={schemaScript(localBusinessSchema())}
         />
-        <Providers>
-          <Navigation />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </Providers>
+        <I18nProvider initialLocale={locale}>
+          <Providers>
+            <Navigation />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </Providers>
+        </I18nProvider>
       </body>
     </html>
   );

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSession } from 'next-auth/react';
 import { siteConfig } from '@/data/site';
+import { LanguageToggle } from '@/components/ui/LanguageToggle';
 
 interface MobileNavProps {
   open: boolean;
@@ -139,33 +140,8 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
               className="px-6 py-6 flex flex-col gap-4"
               style={{ borderTop: '1px solid var(--border-dark)' }}
             >
-              {/* Language toggle (visual stub for Phase 1C) */}
-              <div className="flex items-center gap-2" role="group" aria-label="Language">
-                <button
-                  type="button"
-                  className="flex h-10 w-10 items-center justify-center rounded-md"
-                  style={{ background: 'var(--bg-card-dark)' }}
-                  aria-label="English"
-                >
-                  <span aria-hidden="true">🇺🇸</span>
-                </button>
-                <button
-                  type="button"
-                  className="flex h-10 w-10 items-center justify-center rounded-md"
-                  style={{ background: 'var(--bg-card-dark)' }}
-                  aria-label="Português"
-                >
-                  <span aria-hidden="true">🇧🇷</span>
-                </button>
-                <button
-                  type="button"
-                  className="flex h-10 w-10 items-center justify-center rounded-md"
-                  style={{ background: 'var(--bg-card-dark)' }}
-                  aria-label="Español"
-                >
-                  <span aria-hidden="true">🇪🇸</span>
-                </button>
-              </div>
+              {/* EN/ES language toggle — Sylvia-pattern port. */}
+              <LanguageToggle size="md" />
 
               {/* Phone */}
               {phone ? (

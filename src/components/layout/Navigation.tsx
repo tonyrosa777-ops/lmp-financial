@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useSession } from 'next-auth/react';
 import { siteConfig } from '@/data/site';
+import { LanguageToggle } from '@/components/ui/LanguageToggle';
 import MobileNav from './MobileNav';
 
 export default function Navigation() {
@@ -86,33 +87,9 @@ export default function Navigation() {
 
           {/* Right — language toggle + phone + primary CTA + mobile hamburger */}
           <div className="flex items-center gap-3">
-            {/* Language toggle (visual stub — desktop only) */}
-            <div
-              className="hidden lg:flex items-center gap-1"
-              role="group"
-              aria-label="Language"
-            >
-              <button
-                type="button"
-                className="flex h-8 w-8 items-center justify-center rounded-md transition-colors"
-                aria-label="English"
-              >
-                <span aria-hidden="true">🇺🇸</span>
-              </button>
-              <button
-                type="button"
-                className="flex h-8 w-8 items-center justify-center rounded-md transition-colors"
-                aria-label="Português"
-              >
-                <span aria-hidden="true">🇧🇷</span>
-              </button>
-              <button
-                type="button"
-                className="flex h-8 w-8 items-center justify-center rounded-md transition-colors"
-                aria-label="Español"
-              >
-                <span aria-hidden="true">🇪🇸</span>
-              </button>
+            {/* EN/ES language toggle — desktop only. Sylvia-pattern port. */}
+            <div className="hidden lg:flex">
+              <LanguageToggle size="sm" />
             </div>
 
             {/* Phone — desktop only */}
