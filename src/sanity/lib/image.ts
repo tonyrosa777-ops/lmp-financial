@@ -5,8 +5,7 @@
  * components must guard for null and fall back to gradient-placeholder UI.
  */
 
-import imageUrlBuilder from '@sanity/image-url';
-import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import imageUrlBuilder, { type SanityImageSource } from '@sanity/image-url';
 import { sanityClient } from '../client';
 
 const builder = sanityClient ? imageUrlBuilder(sanityClient) : null;
