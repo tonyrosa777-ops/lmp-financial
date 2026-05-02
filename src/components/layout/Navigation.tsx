@@ -201,14 +201,24 @@ export default function Navigation() {
               <LanguageToggle size="sm" />
             </div>
 
-            {/* Phone — desktop only */}
+            {/* Phone — icon-only on desktop. Tap-to-call via tel: link, the full
+                number lives in the title tooltip + aria-label. Modern luxury
+                pattern (Linear/Stripe/Vercel) — keeps the call affordance while
+                freeing horizontal space for the primary CTA. */}
             {phone ? (
               <a
                 href={`tel:${phone.replace(/[^0-9+]/g, '')}`}
-                className="hidden xl:inline font-mono text-micro transition-colors"
-                style={{ color: 'var(--text-secondary)' }}
+                className="hidden lg:flex h-9 w-9 items-center justify-center rounded-full transition-colors"
+                style={{
+                  background: 'rgba(245, 239, 226, 0.06)',
+                  color: 'var(--text-secondary)',
+                }}
+                aria-label={t('callAriaTemplate').replace('{phone}', phone)}
+                title={phone}
               >
-                {phone}
+                <span aria-hidden="true" style={{ fontSize: '1.1rem', lineHeight: 1 }}>
+                  📞
+                </span>
               </a>
             ) : null}
 
@@ -221,6 +231,14 @@ export default function Navigation() {
             >
               {isAuthed ? t('auth.myAccount') : t('auth.signIn')}
             </Link>
+
+            {/* Hairline divider — separates utility cluster (language + phone + sign in)
+                from the primary CTA so Get Pre-Approved reads as the dominant action. */}
+            <span
+              aria-hidden="true"
+              className="hidden lg:block h-7 w-px ml-1"
+              style={{ background: 'rgba(245, 239, 226, 0.28)' }}
+            />
 
             {/* Primary CTA — desktop */}
             <Link

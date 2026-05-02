@@ -27,6 +27,7 @@
     "signInArrow": "Iniciar sesión →",
     "myAccountArrow": "Mi cuenta →"
   },
+  "callAriaTemplate": "Llamar al {phone}",
   "footer": {
     "columns": [
       {

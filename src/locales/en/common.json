@@ -25,6 +25,7 @@
     "signInArrow": "Sign In →",
     "myAccountArrow": "My Account →"
   },
+  "callAriaTemplate": "Call {phone}",
   "footer": {
     "columns": [
       {
