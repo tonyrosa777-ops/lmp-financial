@@ -187,16 +187,19 @@ export const siteConfig: SiteConfig = {
     //   3. "We work the lenders. You work on packing boxes."
     tagline: "Settle into your home, not a rate you'll regret.",
     // [DEMO COPY — pending client review]
+    // Tightened 2026-05-02 — leads with the differentiator, drops "We are" opener.
+    // Also serves as <meta name="description"> source via app/layout.tsx.
     subheadline:
-      "We are an independent mortgage broker out of Lowell, Massachusetts. Twenty-two loan officers, nine licensed states, thirty-plus wholesale lenders shopping every file we touch. One application, one team, one closing.",
+      "Independent mortgage broker out of Lowell, Massachusetts. Thirty-plus wholesale lenders shopping every file. One application, one team, your best rate.",
     ctaPrimary: { label: "Get Pre-Approved", href: "/booking" },
     ctaSecondary: { label: "Take the Quiz", href: "/quiz" },
+    // EN/PT/ES locale chip removed 2026-05-02 — language indicator now lives
+    // exclusively in the nav-level LanguageToggle (the toggle IS the indicator).
     trustStrip: [
       "NMLS #2754084",
       "9 states licensed",
       "22 loan officers",
       "Lowell, MA",
-      "EN · PT · ES",
     ],
   },
 

@@ -1,30 +1,43 @@
 {
   "_meta": { "status": "ai-demo-pending-review", "reviewer": null, "reviewed_at": null },
   "_compliance_flags": [
-    "claim:14-day-close (stats.items[0])",
-    "claim:4.9-rating (stats.items[1])",
-    "claim:9-states-licensed (stats.items[2], hero.subheadline, hero.eyebrowTemplate, hero.trustStrip, preApprovalCTA.bodyTemplate)",
-    "claim:22-loan-officers (stats.items[3], hero.subheadline, hero.eyebrowTemplate, hero.trustStrip, hero.founderStrip.body, meetTheTeam.headline, preApprovalCTA.bodyTemplate)",
+    "claim:14-day-close (stats.items[0], hero.metricStrip.speed)",
+    "claim:4.9-rating (stats.items[1], hero.metricStrip.rating)",
+    "claim:100-plus-reviews (hero.metricStrip.reviews)",
+    "claim:9-states-licensed (stats.items[2], hero.subheadline, hero.eyebrowTemplate, hero.trustStrip, hero.creditStrip.credentialLine, preApprovalCTA.bodyTemplate)",
+    "claim:22-loan-officers (stats.items[3], hero.subheadline, hero.eyebrowTemplate, hero.trustStrip, hero.creditStrip.credentialLine, hero.founderStrip.body, meetTheTeam.headline, preApprovalCTA.bodyTemplate)",
     "claim:30-plus-wholesale-lenders (hero.subheadline, hero.founderStrip.body)",
     "claim:10662-average-savings (stats.items[4])"
   ],
   "hero": {
     "eyebrowTemplate": "NMLS #{nmls} · {stateCount} estados · {loCount} oficiales de préstamos",
     "tagline": "Instálese en su casa, no en una tasa de la que se va a arrepentir.",
-    "subheadline": "Somos un broker hipotecario independiente con sede en Lowell, Massachusetts. Veintidós oficiales de préstamos, nueve estados con licencia, más de treinta prestamistas mayoristas que cotizan cada expediente que tocamos. Una sola solicitud, un solo equipo, un solo cierre.",
+    "subheadline": "Corredor hipotecario independiente en Lowell, Massachusetts. Más de treinta prestamistas mayoristas compitiendo por su archivo. Una solicitud, un equipo, su mejor tasa.",
     "ctaPrimary": { "label": "Obtenga su pre-aprobación", "href": "/booking" },
     "ctaSecondary": { "label": "Haga el cuestionario", "href": "/quiz" },
     "trustStrip": [
       "NMLS #2754084",
       "9 estados con licencia",
       "22 oficiales de préstamos",
-      "Lowell, MA",
-      "EN · PT · ES"
+      "Lowell, MA"
     ],
+    "creditStrip": {
+      "ariaLabel": "Credenciales del fundador",
+      "credentialLine": "Fundada en Lowell por Mike Comerford · NMLS #{nmls} · {stateCount} estados · {loCount} oficiales"
+    },
+    "canvas": {
+      "matchCard": "Mejor tasa encontrada"
+    },
+    "metricStrip": {
+      "rating": { "emoji": "⭐", "value": "4.9", "label": "promedio cinco estrellas" },
+      "reviews": { "emoji": "💬", "value": "Más de 100", "label": "reseñas verificadas" },
+      "speed": { "emoji": "⚡", "value": "14 días", "label": "promedio para cerrar" }
+    },
     "founderStrip": {
       "eyebrow": "De Mike Comerford, Presidente",
       "body": "Fundamos LMP en Lowell porque los prestatarios a los que queríamos servir eran nuestros vecinos. Hoy somos 22 oficiales de préstamos en 9 estados, cotizando con más de 30 prestamistas mayoristas en cada expediente. Contestamos llamadas los sábados. Vamos en persona a los cierres. Apretón de manos de Lowell, ejecución estilo Stripe.",
-      "linkLabel": "Conozca al equipo →"
+      "linkLabel": "Conozca al equipo →",
+      "altText": "Mike Comerford, Presidente de LMP Financial"
     }
   },
   "painPoints": {

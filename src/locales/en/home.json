@@ -2,20 +2,32 @@
   "hero": {
     "eyebrowTemplate": "NMLS #{nmls} · {stateCount} states · {loCount} loan officers",
     "tagline": "Settle into your home, not a rate you'll regret.",
-    "subheadline": "We are an independent mortgage broker out of Lowell, Massachusetts. Twenty-two loan officers, nine licensed states, thirty-plus wholesale lenders shopping every file we touch. One application, one team, one closing.",
+    "subheadline": "Independent mortgage broker out of Lowell, Massachusetts. Thirty-plus wholesale lenders shopping every file. One application, one team, your best rate.",
     "ctaPrimary": { "label": "Get Pre-Approved", "href": "/booking" },
     "ctaSecondary": { "label": "Take the Quiz", "href": "/quiz" },
     "trustStrip": [
       "NMLS #2754084",
       "9 states licensed",
       "22 loan officers",
-      "Lowell, MA",
-      "EN · PT · ES"
+      "Lowell, MA"
     ],
+    "creditStrip": {
+      "ariaLabel": "Founder credentials",
+      "credentialLine": "Founded in Lowell by Mike Comerford · NMLS #{nmls} · {stateCount} states · {loCount} LOs"
+    },
+    "canvas": {
+      "matchCard": "Best rate match"
+    },
+    "metricStrip": {
+      "rating": { "emoji": "⭐", "value": "4.9", "label": "five-star average" },
+      "reviews": { "emoji": "💬", "value": "100+", "label": "verified reviews" },
+      "speed": { "emoji": "⚡", "value": "14-day", "label": "average close" }
+    },
     "founderStrip": {
       "eyebrow": "From Mike Comerford, President",
       "body": "We started LMP in Lowell because the borrowers we wanted to serve were our neighbors. Today we are 22 loan officers across 9 states, shopping 30-plus wholesale lenders on every file. We answer Saturday calls. We come to closings. Lowell handshake, Stripe execution.",
-      "linkLabel": "Meet the team →"
+      "linkLabel": "Meet the team →",
+      "altText": "Mike Comerford, President of LMP Financial"
     }
   },
   "painPoints": {

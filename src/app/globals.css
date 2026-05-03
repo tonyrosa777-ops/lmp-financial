@@ -212,9 +212,27 @@ h1, h2, .font-display {
 
 .section-dark-gradient {
   background:
+    /* Hero anchor glow — third radial behind the H1 area, anchors the shimmer */
+    radial-gradient(ellipse 35% 45% at 25% 35%, rgba(197, 165, 114, 0.10), transparent 70%),
     radial-gradient(ellipse 60% 80% at 20% 10%, rgba(197, 165, 114, 0.08), transparent 60%),
     radial-gradient(ellipse 70% 60% at 80% 90%, rgba(26, 42, 71, 0.6), transparent 70%),
     var(--primary);
+}
+
+/* ============================================================
+   PRIMARY CTA — resting + hover gold glow
+   Used on the hero primary CTA to rebalance against the more-active
+   LenderShoppingCanvas. Box-shadow only — counts as 0 motion layers
+   (transition fires only on hover, not idle).
+   ============================================================ */
+
+.cta-primary-glow {
+  box-shadow: 0 0 24px rgba(197, 165, 114, 0.18);
+  transition: box-shadow 200ms ease-out, transform 200ms ease-out, background-color 200ms ease-out;
+}
+
+.cta-primary-glow:hover {
+  box-shadow: 0 0 32px rgba(197, 165, 114, 0.32);
 }
 
 .section-light-gradient {
