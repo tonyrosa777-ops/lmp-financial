@@ -1,0 +1,126 @@
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "translatedFrom": "en",
+    "translator": "AI",
+    "reviewRequired": ["native-speaker", "compliance-it-firm"]
+  },
+  "_compliance_flags": [
+    "FHA: 3.5% down, 580+ credit score claim — needs LMP IT firm verification",
+    "VA: Zero down, no PMI claim — standard but verify language for VA advertising rules",
+    "Jumbo: Up to $3M, 10% down minimum, 680+ credit score — verify with current wholesale investor sheets",
+    "USDA: Zero down claim — verify USDA program language",
+    "Interest-Only: 5 to 10 year interest-only period claim — verify with current portfolio investors",
+    "Reverse: 62+ age requirement — federal HECM standard, OK to state",
+    "ARM: 3/1, 5/1, 7/1, 10/1 structures — verify currently available with wholesale bench"
+  ],
+  "indexPage": {
+    "metaTitle": "Programas de Empréstimo",
+    "metaDescription": "9 programas de hipoteca, cotados com mais de 30 credores atacadistas. FHA, VA, Jumbo, USDA, Primeiro Comprador, Reversa, Somente Juros, ARM, Taxa Fixa. Disponível em MA, NH, ME, RI, CT, FL, CO, VT, TX.",
+    "eyebrow": "Programas de Empréstimo",
+    "headline": "Nove programas. 9 caminhos para casa.",
+    "subheadline": "Cada mutuário é diferente. Cada empréstimo deve ser também. Cotamos com mais de 30 credores atacadistas para se encaixar na sua situação, não na deles.",
+    "ctaSection": {
+      "headline": "Não sabe qual programa se encaixa?",
+      "body": "Faça o quiz de 5 perguntas. Vamos combinar você com o programa certo e o oficial certo.",
+      "ctaPrimary": "Faça o Quiz",
+      "ctaSecondary": "Obtenha sua Pré-Aprovação"
+    }
+  },
+  "detailPage": {
+    "eyebrowSuffix": "Programa de Empréstimo",
+    "complianceFlag": "[COMPLIANCE-REVIEW-PENDING]",
+    "eligibilityHeadline": "Elegibilidade",
+    "documentsHeadline": "O que você vai precisar",
+    "documentsNote": "[DEMO COPY — pending client review. Document checklist may vary by program.]",
+    "documentChecklist": [
+      "Identificação emitida pelo governo",
+      "Dois contracheques mais recentes",
+      "Dois anos de W-2s ou declarações de imposto",
+      "Dois meses de extratos bancários",
+      "Extrato mais recente de hipoteca (apenas refinanciamento)"
+    ],
+    "faqHeadline": "Perguntas comuns",
+    "faqNote": "[COMPLIANCE-REVIEW-PENDING — all program-specific copy needs LMP IT firm signoff before publish.]",
+    "faq": {
+      "timeline": {
+        "q": "Qual é a linha do tempo típica para um {programName}?",
+        "a": "Da solicitação ao fechamento, a maioria dos arquivos passa em 14 a 30 dias. Ancoramos linhas do tempo específicas assim que cotamos seu arquivo na nossa bancada de credores atacadistas."
+      },
+      "creditScore": {
+        "q": "Que score de crédito eu preciso?",
+        "a": "{eligibility}. Podemos conversar sobre alternativas se seu arquivo estiver abaixo desses limites."
+      },
+      "rateLock": {
+        "q": "Posso travar minha taxa?",
+        "a": "Sim. Travamentos de taxa são parte do processo do loan estimate. Falamos pela janela de travamento e qualquer custo associado antes de você se comprometer."
+      },
+      "giftDownPayment": {
+        "q": "Posso usar um presente para minha entrada?",
+        "a": "Sim para a maioria dos programas. Vamos passar pela documentação necessária (carta de presente, depósitos bancários com origem) quando nos sentarmos."
+      }
+    },
+    "ctaHeadline": "Pronto para começar com um {programName}?",
+    "ctaPrimary": "Obtenha sua Pré-Aprovação",
+    "ctaSecondary": "Faça o Quiz"
+  },
+  "homepageSection": {
+    "eyebrow": "Programas de Empréstimo",
+    "headline": "Nove programas. 9 caminhos para casa.",
+    "cardCta": "Saiba mais →"
+  },
+  "sectionLabels": {
+    "blurb": "Visão geral",
+    "eligibility": "Quem se qualifica",
+    "nextSteps": "Próximos passos",
+    "cta": "Obtenha sua pré-aprovação",
+    "learnMore": "Saiba mais →"
+  },
+  "programs": {
+    "fixed-rate": {
+      "name": "Hipoteca de Taxa Fixa",
+      "blurb": "Trave sua taxa por 15 ou 30 anos. O pagamento que você assina no fechamento é o pagamento que você faz todo mês, não importa o que o mercado faça depois.",
+      "eligibility": "Prazos de 30 e 15 anos. Diretrizes convencionais de crédito e renda se aplicam."
+    },
+    "fha": {
+      "name": "Empréstimo FHA",
+      "blurb": "Apoiado pelo governo e construído para primeiros compradores e compradores de menor entrada. Entrada menor, limites de crédito mais amigáveis, apenas residência primária.",
+      "eligibility": "3,5% de entrada, score de crédito 580+, apenas residência primária."
+    },
+    "va": {
+      "name": "Empréstimo VA",
+      "blurb": "Um benefício que você conquistou. Zero de entrada, sem seguro hipotecário privado, taxas competitivas para veteranos, militares ativos, e cônjuges qualificados.",
+      "eligibility": "Zero de entrada, sem PMI. Veteranos elegíveis, militares ativos, e cônjuges qualificados."
+    },
+    "jumbo": {
+      "name": "Hipoteca Jumbo",
+      "blurb": "Financiamento acima dos limites de empréstimo conforme. Cotamos investidores jumbo atacadistas para que empréstimos de alto valor tenham preço competitivo, não punitivo.",
+      "eligibility": "Até $3M, 10% de entrada mínima, score de crédito 680+."
+    },
+    "arm": {
+      "name": "Hipoteca de Taxa Ajustável",
+      "blurb": "Taxa inicial mais baixa por um período fixo de introdução, depois ela se ajusta. Jogada inteligente se você planeja se mudar, refinanciar, ou trocar antes do reajuste.",
+      "eligibility": "Estruturas ARM 3/1, 5/1, 7/1, e 10/1. Qualificação padrão de renda e crédito."
+    },
+    "usda": {
+      "name": "Hipoteca USDA",
+      "blurb": "Financiamento sem entrada para casas elegíveis em áreas rurais e suburbanas. Discretamente poderoso para o endereço certo, especialmente no norte da Nova Inglaterra e em áreas rurais de CT.",
+      "eligibility": "Zero de entrada. O imóvel deve estar em geografia elegível para USDA. Limites de renda se aplicam por condado."
+    },
+    "first-time-buyer": {
+      "name": "Primeiro Comprador",
+      "blurb": "Programas e subsídios construídos para a primeira casa, incluindo assistência estadual para entrada: MassHousing, NHHFA, MaineHousing, RIHousing, CHFA, VHFA, FL Hometown Heroes, TSAHC, CHFA-CO.",
+      "eligibility": "Elegibilidade varia por estado e programa. Vamos passar com você por cada opção para a qual você se qualifica."
+    },
+    "reverse": {
+      "name": "Hipoteca Reversa",
+      "blurb": "Converta o patrimônio da casa em renda ou linha de crédito enquanto continua morando na casa que você ama. Construído para proprietários em fase de aposentadoria, 62 anos ou mais.",
+      "eligibility": "Mutuário primário deve ter 62 anos ou mais. Residência primária ocupada pelo proprietário exigida."
+    },
+    "interest-only": {
+      "name": "Hipoteca Somente Juros",
+      "blurb": "Pague somente juros pelos primeiros 5 a 10 anos, liberando fluxo de caixa para investimento, negócios, ou uma reforma. Programa especializado, casos de uso específicos, e vamos dizer quando não se encaixa.",
+      "eligibility": "Período somente juros de 5 a 10 anos. Requisitos de crédito e reservas mais fortes são típicos."
+    }
+  }
+}

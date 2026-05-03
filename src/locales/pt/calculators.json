@@ -1,0 +1,247 @@
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "translatedFrom": "en",
+    "translator": "AI",
+    "reviewRequired": ["native-speaker", "compliance-it-firm"]
+  },
+  "_compliance_flags": [
+    "downPayment.programs.jumbo: $766,550 conforming limit (verify current cap)",
+    "Multiple program-specific thresholds (FHA 3.5%/580+, VA 0%, USDA 0%, Conventional 5%) require LMP IT firm verification"
+  ],
+  "indexPage": {
+    "eyebrow": "Calculadoras",
+    "headline": "Faça as contas.",
+    "subheadline": "Cinco calculadoras, nativas do lmpfinancial.com, rápidas no celular, e fundamentadas na mesma matemática de credor atacadista que usamos todos os dias. Estimativas hoje, números reais de um oficial de empréstimos quando você estiver pronto.",
+    "pickATool": {
+      "eyebrow": "Escolha uma Ferramenta",
+      "headline": "Cinco calculadoras. Uma fonte da verdade.",
+      "body": "Cada calculadora roda a mesma matemática de amortização, DTI e limites que seu credor vai rodar. O resultado é uma estimativa. A conversa que vem depois é onde o número real é construído."
+    },
+    "cards": {
+      "affordability": {
+        "name": "Acessibilidade",
+        "description": "Quanta casa eu posso pagar? Renda, dívidas, e matemática de DTI."
+      },
+      "monthlyPayment": {
+        "name": "Pagamento Mensal",
+        "description": "Principal + juros + impostos + seguro + PMI detalhados."
+      },
+      "refinance": {
+        "name": "Refinanciamento",
+        "description": "Empréstimo atual vs. novo empréstimo. Meses para o break-even. Economia ao longo da vida."
+      },
+      "downPayment": {
+        "name": "Entrada",
+        "description": "Limites FHA, VA, USDA, Convencional lado a lado."
+      },
+      "dti": {
+        "name": "DTI",
+        "description": "Front-end e back-end de dívida-sobre-renda, com limites do credor."
+      }
+    },
+    "useCalculatorCta": "Usar calculadora →",
+    "talkToReal": {
+      "eyebrow": "Fale com uma Pessoa Real",
+      "headline": "A calculadora é o começo. O oficial de empréstimos é a resposta.",
+      "body": "Calculadoras são estimativas, não compromissos. Taxas reais, termos reais, e uma aprovação real começam com uma chamada de 15 minutos. Escolha um horário que funcione.",
+      "primary": "Obtenha sua Pré-Aprovação",
+      "secondary": "Conheça a Equipe",
+      "disclaimer": "[NOT-A-COMMITMENT] Calculadoras geram apenas estimativas. Taxas, termos, e aprovação reais determinados na solicitação. [COMPLIANCE-REVIEW-PENDING]"
+    }
+  },
+  "shared": {
+    "yourNumbers": "Seus números",
+    "slideToAdjust": "Deslize para ajustar. Estimativas atualizam ao vivo.",
+    "slideToAdjustRatios": "Deslize para ajustar. Razões atualizam ao vivo.",
+    "wantRealNumber": "Quer um número real?",
+    "getPreApproved": "Obtenha sua Pré-Aprovação",
+    "notACommitment": "[NOT-A-COMMITMENT]",
+    "complianceReviewPending": "[COMPLIANCE-REVIEW-PENDING]",
+    "headsUp": "Atenção"
+  },
+  "affordability": {
+    "eyebrow": "Calculadora de Acessibilidade",
+    "headline": "Quanta casa eu posso pagar?",
+    "subheadline": "Insira sua renda, suas dívidas mensais, e o DTI alvo. Vamos rodar a mesma matemática de amortização que seu credor vai rodar. O número que você vê é o teto, não a recomendação.",
+    "inputs": {
+      "annualIncome": "Renda anual",
+      "monthlyDebts": "Dívidas mensais (carro, empréstimos estudantis, cartões de crédito)",
+      "downPayment": "Entrada disponível",
+      "interestRate": "Taxa de juros",
+      "loanTerm": "Prazo do empréstimo",
+      "targetDti": "DTI back-end alvo",
+      "yrs": "anos"
+    },
+    "results": {
+      "title": "O que isso significa",
+      "subtitle": "Estimativa baseada nos dados que você inseriu.",
+      "debtsTooHigh": "Suas dívidas atuais excedem o limite de DTI alvo. Reduza as dívidas mensais ou aumente a renda para obter uma estimativa. Um oficial de empréstimos também pode discutir fatores compensatórios.",
+      "maxPayment": "Pagamento máximo de moradia mensal",
+      "maxPaymentSub": "Renda vezes DTI alvo, menos as dívidas atuais.",
+      "maxLoan": "Valor máximo do empréstimo",
+      "maxLoanSubTemplate": "Empréstimo suportado por esse pagamento a {rate} por {term} anos.",
+      "maxHomePrice": "Preço máximo do imóvel",
+      "maxHomePriceSubTemplate": "Valor do empréstimo mais sua entrada de {downPayment}."
+    },
+    "disclaimerBody": "Estes números são estimativas. Taxas, termos e aprovação reais dependem do seu arquivo completo: crédito, documentação de renda, ativos, imóvel e diretrizes do programa. Fale com um oficial de empréstimos para uma cotação real.",
+    "ctaBody": "Quinze minutos com um oficial de empréstimos transformam a estimativa em uma carta de pré-aprovação que você pode entregar a um corretor de imóveis."
+  },
+  "dti": {
+    "eyebrow": "Dívida-Sobre-Renda",
+    "headline": "Meu DTI vai passar na análise?",
+    "subheadline": "Razões de dívida-sobre-renda front-end e back-end, comparadas às diretrizes que quatro programas principais realmente usam. As tags mostram onde você está num relance.",
+    "inputs": {
+      "grossMonthlyIncome": "Renda mensal bruta",
+      "monthlyDebts": "Dívidas mensais atuais (carro, estudantil, cartões de crédito, etc.)",
+      "mortgagePayment": "Pagamento de hipoteca alvo (PITI)"
+    },
+    "results": {
+      "frontEnd": "DTI front-end",
+      "frontEndFormula": "Hipoteca / renda",
+      "backEnd": "DTI back-end",
+      "backEndFormula": "(Hipoteca + dívidas) / renda",
+      "byProgramTitle": "Por programa",
+      "byProgramSubtitle": "Aprovado / apertado / fatores compensatórios necessários, num relance.",
+      "compFactorsNote": "Fatores compensatórios incluem reservas em dinheiro, renda residual, histórico mais longo de emprego, e crédito mais forte. Um oficial de empréstimos pode mapear os seus."
+    },
+    "badges": {
+      "pass": "Aprovado",
+      "tight": "Apertado",
+      "compNeeded": "Fatores comp. necessários",
+      "residual": "Teste de renda residual",
+      "specialProgram": "Programa especial"
+    },
+    "programs": {
+      "fha": {
+        "name": "FHA",
+        "description": "Front 31% / Back 43% (50% com fatores comp.)",
+        "note": "Limites mais flexíveis. Fatores compensatórios incluem reservas, renda residual, e profundidade de crédito."
+      },
+      "conventional": {
+        "name": "Convencional",
+        "description": "Front 28% / Back 36% (até 50% estendido)",
+        "note": "Mais apertado no limite padrão; muitos credores estendem até 45-50% com arquivos fortes."
+      },
+      "va": {
+        "name": "VA",
+        "description": "Método de renda residual (não DTI tradicional)",
+        "note": "VA avalia a renda residual (dinheiro restante após dívidas e impostos) por tamanho da família e região, não um teto de DTI back-end."
+      },
+      "usda": {
+        "name": "USDA",
+        "description": "Front 29% / Back 41%",
+        "note": "O imóvel deve estar em geografia elegível para USDA. Limites de renda se aplicam por condado."
+      }
+    },
+    "disclaimerBody": "Estes números são estimativas. Os limites de DTI variam por credor, versão do programa e resultados do AUS. Fatores compensatórios e cálculos de renda residual são avaliados pela análise caso a caso. Fale com um oficial de empréstimos para uma leitura real do seu arquivo.",
+    "ctaBody": "Um oficial de empréstimos pode rodar seu arquivo completo no AUS atacadista, considerar fatores compensatórios, e dizer exatamente quais programas passam."
+  },
+  "monthlyPayment": {
+    "eyebrow": "Pagamento Mensal",
+    "headline": "Qual será meu pagamento?",
+    "subheadline": "Principal mais juros mais impostos mais seguro mais PMI. O panorama completo, não apenas a parte que as calculadoras de cotação mostram.",
+    "inputs": {
+      "loanAmount": "Valor do empréstimo",
+      "interestRate": "Taxa de juros",
+      "loanTerm": "Prazo do empréstimo",
+      "annualTax": "Imposto predial anual",
+      "annualInsurance": "Seguro residencial anual",
+      "pmiRate": "Taxa de PMI (% anual do empréstimo, 0 se 20%+ de entrada)"
+    },
+    "yourLoan": "Seu empréstimo",
+    "results": {
+      "title": "Seu pagamento",
+      "subtitle": "O detalhamento completo do PITI.",
+      "totalMonthly": "Pagamento mensal total",
+      "totalMonthlySub": "Por mês, tudo incluído.",
+      "principalAndInterest": "Principal e juros",
+      "propertyTax": "Imposto predial",
+      "homeInsurance": "Seguro residencial",
+      "pmi": "PMI",
+      "lifetimeInterest": "Juros pagos ao longo da vida",
+      "lifetimeInterestSubTemplate": "Total de juros ao longo do prazo completo de {term} anos, antes de qualquer pagamento extra de principal."
+    },
+    "disclaimerBody": "Estes números são estimativas. Taxas, termos e aprovação reais dependem do seu arquivo completo. Imposto predial, seguro e PMI variam por imóvel e programa. Fale com um oficial de empréstimos para uma cotação real.",
+    "ctaBody": "Um oficial de empréstimos pode equiparar esta calculadora a uma cotação atacadista real, com as tarifas reais, créditos do credor e a matemática específica do programa."
+  },
+  "refinance": {
+    "eyebrow": "Refinanciamento",
+    "headline": "Devo refinanciar?",
+    "subheadline": "Empréstimo atual vs. novo empréstimo. Matemática real do break-even, economia em dez anos, e uma resposta clara quando os números não fecham.",
+    "inputs": {
+      "yourLoans": "Seus empréstimos",
+      "yourLoansSub": "Empréstimo atual à esquerda. Novo empréstimo à direita.",
+      "currentLoan": "Empréstimo atual",
+      "newLoan": "Novo empréstimo",
+      "currentBalance": "Saldo atual",
+      "currentRate": "Taxa atual",
+      "currentTermRemaining": "Prazo atual restante (anos)",
+      "newRate": "Nova taxa",
+      "newTerm": "Novo prazo",
+      "closingCosts": "Custos de fechamento",
+      "rollClosingCosts": "Incorporar os custos de fechamento ao novo empréstimo"
+    },
+    "results": {
+      "title": "A matemática",
+      "subtitle": "Lado a lado, com a resposta no fim.",
+      "current": "Atual",
+      "new": "Novo",
+      "perMonthPi": "/mês P&J",
+      "noBenefit": "Refinanciar com as taxas que você inseriu não reduziria seu pagamento mensal. Considere se você está otimizando o prazo ou cash-out, em vez disso. Um oficial de empréstimos pode modelar alternativas.",
+      "monthlySavings": "Economia mensal",
+      "monthlySavingsSub": "Por mês, todo mês, durante a vida do novo empréstimo.",
+      "breakEven": "Break-even",
+      "breakEvenSub": "Custos de fechamento recuperados.",
+      "tenYearSavings": "Economia em 10 anos",
+      "tenYearSavingsSub": "Líquido dos custos de fechamento.",
+      "newLoanAmountTemplate": "Novo valor do empréstimo com custos de fechamento incorporados: {amount}.",
+      "moSuffix": "mês"
+    },
+    "disclaimerBody": "Estes números são estimativas. Taxas, termos e aprovação reais dependem do seu arquivo completo. Refinanciar reinicia o cronograma de amortização, o que pode mudar os juros pagos ao longo da vida mesmo quando o pagamento mensal cai. Fale com um oficial de empréstimos para o panorama completo.",
+    "ctaBody": "Vamos cotar seu refinanciamento com vários credores atacadistas e trazer os números que realmente passam no fechamento."
+  },
+  "downPayment": {
+    "eyebrow": "Entrada",
+    "headline": "Quanto preciso de entrada?",
+    "subheadline": "Seis programas, lado a lado. O número depende do programa. O programa depende do seu arquivo. Ambos dependem de uma conversa real.",
+    "inputs": {
+      "homePrice": "Preço do imóvel",
+      "homePriceSub": "Arraste o controle. Os limites de entrada e o caixa total para fechar atualizam ao vivo para cada programa."
+    },
+    "results": {
+      "downPayment": "Entrada",
+      "totalCashToClose": "Caixa total para fechar (est.)",
+      "totalCashSub": "Entrada + ~3% de custos de fechamento.",
+      "learnAboutTemplate": "Saiba sobre {programName} →"
+    },
+    "programs": {
+      "fha": {
+        "name": "FHA",
+        "note": "3,5% de entrada. Crédito 580+. Apenas residência primária."
+      },
+      "va": {
+        "name": "VA",
+        "note": "0% de entrada. Veteranos elegíveis, militares ativos, e cônjuges qualificados."
+      },
+      "usda": {
+        "name": "USDA",
+        "note": "0% de entrada. O imóvel deve estar em geografia elegível para USDA. Limites de renda se aplicam."
+      },
+      "conv5": {
+        "name": "Convencional 5%",
+        "note": "5% de entrada. PMI exigido até 20% de patrimônio. Qualificação de crédito padrão."
+      },
+      "conv20": {
+        "name": "Convencional 20%",
+        "note": "20% de entrada. Sem PMI. O caminho convencional mais limpo quando as reservas permitem."
+      },
+      "jumbo": {
+        "name": "Jumbo (10%)",
+        "note": "Acima do limite conforme de $766,550. Requisitos de crédito e reservas mais fortes."
+      }
+    },
+    "disclaimerBody": "Estes números são estimativas. Os custos de fechamento variam por estado, imóvel e programa (frequentemente 2 a 5% do preço). Os mínimos de entrada mostrados são pisos do programa; muitos mutuários se beneficiam de dar mais para reduzir o PMI ou melhorar a taxa. Fale com um oficial de empréstimos para modelar seu cenário específico.",
+    "ctaBody": "Programas estaduais de assistência para entrada (MassHousing, NHHFA, MaineHousing, CHFA, RIHousing, TSAHC, e outros) podem reduzir esses números ainda mais. Sabemos para quais você se qualifica."
+  }
+}

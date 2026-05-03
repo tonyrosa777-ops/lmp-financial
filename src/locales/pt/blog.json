@@ -1,0 +1,35 @@
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "translatedFrom": "en",
+    "translator": "AI",
+    "reviewRequired": ["native-speaker", "compliance-it-firm"]
+  },
+  "_compliance_flags": [],
+  "index": {
+    "metaTitle": "Sala de Leitura",
+    "metaDescription": "Programas estaduais, comparações entre programas de empréstimo, e como funciona o modelo de corretor atacadista. Escrito pelos oficiais de empréstimos da LMP.",
+    "eyebrow": "Sala de Leitura",
+    "headline": "Programas estaduais, explicados.",
+    "subheadline": "Comparações entre programas de empréstimo, explicações sobre os DPAs estaduais, e como o modelo de corretor atacadista realmente funciona. Escrito pelos oficiais de empréstimos da LMP, copy demo sinalizada e pendente de revisão pelo cliente.",
+    "noArticles": "Nenhum artigo ainda.",
+    "cta": {
+      "headline": "Quer conversar sobre isso?",
+      "body": "Artigos são um bom começo. Conversas fecham empréstimos.",
+      "primary": "Obtenha sua Pré-Aprovação",
+      "secondary": "Faça o Quiz"
+    }
+  },
+  "article": {
+    "byTemplate": "Por {author}",
+    "byWithRoleTemplate": "Por {author}, {role}",
+    "publishedSeparator": "·",
+    "notFoundTitle": "Artigo Não Encontrado",
+    "cta": {
+      "headline": "Pronto para conversar sobre sua situação?",
+      "primary": "Obtenha sua Pré-Aprovação",
+      "secondary": "Mais artigos"
+    }
+  },
+  "untranslatedNote": "Disponível em breve em português."
+}

@@ -1,0 +1,149 @@
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "translatedFrom": "en",
+    "translator": "AI",
+    "reviewRequired": ["native-speaker", "compliance-it-firm"]
+  },
+  "_compliance_flags": [
+    "valueProps.items[0]: 14-day average close (claim, substantiate)",
+    "valueProps.items[2]: Pre-approval in hours (claim, substantiate)",
+    "howItWorks: 30-plus wholesale lenders (claim, substantiate)",
+    "testimonials.items: all DEMO COPY pending client review",
+    "RESPA-compliant claims throughout co-marketing section (verify language with compliance partner)"
+  ],
+  "page": {
+    "eyebrow": "Para Corretores de Imóveis",
+    "headline": "Feche mais negócios. Mais rápido.",
+    "subheadlineTemplate": "Seu comprador precisa de pré-aprovação hoje, não na próxima semana. Pré-aprovamos em horas, resolvemos condições no mesmo dia, e aparecemos na mesa de fechamento. Uma parceria em {stateCount} estados licenciados.",
+    "primaryCta": "Torne-se um Parceiro de Indicação",
+    "secondaryCta": "Como funciona",
+    "metaTemplate": "NMLS #{nmls} · {stateCount} estados · co-marketing em conformidade com RESPA"
+  },
+  "valueProps": {
+    "eyebrow": "Por Que Fazer Parceria com a LMP",
+    "headline": "Fechamos no prazo. Comunicamos toda semana. Aparecemos.",
+    "subheadline": "As cinco razões pelas quais corretores locais nos enviam a próxima pré-aprovação e a seguinte.",
+    "items": [
+      {
+        "title": "14 dias de fechamento médio",
+        "body": "Nossa equipe resolve as condições no mesmo dia. Sua data de fechamento se mantém, seu comprador fica calmo, você mantém sua reputação."
+      },
+      {
+        "title": "Presença pessoal em todo fechamento",
+        "body": "Mike ou seu oficial designado vai à mesa de fechamento quando a geografia permite. O negócio é importante demais para uma chamada telefônica."
+      },
+      {
+        "title": "Pré-aprovação em horas",
+        "body": "Cartas de pré-aprovação no mesmo dia para arquivos limpos. Seu comprador faz uma oferta crível no momento em que sai do open house."
+      },
+      {
+        "title": "Kits de marketing co-marca sem custo",
+        "body": "Folhetos conjuntos em conformidade com RESPA, materiais de open house, templates de e-mail marketing. Dividimos o esforço de marketing, não a divulgação."
+      },
+      {
+        "title": "9 estados, 22 oficiais de empréstimos",
+        "body": "Comprador entre estados? Somos licenciados em MA, NH, ME, RI, CT, FL, CO, VT, e TX. Uma parceria cobre seu pipeline de mudança."
+      }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "Como Funciona",
+    "headline": "Três passos. Sem surpresas.",
+    "stepLabel": "Passo",
+    "steps": [
+      {
+        "title": "Indique",
+        "body": "Apresente seu comprador ou cliente de refinanciamento ao oficial de empréstimos da LMP que preferir. Não sabe quem se encaixa? Pergunte e atribuiremos com base no estado, idioma, e necessidade do programa."
+      },
+      {
+        "title": "Trabalhamos",
+        "body": "Pré-aprovação, cotação com mais de 30 credores atacadistas, coleta de documentos, condições, análise. A comunicação fica firme com você o tempo todo."
+      },
+      {
+        "title": "Fechamos juntos",
+        "body": "Pessoalmente na mesa de fechamento quando a geografia permite. Os dois assinam na mesa. Seu comprador lembra de quem apareceu. Você também."
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Em Suas Palavras",
+    "headline": "Corretores de imóveis que enviam o próximo negócio para a LMP.",
+    "demoFlag": "[DEMO COPY — pending client review]",
+    "items": [
+      {
+        "name": "Tina C.",
+        "title": "Corretora, Lowell MA",
+        "body": "Mando todo mundo que posso para a LMP agora. Mês passado tive uma primeira compradora com um arquivo 1099 complicado. Aisha tinha a pré-aprovação de volta na mesma tarde, e Mike apareceu no fechamento com um cartão para a compradora. Esse é o nível que espero de um parceiro."
+      },
+      {
+        "name": "Mark D.",
+        "title": "Corretor, Salem NH",
+        "body": "A maioria dos credores some entre o loan estimate e o closing disclosure. A LMP manda uma atualização toda sexta-feira, em todo arquivo ativo. Não tive um negócio morrer na LMP em dois anos. Esse número sozinho é o motivo pelo qual eu indico."
+      },
+      {
+        "name": "Hector M.",
+        "title": "Corretor de investimentos, Houston TX",
+        "body": "DSCR, extrato bancário, compradores multi-estado. Ryan McConihe conhece atacado de cor e o arquivo se move como deve. Fechou três dos meus em 21 dias ou menos no último trimestre. Os folhetos co-marca também me ajudaram a rodar um circuito completo de open houses."
+      }
+    ]
+  },
+  "coMarketing": {
+    "eyebrow": "Kits de Co-Marketing",
+    "headline": "Materiais em conformidade com RESPA. Grátis para nossos parceiros.",
+    "subheadline": "Compartilhamos o esforço de marketing, nunca a divulgação. Cada material revisado pelo nosso parceiro de compliance antes de virar impressão ou pixel.",
+    "assetFlag": "[ASSET-PENDING — kits PDF set, Phase 1G]",
+    "items": [
+      {
+        "title": "Folhetos de open house",
+        "body": "Páginas únicas co-marca com sua foto, seus dados de contato, nosso CTA de pré-aprovação. PDFs prontos para impressão, com a linha de compliance da sua corretora incluída."
+      },
+      {
+        "title": "Templates de e-mail marketing",
+        "body": "Anúncios de novas listagens, atualizações de just-sold, lembretes de refinanciamento em mudanças de mercado. Linguagem de marketing conjunta em conformidade com RESPA, revisada pelo nosso parceiro de compliance."
+      },
+      {
+        "title": "Gráficos prontos para redes sociais",
+        "body": "Templates quadrados e em formato story para Instagram e Facebook, troque sua foto, poste no mesmo dia. Destaques de programas estaduais prontos para MassHousing, NHHFA, CHFA, RIHousing, FL Hometown Heroes, TSAHC."
+      }
+    ]
+  },
+  "form": {
+    "eyebrow": "Torne-se um Parceiro",
+    "headline": "Envie a próxima pré-aprovação. Cuidamos a partir daí.",
+    "fields": {
+      "firstName": "Nome",
+      "firstNamePlaceholder": "Tina",
+      "lastName": "Sobrenome",
+      "lastNamePlaceholder": "Costa",
+      "brokerage": "Imobiliária",
+      "brokeragePlaceholder": "Coldwell Banker, Compass, KW, independente...",
+      "email": "E-mail",
+      "emailPlaceholder": "voce@imobiliaria.com",
+      "phone": "Telefone",
+      "phonePlaceholder": "(555) 123-4567",
+      "statesLabelTemplate": "Estados em que você atua ({statesList})",
+      "statesPlaceholder": "MA, NH...",
+      "statesHelper": "Diga onde sua carteira ativa está.",
+      "message": "Conte sobre seu comprador típico",
+      "messagePlaceholder": "Primeiros compradores, jumbo, investidor, multifamiliar, mudança..."
+    },
+    "submit": "Enviar para a LMP"
+  },
+  "directContact": {
+    "eyebrow": "Contato Direto",
+    "headline": "Fale conosco diretamente.",
+    "body": "Mike Comerford, Presidente e CEO, recebe apresentações de parceiros pessoalmente. Entre em contato e responderemos no mesmo dia útil.",
+    "labels": {
+      "email": "E-mail",
+      "phone": "Telefone",
+      "office": "Escritório",
+      "licensed": "Licenciado"
+    }
+  },
+  "finalCta": {
+    "headline": "Pronto para enviar sua próxima pré-aprovação para a LMP?",
+    "bodyTemplate": "Uma parceria. {stateCount} estados. {loCount} oficiais de empréstimos prontos para trabalhar seu próximo arquivo.",
+    "primary": "Torne-se um Parceiro de Indicação"
+  }
+}

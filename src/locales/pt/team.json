@@ -1,0 +1,151 @@
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "translatedFrom": "en",
+    "translator": "AI",
+    "reviewRequired": ["native-speaker", "compliance-it-firm"]
+  },
+  "_compliance_flags": [
+    "All LO bios contain narrative claims (years of experience, deal types closed) — substantiate before publish",
+    "Per-LO state licensure unconfirmed pending Mike Comerford's regulatory verification — display only LOs confirmed licensed in each state"
+  ],
+  "indexPage": {
+    "eyebrow": "Nossa Equipe",
+    "headline": "22 oficiais de empréstimos, uma sede em Lowell.",
+    "subheadline": "Cada oficial de empréstimos da LMP é licenciado individualmente com seu próprio NMLS. Trabalhamos em 9 estados e três idiomas.",
+    "filterLabel": "Filtrar:",
+    "filterAllStates": "Todos os estados",
+    "filterAllLanguages": "Todos os idiomas",
+    "scheduleWithPrefix": "Agendar com",
+    "ctaSection": {
+      "headline": "Não sabe com quem falar?",
+      "subheadline": "Faça o quiz de 5 perguntas. Vamos combinar você com o oficial certo com base na sua situação.",
+      "ctaPrimary": "Faça o Quiz",
+      "ctaSecondary": "Obtenha sua Pré-Aprovação"
+    }
+  },
+  "loPage": {
+    "labels": {
+      "nmlsPrefix": "NMLS #",
+      "licensedIn": "Licenciado em",
+      "statesPending": "Estados: [CONFIRM-WITH-CLIENT]",
+      "statesPendingShort": "[STATE-LICENSURE CONFIRM-WITH-CLIENT]",
+      "aboutSection": "Sobre",
+      "scheduleEyebrow": "Agendar com",
+      "scheduleHeadline": "Agende uma chamada de 30 minutos.",
+      "scheduleSubheadline": "Escolha um horário que funcione. {firstName} vai ligar para conversar sobre sua situação, falar sobre programas, e responder perguntas.",
+      "messageHeadline": "Ou envie uma mensagem",
+      "messageSubheadline": "Prefere e-mail? Mande uma mensagem para {firstName}. Respostas tipicamente em um dia útil.",
+      "emailCta": "Enviar E-mail para {firstName}",
+      "preApprovalCta": "Continue sua solicitação",
+      "sendCta": "Enviar para {firstName}",
+      "languagesLabel": "Idiomas",
+      "specialtiesLabel": "Especialidades",
+      "demoCopyNote": "[DEMO COPY, pending client review]",
+      "portraitPending": "[ASSET-PENDING, {name} portrait]",
+      "form": {
+        "firstName": "Nome",
+        "lastName": "Sobrenome",
+        "email": "E-mail",
+        "phone": "Telefone",
+        "situation": "Qual é a sua situação?",
+        "situationPlaceholder": "Primeiro comprador, refinanciamento, dúvidas sobre FHA, etc."
+      },
+      "languageNames": {
+        "en": "Inglês",
+        "es": "Espanhol",
+        "pt": "Português"
+      }
+    }
+  },
+  "officers": {
+    "mike-comerford": {
+      "title": "Presidente / CEO / Oficial de Empréstimos",
+      "bio": "Oi, sou Mike. Fundei a LMP Financial porque mutuários em Lowell, em Cape Coral, em Denver merecem um corretor que cota o mercado, não um banco empurrando um produto. Venho originando empréstimos há duas décadas e ainda atendo chamadas no sábado. Ainda fecho empréstimos pessoalmente quando posso. E ainda acredito que a melhor hipoteca é aquela que você entende de cor quando chegamos à mesa de fechamento. Vinte e dois oficiais, nove estados, três idiomas. Somos independentes de propósito."
+    },
+    "allen-carmody": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Vim para esta área ouvindo mais do que falando. Cada mutuário entra com uma história, uma situação de renda, uma razão pela qual ainda não comprou. Meu trabalho é combinar a sua com o empréstimo que realmente se encaixa, não o que um banco quer vender naquele mês. Trabalho na Nova Inglaterra e no Mountain West, e tenho um carinho especial por primeiros compradores que acham que ainda não podem se dar ao luxo. Metade das vezes, podem."
+    },
+    "edward": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Trabalho com o telefone até tarde, respondo mensagens nos fins de semana, e lembro dos nomes das crianças em cada família de mutuário que ajudei a fechar. Hipotecas são matemática. O relacionamento é tudo o resto. Trabalho principalmente no Nordeste e já fechei empréstimos para veteranos, primeiros compradores, e mutuários autônomos que outras casas recusaram. Se seu arquivo é incomum, é exatamente quando você quer eu nele."
+    },
+    "rocco": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Venho originando empréstimos há tempo suficiente para saber que a taxa importa menos do que a data de fechamento. Se você não fechar no prazo, a taxa que travou é teórica e o vendedor que perdeu é real. Levo meus mutuários à mesa no dia que prometemos. Trabalho na Nova Inglaterra e em Vermont especialmente, e fecho minhas tardes de sexta caminhando pelos bairros para os quais ajudei famílias a se mudarem."
+    },
+    "tim": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Primeiros compradores, famílias subindo de nível, veteranos, otimizadores de refinanciamento. Já guiei todo tipo de mutuário por todo tipo de programa no Nordeste. Rodo matemática de buy-down do jeito que outras pessoas rodam escalações de fantasy. Traga sua situação e a taxa que você tem medo de abrir mão, e vou trazer o caminho que realmente fecha. Sábados estou no jogo de hóquei do meu filho com o telefone ligado."
+    },
+    "doug": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Estou nesta indústria desde antes dos credores online existirem e ainda estou aqui por uma razão. Mutuários lembram de quem atendeu o telefone quando o negócio estava prestes a desabar no fechamento. Especializo-me em empréstimos VA em nossa área de atuação de nove estados, e já fechei para veteranos de cada ramo e cada era. Se você serviu, conquistou o benefício, e vou garantir que o credor o trate dessa forma. Vou aos fechamentos."
+    },
+    "juan": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Hablo español. Trabalho com mutuários que merecem entender cada página de cada divulgação, no idioma em que pensam. A maior decisão financeira da sua vida nunca deve depender de uma barreira de idioma ou uma tradução apressada. Já fechei empréstimos para compradores de primeira geração em Lawrence, em Lowell, em Brockton, e em Houston. Se sua mãe ou sua tia quer estar na chamada, é exatamente como eu quero fazer."
+    },
+    "ryan": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Amo este trabalho porque cada empréstimo muda a vida de uma família. Trato seu arquivo como se fosse o único na minha mesa, porque para você, é. Trabalho principalmente na Nova Inglaterra e Rhode Island, e tiro minhas tardes de domingo para ligar para mutuários um ano após o fechamento para ver como a casa está tratando deles. A melhor parte deste trabalho não é o fechamento. É a foto de festa de inauguração que recebo seis meses depois."
+    },
+    "scott-jones": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Já me sentei na cadeira de fechamento em centenas de empréstimos. O padrão é claro. Mutuários que entendem seu empréstimo são mais felizes anos depois. Então desacelero nas partes que parecem pequenas, como a renúncia de escrow, a matemática de impound, a linha de seguro de risco. Trabalho principalmente em Florida e no Nordeste, e sou o oficial que liga para o HOA pessoalmente quando o analista tem uma pergunta. Economiza uma semana."
+    },
+    "amy-mcbrair": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Trabalho duro, me movo rápido, e digo a verdade. Se seu arquivo tem uma ruga, vou encontrá-la no primeiro dia e vamos trabalhar o problema juntos. Sem surpresas na mesa de fechamento, sem pânico de última hora, sem ligações da análise que você não viu vir. Trabalho jumbo, convencional, e o tipo de financiamento de condomínio singular que assusta credores de varejo. Vim para este negócio porque meus pais foram primeiros compradores uma vez. Não esqueço disso."
+    },
+    "mike-comerford-jr": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Cresci em torno deste negócio, o que significa que aprendi o ofício com alguém que faz isso há duas décadas. Trago energia nova e padrões da velha escola para cada arquivo. Já fechei empréstimos CHFA no Colorado, jumbos em Massachusetts, e FHA em New Hampshire. Os nomes dos produtos mudam. A promessa não. Fecho no prazo, e se não puder, te aviso no dia anterior, não no dia."
+    },
+    "david-serrano": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Hablo español. Passo tempo extra com primeiros compradores porque a primeira casa é um momento único na vida. Trabalho principalmente Texas e o Nordeste, e já fechei combinações TSAHC, TDHCA, e MCC para professores, bombeiros, e SMU. Se você se qualifica para Homes for Texas Heroes, quero você na chamada com seu cônjuge e sua mãe, no idioma que for confortável. A gente acerta ou não fecha."
+    },
+    "aisha-barbosa": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Falo português. Trabalho com famílias nas comunidades de língua portuguesa da Nova Inglaterra e além, de Lowell a Lawrence a Brockton a Framingham. Cada mutuário merece um caminho claro, no idioma em que pensa, e um corretor que entende que grandes decisões são tomadas em conselhos de família, não sozinhas. Fecho empréstimos ITIN, FHA, combinações de DPA do MassHousing, e respondo WhatsApp em velocidades que meu marido acha excessivas."
+    },
+    "ryan-mcconihe": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Aprendi este negócio fechando arquivos difíceis para situações difíceis. Renda autônoma, empréstimos com base em ativos, negócios jumbo, DSCR para investidores, programas de extrato bancário para a economia gig. Se seu arquivo é complicado, é exatamente quando você quer eu nele. Leio declarações de imposto do jeito que algumas pessoas leem romances policiais. Trabalho principalmente Florida e o Nordeste, e meu ponto forte são mutuários que ouviram não três vezes antes de chegarem em mim."
+    },
+    "lew-calhoun": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Originei em cada ciclo de mercado desde o início dos anos 2000. O ciclo muda. O trabalho não. Escutar, trabalhar o arquivo, levar o mutuário para casa. Trabalho principalmente na Nova Inglaterra, com uma carteira firme de refinanciamentos e compras subindo de nível. Mando atualizações escritas semanais porque aprendi do jeito difícil que o silêncio é a pior experiência do cliente nesta indústria. Meus mutuários sabem o que está acontecendo toda semana do arquivo."
+    },
+    "kwame": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Tiro tempo para ensinar. Cada mutuário com quem trabalho fecha sabendo o que cada linha da divulgação dele significa, o que o PMI dele faz e quando vai embora, o que o escrow dele guarda e por quê. Conhecimento é a parte do empréstimo que você guarda para sempre. Trabalho na Nova Inglaterra e Maine, e refinancio meus próprios mutuários quando a matemática diz que é hora. Não persigo o próximo negócio ao custo daquele que já fechei."
+    },
+    "nick-anastasi": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Trato seu objetivo como o briefing. Seja o pagamento mais baixo, o fechamento mais rápido, ou a jogada mais inteligente de longo prazo, construo o empréstimo que realmente atende isso. Trabalho principalmente Connecticut e o Nordeste, e fecho muitos arquivos CHFA Time To Own e DAP para primeiros compradores em Hartford e New Haven. Se você se qualifica para o programa, quero ele na mesa. Se você não se qualifica, vou dizer diretamente."
+    },
+    "jamal-azweem": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Comunicação é o jogo inteiro. Mantenho você, seu corretor de imóveis, e a análise na mesma página da pré-aprovação ao clear-to-close. Sem silêncios longos, sem condições surpresa no dia anterior ao fechamento, sem e-mails de fim de semana sem resposta até segunda. Trabalho na Nova Inglaterra e Connecticut, e mando uma atualização de sexta à tarde em todo arquivo ativo porque eu gostaria de uma se eu fosse o mutuário."
+    },
+    "alexa-parra-magalhaes": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Hablo español, falo português. Trabalho nas nossas comunidades da Nova Inglaterra para garantir que cada mutuário entre no fechamento sabendo exatamente o que assinou e o que vem depois. Arquivos ITIN, DPA do MassHousing, combinações FHA para compradores de primeira geração em Lowell, Lawrence, Methuen, e Framingham. Faço chamadas nos fins de semana, em três idiomas, e recebo familiares na linha. É assim que isso deve funcionar."
+    },
+    "jayne-bolton": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Estou em hipoteca há tempo suficiente para lembrar de quando máquinas de fax eram o gargalo. As ferramentas mudam. A promessa segue a mesma. Vou fechar seu empréstimo no prazo e dizer a verdade em cada passo. Especializo-me em hipotecas reversas e refinanciamentos para proprietários em idade de aposentadoria em nossa área de atuação de nove estados, e sou a oficial mais provável de fazer uma chamada longa com sua filha na linha. É exatamente como deve ser."
+    },
+    "lily-perez": {
+      "title": "Oficial de Empréstimos",
+      "bio": "Hablo español. Trabalho com famílias colocando suas primeiras raízes neste país, e com vizinhos que estão aqui há gerações. Cada história recebe o mesmo cuidado, a mesma paciência, as mesmas ligações atendidas após o expediente quando a vida só permite chamadas após o expediente. Fecho FHA, convencional, DPA do MassHousing, e programas CHFA-CO no Nordeste e Colorado. Quero seu cônjuge, sua mãe, e seu contador na chamada se isso ajudar."
+    },
+    "brian-walsh": {
+      "title": "Recrutador",
+      "bio": "Ajudo oficiais de empréstimos a encontrar seu próximo capítulo na LMP. Melhores divisões, melhor acesso atacadista, mentoria real do Mike, treinamento presencial em Lowell ou totalmente remoto, e materiais de marketing bilíngues se você atende uma comunidade portuguesa ou espanhola. Temos UWM, Rocket Pro, e mais de 30 relacionamentos com credores atacadistas. Se você está cansado de um plano de comissão que não consegue ler ou overlays que recusam seus mutuários sem motivo, vamos ter uma chamada inicial confidencial. Mande mensagem direto."
+    }
+  }
+}

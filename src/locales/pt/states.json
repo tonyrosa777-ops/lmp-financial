@@ -1,0 +1,132 @@
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "translatedFrom": "en",
+    "translator": "AI",
+    "reviewRequired": ["native-speaker", "compliance-it-firm"]
+  },
+  "indexPage": {
+    "eyebrow": "Onde Somos Licenciados",
+    "headline": "Nove estados. Um aperto de mão de Lowell.",
+    "subheadline": "Somos licenciados para originar hipotecas residenciais em nove estados. Cada um tem sua própria agência de financiamento de moradia, sua própria estrutura de DPA, e suas próprias particularidades. Conhecemos todos pelo nome.",
+    "mapHelpText": "Clique em um estado para ver o que oferecemos lá"
+  },
+  "statePage": {
+    "labels": {
+      "regionLabel": "Região",
+      "primaryCityLabel": "Cidade principal",
+      "programsAvailable": "Programas disponíveis neste estado",
+      "loanOfficersInState": "Oficiais de empréstimos atendendo este estado",
+      "specialPrograms": "Programas específicos do estado",
+      "downPaymentAssistance": "Assistência para entrada",
+      "eligibility": "Elegibilidade",
+      "agency": "Agência",
+      "viewAgencyLink": "Ver site da agência →",
+      "ctaSection": "Obtenha sua pré-aprovação em {state}",
+      "ctaSubheadline": "Uma chamada inicial de 15 minutos. Sem consulta de crédito, sem documentos, sem compromisso.",
+      "ctaButton": "Agendar com um oficial de {state}",
+      "preApprovalCta": "Inicie sua pré-aprovação"
+    },
+    "compliance": {
+      "figuresFlag": "Números atuais para o 1º trimestre de 2026. Verifique com o site da agência. Revisão de compliance pendente.",
+      "disclaimer": "Programas, elegibilidade, e números estão sujeitos a alterações. Confirme os detalhes atuais com a agência emissora antes de solicitar."
+    }
+  },
+  "states": {
+    "massachusetts": {
+      "code": "MA",
+      "shortName": "MA",
+      "fullName": "Massachusetts",
+      "primaryCity": "Lowell",
+      "region": "New England",
+      "blurb": "Massachusetts é a casa. Nosso escritório em Lowell fica a cinco minutos do Acre, dez de Centralville, e atendemos o Vale do Merrimack, a South Shore, as comunidades brasileira e hispânica de Lawrence e Brockton, e o Cape toda semana. Fechamos combinações de DPA do MassHousing, arquivos ONE Mortgage, e FHA em três idiomas."
+    },
+    "new-hampshire": {
+      "code": "NH",
+      "shortName": "NH",
+      "fullName": "New Hampshire",
+      "primaryCity": "Manchester",
+      "region": "New England",
+      "blurb": "Salem, Nashua, Manchester, Concord. NH fica quinze minutos ao norte da nossa sede em Lowell e é nossa segunda carteira mais densa. Empilhamos NHHFA Home Flex Plus com o convencional primário, rodamos a Community Heroes Initiative para socorristas, e conhecemos o mercado de quem está subindo de nível no sul de NH de cor."
+    },
+    "maine": {
+      "code": "ME",
+      "shortName": "ME",
+      "fullName": "Maine",
+      "primaryCity": "Portland",
+      "region": "New England",
+      "blurb": "De Portland a Bangor, do Midcoast ao Down East, financiamento de casas móveis e modulares de que outras casas correm. A combinação First Home Loan mais Advantage do MaineHousing é uma das estruturas de DPA mais generosas da Nova Inglaterra, e o novo subsídio First Generation é uma cunha real para compradores cujos pais nunca foram proprietários. Nós fechamos."
+    },
+    "rhode-island": {
+      "code": "RI",
+      "shortName": "RI",
+      "fullName": "Rhode Island",
+      "primaryCity": "Providence",
+      "region": "New England",
+      "blurb": "Providence, Cranston, Pawtucket, Newport, Woonsocket. RI é um mercado denso de primeiros compradores e o RIHousing construiu uma das estruturas de DPA mais empilháveis do país: 15kDPA em cima de FirstGenHomeRI em cima de um crédito tributário MCC. Já fechamos os três no mesmo arquivo."
+    },
+    "connecticut": {
+      "code": "CT",
+      "shortName": "CT",
+      "fullName": "Connecticut",
+      "primaryCity": "Hartford",
+      "region": "New England",
+      "blurb": "Hartford, New Haven, Bridgeport, Stamford, o mercado jumbo do condado de Fairfield. CHFA Time To Own pode colocar até $50,000 de dinheiro perdoável para uma primeira casa, em cima do CHFA primário. A maioria dos credores de varejo trata os programas de bond de CT como uma caixinha de marcar. Tratamos como o arquivo."
+    },
+    "vermont": {
+      "code": "VT",
+      "shortName": "VT",
+      "fullName": "Vermont",
+      "primaryCity": "Burlington",
+      "region": "New England",
+      "blurb": "Burlington, South Burlington, Montpelier, Rutland. Vermont é um mercado pequeno com um conjunto de DPA desproporcional. VHFA empilha MOVE mais ASSIST mais First Generation em um único arquivo, e o MOVE MCC adiciona um crédito tributário federal por cima de tudo isso. Nós fechamos."
+    },
+    "florida": {
+      "code": "FL",
+      "shortName": "FL",
+      "fullName": "Florida",
+      "primaryCity": "Tampa",
+      "region": "Florida",
+      "blurb": "Tampa, Miami, Orlando, Cape Coral, Naples, Jacksonville. Florida é o mercado de migração sazonal, o mercado de condomínio, e o mercado de trabalhadores essenciais. Hometown Heroes coloca $35,000 de DPA na mesa para enfermeiros, professores, bombeiros, policiais, e SMU. Financiamento de condomínio non-warrantable assusta credores de varejo. Não nos assusta."
+    },
+    "colorado": {
+      "code": "CO",
+      "shortName": "CO",
+      "fullName": "Colorado",
+      "primaryCity": "Denver",
+      "region": "Mountain West",
+      "blurb": "Denver, Boulder, Aurora, Colorado Springs, o Front Range. CHFA-CO atualizou os limites de renda em janeiro de 2026 e o segundo perdoável metroDPA é um dos programas de assistência mais empilháveis do país. Combinamos CHFA Preferred com metroDPA no mesmo arquivo, e conhecemos a dança jumbo de condado de alto custo em Boulder de cor."
+    },
+    "texas": {
+      "code": "TX",
+      "shortName": "TX",
+      "fullName": "Texas",
+      "primaryCity": "Houston",
+      "region": "Texas",
+      "blurb": "Houston, Dallas, Austin, San Antonio, o Rio Grande Valley. Texas roda dois sistemas estaduais paralelos de moradia (TSAHC e TDHCA), cada um com seu próprio DPA, MCC, e programa para trabalhador essencial. Arquivos bilíngues fecham mais rápido aqui do que em qualquer outro lugar da nossa área de atuação, e já fechamos Homes for Texas Heroes para professores, SMU, bombeiros, e policiais."
+    }
+  },
+  "regions": {
+    "New England": "New England",
+    "Florida": "Florida",
+    "Mountain West": "Mountain West",
+    "Texas": "Texas"
+  },
+  "_compliance_flags": {
+    "DEMO_COPY_PENDING_CLIENT_REVIEW": "All state intros (blurb fields) are demo copy pending client review per state-programs.ts source comments.",
+    "FIGURES_CURRENT_AS_OF_2026_Q1": "All program figures (DPA amounts, percentages, eligibility income tiers) flagged in source. Verify against agency websites before publish.",
+    "COMPLIANCE_REVIEW_PENDING": "All program copy requires LMP compliance review before publish. State-specific advertising copy must comply with each state's mortgage advertising rules (MA, NH, ME, RI, CT, FL, CO, VT, TX).",
+    "FEATURED_LO_LICENSURE_UNCONFIRMED": "Per-state LO licensure (featuredLOSlugs in source) is unconfirmed pending Mike Comerford's regulatory verification. Display only LOs confirmed licensed in each state.",
+    "QUANTIFIABLE_CLAIMS": [
+      "MA — MassHousing up to $30,000 DPA (verify with agency)",
+      "NH — NHHFA Home Flex Plus up to 4 percent forgivable (verify)",
+      "ME — Advantage $5,000 cash grant + First Generation $5,000 (verify)",
+      "RI — 15kDPA $15,000, Extra Assistance up to $25,000, FirstGenHomeRI $25,000 forgivable (verify)",
+      "CT — Time To Own up to $50,000 forgivable, DAP up to $25,000 (verify)",
+      "VT — ASSIST up to $15,000, First Generation $15,000 (verify)",
+      "FL — Hometown Heroes up to $35,000, Florida Assist up to $10,000 (verify)",
+      "CO — FirstGeneration $25,000, HomeAccess up to $25,000, metroDPA up to 6 percent forgivable (verify)",
+      "TX — TSAHC Heroes up to 5 percent, Home Sweet Texas up to 5 percent, TDHCA programs up to 5 percent (verify)"
+    ]
+  }
+}

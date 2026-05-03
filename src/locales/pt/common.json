@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "translatedFrom": "en",
+    "translator": "AI",
+    "reviewRequired": ["native-speaker", "compliance-it-firm"]
+  },
+  "_compliance_flags": [],
+  "nav": {
+    "items": [
+      { "href": "/services", "label": "Programas de Empréstimo" },
+      { "href": "/calculators", "label": "Calculadoras" },
+      { "href": "/team", "label": "Equipe" },
+      { "href": "/partners", "label": "Corretores de Imóveis" },
+      { "href": "/careers", "label": "Carreiras" },
+      { "href": "/blog", "label": "Blog" },
+      { "href": "/contact", "label": "Contato" },
+      { "href": "/pricing", "label": "Preços", "isInternal": true }
+    ],
+    "ctaPrimary": { "label": "Obtenha sua Pré-Aprovação", "href": "/booking" },
+    "openNav": "Abrir navegação",
+    "closeNav": "Fechar navegação",
+    "homeAriaTemplate": "Página inicial de {businessName}",
+    "primaryAriaLabel": "Principal",
+    "drawerAriaLabel": "Navegação do site",
+    "moreLabel": "Mais",
+    "moreAriaLabel": "Mais navegação"
+  },
+  "auth": {
+    "signIn": "Entrar",
+    "myAccount": "Minha Conta",
+    "signInArrow": "Entrar →",
+    "myAccountArrow": "Minha Conta →"
+  },
+  "callAriaTemplate": "Ligar para {phone}",
+  "footer": {
+    "columns": [
+      {
+        "title": "Empresa",
+        "links": [
+          { "label": "Sobre", "href": "/about" },
+          { "label": "Equipe", "href": "/team" },
+          { "label": "Corretores de Imóveis", "href": "/partners" },
+          { "label": "Carreiras", "href": "/careers" },
+          { "label": "Contato", "href": "/contact" }
+        ]
+      },
+      {
+        "title": "Programas de Empréstimo",
+        "links": [
+          { "label": "Hipoteca de Taxa Fixa", "href": "/services/fixed-rate" },
+          { "label": "Empréstimo FHA", "href": "/services/fha" },
+          { "label": "Empréstimo VA", "href": "/services/va" },
+          { "label": "Hipoteca Jumbo", "href": "/services/jumbo" },
+          { "label": "Hipoteca de Taxa Ajustável", "href": "/services/arm" },
+          { "label": "Hipoteca USDA", "href": "/services/usda" },
+          { "label": "Primeiro Comprador", "href": "/services/first-time-buyer" },
+          { "label": "Hipoteca Reversa", "href": "/services/reverse" },
+          { "label": "Hipoteca Somente Juros", "href": "/services/interest-only" }
+        ]
+      },
+      {
+        "title": "Recursos",
+        "links": [
+          { "label": "Calculadoras", "href": "/calculators" },
+          { "label": "Perguntas Frequentes", "href": "/faq" },
+          { "label": "Blog", "href": "/blog" },
+          { "label": "Avaliações", "href": "/testimonials" },
+          { "label": "Áreas de Atendimento", "href": "/service-areas" }
+        ]
+      },
+      {
+        "title": "Contato",
+        "links": [
+          { "label": "(978) 453-LOAN", "href": "tel:+19784535626" },
+          { "label": "info@lmpfinancial.com", "href": "mailto:info@lmpfinancial.com" },
+          { "label": "LinkedIn", "href": "https://www.linkedin.com/in/mike-comerford-aa134887/" }
+        ]
+      }
+    ],
+    "copyright": "© 2026 LMP Financial. Todos os direitos reservados.",
+    "legalLinks": [
+      { "label": "Política de Privacidade", "href": "/privacy-policy" },
+      { "label": "Termos de Uso", "href": "/terms-of-use" },
+      { "label": "Declaração de Acessibilidade ADA", "href": "/ada-accessibility-statement" }
+    ],
+    "verbatimNote": "Avisos legais regulatórios são exibidos em inglês para cumprir com as regras de publicidade estaduais."
+  },
+  "buttons": {
+    "getPreApproved": "Obtenha sua Pré-Aprovação",
+    "talkToLO": "Fale com um Oficial de Empréstimos",
+    "takeQuiz": "Faça o Quiz",
+    "learnMore": "Saiba mais →",
+    "meetTheTeam": "Conheça a equipe →",
+    "viewAll": "Ver Tudo"
+  }
+}

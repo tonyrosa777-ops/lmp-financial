@@ -1,0 +1,183 @@
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "translatedFrom": "en",
+    "translator": "AI",
+    "reviewRequired": ["native-speaker", "compliance-it-firm"]
+  },
+  "_compliance_flags": [
+    "comp.rangeValue 220-275 bps (anchored to NEXA published comp; pending Mike Comerford sign-off)",
+    "loTestimonials.items[1].title $42M originated in 2024 (DEMO COPY)",
+    "loTestimonials.items[2].title $28M originated in 2024 (DEMO COPY)",
+    "Mike Comerford NMLS #184368 (verify)"
+  ],
+  "page": {
+    "eyebrow": "Para Oficiais de Empréstimos",
+    "headline": "Mais carteira. Mais ferramentas. Mais dinheiro.",
+    "subheadline": "220 a 275 bps. Treinamento presencial em Lowell. Materiais de marketing bilíngues em EN, PT, ES. Mais de trinta credores atacadistas, em cada arquivo. Você traz a carteira, nós trazemos o resto.",
+    "primaryCta": "Fale com Brian",
+    "secondaryCta": "Por que LMP",
+    "metaTemplate": "[COMPLIANCE-REVIEW-PENDING] · NMLS #{nmls} · {stateCount} estados · 22 oficiais ativos"
+  },
+  "whyLmp": {
+    "eyebrow": "Por que LMP",
+    "headline": "Uma nota de Mike Comerford, fundador.",
+    "demoFlag": "[DEMO COPY — pending client review]",
+    "paragraphs": [
+      "Eu venho originando empréstimos há duas décadas e treinando oficiais durante boa parte delas. A razão pela qual construí a LMP é simples. O oficial é o produto. Não o banco, não a marca, não o site. A relação entre o oficial de empréstimos e o mutuário é o negócio inteiro, e cada decisão que tomamos na LMP parte daí.",
+      "É por isso que mantemos uma bancada atacadista de verdade em vez de empurrar o produto de um único credor. É por isso que montamos kits de marketing bilíngues completos em inglês, português e espanhol, porque a maioria das casas de varejo ainda finge que toda a base de mutuários fala um único idioma. É por isso que oferecemos treinamento presencial em nossa sede em Lowell para novos oficiais e uma opção totalmente remota para todos os outros. E é por isso que expandimos estado a estado junto com nossos oficiais, não num mapa corporativo desenhado por alguém que nunca conheceu nossa carteira.",
+      "Se você está lendo isso e está cansado de um plano de comissão que você não consegue ler, de overlays cativas recusando seus mutuários sem motivo, ou de uma casa onde ninguém atende o telefone, entre em contato. Brian Walsh é nosso recrutador. Ele vai marcar uma chamada inicial confidencial esta semana. Vinte e dois oficiais e contando. Ainda estamos contratando."
+    ],
+    "signature": "Mike Comerford",
+    "signatureTitle": "Presidente e CEO · NMLS #184368"
+  },
+  "comp": {
+    "eyebrow": "O Que Pagamos",
+    "headline": "Comissão na página. Não no armário.",
+    "rangeEyebrow": "Faixa de Comissão",
+    "rangeValue": "220 a 275",
+    "rangeUnit": "bps",
+    "rangeBody": "Ancorada na estrutura de comissão publicada pela NEXA. Opções de saque diário e semanal disponíveis. Faixa de comissão definida no onboarding, sem surpresas, documentada na sua carta-proposta.",
+    "rangeFlag": "[COMPLIANCE-REVIEW-PENDING]: faixa final de comissão publicada pendente de aprovação de Mike Comerford + revisão do parceiro de compliance.",
+    "vsSolo": {
+      "eyebrow": "vs. Trabalhar Sozinho",
+      "headline": "O que você ganha que não teria sozinho.",
+      "items": [
+        {
+          "boldLabel": "W-2 com divisão de comissão.",
+          "rest": "Simplicidade tributária, elegibilidade a benefícios em faixas qualificadas."
+        },
+        {
+          "boldLabel": "Materiais de marketing inclusos.",
+          "rest": "Folhetos bilíngues, templates sociais, sequências de e-mail."
+        },
+        {
+          "boldLabel": "Apoio em licença multi-estadual.",
+          "rest": "Pagamos os exames e os registros SAFE assim que você se compromete."
+        }
+      ]
+    }
+  },
+  "archetypes": {
+    "eyebrow": "Quem Se Encaixa",
+    "headline": "Quatro tipos de oficial que prosperam na LMP.",
+    "subheadline": "Se reconheceu em algum deles? Brian quer ouvir você.",
+    "items": [
+      {
+        "title": "Operador multi-estado",
+        "body": "Você tem carteira em dois ou mais estados e está cansado de dores de cabeça com licenças na sua casa atual. Carregamos MA, NH, ME, RI, CT, FL, CO, VT, e TX. Apoio para extensão de licença está incluído."
+      },
+      {
+        "title": "Especialista bilíngue",
+        "body": "Fluência em espanhol ou português, atendendo comunidades que a maioria dos credores de varejo ignora. Materiais de marketing em EN, PT, e ES. Conforto com ITIN. Sua comunidade merece um corretor que fale do jeito que ela fala."
+      },
+      {
+        "title": "Especialista em programas estaduais",
+        "body": "Você conhece MassHousing, NHHFA, MaineHousing, RIHousing, CHFA, VHFA, FL Hometown Heroes, TSAHC, TDHCA, e metroDPA de cor. Nós também. Suas combinações de DPA fecham, sempre."
+      },
+      {
+        "title": "Closer de mutuários autônomos",
+        "body": "Empréstimos com extrato bancário, DSCR, 1099, ITIN. Você lê declarações de imposto do jeito que algumas pessoas leem romances policiais. Nossa bancada atacadista realmente analisa renda fora do W-2, em vez de simplesmente recusar."
+      }
+    ]
+  },
+  "tools": {
+    "eyebrow": "Ferramentas que Você Vai Ter",
+    "headline": "Tudo que você precisa para fechar. Nada no seu caminho.",
+    "items": [
+      {
+        "badge": "30+ Credores",
+        "title": "Bancada atacadista completa",
+        "body": "UWM, Rocket Pro TPO, e mais de 30 relacionamentos com credores atacadistas. O preço certo, em cada arquivo, sem overlays cativas."
+      },
+      {
+        "badge": "Non-QM",
+        "title": "ITIN, DSCR, Extrato Bancário",
+        "body": "Programas que sua casa de varejo provavelmente não vai aprovar. Nossos investidores aprovam, e nossos processadores sabem como montar o arquivo."
+      },
+      {
+        "badge": "DPA Estadual",
+        "title": "Cada programa estadual",
+        "body": "MassHousing, NHHFA, MaineHousing, RIHousing, CHFA, VHFA, TSAHC, TDHCA, FL Hometown Heroes, metroDPA. Empilhados, combinados, fechados."
+      },
+      {
+        "badge": "EN · PT · ES",
+        "title": "Kits de marketing bilíngues",
+        "body": "Folhetos co-marca e templates de e-mail em três idiomas. Se você atende uma comunidade portuguesa ou espanhola, não está construindo do zero."
+      },
+      {
+        "badge": "Sede em Lowell",
+        "title": "Treinamento presencial",
+        "body": "Novo no atacado? Passe uma semana na sede em Lowell com Mike e os oficiais sêniores. Ou fique totalmente remoto. Ambas as opções estão abertas."
+      },
+      {
+        "badge": "9 Estados",
+        "title": "Apoio em extensão de licença",
+        "body": "Quer adicionar MA, NH, FL, TX, CO? Pagamos os custos de exame e do registro SAFE assim que você se compromete. Sua carteira cresce onde você cresce."
+      }
+    ]
+  },
+  "loTestimonials": {
+    "eyebrow": "Em Suas Palavras",
+    "headline": "Mike, mais dois oficiais sêniores sobre o que mudou quando entraram.",
+    "demoFlag": "[DEMO COPY — pending client review]",
+    "items": [
+      {
+        "name": "Mike Comerford",
+        "title": "Presidente e CEO, originando desde 2003",
+        "body": "Construí a LMP porque queria um lugar onde o oficial é o produto. Não o banco. Não a marca. O oficial. Tudo o que fazemos é desenhado em torno dessa ideia simples, e a equipe que temos é prova de que funciona. Vinte e dois oficiais, três idiomas, nove estados, e ainda estamos contratando."
+      },
+      {
+        "name": "Oficial Sênior, originou $42M em 2024",
+        "title": "Entrou na LMP vindo de uma rede nacional de varejo",
+        "body": "Mudei minha carteira porque estava cansado de um plano de comissão que eu não conseguia ler. Duzentos e vinte e cinco bps desde o primeiro dia, saque semanal disponível, cotação atacadista completa, e Mike realmente atende o telefone. Minha taxa de fechamento subiu. Meu líquido subiu. Meus fins de semana são meus de novo."
+      },
+      {
+        "name": "Oficial Bilíngue, originou $28M em 2024",
+        "title": "Entrou na LMP depois de operar uma casa solo totalmente remota",
+        "body": "Trabalhar remoto sozinho era bom para a comissão. Solitário para o trabalho. Na LMP eu tenho as divisões que tinha como independente mais um processador de verdade, kits de marketing reais em português, e um recrutador que responde mensagens. Fecho mais arquivos agora e trabalho menos horas fazendo isso."
+      }
+    ]
+  },
+  "form": {
+    "eyebrow": "Fale com Brian",
+    "headline": "Chamada inicial confidencial esta semana.",
+    "fields": {
+      "firstName": "Nome",
+      "firstNamePlaceholder": "Alex",
+      "lastName": "Sobrenome",
+      "lastNamePlaceholder": "Rivera",
+      "currentEmployer": "Empregador atual",
+      "currentEmployerPlaceholder": "loanDepot, CrossCountry, casa independente, entre cargos...",
+      "email": "E-mail",
+      "emailPlaceholder": "voce@pessoal.com",
+      "emailHelper": "E-mail pessoal preferível por confidencialidade.",
+      "phone": "Telefone",
+      "phonePlaceholder": "(555) 123-4567",
+      "statesLabelTemplate": "Estados licenciados ({statesList})",
+      "statesPlaceholder": "MA, NH, FL...",
+      "statesHelper": "Onde você atualmente tem licença MLO.",
+      "annualVolume": "Volume anual de produção (USD)",
+      "annualVolumePlaceholder": "$18M",
+      "annualVolumeHelper": "Total mais recente de originação em ano cheio. Faixa serve.",
+      "missing": "O que está faltando na sua casa atual?",
+      "missingPlaceholder": "Clareza de comissão, bancada de credores, suporte de marketing, mentoria, caminho multi-estado..."
+    },
+    "submit": "Enviar para Brian"
+  },
+  "brianCard": {
+    "labels": {
+      "email": "E-mail",
+      "nmls": "NMLS",
+      "nmlsNote": "(recrutador, não oficial)",
+      "office": "Escritório"
+    },
+    "directButton": "Enviar E-mail Direto para Brian"
+  },
+  "finalCta": {
+    "headline": "Pronto para conversar?",
+    "body": "Chamada inicial confidencial com Brian esta semana. Ou releia a nota de Mike primeiro. Ambos funcionam.",
+    "primary": "Enviar E-mail para Brian Walsh",
+    "secondary": "Ler a nota de Mike"
+  }
+}

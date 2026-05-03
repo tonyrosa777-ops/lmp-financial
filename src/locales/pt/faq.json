@@ -1,0 +1,92 @@
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "translatedFrom": "en",
+    "translator": "AI",
+    "reviewRequired": ["native-speaker", "compliance-it-firm"]
+  },
+  "_compliance_flags": [
+    "process.timeline answer: 14 to 30 days from clear-to-close (claim, verify substantiation)",
+    "programs.minimumDownPayment: FHA 3.5%, VA/USDA 0%, Conventional 3-5%, Jumbo 10%+ (verify currency)",
+    "programs.broker answer: 30+ wholesale lenders (substantiate)"
+  ],
+  "page": {
+    "eyebrow": "Perguntas Comuns",
+    "headline": "Mais perguntadas. Honestamente respondidas.",
+    "subheadline": "Doze perguntas que aparecem quase toda semana, de primeiros compradores, gente buscando refinanciamento, parceiros corretores de imóveis, e oficiais de empréstimos pensando em mudar. Se a sua não está aqui, mande para nós."
+  },
+  "groups": {
+    "process": {
+      "eyebrow": "Grupo 1",
+      "title": "Pré-Aprovação e Processo",
+      "items": [
+        {
+          "question": "Como faço para obter a pré-aprovação?",
+          "answer": "Comece com uma chamada de 30 minutos. Seu oficial de empréstimos pergunta sobre seu objetivo, sua linha do tempo, e seus números. Fazemos uma consulta de crédito leve, pedimos uma lista curta de documentos (renda, ativos, identificação), e a maioria dos arquivos tem uma carta de pré-aprovação em 24 a 48 horas."
+        },
+        {
+          "question": "Quais documentos eu preciso?",
+          "answer": "Identificação emitida pelo governo, seus dois contracheques mais recentes, dois anos de W-2s ou declarações de imposto, dois meses de extratos bancários, e seu extrato atual de hipoteca se estiver refinanciando. Mutuários autônomos enviam K-1s, 1099s, ou declarações da empresa em vez disso. Seu oficial envia um checklist limpo para que você carregue uma vez, não três."
+        },
+        {
+          "question": "Quanto tempo leva o fechamento?",
+          "answer": "Nossa equipe mira de 14 a 30 dias do clear-to-close. O número exato depende do programa, do imóvel, e de quão rápido as condições se resolvem. Empurramos com força nas partes que controlamos e dizemos a verdade nas que não controlamos."
+        },
+        {
+          "question": "Isso vai afetar meu score de crédito?",
+          "answer": "A primeira conversa usa uma consulta leve, que não afeta seu score. Uma consulta dura só acontece na solicitação completa, com seu consentimento por escrito. Se você decidir não seguir em frente após a pré-aprovação, seu crédito fica intacto."
+        }
+      ]
+    },
+    "programs": {
+      "eyebrow": "Grupo 2",
+      "title": "Conceitos Básicos dos Programas",
+      "items": [
+        {
+          "question": "FHA vs. Convencional, qual é o certo para mim?",
+          "answer": "Depende do seu score de crédito, da sua entrada, e da sua razão dívida-renda. FHA é mais amigável com o crédito e aceita 3,5% de entrada. Convencional é mais agudo na taxa se seu crédito é forte e você consegue dar pelo menos 5% de entrada. Rodamos a matemática dos dois jeitos e mostramos o custo mensal real lado a lado."
+        },
+        {
+          "question": "Qual é a entrada mínima?",
+          "answer": "Varia por programa. FHA começa em 3,5%, VA e USDA em 0%, Convencional em 3 a 5% para primeiros compradores, e Jumbo tipicamente em 10% ou mais. Assistência estadual para entrada pode ser empilhada por cima, em alguns casos deixando seu desembolso perto de zero."
+        },
+        {
+          "question": "Vocês oferecem refinanciamento?",
+          "answer": "Sim. Refinanciamentos de taxa-e-prazo, refinanciamentos cash-out, e HELOCs em todos os nove estados licenciados. Cada refinanciamento começa com uma análise de break-even, onde calculamos quantos meses leva para a economia cobrir os custos de fechamento. Se a matemática não fecha, dizemos."
+        },
+        {
+          "question": "Por que usar um corretor em vez de ir ao meu banco?",
+          "answer": "Seu banco compra de um único credor, dele mesmo. Compramos com mais de 30 credores atacadistas e trazemos a combinação mais forte de taxa, tarifas e programa. Mesma solicitação, várias propostas de credores, sem consultas extras de crédito. O mercado atacadista geralmente oferece preços abaixo do varejo porque o credor não está pagando por agências e um departamento de marketing."
+        }
+      ]
+    },
+    "workingWith": {
+      "eyebrow": "Grupo 3",
+      "title": "Trabalhando com a LMP",
+      "items": [
+        {
+          "question": "Quais idiomas vocês falam?",
+          "answer": "Inglês em toda a equipe. Espanhol com três dos nossos oficiais. Português com dois. Lowell, Lawrence, e a Grande Boston têm uma das populações brasileiras e falantes de português mais densas do país, e construímos a equipe para combinar."
+        },
+        {
+          "question": "Vocês trabalham com primeiros compradores?",
+          "answer": "Sim, e é uma grande parte do que fazemos. Carregamos uma biblioteca profunda de programas estaduais: MassHousing, NHHFA, MaineHousing, RIHousing, CHFA-CT, VHFA, FL Hometown Heroes, TSAHC e TDHCA no Texas, e CHFA-CO com metroDPA no Colorado. A maioria dos primeiros compradores se qualifica para mais de um programa. Alinhamos todos e deixamos você escolher."
+        },
+        {
+          "question": "Vocês trabalham com corretores de imóveis?",
+          "answer": "Sim. Temos um programa dedicado de parceria com corretores com kits de co-marketing, cartas de pré-aprovação rápidas no mesmo dia, e presença pessoal em todo fechamento que a geografia permitir. Veja a página de Corretores de Imóveis para detalhes e para se apresentar."
+        },
+        {
+          "question": "Sou oficial de empréstimos procurando uma nova casa. Com quem falo?",
+          "answer": "Brian Walsh cuida do recrutamento de oficiais de empréstimos. Chamadas iniciais confidenciais, um plano de comissão claro, acesso atacadista real através da UWM, Rocket Pro, e mais de 30 outros credores. Veja a página de Carreiras ou mande mensagem direta para Brian."
+        }
+      ]
+    }
+  },
+  "cta": {
+    "headline": "Pergunta que não respondemos?",
+    "body": "Agende uma chamada inicial de 15 minutos ou faça o quiz para ver qual programa de empréstimo se encaixa na sua situação. De qualquer jeito, você fala com um oficial de empréstimos real depois.",
+    "primary": "Agendar uma Chamada",
+    "secondary": "Faça o Quiz"
+  }
+}

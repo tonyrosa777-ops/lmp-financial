@@ -1,0 +1,43 @@
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "translatedFrom": "en",
+    "translator": "AI",
+    "reviewRequired": ["native-speaker", "compliance-it-firm"],
+    "note": "Os 36 quotes de testimonials permanecem em inglês intencionalmente. São artefatos de voz; a tradução destrói o registro humano-no-celular do qual a marca depende. Renderiza-se a 'originalLanguageNote' abaixo da grade quando a localidade é PT."
+  },
+  "_compliance_flags": [
+    "subheadlineTemplate references {count} reviews — verify count is sourced/substantiated"
+  ],
+  "page": {
+    "eyebrow": "Avaliações e Depoimentos",
+    "headline": "Mutuários reais, fechamentos reais.",
+    "subheadlineTemplate": "{count} avaliações em 9 estados. Cada programa. Cada estado em que operamos."
+  },
+  "filters": {
+    "groupAriaLabel": "Filtrar depoimentos por programa de empréstimo",
+    "allLabelTemplate": "Todos ({count})",
+    "programLabelTemplate": "{program} ({count})"
+  },
+  "grid": {
+    "noResultsPrefix": "Nenhuma avaliação ainda para este programa. Tente outro filtro, ou ",
+    "noResultsLink": "comece uma pré-aprovação",
+    "noResultsSuffix": " e seja o primeiro."
+  },
+  "pagination": {
+    "pageOfTemplate": "Página {current} de {total}",
+    "reviewSingular": "avaliação",
+    "reviewPlural": "avaliações",
+    "previous": "← Anterior",
+    "next": "Próximo →",
+    "previousAria": "Página anterior de depoimentos",
+    "nextAria": "Próxima página de depoimentos"
+  },
+  "cta": {
+    "headline": "Se reconheceu nessas histórias?",
+    "body": "Mesma equipe, mesma abordagem de cotar o mercado, mesma promessa de fechar no prazo. Comece sua pré-aprovação e vamos combinar você com o oficial que se encaixa no seu estado, no seu idioma, e na sua situação.",
+    "primary": "Obtenha sua Pré-Aprovação",
+    "secondary": "Faça o Quiz"
+  },
+  "originalLanguageNote": "Avaliações de clientes em seu idioma original."
+}

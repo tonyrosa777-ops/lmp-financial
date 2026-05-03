@@ -1,0 +1,161 @@
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "translatedFrom": "en",
+    "translator": "AI",
+    "reviewRequired": ["native-speaker", "compliance-it-firm"]
+  },
+  "intro": {
+    "eyebrow": "Encontre Seu Caminho de Empréstimo",
+    "headline": "Três minutos. Cinco perguntas. O oficial de empréstimos certo.",
+    "subheadline": "Vamos classificar sua situação, recomendar o programa de empréstimo que se encaixa, e colocar você na agenda com o oficial de empréstimos mais adequado para isso.",
+    "badge": "Quiz · 5 perguntas",
+    "bodyHeadline": "Conte sua situação. Vamos dizer o programa.",
+    "bodyParagraph": "Construímos este quiz do jeito que abrimos chamadas iniciais no nosso escritório. Cinco perguntas rápidas, sem consulta de crédito, sem documentos, sem compromisso. No final você vai saber qual programa de empréstimo se encaixa na sua situação e qual oficial da nossa equipe é o melhor para isso.",
+    "ctaStart": "Começar o quiz",
+    "estimatedTime": "Três minutos. Cinco perguntas."
+  },
+  "progress": {
+    "questionLabel": "Pergunta",
+    "ofLabel": "de",
+    "back": "Voltar",
+    "backToIntroAria": "Voltar para a introdução",
+    "previousQuestionAria": "Pergunta anterior"
+  },
+  "questions": [
+    {
+      "id": "situation",
+      "prompt": "Onde você está agora na sua jornada de moradia?",
+      "answers": [
+        { "label": "🌱 Comprando minha primeira casa", "type": "FirstTimeFoundation" },
+        { "label": "🎖️ Servi às forças armadas e quero usar meu benefício VA", "type": "VeteranPath" },
+        { "label": "🏡 Vendendo, mudando para uma maior, ou comprando uma segunda casa", "type": "MoveUpBuyer" },
+        { "label": "🔄 Já sou proprietário e quero refinanciar", "type": "RefinanceOptimizer" }
+      ]
+    },
+    {
+      "id": "credit",
+      "prompt": "Em qual faixa de crédito você está hoje?",
+      "answers": [
+        { "label": "🌱 Abaixo de 620, ainda construindo", "type": "FirstTimeFoundation" },
+        { "label": "🎖️ 620 a 699, faixa intermediária sólida", "type": "VeteranPath" },
+        { "label": "🔄 700 a 739, saudável", "type": "RefinanceOptimizer" },
+        { "label": "🏡 740 ou mais, faixa superior", "type": "MoveUpBuyer" }
+      ]
+    },
+    {
+      "id": "property",
+      "prompt": "Que tipo de imóvel estamos falando?",
+      "answers": [
+        { "label": "🔑 Residência primária onde vou morar", "type": "FirstTimeFoundation" },
+        { "label": "🇺🇸 Residência primária, usando elegibilidade VA", "type": "VeteranPath" },
+        { "label": "🏛️ Casa maior ou segunda casa", "type": "MoveUpBuyer" },
+        { "label": "🏠 A casa que já tenho e onde moro", "type": "RefinanceOptimizer" }
+      ]
+    },
+    {
+      "id": "state",
+      "prompt": "Em qual estado o imóvel está (ou vai estar)?",
+      "answers": [
+        { "label": "🦞 Massachusetts, Maine, ou Rhode Island", "type": "FirstTimeFoundation" },
+        { "label": "🌲 New Hampshire, Vermont, ou Connecticut", "type": "RefinanceOptimizer" },
+        { "label": "🌴 Florida ou Texas", "type": "VeteranPath" },
+        { "label": "⛰️ Colorado", "type": "MoveUpBuyer" }
+      ]
+    },
+    {
+      "id": "down-payment",
+      "prompt": "Quanto você tem reservado para a entrada?",
+      "answers": [
+        { "label": "🌱 Abaixo de 3,5 por cento, ou começando agora", "type": "FirstTimeFoundation" },
+        { "label": "🎖️ Zero, planejo usar VA", "type": "VeteranPath" },
+        { "label": "🏡 10 a 20 por cento prontos para usar", "type": "MoveUpBuyer" },
+        { "label": "🔄 Não estou comprando, tenho patrimônio na minha casa atual", "type": "RefinanceOptimizer" }
+      ]
+    },
+    {
+      "id": "timeline",
+      "prompt": "Qual é a sua linha do tempo?",
+      "answers": [
+        { "label": "⏳ Apenas explorando, sem pressão ainda", "type": "FirstTimeFoundation" },
+        { "label": "⚡ Preciso fechar nos próximos 30 dias", "type": "VeteranPath" },
+        { "label": "📅 Daqui a 1 a 3 meses", "type": "RefinanceOptimizer" },
+        { "label": "🗓️ Daqui a 3 a 6 meses", "type": "MoveUpBuyer" }
+      ]
+    }
+  ],
+  "results": {
+    "labels": {
+      "yourMatch": "Sua combinação",
+      "recommendedProgram": "Programa recomendado",
+      "yourLoanOfficer": "Seu oficial de empréstimos",
+      "readFullProgram": "Leia os detalhes completos do programa →",
+      "bookHeadline": "Agende sua chamada inicial de 15 minutos",
+      "restartCta": "Reiniciar o quiz",
+      "errorMessage": "Algo deu errado. Por favor, tente de novo."
+    },
+    "archetypes": {
+      "FirstTimeFoundation": {
+        "name": "Fundação para Primeiro Comprador",
+        "tagline": "Você está comprando sua primeira casa. Vamos fazer a matemática realmente fechar.",
+        "body": [
+          "Primeiras casas são um problema de matemática e um problema de emoção ao mesmo tempo. A maioria dos credores resolve apenas um. Nós resolvemos os dois. O programa certo para um primeiro comprador raramente é aquele que um único banco empurra. É a combinação de FHA, convencional, e assistência estadual para entrada que coloca você na casa que você realmente quer com um pagamento que você realmente consegue ter.",
+          "Cotamos seu arquivo com mais de trinta credores atacadistas e conhecemos cada programa estadual de DPA na nossa área de atuação pelo nome. MassHousing, NHHFA, MaineHousing, RIHousing, CHFA, VHFA, FL Hometown Heroes, TSAHC, CHFA-CO. Os subsídios e segundas hipotecas perdoáveis para os quais você pode se qualificar podem ser a diferença entre alugar mais um ano e fechar neste outono.",
+          "Seu próximo passo é uma chamada inicial de 15 minutos. Sem consulta de crédito, sem documentos, sem pressão. Primeiro escutamos, depois recomendamos programas, e dizemos diretamente para o que você se qualifica e como ficam os números."
+        ],
+        "recommendedProgram": {
+          "name": "Empréstimo FHA",
+          "reason": "FHA é o ponto de partida mais comum para primeiros compradores porque a entrada é de 3,5 por cento e o limite de crédito é mais amigável que o convencional. Quase sempre combinamos com programas estaduais de DPA para um desembolso de fechamento ainda menor."
+        }
+      },
+      "VeteranPath": {
+        "name": "Caminho do Veterano",
+        "tagline": "Você serviu. O empréstimo VA foi feito exatamente para este momento.",
+        "body": [
+          "O empréstimo VA é a ferramenta de compra mais poderosa do mercado residencial e quase nenhum credor de varejo trata dessa forma. Zero de entrada, sem seguro hipotecário privado, sem valor máximo de empréstimo na maioria dos condados desde 2020, e uma taxa de financiamento que é totalmente isenta para muitos veteranos com classificação de invalidez. Se você serviu, este benefício foi conquistado, e vamos garantir que o credor o trate dessa forma.",
+          "Fechamos empréstimos VA em todos os nossos nove estados licenciados. Ativo, aposentado, reserva, cônjuge sobrevivente, todas as eras. Doug Danzey na nossa equipe vem originando empréstimos VA desde antes de alguns dos nossos outros oficiais estarem na indústria e ele vai aos fechamentos sempre que o mutuário quiser ele lá.",
+          "Seu próximo passo é uma checagem de Certificado de Elegibilidade e uma chamada inicial de 15 minutos. Vamos puxar o COE para você. Sem impacto no crédito, sem compromisso, apenas clareza sobre para o que você se qualifica e como ficam os números."
+        ],
+        "recommendedProgram": {
+          "name": "Empréstimo VA",
+          "reason": "Zero de entrada, sem PMI, taxas competitivas. Para a maioria dos veteranos, esta é a resposta certa na primeira vez que rodamos os números, e cotamos credores atacadistas VA para encontrar a melhor combinação de taxa-e-tarifa no seu arquivo específico."
+        }
+      },
+      "MoveUpBuyer": {
+        "name": "Comprador Subindo de Nível",
+        "tagline": "Você não é novo nisso. Vamos conseguir a taxa que o mercado realmente dá.",
+        "body": [
+          "Você já fez isso antes. Sabe como é um closing disclosure, sabe quanto custa uma renúncia de escrow, e não vai se impressionar com uma taxa enganosa. Ótimo. Compradores subindo de nível geralmente recebem o pior atendimento desta indústria porque os credores assumem que você não precisa de explicação. Assumimos o oposto. Você merece mais detalhe, não menos, porque os dólares são maiores.",
+          "Para compras subindo de nível, geralmente rodamos uma análise de contingência sobre sua casa atual, modelamos a matemática de abrir mão da taxa contra um buy-down permanente ou um buy-down temporário 2-1, e cotamos credores atacadistas convencional e jumbo lado a lado. Se um piggyback secundário fizer mais sentido que um jumbo primário, vamos dizer. Se um empréstimo-ponte for o jogo mais limpo, vamos dizer isso também.",
+          "Seu próximo passo é uma consulta de 15 minutos. Traga seu número de empréstimo atual e sua estimativa de patrimônio. Vamos rodar números reais, não números de venda."
+        ],
+        "recommendedProgram": {
+          "name": "Hipoteca Jumbo",
+          "reason": "Compradores subindo de nível frequentemente cruzam o limite de empréstimo conforme. Cotamos investidores jumbo atacadistas para que o financiamento da sua casa maior tenha preço competitivo, não punitivo. Se um empréstimo conforme for a resposta certa, vamos dizer isso em vez disso."
+        }
+      },
+      "RefinanceOptimizer": {
+        "name": "Otimizador de Refinanciamento",
+        "tagline": "Você já é proprietário. Agora faça o empréstimo trabalhar mais para você.",
+        "body": [
+          "Um refinanciamento é a jogada de patrimônio mais subestimada das finanças residenciais porque é a única transação de empréstimo onde você já conhece o imóvel, já conhece o mutuário, e já sabe qual era o pagamento antigo. A única pergunta é se a nova matemática supera a antiga, e por quanto, e em quanto tempo.",
+          "Modelamos o break-even em um refi de taxa-e-prazo até o mês, não o ano. Cotamos estruturas de cash-out, no-cash-out, e HELOC lado a lado para você ver os trade-offs. Vamos dizer quando não é o momento certo, o que é algo que a maioria dos credores nunca vai fazer porque eles são pagos para fechar, não para aconselhar.",
+          "Seu próximo passo é uma chamada de 15 minutos. Tenha seu extrato atual de empréstimo à mão. Vamos rodar o break-even na hora."
+        ],
+        "recommendedProgram": {
+          "name": "Hipoteca de Taxa Fixa",
+          "reason": "A maioria dos refinanciamentos cai em um fixo de 15 ou 30 anos porque o objetivo é travar o novo pagamento por longo prazo. Se uma estrutura diferente (ARM, somente juros, segundo HELOC) realmente atende melhor seu objetivo, vamos te encaminhar para lá em vez disso."
+        }
+      }
+    }
+  },
+  "_compliance_flags": {
+    "DEMO_COPY_PENDING_CLIENT_REVIEW": "Todos os parágrafos de body de resultado são copy demo pendente de revisão pelo cliente per quiz.ts source comments.",
+    "COMPLIANCE_REVIEW_PENDING": "Todas as perguntas qualificadoras neste dicionário requerem revisão de compliance da LMP antes de publicar. Copy de quiz que influencia recomendação de programa é publicidade hipotecária regulada.",
+    "QUANTIFIABLE_CLAIMS": [
+      "30-plus wholesale lenders (FirstTimeFoundation body[1]) — substantiation required",
+      "9 licensed states (VeteranPath body[1]) — accurate per CLAUDE.md project variables",
+      "VA funding fee waiver for disability-rated veterans (VeteranPath body[0]) — verify current VA policy"
+    ]
+  }
+}

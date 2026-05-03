@@ -1,0 +1,159 @@
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "translatedFrom": "en",
+    "translator": "AI",
+    "reviewRequired": ["native-speaker", "compliance-it-firm"]
+  },
+  "_compliance_flags": [
+    "tier prices ($1,500 / $3,000 / $5,500) — internal Optimus sales tool, deleted before launch per CLAUDE.md Always-Built Features Rule"
+  ],
+  "page": {
+    "metaTitle": "⬥ Preços, Ferramenta Interna de Vendas",
+    "metaDescription": "Preços por nível de site Optimus. Ferramenta interna de vendas, deletada antes do lançamento.",
+    "eyebrow": "⬥ Preços",
+    "headline": "Três níveis. Um site que fecha negócios.",
+    "subheadline": "Cada site que construímos é entregue com a mesma fundação de luxo. Os níveis adicionam recursos que aumentam a conversão. A maioria dos clientes escolhe o Pro."
+  },
+  "tiers": {
+    "popularBadge": "⭐ Mais Popular",
+    "starter": {
+      "name": "Starter",
+      "tagline": "Fundação premium. Páginas centrais. Hero animado.",
+      "features": [
+        "Página inicial de luxo personalizada com hero animado",
+        "Página Sobre com história do fundador",
+        "Página de programas de empréstimo (ou serviços para clientes não-hipoteca)",
+        "Página de contato com roteamento de formulário",
+        "Página de Perguntas Frequentes",
+        "Domínio personalizado + deploy na Vercel",
+        "Responsivo em todos os breakpoints",
+        "Otimizado para performance (Lighthouse 90+)",
+        "Calendário de Agendamento Automatizado",
+        "Quiz de Captura de Leads",
+        "Blog Profissional",
+        "Galeria de Fotos",
+        "Vitrine de Depoimentos",
+        "Loja de Produtos com Marca"
+      ]
+    },
+    "pro": {
+      "name": "Pro",
+      "tagline": "Tudo que a maioria dos clientes realmente precisa para converter.",
+      "features": [
+        "Tudo do Starter",
+        "Calendário de Agendamento Automatizado (com marca personalizada, sem iframe de terceiros)",
+        "Quiz de Captura de Leads (funil pontuado, resultados por arquétipo)",
+        "Blog Profissional (arquitetura de artigos, pronto para SEO, otimizado para AEO)",
+        "Galeria de Fotos (12-16 imagens, totalmente com marca)",
+        "Vitrine de Depoimentos (página completa de avaliações, paginada)",
+        "Loja de Produtos com Marca",
+        "Recursos do nível Premium"
+      ]
+    },
+    "premium": {
+      "name": "Premium",
+      "tagline": "Lançamento white-glove com comércio + suporte prioritário.",
+      "features": [
+        "Tudo do Pro",
+        "Loja de Produtos com Marca (integração Stripe + Printful, com marca personalizada)",
+        "Suporte e revisões prioritárias",
+        "Pacote de lançamento white-glove",
+        "Arquitetura de suporte multi-idioma (quando aplicável)"
+      ]
+    },
+    "ctaButton": "Começar",
+    "includedAria": "Incluído",
+    "notIncludedAria": "Não incluído"
+  },
+  "roi": {
+    "eyebrow": "Calculadora de ROI",
+    "headline": "Qual é o ROI?",
+    "body": "Deslize para seus números. O nível certo se paga em dias, não em trimestres.",
+    "labels": {
+      "avgCommission": "Comissão média por empréstimo",
+      "loansPerMonth": "Empréstimos por mês",
+      "tier": "Nível",
+      "tierPriceTemplate": "Preço do nível selecionado: ${price}"
+    },
+    "tierAriaLabel": "Nível de preço",
+    "outputs": {
+      "eyebrow": "Seus números",
+      "subtitle": "Atualizações ao vivo conforme você desliza.",
+      "monthlyRevenue": "Receita mensal",
+      "monthlyRevenueSub": "Apenas do seu pipeline de empréstimos.",
+      "breakEven": "Break-even",
+      "breakEvenSubTemplate": "Para pagar o {tierName}.",
+      "breakEvenDays": "dias",
+      "twelveMonthRoi": "ROI de 12 meses",
+      "twelveMonthRoiSub": "Retorno líquido sobre a construção em um ano."
+    },
+    "lockInTemplate": "Garantir o {tierName}"
+  },
+  "comparison": {
+    "eyebrow": "Lado a lado",
+    "headline": "Cada recurso, em cada nível.",
+    "body": "Pro é o ponto certo da maioria dos clientes: todos os recursos de conversão, sem o overhead de comércio.",
+    "headers": {
+      "feature": "Recurso",
+      "starter": "Starter",
+      "pro": "Pro ⭐",
+      "premium": "Premium"
+    },
+    "categories": {
+      "foundation": {
+        "name": "Fundação",
+        "rows": [
+          "Página inicial de luxo personalizada com hero animado",
+          "Sobre / história do fundador",
+          "Página de serviços / programas de empréstimo",
+          "Páginas de Contato + Perguntas Frequentes",
+          "Domínio personalizado + deploy na Vercel",
+          "Design responsivo",
+          "Otimização de performance"
+        ]
+      },
+      "conversion": {
+        "name": "Conversão",
+        "rows": [
+          "Calendário de Agendamento Automatizado",
+          "Quiz de Captura de Leads"
+        ]
+      },
+      "contentSeo": {
+        "name": "Conteúdo e SEO",
+        "rows": [
+          "Blog Profissional",
+          "Galeria de Fotos",
+          "Vitrine de Depoimentos",
+          "Arquitetura de conteúdo otimizada para AEO"
+        ]
+      },
+      "commerce": {
+        "name": "Comércio",
+        "rows": [
+          "Loja de Produtos com Marca (Stripe + Printful)"
+        ]
+      },
+      "support": {
+        "name": "Suporte",
+        "rows": [
+          "Suporte padrão",
+          "Revisões prioritárias",
+          "Pacote de lançamento white-glove"
+        ]
+      }
+    }
+  },
+  "finalCta": {
+    "eyebrow": "Próximo passo",
+    "headline": "Pronto para começar?",
+    "body": "Escolha um nível na chamada. Saia com uma data de construção e um plano de lançamento.",
+    "primary": "Agendar uma Consulta"
+  },
+  "modal": {
+    "ariaLabel": "Agendar uma consulta",
+    "closeBackdropAria": "Fechar diálogo de agendamento",
+    "closeAria": "Fechar"
+  }
+}

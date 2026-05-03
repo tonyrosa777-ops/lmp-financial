@@ -1,0 +1,13 @@
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "translatedFrom": "en",
+    "translator": "AI",
+    "reviewRequired": ["native-speaker", "compliance-it-firm"]
+  },
+  "_compliance_flags": [
+    "Estas notas em português esclarecem ao usuário falante de português que certos textos legais (SMS opt-in disclaimer, broker disclosure, Privacy Policy, Terms of Use, ADA Statement) permanecem verbatim em inglês conforme requisitos regulatórios per CLAUDE.md Compliance Rule."
+  ],
+  "legalNotice": "Aviso legal exibido em inglês conforme requisitos regulatórios.",
+  "complianceReviewPending": "Informação pendente de revisão de conformidade."
+}

@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "translatedFrom": "en",
+    "translator": "AI",
+    "reviewRequired": ["native-speaker", "compliance-it-firm"]
+  },
+  "_compliance_flags": [],
+  "page": {
+    "eyebrow": "Entre em Contato",
+    "headline": "Aperto de mão de Lowell. Velocidade de e-mail ou texto.",
+    "subheadline": "Pessoas reais, em nosso escritório na Cabot Street, do outro lado de cada mensagem que você envia. Resposta no mesmo dia em dias úteis, e nos fins de semana quando a vida exigir.",
+    "metaTemplate": "NMLS #{nmls} · {stateCount} estados licenciados · {loCount} oficiais de empréstimos"
+  },
+  "form": {
+    "eyebrow": "Envie uma Mensagem",
+    "headline": "Diga o que você precisa.",
+    "subheadline": "Pré-aprovação, refinanciamento, contato de parceiro, preferência de idioma, qualquer coisa. Vamos encaminhar sua mensagem para o oficial certo no mesmo dia.",
+    "fields": {
+      "firstName": "Nome",
+      "firstNamePlaceholder": "Maria",
+      "lastName": "Sobrenome",
+      "lastNamePlaceholder": "Silva",
+      "email": "E-mail",
+      "emailPlaceholder": "voce@email.com",
+      "phone": "Telefone",
+      "phonePlaceholder": "(555) 123-4567",
+      "message": "Como podemos ajudar?",
+      "messagePlaceholder": "Primeiro comprador em NH, olhando para FHA. Qual é o próximo passo?"
+    },
+    "submit": "Enviar Mensagem"
+  },
+  "info": {
+    "eyebrow": "Linhas Diretas",
+    "headline": "Fale conosco do jeito que funciona para você.",
+    "labels": {
+      "office": "Escritório",
+      "phone": "Telefone",
+      "generalEmail": "E-mail Geral",
+      "founder": "Mike Comerford, Presidente",
+      "linkedin": "LinkedIn",
+      "officeHours": "Horário do Escritório",
+      "linkedinLabel": "Mike Comerford no LinkedIn"
+    },
+    "officeHoursLine1": "Seg a Sex, 9h às 18h ET",
+    "officeHoursLine2": "Sáb com agendamento",
+    "officeHoursDemoFlag": "[DEMO COPY — pending client review]"
+  },
+  "trust": {
+    "eyebrow": "Corretor Local, Alcance Multi-Estado",
+    "stats": {
+      "companyNmls": "NMLS da Empresa",
+      "statesLicensed": "Estados Licenciados",
+      "loanOfficers": "Oficiais de Empréstimos",
+      "lowellLabel": "Lowell",
+      "lowellSub": "Massachusetts"
+    }
+  }
+}

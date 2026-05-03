@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "translatedFrom": "en",
+    "translator": "AI",
+    "reviewRequired": ["native-speaker", "compliance-it-firm"]
+  },
+  "_compliance_flags": [],
+  "page": {
+    "eyebrow": "Obtenha sua Pré-Aprovação",
+    "headline": "Escolha um horário. Nós ligamos.",
+    "subheadline": "Chamada gratuita de 30 minutos. Sem pressão. Sem compromisso. Vamos conversar sobre sua situação e ver quais programas se encaixam."
+  },
+  "calendar": {
+    "headerEyebrow": "Agende uma chamada",
+    "headerEyebrowWithLoTemplate": "Agendar com {loFirstName}",
+    "stepDate": "Escolha um dia",
+    "stepTime": "Escolha um horário",
+    "stepForm": "Seus dados",
+    "stepConfirmed": "Você está agendado",
+    "back": "← Voltar",
+    "weekendsNote": "Fins de semana estamos fora do escritório. Escolha um dia útil e mostraremos os horários disponíveis.",
+    "loadingTimes": "Carregando horários...",
+    "noTimesAvailable": "Não há horários disponíveis nesse dia. Tente outra data.",
+    "errorLoad": "Não foi possível carregar os horários. Por favor, tente novamente.",
+    "errorBooking": "O agendamento falhou. Por favor, tente novamente ou ligue diretamente para nós.",
+    "fields": {
+      "fullName": "Nome completo",
+      "email": "E-mail",
+      "phone": "Telefone"
+    },
+    "quizContext": {
+      "eyebrow": "Do seu quiz",
+      "recommendedProgramLabel": "Programa recomendado:",
+      "bestFitLabel": "Melhor encaixe:",
+      "note": "Vamos levar esse contexto para a chamada para que você não precise se repetir."
+    },
+    "submit": "Confirmar agendamento",
+    "submitting": "Agendando...",
+    "bookingForTemplate": "Agendando para {dateTime}",
+    "confirmed": {
+      "headline": "Você está agendado.",
+      "bodyDefault": "E-mail de confirmação a caminho. Vamos ligar no horário marcado.",
+      "bodyWithLoTemplate": "E-mail de confirmação a caminho. {loFirstName} vai ligar no horário marcado.",
+      "reschedule": "Precisa reagendar? Responda ao e-mail de confirmação."
+    },
+    "modeBadge": {
+      "demo": "Modo demonstração",
+      "live": "Agendamento ao vivo",
+      "demoSub": "Disponibilidade de exemplo para visualização.",
+      "liveSub": "Disponibilidade ao vivo."
+    }
+  },
+  "faq": {
+    "headline": "Algumas perguntas comuns",
+    "items": [
+      {
+        "question": "O que devo esperar na chamada?",
+        "answer": "Uma conversa de 30 minutos. Falamos sobre sua situação, seus objetivos, quais programas podem se encaixar. Sem compromisso, sem venda."
+      },
+      {
+        "question": "Quais documentos devo ter prontos?",
+        "answer": "Nada é exigido para a primeira chamada. Se quiser uma estimativa de pré-aprovação leve durante a chamada, tenha em mãos seu contracheque mais recente e uma noção do seu score de crédito."
+      },
+      {
+        "question": "Isso vai afetar meu score de crédito?",
+        "answer": "Para a chamada, não. Fazemos uma consulta leve apenas se você pedir uma estimativa de pré-aprovação, e somente com seu consentimento por escrito."
+      },
+      {
+        "question": "Posso reagendar?",
+        "answer": "Sim. Responda ao e-mail de confirmação ou escolha um novo horário nesta página."
+      }
+    ],
+    "demoNote": "Copy demo pendente de revisão pelo cliente."
+  }
+}

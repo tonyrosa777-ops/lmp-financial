@@ -1,0 +1,82 @@
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "translatedFrom": "en",
+    "translator": "AI",
+    "reviewRequired": ["native-speaker", "compliance-it-firm"]
+  },
+  "_compliance_flags": [],
+  "portal": {
+    "metaTitle": "Seu Portal do Mutuário",
+    "metaDescription": "Seu Portal do Mutuário LMP Financial: consultas agendadas, sua combinação salva do quiz, e o progresso da sua solicitação.",
+    "eyebrow": "Portal do Mutuário",
+    "welcomeBack": "Bem-vindo de volta",
+    "signOut": "Sair",
+    "backToSiteTemplate": "← Voltar para {businessName}"
+  },
+  "bookings": {
+    "eyebrow": "Próximas consultas",
+    "headline": "Suas chamadas agendadas",
+    "loading": "Carregando suas consultas...",
+    "loadError": "Não foi possível carregar suas consultas. Tente atualizar a página.",
+    "emptyBody": "Você ainda não tem nenhuma consulta agendada.",
+    "emptyCta": "Agende uma chamada →",
+    "callWithTemplate": "Chamada com {loName}",
+    "joinLink": "Link de entrada",
+    "aboutLoTemplate": "Sobre {loFirstName} →",
+    "demoBadge": "Modo demonstração",
+    "demoNote": "Mostrando agendamentos de exemplo até a conexão com o Calendly na Fase 2A."
+  },
+  "savedQuiz": {
+    "eyebrow": "Sua combinação",
+    "headline": "Recomendado para você",
+    "loading": "Carregando...",
+    "noQuizBody": "Você ainda não fez nosso quiz de 5 perguntas. Ele vai recomendar o programa de empréstimo certo e o oficial certo para sua situação.",
+    "noQuizCta": "Faça o quiz",
+    "outdatedBody": "Seu resultado salvo do quiz faz referência a uma recomendação desatualizada.",
+    "outdatedCta": "Refazer o quiz",
+    "outdatedSuffix": " para obter uma combinação atualizada.",
+    "programLabel": "Programa",
+    "programDetailsLink": "Leia os detalhes completos do programa →",
+    "loLabel": "Seu oficial de empréstimos",
+    "loProfileLink": "Veja o perfil dele →",
+    "savedDateTemplate": "Salvo em {date}",
+    "retakeLink": "Refazer o quiz →"
+  },
+  "application": {
+    "eyebrow": "Solicitação",
+    "headline": "Continue sua solicitação",
+    "body": "Retome de onde parou em nosso portal seguro de solicitações. Você será direcionado para um formulário hospedado e construído para solicitações de hipoteca: SSN, emprego, e histórico de endereços. Nós entregamos você lá com seus dados de contato já conhecidos por nós.",
+    "helperPrefix": "Não sabe com qual oficial começar? ",
+    "helperQuizLink": "Faça o quiz de 5 perguntas",
+    "helperOr": " ou ",
+    "helperTeamLink": "navegue pelos nossos oficiais de empréstimos",
+    "helperSuffix": ".",
+    "secureBadge": "Hospedado com nosso parceiro de solicitações · Seguro"
+  },
+  "signIn": {
+    "metaTitle": "Entre no Seu Portal do Mutuário",
+    "metaDescription": "Entre no seu Portal do Mutuário LMP Financial para ver consultas agendadas, seu resultado salvo do quiz, e o progresso da sua solicitação.",
+    "eyebrow": "Portal do Mutuário",
+    "headline": "Entre na sua conta",
+    "subheadline": "Sem senha. Digite o e-mail que você usou para agendar uma chamada ou fazer o quiz, e você estará conectado.",
+    "form": {
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "voce@exemplo.com",
+      "submit": "Entrar",
+      "submitting": "Entrando...",
+      "errorGeneric": "Não foi possível conectá-lo com esse e-mail. Tente novamente.",
+      "errorUnexpected": "Algo deu errado ao conectar. Por favor, tente novamente.",
+      "modeBadge": "Sem senha · Modo demonstração"
+    },
+    "checkInbox": {
+      "headline": "Verifique sua caixa de entrada",
+      "bodyTemplate": "Enviamos um link de acesso para {email}. Clique no link no e-mail para acessar seu portal. O link expira em 24 horas.",
+      "fallbackEmail": "seu e-mail",
+      "missingPrefix": "Não recebeu? Verifique a pasta de spam, ou ",
+      "tryDifferent": "tente um e-mail diferente",
+      "missingSuffix": "."
+    },
+    "complianceFlag": "[COMPLIANCE-REVIEW-PENDING]"
+  }
+}
