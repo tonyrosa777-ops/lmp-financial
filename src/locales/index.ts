@@ -4,8 +4,12 @@
  * For LMP's site size (~17 namespaces) bundling is the correct tradeoff:
  * one extra ~50KB gzip bundle, zero runtime fetch latency on locale switch.
  *
- * Bilingual Copy Rule (CLAUDE.md): every key in en/<namespace>.json must
- * have a matching key path in es/<namespace>.json. Pre-launch-auditor enforces.
+ * Bilingual Copy Rule (CLAUDE.md, scope-expanded to trilingual): every key in
+ * en/<namespace>.json must have a matching key path in es/<namespace>.json AND
+ * pt/<namespace>.json. Pre-launch-auditor enforces.
+ *
+ * PT locale added 2026-05-02 — Brazilian Portuguese, primarily for the Lowell
+ * BR-American FTHB audience (LMP's #1 demographic wedge per market intel v2).
  */
 
 import enCommon from './en/common.json';
@@ -43,6 +47,24 @@ import esBooking from './es/booking.json';
 import esAccount from './es/account.json';
 import esCompliance from './es/compliance.json';
 import esPricing from './es/pricing.json';
+
+import ptCommon from './pt/common.json';
+import ptHome from './pt/home.json';
+import ptServices from './pt/services.json';
+import ptTeam from './pt/team.json';
+import ptPartners from './pt/partners.json';
+import ptCareers from './pt/careers.json';
+import ptStates from './pt/states.json';
+import ptCalculators from './pt/calculators.json';
+import ptQuiz from './pt/quiz.json';
+import ptTestimonials from './pt/testimonials.json';
+import ptBlog from './pt/blog.json';
+import ptFaq from './pt/faq.json';
+import ptContact from './pt/contact.json';
+import ptBooking from './pt/booking.json';
+import ptAccount from './pt/account.json';
+import ptCompliance from './pt/compliance.json';
+import ptPricing from './pt/pricing.json';
 
 const en = {
   common: enCommon,
@@ -82,8 +104,28 @@ const es = {
   account: esAccount,
   compliance: esCompliance,
   pricing: esPricing,
-};
+} as unknown as typeof en;
 
-export const translations = { en, es } as const;
+const pt = {
+  common: ptCommon,
+  home: ptHome,
+  services: ptServices,
+  team: ptTeam,
+  partners: ptPartners,
+  careers: ptCareers,
+  states: ptStates,
+  calculators: ptCalculators,
+  quiz: ptQuiz,
+  testimonials: ptTestimonials,
+  blog: ptBlog,
+  faq: ptFaq,
+  contact: ptContact,
+  booking: ptBooking,
+  account: ptAccount,
+  compliance: ptCompliance,
+  pricing: ptPricing,
+} as unknown as typeof en;
+
+export const translations = { en, es, pt } as const;
 
 export type Translations = typeof en;

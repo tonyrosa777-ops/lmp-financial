@@ -6,19 +6,21 @@ import type { Locale } from '@/lib/i18n';
 const LANGS: { locale: Locale; label: string; ariaLabel: string }[] = [
   { locale: 'en', label: 'EN', ariaLabel: 'Switch to English' },
   { locale: 'es', label: 'ES', ariaLabel: 'Cambiar a español' },
+  { locale: 'pt', label: 'PT', ariaLabel: 'Mudar para português' },
 ];
 
 /**
- * LanguageToggle — segmented pill control, EN / ES.
+ * LanguageToggle — segmented pill control, EN / ES / PT.
  * Active locale: solid brass (var(--accent) #C5A572) with deep-navy text.
  * Inactive: muted cream, hover lifts to ~70% opacity.
  *
  * size="sm" — desktop nav inline use (default)
  * size="md" — mobile drawer footer use
  *
- * Pattern ported from Sylvia Rich Hungarian Consul (EN/HU). LMP serves a large
- * Spanish-speaking borrower population across MA + 8 other licensed states;
- * the toggle persists locale via NEXT_LOCALE cookie + re-renders client-side.
+ * Pattern ported from Sylvia Rich Hungarian Consul (EN/HU). LMP serves Spanish-
+ * and Portuguese-speaking borrowers across MA + 8 other licensed states; the
+ * toggle persists locale via NEXT_LOCALE cookie + re-renders client-side. PT
+ * (Brazilian Portuguese) added 2026-05-02 for Lowell's BR-American audience.
  */
 export function LanguageToggle({ size = 'sm' }: { size?: 'sm' | 'md' }) {
   const { locale, setLocale } = useI18n();

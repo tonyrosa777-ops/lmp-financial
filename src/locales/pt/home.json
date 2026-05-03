@@ -1,0 +1,185 @@
+{
+  "_meta": {
+    "status": "ai-demo-pending-review",
+    "translatedFrom": "en",
+    "translator": "AI",
+    "reviewRequired": ["native-speaker", "compliance-it-firm"]
+  },
+  "_compliance_flags": [
+    "claim:14-day-close (stats.items[0])",
+    "claim:4.9-rating (stats.items[1])",
+    "claim:9-states-licensed (stats.items[2], hero.subheadline, hero.eyebrowTemplate, hero.trustStrip, preApprovalCTA.bodyTemplate)",
+    "claim:22-loan-officers (stats.items[3], hero.eyebrowTemplate, hero.trustStrip, hero.founderStrip.body, meetTheTeam.headline, preApprovalCTA.bodyTemplate, hero.creditStrip.credentialLine)",
+    "claim:30-plus-wholesale-lenders (hero.subheadline, hero.founderStrip.body)",
+    "claim:10662-average-savings (stats.items[4])"
+  ],
+  "hero": {
+    "eyebrowTemplate": "NMLS #{nmls} · {stateCount} estados · {loCount} oficiais de empréstimos",
+    "tagline": "Estabeleça-se em sua casa, não em uma taxa da qual você vai se arrepender.",
+    "subheadline": "Corretor hipotecário independente em Lowell, Massachusetts. Mais de trinta credores atacadistas competindo pelo seu arquivo. Uma solicitação, uma equipe, sua melhor taxa.",
+    "ctaPrimary": { "label": "Obtenha sua Pré-Aprovação", "href": "/booking" },
+    "ctaSecondary": { "label": "Faça o Quiz", "href": "/quiz" },
+    "trustStrip": [
+      "NMLS #2754084",
+      "9 estados licenciados",
+      "22 oficiais de empréstimos",
+      "Lowell, MA"
+    ],
+    "founderStrip": {
+      "eyebrow": "De Mike Comerford, Presidente",
+      "body": "Fundamos a LMP em Lowell porque os mutuários a quem queríamos atender eram nossos vizinhos. Hoje somos 22 oficiais de empréstimos em 9 estados, cotando com mais de 30 credores atacadistas em cada arquivo. Atendemos chamadas no sábado. Vamos pessoalmente aos fechamentos. Aperto de mão de Lowell, execução estilo Stripe.",
+      "linkLabel": "Conheça a equipe →",
+      "altText": "Mike Comerford, Presidente da LMP Financial"
+    },
+    "canvas": {
+      "matchCard": "Melhor taxa encontrada"
+    },
+    "creditStrip": {
+      "ariaLabel": "Credenciais do fundador",
+      "credentialLine": "Fundado em Lowell por Mike Comerford · NMLS #{nmls} · {stateCount} estados · {loCount} oficiais"
+    },
+    "metricStrip": {
+      "rating": { "emoji": "⭐", "value": "4,9", "label": "média cinco estrelas" },
+      "reviews": { "emoji": "💬", "value": "Mais de 100", "label": "avaliações verificadas" },
+      "speed": { "emoji": "⚡", "value": "14 dias", "label": "para fechar em média" }
+    }
+  },
+  "painPoints": {
+    "eyebrow": "Dores Comuns",
+    "headline": "Já ouvimos todas as versões dessa história.",
+    "items": [
+      {
+        "emoji": "🔍",
+        "title": "Cotar com vários bancos por conta própria",
+        "body": "Três bancos, três respostas, nenhuma clareza. Enviamos uma única solicitação para mais de trinta credores atacadistas e trazemos a combinação mais forte, para que você compare maçãs com maçãs."
+      },
+      {
+        "emoji": "💰",
+        "title": "Taxas confusas e tarifas ocultas",
+        "body": "Taxas iniciais enganosas, pontos, créditos do credor, tarifas inúteis. Repassamos o loan estimate linha por linha, para que você saiba exatamente o que está pagando e o que não está."
+      },
+      {
+        "emoji": "⏳",
+        "title": "Análise lenta que mata negócios",
+        "body": "A maioria dos credores de varejo trabalha no próprio relógio. As casas atacadistas atendem o telefone. Nossa equipe resolve as condições no mesmo dia em que chegam, então a data de fechamento se mantém."
+      },
+      {
+        "emoji": "❓",
+        "title": "Incerteza se você será aprovado",
+        "body": "A pré-aprovação deve ser um sim, ou um caminho claro para o sim. Dizemos onde você está no primeiro dia e construímos o arquivo que leva você até o fim. Sem talvez vagos."
+      },
+      {
+        "emoji": "🗣️",
+        "title": "Barreiras de idioma em uma decisão de vida",
+        "body": "Em nossa equipe trabalhamos em inglês, português e espanhol. A maior decisão financeira da sua vida nunca deve se perder na tradução, e sua família deve poder acompanhar cada passo."
+      },
+      {
+        "emoji": "📈",
+        "title": "Renda autônoma que confunde os credores",
+        "body": "1099, K-1, extratos bancários, DSCR, renda de aluguel. Trabalhamos com investidores atacadistas que de fato analisam renda fora do W-2, em vez de apenas marcar caixinhas e recusar."
+      }
+    ]
+  },
+  "loanPrograms": {
+    "eyebrow": "Programas de Empréstimo",
+    "headline": "Nove programas. 9 caminhos para casa.",
+    "learnMore": "Saiba mais →"
+  },
+  "stats": {
+    "eyebrow": "Em Números",
+    "headline": "Números específicos, com fonte.",
+    "items": [
+      { "emoji": "⚡", "value": "14 dias", "label": "Tempo médio de fechamento", "flag": "[SOURCING-REQUIRED]" },
+      { "emoji": "⭐", "value": "4.9/5", "label": "Avaliação média", "flag": "[SOURCING-REQUIRED]" },
+      { "emoji": "🌎", "value": "9", "label": "Estados licenciados" },
+      { "emoji": "👥", "value": "22", "label": "Oficiais de empréstimos" },
+      { "emoji": "💰", "value": "$10,662", "label": "Economia média ao longo da vida vs. varejo (Polygon Research / UWM, HMDA 2023)", "flag": "[COMPLIANCE-REVIEW-PENDING]" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Em Suas Palavras",
+    "headline": "Mutuários reais, fechamentos reais.",
+    "seeAllTemplate": "Veja todas as {count} avaliações"
+  },
+  "quizCTA": {
+    "eyebrow": "Não Sabe Por Onde Começar?",
+    "headline": "Três minutos. Cinco perguntas. O oficial de empréstimos certo.",
+    "body": "Conte um pouco sobre sua situação. Vamos combinar você com o programa certo e com o oficial indicado.",
+    "ctaLabel": "Faça o Quiz"
+  },
+  "meetTheTeam": {
+    "eyebrow": "Conheça a Equipe",
+    "headline": "22 oficiais de empréstimos, uma sede em Lowell.",
+    "ctaLabelTemplate": "Conheça todos os {count} oficiais de empréstimos"
+  },
+  "blogPreview": {
+    "eyebrow": "Sala de Leitura",
+    "headline": "Programas estaduais, explicados.",
+    "stubFlag": "[STUB, Phase 1F: Sanity wiring]",
+    "articles": [
+      {
+        "title": "FHA vs. Convencional em NH",
+        "excerpt": "Quando 3,5% de entrada com score 580 faz mais sentido do que 5% com 620.",
+        "category": "Programas de Empréstimo"
+      },
+      {
+        "title": "MassHousing: $30K de Assistência para Entrada",
+        "excerpt": "Faixas de renda, elegibilidade e como combina com FHA.",
+        "category": "Programas Estaduais"
+      },
+      {
+        "title": "Atacado vs. Varejo: Por que Importa",
+        "excerpt": "O que significa cotarmos com mais de 30 credores atacadistas para você.",
+        "category": "Como Trabalhamos"
+      }
+    ]
+  },
+  "preApprovalCTA": {
+    "headline": "Obtenha sua pré-aprovação.",
+    "bodyTemplate": "Uma solicitação. {loCount} oficiais de empréstimos. {stateCount} estados.",
+    "ctaPrimary": { "label": "Obtenha sua Pré-Aprovação", "href": "/booking" },
+    "ctaSecondary": { "label": "Faça o Quiz", "href": "/quiz" }
+  },
+  "processSteps": {
+    "eyebrow": "Como Funciona",
+    "headline": "Seis passos da chamada inicial até as chaves.",
+    "items": [
+      {
+        "number": "1️⃣",
+        "emoji": "🤝",
+        "title": "Chamada Inicial",
+        "body": "Uma conversa de 15 minutos com o oficial que se encaixa no seu estado, no seu idioma e na sua situação. Primeiro escutamos, depois perguntamos, por último recomendamos programas."
+      },
+      {
+        "number": "2️⃣",
+        "emoji": "📋",
+        "title": "Documentos",
+        "body": "Renda, ativos, identificação. Enviamos um checklist limpo, você carrega com segurança, nós cuidamos do resto. A maioria dos arquivos fica completa em 2 a 3 dias."
+      },
+      {
+        "number": "3️⃣",
+        "emoji": "🔍",
+        "title": "Cotação com Credores",
+        "body": "Enviamos seu arquivo para vários credores atacadistas e trazemos a melhor combinação de taxa, tarifas e programa. Na mesma semana, sempre."
+      },
+      {
+        "number": "4️⃣",
+        "emoji": "📝",
+        "title": "Solicitação",
+        "body": "Com a carta de pré-aprovação em mãos, você faz a oferta. Quando a oferta vence, partimos direto para a solicitação completa com o credor escolhido. Sem reiniciar nada, sem redigitar."
+      },
+      {
+        "number": "5️⃣",
+        "emoji": "🏠",
+        "title": "Análise (Underwriting)",
+        "body": "Empurramos o arquivo, resolvemos condições no mesmo dia, e mantemos você e seu corretor de imóveis informados com atualizações escritas semanais. Sem silêncios longos."
+      },
+      {
+        "number": "6️⃣",
+        "emoji": "🎉",
+        "title": "Fechamento",
+        "body": "Números finais, closing disclosure, dia da assinatura. Você recebe as chaves. Mandamos um presente de fechamento, e seguimos aqui para o refinanciamento, para a próxima casa, para a primeira casa dos seus filhos."
+      }
+    ]
+  }
+}

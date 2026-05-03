@@ -2,13 +2,13 @@
  * i18n.ts — lightweight i18n utilities for LMP Financial.
  * Custom React Context + cookie pattern (next-intl/next-i18next would be overkill).
  * Pattern ported from Sylvia Rich Hungarian Consul (tonyrosa777-ops/Sylvia-Rich-Hungary-Consul-NE).
- * Locale set: EN (default) + ES, serving the large Spanish-speaking borrower
- * population across LMP's 9 licensed states (esp. MA).
+ * Locale set: EN (default) + ES + PT (Brazilian Portuguese, added 2026-05-02 for
+ * Lowell's BR-American audience — LMP's highest-leverage demographic wedge).
  */
 
-export type Locale = 'en' | 'es';
+export type Locale = 'en' | 'es' | 'pt';
 
-export const SUPPORTED_LOCALES: Locale[] = ['en', 'es'];
+export const SUPPORTED_LOCALES: Locale[] = ['en', 'es', 'pt'];
 export const DEFAULT_LOCALE: Locale = 'en';
 export const LOCALE_COOKIE = 'NEXT_LOCALE';
 
@@ -37,5 +37,10 @@ export function setLocaleCookie(locale: Locale): void {
 
 /** Map locale → OpenGraph locale string. */
 export function ogLocale(locale: Locale): string {
-  return locale === 'es' ? 'es_US' : 'en_US';
+  switch (locale) {
+    case 'es': return 'es_US';
+    case 'pt': return 'pt_BR';
+    case 'en':
+    default:   return 'en_US';
+  }
 }

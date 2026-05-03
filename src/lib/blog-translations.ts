@@ -328,8 +328,10 @@ export const blogTranslations: Record<string, { es: BlogTranslation }> = {
   },
 };
 
+import type { Locale } from '@/lib/i18n';
+
 /**
- * Merge ES translation onto an English post if available.
+ * Merge a translated body onto an English post if available.
  *
  * Lookup key: post `_id` (stable across both Sanity and seed-posts.json).
  * Falls back to slug if `_id` is somehow absent.
@@ -338,6 +340,10 @@ export const blogTranslations: Record<string, { es: BlogTranslation }> = {
  * - locale === 'es' && translation exists → swaps title, excerpt, body
  * - locale === 'es' && translation missing → returns post unchanged
  *   (page component renders untranslatedNote badge from blog.json)
+ * - locale === 'pt' → returns post unchanged ALWAYS (full PT body translations
+ *   are deferred to Phase 2 per CLAUDE.md Bilingual Copy Rule scope-expansion;
+ *   the page component renders "Disponível em breve em português" note from
+ *   pt/blog.json untranslatedNote)
  */
 export function applyBlogTranslation<
   T extends {
@@ -347,8 +353,9 @@ export function applyBlogTranslation<
     excerpt?: string;
     body?: BlockContent[];
   },
->(post: T, locale: 'en' | 'es'): T {
-  if (locale === 'en') return post;
+>(post: T, locale: Locale): T {
+  if (locale === 'en' || locale === 'pt') return post;
+  // locale === 'es'
   const key = post._id ?? post.slug;
   if (!key) return post;
   const translation = blogTranslations[key]?.es;

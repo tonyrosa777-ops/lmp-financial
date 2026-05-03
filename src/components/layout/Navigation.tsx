@@ -196,7 +196,7 @@ export default function Navigation() {
 
           {/* Right — language toggle + phone + primary CTA + mobile hamburger */}
           <div className="flex items-center gap-3">
-            {/* EN/ES language toggle — desktop only. Sylvia-pattern port. */}
+            {/* EN/ES/PT language toggle — desktop only. Sylvia-pattern port. */}
             <div className="hidden lg:flex">
               <LanguageToggle size="sm" />
             </div>
